@@ -148,33 +148,34 @@ data:extend({
           scale = 0.5
         },
         {
-          filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-broken.png",
+          filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-repaired.png",
           priority = crash_site_sprite_priority,
-          width = 472,
-          height = 280,
-          frame_count = 1,
-          line_length = 1,
-          animation_speed = 1 / 3,
-          shift = util.by_pixel(-24, 6),
-          scale = 0.5
-        },
-        {
-          filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-broken-shadow.png",
-          priority = crash_site_sprite_priority,
-          width = 550,
-          height = 304,
+          width = 488,
+          height = 252,
           frame_count = 1,
           line_length = 1,
           repeat_count = 1,
           animation_speed = 1 / 3,
-          shift = util.by_pixel(-14, 9),
+          shift = util.by_pixel(-18, 14),
+          scale = 0.5
+        },
+        {
+          filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-repaired-shadow.png",
+          priority = crash_site_sprite_priority,
+          width = 696,
+          height = 302,
+          frame_count = 1,
+          line_length = 1,
+          repeat_count = 1,
+          animation_speed = 1 / 3,
+          shift = util.by_pixel(-11, 12),
           scale = 0.5,
           draw_as_shadow = true
         }
       }
     },
     stateless_visualisation = nil;
-    map_color = {0.78, 0.78, 0.1},
+    map_color = {1, 1, 1},
     map_grid = false
   },
 
