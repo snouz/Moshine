@@ -214,7 +214,16 @@ data:extend({
             {
               type = "create-entity",
               entity_name = "medium-explosion",
-            }
+            },
+            {
+              type = "damage",
+              damage = {amount = 50, type = "explosion"}
+            },
+            {
+              type = "create-entity",
+              entity_name = "medium-scorchmark-tintable",
+              check_buildability = true
+            },
           }
         }
       }
