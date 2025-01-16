@@ -18,7 +18,8 @@ data:extend({
     energy_required = 10,
     ingredients =
     {
-      {type = "item", name = "lab", amount = 1},
+      {type = "item", name = "assembling-machine", amount = 1},
+      {type = "item", name = "quantum-processor", amount = 5},
     },
     results = {{type = "item", name = "data-processor", amount = 1}},
     --enabled = false,
@@ -84,25 +85,6 @@ data:extend({
 
 
 
--- post-vulcanus
-
-  {
-    type = "recipe",
-    name = "neodymium-ingot",
-    icon = "__Moshine__/graphics/icons/neodymium-ingot.png",
-    category = "metallurgy", -- only foundtry
-    energy_required = 3.2,
-    ingredients = {
-      {type = "fluid", name = "lava", amount = 50},
-      {type = "item", name = "iron-ore", amount = 1},
-    },
-    results = {
-      {type = "item", name = "neodymium-ingot", amount = 1},
-      {type = "item", name = "stone", amount = 10},
-    },
-    allow_productivity = true,
-    --enabled = false,
-  },
 
 ---post fulgora
 
@@ -112,9 +94,82 @@ data:extend({
     category = "electromagnetics", -- only electromagnetic plant
     energy_required = 3.2,
     ingredients = {
-      {type = "item", name = "neodymium-ingot", amount = 1},
+      {type = "item", name = "neodymium", amount = 5},
     },
-    results = {{type = "item", name = "optical-fiber", amount = 1}},
+    results = {{type = "item", name = "magnet", amount = 1}},
     --enabled = false,
   },
+  {
+    type = "recipe",
+    name = "hard-drive",
+    category = "electronics",
+    energy_required = 3.2,
+    ingredients = {
+      {type = "item", name = "magnet", amount = 5},
+      {type = "item", name = "silicon-cell", amount = 5},
+    },
+    results = {{type = "item", name = "hard-drive", amount = 1}},
+    --enabled = false,
+  },
+  {
+    type = "recipe",
+    name = "3d-data-storage",
+    category = "electronics",
+    energy_required = 3.2,
+    ingredients = {
+      {type = "item", name = "magnet", amount = 5},
+      {type = "item", name = "silicon-cell", amount = 5},
+      {type = "item", name = "hard-drive", amount = 5},
+    },
+    results = {{type = "item", name = "hard-drive", amount = 1}},
+    --enabled = false,
+  },
+  {
+    type = "recipe",
+    name = "3d-data-storage",
+    category = "electronics",
+    energy_required = 3.2,
+    ingredients = {
+      {type = "item", name = "magnet", amount = 5},
+      {type = "item", name = "silicon-cell", amount = 5},
+      {type = "item", name = "hard-drive", amount = 5},
+    },
+    results = {{type = "item", name = "3d-data-storage", amount = 1}},
+    --enabled = false,
+  },
+
+
+
+
+  {
+    type = "recipe-category",
+    name = "data-processing"
+  },
+
+  {
+    type = "recipe",
+    name = "unstable-model",
+    category = "data-processing",
+    energy_required = 30,
+    ingredients = {
+      {type = "fluid", name = "raw-data", amount = 500},
+      {type = "item", name = "3d-data-storage", amount = 5},
+      {type = "item", name = "hard-drive", amount = 5},
+    },
+    results = {{type = "item", name = "unstable-model", amount = 1}},
+    --enabled = false,
+  },
+  {
+    type = "recipe",
+    name = "stable-model",
+    category = "data-processing",
+    energy_required = 300,
+    ingredients = {
+      {type = "fluid", name = "raw-data", amount = 1000},
+      {type = "item", name = "3d-data-storage", amount = 5},
+    },
+    results = {{type = "item", name = "stable-model", amount = 1}},
+    --enabled = false,
+  },
+
 })

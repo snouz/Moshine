@@ -128,7 +128,8 @@ data:extend({
     name = "data-processor",
     icon = "__Moshine__/graphics/icons/data-processor.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 0.2, result = "assembling-machine-1"},
+    minable = {mining_time = 0.2, result = "data-processor"},
+    crafting_categories = {"data-processing"},
     max_health = 300,
     corpse = "assembling-machine-1-remnants",
     dying_explosion = "assembling-machine-1-explosion",
@@ -199,7 +200,6 @@ data:extend({
         }
       }
     },
-    crafting_categories = {"crafting", "basic-crafting", "advanced-crafting"},
     crafting_speed = 0.5,
     energy_source =
     {

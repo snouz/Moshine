@@ -72,14 +72,14 @@ data:extend({
 
   {
     type = "item",
-    name = "neodymium-ore",
+    name = "neodymium",
     icon = "__Moshine__/graphics/icons/neodymium-ore.png",
     pictures =
     {
-      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-ore.png",   scale = 0.5 },
-      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-ore-1.png", scale = 0.5 },
-      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-ore-2.png", scale = 0.5 },
-      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-ore-3.png", scale = 0.5 }
+      { size = 64, filename = "__Moshine__/graphics/icons/neodymium.png",   scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-1.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-2.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-3.png", scale = 0.5 }
     },
     subgroup = "vulcanus-processes",
     color_hint = { text = "T" },
@@ -112,20 +112,6 @@ data:extend({
     stack_size = 50,
     default_import_location = "moshine",
     weight = 5*kg
-  },
-  {
-    type = "item",
-    name = "neodymium-ingot",
-    icon = "__Moshine__/graphics/icons/neodymium-ingot.png",
-    subgroup = "raw-material",
-    color_hint = { text = "C" },
-    order = "a[smelting]-b[copper-plate]",
-    inventory_move_sound = item_sounds.metal_small_inventory_move,
-    pick_sound = item_sounds.metal_small_inventory_pickup,
-    drop_sound = item_sounds.metal_small_inventory_move,
-    default_import_location = "moshine",
-    stack_size = 50,
-    weight = 10*kg,
   },
   {
     type = "item",
