@@ -8,7 +8,11 @@
   "factorio_version": "2.0",
   "dependencies": [
     "base",
-    "space-age"
+    "space-age",
+    
+    "snouz-big-accumulator",
+    "snouz-big-solar-panel",
+    "se-space-trains"
   ],
   "quality_required": false,
   "rail_bridges_required": false,
