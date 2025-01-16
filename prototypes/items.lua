@@ -199,11 +199,11 @@ data:extend({
   },
   {
     type = "item",
-    name = "unstable-model",
-    icon = "__Moshine__/graphics/icons/unstable-model.png",
+    name = "model-unstable",
+    icon = "__Moshine__/graphics/icons/model-unstable.png",
     pictures =
     {
-      { size = 64, filename = "__Moshine__/graphics/icons/unstable-model.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/model-unstable.png", scale = 0.5 },
     },
     fuel_category = "chemical",
     subgroup = "agriculture-products",
@@ -245,8 +245,8 @@ data:extend({
   },
   {
     type = "item",
-    name = "stable-model",
-    icon = "__Moshine__/graphics/icons/stable-model.png",
+    name = "model-stable",
+    icon = "__Moshine__/graphics/icons/model-stable.png",
     subgroup = "raw-material",
     color_hint = { text = "C" },
     order = "a[smelting]-b[copper-plate]",

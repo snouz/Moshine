@@ -8,6 +8,9 @@ data:extend({
     ingredients =
     {
       {type = "item", name = "lab", amount = 1},
+      {type = "item", name = "heat-shielding", amount = 40},
+      {type = "item", name = "magnet", amount = 20},
+
     },
     results = {{type="item", name="supercomputer", amount = 1}},
     --enabled = false,
@@ -18,7 +21,7 @@ data:extend({
     energy_required = 10,
     ingredients =
     {
-      {type = "item", name = "assembling-machine", amount = 1},
+      {type = "item", name = "assembling-machine-3", amount = 1},
       {type = "item", name = "quantum-processor", amount = 5},
     },
     results = {{type = "item", name = "data-processor", amount = 1}},
@@ -64,7 +67,7 @@ data:extend({
     name = "heat-shielding",
     ingredients =
     {
-      {type = "item", name = "silicon", amount = 5}
+      {type = "item", name = "silicon", amount = 5},
       {type = "item", name = "low-density-structure", amount = 2},
     },
     results = {{type = "item", name = "heat-shielding", amount = 1}},
@@ -148,7 +151,7 @@ data:extend({
 
   {
     type = "recipe",
-    name = "unstable-model",
+    name = "model-unstable",
     category = "data-processing",
     energy_required = 30,
     ingredients = {
@@ -156,19 +159,19 @@ data:extend({
       {type = "item", name = "3d-data-storage", amount = 5},
       {type = "item", name = "hard-drive", amount = 5},
     },
-    results = {{type = "item", name = "unstable-model", amount = 1}},
+    results = {{type = "item", name = "model-unstable", amount = 1}},
     --enabled = false,
   },
   {
     type = "recipe",
-    name = "stable-model",
+    name = "model-stable",
     category = "data-processing",
     energy_required = 300,
     ingredients = {
+      {type = "item", name = "model-unstable", amount = 1},
       {type = "fluid", name = "raw-data", amount = 1000},
-      {type = "item", name = "3d-data-storage", amount = 5},
     },
-    results = {{type = "item", name = "stable-model", amount = 1}},
+    results = {{type = "item", name = "model-stable", amount = 1}},
     --enabled = false,
   },
 

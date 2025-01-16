@@ -184,7 +184,7 @@ data:extend({
     name = "neodymium-ore",
     icon = "__Moshine__/graphics/icons/neodymium-ore.png",
     flags = {"placeable-neutral"},
-    factoriopedia_simulation = simulations.factoriopedia_uranium_ore,
+    --factoriopedia_simulation = simulations.factoriopedia_uranium_ore,
     order = "a-b-e",
     tree_removal_probability = 0.7,
     tree_removal_max_distance = 32 * 32,
@@ -216,7 +216,7 @@ data:extend({
     {
       sheet =
       {
-        filename = "__Moshine__/graphics/entity/uranium-ore/neodymium-ore.png",
+        filename = "__Moshine__/graphics/entity/neodymium-ore/neodymium-ore.png",
         priority = "extra-high",
         width = 128,
         height = 128,
