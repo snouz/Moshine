@@ -5,7 +5,7 @@ data:extend({
   {
     type = "technology",
     name = "planet-discovery-moshine",
-    icons = util.technology_icon_constant_planet(techicons .. "moshine.png"),
+    icons = util.technology_icon_constant_planet(techicons .. "moshine-tech-moshine.png"),
     icon_size = 256,
     essential = true,
     effects =
