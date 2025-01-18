@@ -22,7 +22,7 @@ data:extend({
     ingredients =
     {
       {type = "item", name = "assembling-machine-3", amount = 1},
-      {type = "item", name = "quantum-processor", amount = 5},
+      --{type = "item", name = "quantum-processor", amount = 5},
     },
     results = {{type = "item", name = "data-processor", amount = 1}},
     enabled = false,
