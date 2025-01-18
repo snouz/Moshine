@@ -1,8 +1,21 @@
 require ("sound-util")
+require ("opticalfiberpictures")
 
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
+
+
+
+
+
+
+
+
+
+
+
+
 
 data:extend({
   {
@@ -226,7 +239,32 @@ data:extend({
 
 
 
-
+  {
+    type = "corpse",
+    name = "opticalfiber-remnants",
+    icon = "__Moshine__/graphics/icons/optical-fiber.png",
+    flags = {"placeable-neutral", "not-on-map"},
+    hidden_in_factoriopedia = true,
+    subgroup = "energy-pipe-distribution-remnants",
+    order = "a-d-a",
+    collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+    selection_box = {{-0.4, -0.4}, {0.4, 0.4}},
+    selectable_in_game = false,
+    time_before_removed = 60 * 60 * 15, -- 15 minutes
+    expires = false,
+    final_render_layer = "remnants",
+    remove_on_tile_placement = false,
+    animation = make_rotated_animation_variations_from_sheet(2,
+    {
+      filename = "__Moshine__/graphics/entity/opticalfiber/remnants/opticalfiber-remnants.png",
+      width = 122,
+      height = 120,
+      line_length = 1,
+      direction_count = 2,
+      shift = util.by_pixel(1.5, 2.5), -- -0,5
+      scale = 0.5
+    })
+  },
 
   {
     type = "pipe",
@@ -235,28 +273,28 @@ data:extend({
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.1, result = "optical-fiber"},
     max_health = 100,
-    corpse = "pipe-remnants",
+    corpse = "opticalfiber-remnants",
     dying_explosion = "pipe-explosion",
-    icon_draw_specification = {scale = 0.5},
+    icon_draw_specification = {scale = 0},
     resistances =
     {
       {
         type = "fire",
-        percent = 80
+        percent = 30
       },
       {
         type = "impact",
-        percent = 30
+        percent = 50
       }
     },
     fast_replaceable_group = "optical-fiber",
-    collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
-    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+    selection_box = {{-0.4, -0.4}, {0.4, 0.4}},
     damaged_trigger_effect = hit_effects.entity(),
     fluid_box =
     {
       volume = 100,
-      pipe_covers = pipecoverspictures(), -- in case a real pipe is connected to a ghost
+      pipe_covers = opticalfibercoverspictures(), -- in case a real pipe is connected to a ghost
       filter = "raw-data",
       pipe_connections =
       {
@@ -267,8 +305,8 @@ data:extend({
       },
       hide_connection_info = true
     },
-    impact_category = "metal",
-    pictures = pipepictures(),
+    impact_category = "glass",
+    pictures = opticalfiberpictures(),
     working_sound = sounds.pipe,
     open_sound = sounds.metal_small_open,
     close_sound = sounds.metal_small_close,
