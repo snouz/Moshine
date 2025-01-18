@@ -73,7 +73,7 @@ data:extend({
   {
     type = "item",
     name = "neodymium",
-    icon = "__Moshine__/graphics/icons/neodymium-ore.png",
+    icon = "__Moshine__/graphics/icons/neodymium.png",
     pictures =
     {
       { size = 64, filename = "__Moshine__/graphics/icons/neodymium.png",   scale = 0.5 },

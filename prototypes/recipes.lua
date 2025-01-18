@@ -13,7 +13,7 @@ data:extend({
 
     },
     results = {{type="item", name="supercomputer", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
   {
     type = "recipe",
@@ -25,17 +25,17 @@ data:extend({
       {type = "item", name = "quantum-processor", amount = 5},
     },
     results = {{type = "item", name = "data-processor", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
   {
     type = "recipe",
-    name = "data-collector",
+    name = "data-extractor",
     ingredients = {
       {type = "item", name = "iron-plate", amount = 2},
     },
-    results = {{type = "item", name = "iron-gear-wheel", amount = 1}},
-    allow_productivity = true
-    --enabled = false,
+    results = {{type = "item", name = "data-extractor", amount = 1}},
+    allow_productivity = true,
+    enabled = false,
   },
   {
     type = "recipe",
@@ -44,7 +44,7 @@ data:extend({
       {type = "item", name = "iron-plate", amount = 1},
     },
     results = {{type = "item", name = "optical-fiber", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
 
 
@@ -60,7 +60,7 @@ data:extend({
     },
     results = {{type = "item", name = "silicon", amount = 1}},
     allow_productivity = true,
-    --enabled = false,
+    enabled = false,
   },
   {
     type = "recipe",
@@ -71,7 +71,7 @@ data:extend({
       {type = "item", name = "low-density-structure", amount = 2},
     },
     results = {{type = "item", name = "heat-shielding", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
 
   {
@@ -83,7 +83,7 @@ data:extend({
       {type = "item", name = "electronic-circuit", amount = 1},
     },
     results = {{type = "item", name = "silicon-cell", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
 
 
@@ -100,7 +100,7 @@ data:extend({
       {type = "item", name = "neodymium", amount = 5},
     },
     results = {{type = "item", name = "magnet", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
   {
     type = "recipe",
@@ -112,7 +112,7 @@ data:extend({
       {type = "item", name = "silicon-cell", amount = 5},
     },
     results = {{type = "item", name = "hard-drive", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
   {
     type = "recipe",
@@ -125,7 +125,7 @@ data:extend({
       {type = "item", name = "hard-drive", amount = 5},
     },
     results = {{type = "item", name = "hard-drive", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
   {
     type = "recipe",
@@ -138,7 +138,7 @@ data:extend({
       {type = "item", name = "hard-drive", amount = 5},
     },
     results = {{type = "item", name = "3d-data-storage", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
 
 
@@ -160,7 +160,7 @@ data:extend({
       {type = "item", name = "hard-drive", amount = 5},
     },
     results = {{type = "item", name = "model-unstable", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
   {
     type = "recipe",
@@ -172,7 +172,7 @@ data:extend({
       {type = "fluid", name = "raw-data", amount = 1000},
     },
     results = {{type = "item", name = "model-stable", amount = 1}},
-    --enabled = false,
+    enabled = false,
   },
 
 })
