@@ -210,12 +210,8 @@ data:extend({
     distance = 5,
     orientation = 0.2,
     magnitude = 0.9,
-    order = "b[moshine]",
+    order = "e[moshine]",
     subgroup = "planets",
-
-
-
-
     map_gen_settings = planet_map_gen.moshine(),
     pollutant_type = nil,
     solar_power_in_space = 6000,
@@ -232,11 +228,11 @@ data:extend({
     procession_graphic_catalogue = planet_catalogue_vulcanus,
     surface_properties =
     {
-      ["day-night-cycle"] = 1.5 * minute,
+      ["day-night-cycle"] = 1 * minute,
       ["magnetic-field"] = 25,
       ["solar-power"] = 4000,
-      pressure = 4000,
-      gravity = 40
+      pressure = 800,
+      gravity = 8
     },
     asteroid_spawn_influence = 1,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus, 0.9),
@@ -254,12 +250,12 @@ data:extend({
       semi_persistent =
       {
         {
-          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-rumble", 3, 0.5)},
+          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-rumble", 3, 0.6)},
           delay_mean_seconds = 10,
           delay_variance_seconds = 5
         },
         {
-          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-flames", 5, 0.6)},
+          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-flames", 5, 1.1)},
           delay_mean_seconds = 15,
           delay_variance_seconds = 7.0
         }
@@ -311,7 +307,17 @@ data:extend({
     from = "nauvis",
     to = "moshine",
     order = "a",
-    length = 1500,
+    length = 3000,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
+  },
+  {
+    type = "space-connection",
+    name = "vulcanus-moshine",
+    subgroup = "planet-connections",
+    from = "nauvis",
+    to = "moshine",
+    order = "a",
+    length = 15000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
   },
 })
