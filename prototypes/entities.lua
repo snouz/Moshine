@@ -5,9 +5,91 @@ local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
 
+supercomputer = "__Moshine__/graphics/entity/supercomputer/"
 
 
+local planetary_teleporter_on_animation = {
+  layers = {
+    --SHADOW
+    {
+      filename = supercomputer .. "teleporter-shadow.png",
+      priority = "low",
+      width = 531,
+      height = 292,
+      scale = 0.5,
+      frame_count = 1,
+      repeat_count = 20,
+      draw_as_shadow = true,
+      animation_speed = 0.5,
+      shift = { 1.9, 1.2 },
+    },
+    --BUILDING
+    {
+      filename = supercomputer .. "teleporter-base.png",
+      priority = "medium",
+      width = 400,
+      height = 475,
+      scale = 0.5,
+      repeat_count = 20,
+      animation_speed = 0.5,
+    },
+    -- GLOWS
+    {
+      filename = supercomputer .. "teleporter-base-combined-glow.png",
+      priority = "high",
+      width = 400,
+      height = 475,
+      scale = 0.5,
+      frame_count = 20,
+      line_length = 5,
+      animation_speed = 0.5,
+      draw_as_glow = true,
+      fadeout = true,
+      blend_mode = "additive-soft",
+    },
+    -- LIGHTS
+    {
+      filename = supercomputer .. "teleporter-base-combined-light.png",
+      priority = "extra-high",
+      width = 400,
+      height = 475,
+      scale = 0.5,
+      frame_count = 20,
+      line_length = 5,
+      animation_speed = 0.5,
+      draw_as_light = true,
+      blend_mode = "additive-soft",
+    },
+  },
+}
 
+local planetary_teleporter_off_animation = {
+  layers = {
+    --SHADOW
+    {
+      filename = supercomputer .. "teleporter-shadow.png",
+      priority = "low",
+      width = 531,
+      height = 292,
+      scale = 0.5,
+      frame_count = 1,
+      repeat_count = 20,
+      draw_as_shadow = true,
+      animation_speed = 0.5,
+      shift = { 1.9, 1.2 },
+    },
+    --BUILDING
+    {
+      filename = supercomputer .. "teleporter-base.png",
+      priority = "medium",
+      width = 400,
+      height = 475,
+      scale = 0.5,
+      repeat_count = 20,
+      animation_speed = 0.5,
+    },
+  },
+}
 
 
 
@@ -26,9 +108,10 @@ data:extend({
     subgroup = "production-machine",
     order = "z-z[z-lab]",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
-    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-    max_health = 350,
+    collision_box = { { -2.65, -1.9 }, { 2.65, 3.2 } },
+    selection_box = { { -3, -2 }, { 3, 3.4 } },
+    drawing_box = { { -3, -3 }, { 3, 3 } },
+    max_health = 900,
     impact_category = "metal",
     alert_icon_shift = util.by_pixel(0, -12),
     icon_draw_specification = {shift = {0, -0.3}},
@@ -50,43 +133,8 @@ data:extend({
       }
     },]]
     damaged_trigger_effect = hit_effects.entity(),
-    on_animation = {
-      layers = {
-        util.sprite_load("__space-age__/graphics/entity/biolab/biolab-anim",{
-          frame_count = 32,
-          scale = 0.5,
-          animation_speed = 0.2,
-        }),
-        util.sprite_load("__space-age__/graphics/entity/biolab/biolab-lights",{
-          frame_count = 32,
-          draw_as_glow = true,
-          blend_mode = "additive",
-          scale = 0.5,
-          animation_speed = 0.2,
-        }),
-        util.sprite_load("__space-age__/graphics/entity/biolab/biolab-shadow",{
-          frame_count = 32,
-          scale = 0.5,
-          animation_speed = 0.2,
-          draw_as_shadow = true,
-        })
-      }
-    },
-    off_animation = {
-      layers = {
-        util.sprite_load("__space-age__/graphics/entity/biolab/biolab-anim",{
-          frame_count = 32,
-          scale = 0.5,
-          animation_speed = 0.2,
-        }),
-        util.sprite_load("__space-age__/graphics/entity/biolab/biolab-shadow",{
-          frame_count = 32,
-          scale = 0.5,
-          animation_speed = 0.2,
-          draw_as_shadow = true,
-        })
-      }
-    },
+    on_animation = planetary_teleporter_on_animation,
+    off_animation = planetary_teleporter_off_animation,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     working_sound =
