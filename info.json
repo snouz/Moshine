@@ -9,7 +9,6 @@
   "dependencies": [
     "base",
     "space-age",
-    
     "snouz-big-accumulator",
     "snouz-big-solar-panel",
     "se-space-trains"
