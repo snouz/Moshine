@@ -105,11 +105,13 @@ data:extend({
     highlight = true,
     minimum = 60000,
     normal = 300000,
-    infinite_depletion_amount = 10,
-    resource_patch_search_radius = 12,
-    tree_removal_probability = 0.7,
+    infinite_depletion_amount = 0,
+    resource_patch_search_radius = 1,
+    tree_removal_probability = 1,
     tree_removal_max_distance = 32 * 32,
+    cliff_removal_probability = 1,
     draw_stateless_visualisation_under_building = false,
+    randomize_visual_position = false,
     minable =
     {
       mining_time = 1,
@@ -124,53 +126,55 @@ data:extend({
         }
       }
     },
-    collision_box = {{-2.2, -1.2}, {2.2, 1.2}},
-    selection_box = {{-2.5, -1.5}, {2.5, 1.5}},
-    autoplace =
-    {
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    --autoplace =
+    --{
       --control = "sulfuric-acid-geyser",
+    --  order = "c", -- Other resources are "b"; oil won't get placed if something else is already there.
+    --  probability_expression = 0,
+    --},
+    autoplace = resource_autoplace.resource_autoplace_settings{
+      name = "crude-oil",
       order = "c", -- Other resources are "b"; oil won't get placed if something else is already there.
-      probability_expression = 0
+      base_density = 0.1,
+      base_spots_per_km2 = 1.8,
+      random_probability = 1/48,
+      random_spot_size_minimum = 0.1,
+      random_spot_size_maximum = 0.1, -- don't randomize spot size
+      additional_richness = 220000, -- this increases the total everywhere, so base_density needs to be decreased to compensate
+      has_starting_area_placement = true,
+      regular_rq_factor_multiplier = 1
     },
     stage_counts = {0},
     stages =
     {
       layers =
       {
-        {
-          filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-ground.png",
-          priority = crash_site_sprite_priority,
-          width = 700,
-          height = 344,
-          shift = util.by_pixel(-49, 11),
-          frame_count = 1,
-          line_length = 1,
-          scale = 0.5
-        },
-        {
-          filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-repaired.png",
-          priority = crash_site_sprite_priority,
-          width = 488,
-          height = 252,
-          frame_count = 1,
-          line_length = 1,
-          repeat_count = 1,
-          animation_speed = 1 / 3,
-          shift = util.by_pixel(-18, 14),
-          scale = 0.5
-        },
-        {
+        --[[{
           filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-repaired-shadow.png",
-          priority = crash_site_sprite_priority,
-          width = 696,
-          height = 302,
+          priority = "high",
+          width = 700,
+          height = 300,
           frame_count = 1,
           line_length = 1,
           repeat_count = 1,
           animation_speed = 1 / 3,
-          shift = util.by_pixel(-11, 12),
+          shift = util.by_pixel(0, 0),
           scale = 0.5,
           draw_as_shadow = true
+        },]]
+        {
+          filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-repaired.png",
+          priority = "high",
+          width = 700,
+          height = 300,
+          frame_count = 1,
+          line_length = 1,
+          repeat_count = 1,
+          animation_speed = 1 / 3,
+          shift = util.by_pixel(0, 0),
+          scale = 0.5
         }
       }
     },
