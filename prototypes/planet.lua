@@ -32,7 +32,7 @@ data:extend({
                   * 18000 * vulcanus_starting_area_multiplier\z
                   * control:quartz_ore:richness / vulcanus_coal_size"
   },
-  {
+  --[[{
     type = "noise-expression",
     name = "moshine_calcite_probability",
     expression = "(control:calcite:size > 0) * (1000 * ((1 + vulcanus_calcite_region) * random_penalty_between(0.9, 1, 1) - 1))"
@@ -43,7 +43,7 @@ data:extend({
     expression = "vulcanus_calcite_region * random_penalty_between(0.9, 1, 1)\z
                   * 24000 * vulcanus_starting_area_multiplier\z
                   * control:calcite:richness / vulcanus_calcite_size"
-  },
+  },]]
   {
     type = "noise-expression",
     name = "moshine_fulgoran_data_source_probability",
@@ -82,12 +82,12 @@ planet_map_gen.moshine = function()
       ["entity:fulgoran-data-source:probability"] = "moshine_fulgoran_data_source_probability",
       ["entity:fulgoran-data-source:richness"] = "moshine_fulgoran_data_source_richness",
     },
-    cliff_settings =
+    --[[cliff_settings =
     {
       name = "cliff-vulcanus",
       cliff_elevation_interval = 120,
       cliff_elevation_0 = 70
-    },
+    },]]
     --[[territory_settings =
     {
       units = {"small-demolisher", "medium-demolisher", "big-demolisher"},
@@ -98,7 +98,7 @@ planet_map_gen.moshine = function()
     autoplace_controls =
     {
       ["quartz_ore"] = {},
-      ["fulgoran_data_source"] = {},
+      ["fulgoran_data_source"] = { frequency = 0.1, size = 0.1, richness = 10000000 },
       ["neodymium_ore"] = {},
       --["calcite"] = {},
       ["vulcanus_volcanism"] = {},
@@ -161,10 +161,10 @@ planet_map_gen.moshine = function()
           ["small-volcanic-rock"] = {},
           ["medium-volcanic-rock"] = {},
           ["tiny-volcanic-rock"] = {},
-          ["tiny-rock-cluster"] = {},
-          ["small-sulfur-rock"] = {},
-          ["tiny-sulfur-rock"] = {},
-          ["sulfur-rock-cluster"] = {},
+          --["tiny-rock-cluster"] = {},
+          --["small-sulfur-rock"] = {},
+          --["tiny-sulfur-rock"] = {},
+          --["sulfur-rock-cluster"] = {},
           ["waves-decal"] = {},
         }
       },
