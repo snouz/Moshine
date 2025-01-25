@@ -3,6 +3,79 @@
 
 local planet_map_gen = require("__space-age__/prototypes/planet/planet-map-gen")
 
+local tile_trigger_effects = require("__space-age__.prototypes.tile.tile-trigger-effects")
+local tile_pollution = require("__space-age__/prototypes/tile/tile-pollution-values")
+local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
+local tile_sounds = require("__space-age__/prototypes/tile/tile-sounds")
+
+local tile_graphics = require("__base__/prototypes/tile/tile-graphics")
+local tile_spritesheet_layout = tile_graphics.tile_spritesheet_layout
+
+
+local lava_to_out_of_map_transition =
+{
+  to_tiles = out_of_map_tile_type_names,
+  transition_group = out_of_map_transition_group_id,
+
+  overlay_layer_group = "zero",
+  apply_effect_color_to_overlay = true,
+  background_layer_offset = 1,
+  background_layer_group = "zero",
+  offset_background_layer_by_tile_layer = true,
+
+  spritesheet = "__base__/graphics/terrain/out-of-map-transition/water-out-of-map-transition-tintable.png",
+  layout = tile_spritesheet_layout.transition_4_4_8_1_1,
+  background_enabled = false,
+
+  apply_waving_effect_on_masks = true,
+  waving_effect_time_scale = 0.005,
+  mask_layout =
+  {
+    spritesheet = "__base__/graphics/terrain/masks/water-edge-transition.png",
+    count = 1,
+    double_side_count = 0,
+    scale = 0.5,
+    outer_corner_x = 64,
+    side_x = 128,
+    u_transition_x = 192,
+    o_transition_x = 256,
+    y = 0
+  }
+}
+
+local function transition_masks()
+  return {
+    mask_spritesheet = "__base__/graphics/terrain/masks/transition-1.png",
+    mask_layout =
+    {
+      scale = 0.5,
+      inner_corner =
+      {
+        count = 8,
+      },
+      outer_corner =
+      {
+        count = 8,
+        x = 64*9
+      },
+      side =
+      {
+        count = 8,
+        x = 64*9*2
+      },
+      u_transition =
+      {
+        count = 1,
+        x = 64*9*3
+      },
+      o_transition =
+      {
+        count = 1,
+        x = 64*9*4
+      }
+    }
+  }
+end
 
 data:extend({
 
@@ -11,7 +84,8 @@ data:extend({
   {
     type = "noise-expression",
     name = "moshine_neodymium_ore_probability",
-    expression = "(control:neodymium_ore:size > 0) * (1000 * ((1 + vulcanus_tungsten_ore_region) * random_penalty_between(0.9, 1, 1) - 1))"
+    --expression = "(control:neodymium_ore:size > 0) * (1000 * ((1 + vulcanus_tungsten_ore_region) * random_penalty_between(0.9, 1, 1) - 1))"
+    expression = "(control:calcite:size > 0) * (1000 * ((1 + vulcanus_calcite_region) * random_penalty_between(0.9, 1, 1) - 1))"
   },
   {
     type = "noise-expression",
@@ -44,7 +118,7 @@ data:extend({
                   * 24000 * vulcanus_starting_area_multiplier\z
                   * control:calcite:richness / vulcanus_calcite_size"
   },]]
-  {
+  --[[{
     type = "noise-expression",
     name = "moshine_fulgoran_data_source_probability",
     expression = "(control:fulgoran_data_source:size > 0) * (0.025 * ((vulcanus_sulfuric_acid_region_patchy > 0) + 2 * vulcanus_sulfuric_acid_region_patchy))"
@@ -55,10 +129,169 @@ data:extend({
     expression = "(vulcanus_sulfuric_acid_region > 0) * random_penalty_between(0.5, 1, 1)\z
                   * 80000 * 40 * vulcanus_richness_multiplier * vulcanus_starting_area_multiplier\z
                   * control:fulgoran_data_source:richness / vulcanus_sulfuric_acid_geyser_size"
+  },]]
+
+
+  ----- Shallow Oil
+  {
+    name = "moshine-hot-swamp",
+    type = "tile",
+    order = "a[oil]-b[shallow]",
+    subgroup = "fulgora-tiles",
+    collision_mask = {
+      layers =
+      {
+        ground_tile = true,
+        resource = true,
+      }
+    },
+    autoplace = {probability_expression = "50 * fulgora_oil_mask * water_base(fulgora_coastline, 1000)"}, -- target coast at cliff elevation
+    layer = 4,
+    layer_group = "ground-natural",
+    map_color = { 74, 42, 43},
+    vehicle_friction_modifier = 4,
+    walking_speed_modifier = 0.8,
+    default_cover_tile = "foundation",
+    absorptions_per_second = tile_pollution.fulgora,
+    fluid = "steam",
+    effect = "moshine-hot-swamp",
+    effect_color = { 74, 42, 43, 255 },
+    effect_color_secondary = { 60, 13, 5, 255 },
+    particle_tints = tile_graphics.fulgora_oil_ocean_particle_tints,
+    --sprite_usage_surface = "fulgora",
+    variants =
+    {
+      transition = transition_masks(),
+      material_background =
+      {
+        picture = "__space-age__/graphics/terrain/oil-sand-8x.png",
+        line_length = 8,
+        count = 16,
+        scale = 0.5
+      },
+      material_texture_width_in_tiles = 8,
+      material_texture_height_in_tiles = 8
+    },
+    --transitions = table.deepcopy(data.raw.tile["sand-1"].transitions),
+    transitions = fulgora_oil_sand_transitions,
+    --transitions_between_transitions = table.deepcopy(data.raw.tile["sand-1"].transitions_between_transitions),
+    transitions_between_transitions = fulgora_sand_transitions_between_transitions,
+    walking_sound = sound_variations("__base__/sound/walking/resources/oil", 7, 1, volume_multiplier("main-menu", 1.5)),
+    landing_steps_sound = sound_variations("__base__/sound/walking/resources/oil", 7, 1, volume_multiplier("main-menu", 2.9)),
+    driving_sound = oil_driving_sound,
+    scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
+    trigger_effect = tile_trigger_effects.sand_trigger_effect()
+  },
+  ----------- "SHALLOW" LAVA
+  {
+    type = "tile",
+    name = "moshine-lava",
+    subgroup = "vulcanus-tiles",
+    order = "a-b",
+    collision_mask = tile_collision_masks.lava(),
+    autoplace = {probability_expression = "100 * fulgora_oil_mask * water_base(fulgora_coastline - 50 - fulgora_coastline_drop / 2, 2000)"},
+    effect = "lava",
+    fluid = "lava",
+    effect_color = { 167, 59, 27 },
+    effect_color_secondary = { 49, 80, 14 },
+    particle_tints = tile_graphics.lava_particle_tints,
+    destroys_dropped_items = true,
+    default_destroyed_dropped_item_trigger = destroyed_item_trigger,
+    layer = 5,
+    layer_group = "water-overlay",
+    --sprite_usage_surface = "vulcanus",
+    variants = tile_variations_template(
+      "__space-age__/graphics/terrain/vulcanus/lava.png",
+      "__base__/graphics/terrain/masks/transition-1.png",
+      {
+        max_size = 4,
+        [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
+        [2] = { probability = 1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
+        [4] = { probability = 0.1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
+      }
+    ),
+    --allowed_neighbors={"lava-hot"},
+    transitions = {lava_to_out_of_map_transition},
+    transitions_between_transitions = data.raw.tile["water"].transitions_between_transitions,
+    walking_sound = data.raw.tile["water"].walking_sound,
+    map_color = {r = 150, g = 49, b = 30},
+    walking_speed_modifier = 1,
+    vehicle_friction_modifier = 1,
+    absorptions_per_second = tile_pollution.lava,
+    trigger_effect = tile_trigger_effects.hot_lava_trigger_effect(),
+    default_cover_tile = "foundation",
+    ambient_sounds =
+    {
+      sound =
+      {
+        variations = sound_variations("__space-age__/sound/world/tiles/lava", 10, 0.5 ),
+        advanced_volume_control =
+        {
+          fades = { fade_in = { curve_type = "cosine", from = { control = 0.5, volume_percentage = 0.0 }, to = { 1.5, 100.0 } } }
+        }
+      },
+      radius = 7.5,
+      min_entity_count = 10,
+      max_entity_count = 30,
+      entity_to_sound_ratio = 0.1,
+      average_pause_seconds = 3
+    }
   },
 
+  ----- Deep oil effect
+  {
+    type = "tile-effect",
+    name = "moshine-hot-swamp",
+    shader = "water",
+    water =
+    {
+      shader_variation = "oil",
+      textures =
+      {
+        {
+          filename = "__space-age__/graphics/terrain/oilNoise.png",
+          width = 512,
+          height = 512
+        },
+        {
+          filename = "__space-age__/graphics/terrain/oil-ocean-deep-shader.png",
+          width = 512 * 4,
+          height = 512 * 2
+        },
+        --gradient map for thin film effect
+        {
+          filename = "__space-age__/graphics/terrain/oilGradient.png",
+          width = 512,
+          height = 32
+        },
+        --specular highligts
+        {
+          filename = "__space-age__/graphics/terrain/oil-ocean-deep-spec.png",
+          width = 512 * 4,
+          height = 512 * 2
+        },
+      },
+      texture_variations_columns = 1,
+      texture_variations_rows = 1,
+      secondary_texture_variations_columns = 4,
+      secondary_texture_variations_rows = 2,
 
+      specular_lightness = { 4, 4, 4 },
+      foam_color = {61,156,214}, -- #3d9cd6ff,
+      foam_color_multiplier = 0.1,
 
+      animation_speed = 2.500,
+      animation_scale = {3, 3},
+
+      dark_threshold = {2.000, 2.000},
+      reflection_threshold = {5.00, 5.00},
+      specular_threshold = {0.000, 0.000},
+      tick_scale = 1.000,
+
+      near_zoom = 0.063,
+      far_zoom = 0.063,
+    }
+  }
 })
 
 
@@ -67,20 +300,24 @@ planet_map_gen.moshine = function()
   {
     property_expression_names =
     {
-      elevation = "vulcanus_elevation",
+      --elevation = "vulcanus_elevation",
+      elevation = "fulgora_elevation",
       temperature = "vulcanus_temperature",
-      moisture = "vulcanus_moisture",
-      aux = "vulcanus_aux",
-      cliffiness = "cliffiness_basic",
+      --moisture = "vulcanus_moisture",
+      moisture = "fulgora_moisture",
+      --aux = "vulcanus_aux",
+      aux = "fulgora_aux",
+      --cliffiness = "cliffiness_basic",
+      cliffiness = "fulgora_cliffiness",
       cliff_elevation = "cliff_elevation_from_elevation",
-      ["entity:neodymium-ore:probability"] = "moshine_neodymium_ore_probability",
-      ["entity:neodymium-ore:richness"] = "moshine_neodymium_ore_richness",
-      ["entity:quartz-ore:probability"] = "moshine_quartz_ore_probability",
-      ["entity:quartz-ore:richness"] = "moshine_quartz_ore_richness",
+      --["entity:neodymium-ore:probability"] = "moshine_neodymium_ore_probability",
+      --["entity:neodymium-ore:richness"] = "moshine_neodymium_ore_richness",
+      --["entity:quartz-ore:probability"] = "moshine_quartz_ore_probability",
+      --["entity:quartz-ore:richness"] = "moshine_quartz_ore_richness",
       --["entity:calcite:probability"] = "moshine_calcite_probability",
       --["entity:calcite:richness"] = "moshine_calcite_richness",
-      ["entity:fulgoran-data-source:probability"] = "moshine_fulgoran_data_source_probability",
-      ["entity:fulgoran-data-source:richness"] = "moshine_fulgoran_data_source_richness",
+      --["entity:fulgoran-data-source:probability"] = "moshine_fulgoran_data_source_probability",
+      --["entity:fulgoran-data-source:richness"] = "moshine_fulgoran_data_source_richness",
     },
     --[[cliff_settings =
     {
@@ -95,14 +332,32 @@ planet_map_gen.moshine = function()
       territory_variation_expression = "demolisher_variation_expression",
       minimum_territory_size = 10
     },]]
+
+    cliff_settings =
+    {
+      name = "cliff-vulcanus",
+      control = "fulgora_cliff",
+      cliff_elevation_0 = 80,
+      -- Ideally the first cliff would be at elevation 0 on the coastline, but that doesn't work,
+      -- so instead the coastline is moved to elevation 80.
+      -- Also there needs to be a large cliff drop at the coast to avoid the janky cliff smoothing
+      -- but it also fails if a corner goes below zero, so we need an extra buffer of 40.
+      -- So the first cliff is at 80, and terrain near the cliff shouln't go close to 0 (usually above 40).
+      cliff_elevation_interval = 40,
+      cliff_smoothing = 0, -- This is critical for correct cliff placement on the coast.
+      richness = 0.5
+    },
     autoplace_controls =
     {
-      ["quartz_ore"] = {},
-      ["fulgoran_data_source"] = { frequency = 0.1, size = 0.1, richness = 10000000 },
-      ["neodymium_ore"] = {},
+      ["quartz_ore"] = { frequency = 6000000, size = 1, richness = 155 },
+      ["fulgoran_data_source"] = { frequency = 4, size = 0.1, richness = 15 },
+      ["neodymium_ore"] = { frequency = 2000000, size = 1, richness = 155 },
       --["calcite"] = {},
-      ["vulcanus_volcanism"] = {},
+      --["vulcanus_volcanism"] = {},
       --["rocks"] = {}, -- can't add the rocks control otherwise nauvis rocks spawn
+
+      ["fulgora_islands"] = {},
+      ["fulgora_cliff"] = {},
     },
     autoplace_settings =
     {
@@ -111,32 +366,43 @@ planet_map_gen.moshine = function()
         settings =
         {
           --nauvis tiles
-          ["volcanic-soil-dark"] = {},
-          ["volcanic-soil-light"] = {},
-          ["volcanic-ash-soil"] = {},
+          --["volcanic-soil-dark"] = {},
+          --["volcanic-soil-light"] = {},
+          --["volcanic-ash-soil"] = {},
           --end of nauvis tiles
-          ["volcanic-ash-flats"] = {},
-          ["volcanic-ash-light"] = {},
-          ["volcanic-ash-dark"] = {},
-          ["volcanic-cracks"] = {},
-          ["volcanic-cracks-warm"] = {},
-          ["volcanic-folds"] = {},
-          ["volcanic-folds-flat"] = {},
-          ["lava"] = {},
-          ["lava-hot"] = {},
-          ["volcanic-folds-warm"] = {},
-          ["volcanic-pumice-stones"] = {},
-          ["volcanic-cracks-hot"] = {},
-          ["volcanic-jagged-ground"] = {},
-          ["volcanic-smooth-stone"] = {},
-          ["volcanic-smooth-stone-warm"] = {},
-          ["volcanic-ash-cracks"] = {},
+          --["volcanic-ash-flats"] = {},
+          --["volcanic-ash-light"] = {},
+          --["volcanic-ash-dark"] = {},
+          --["volcanic-cracks"] = {},
+          --["volcanic-cracks-warm"] = {},
+          --["volcanic-folds"] = {},
+          --["volcanic-folds-flat"] = {},
+          ["moshine-hot-swamp"] = {},
+          ["moshine-lava"] = {},
+
+          ["fulgoran-rock"] = {},
+          ["fulgoran-dust"] = {},
+          ["fulgoran-sand"] = {},
+          ["fulgoran-dunes"] = {},
+          --["fulgoran-walls"] = {},
+          --["fulgoran-paving"] = {},
+          --["fulgoran-conduit"] = {},
+          --["fulgoran-machinery"] = {},
+
+          --["volcanic-folds-warm"] = {},
+          --["volcanic-pumice-stones"] = {},
+          --["volcanic-cracks-hot"] = {},
+          --["volcanic-jagged-ground"] = {},
+          --["volcanic-smooth-stone"] = {},
+          --["volcanic-smooth-stone-warm"] = {},
+          --["volcanic-ash-cracks"] = {},
         }
       },
       ["decorative"] =
       {
         settings =
         {
+          --[[
           -- nauvis decoratives
           ["v-brown-carpet-grass"] = {},
           ["v-green-hairy-grass"] = {},
@@ -166,19 +432,21 @@ planet_map_gen.moshine = function()
           --["tiny-sulfur-rock"] = {},
           --["sulfur-rock-cluster"] = {},
           ["waves-decal"] = {},
+          ]]
         }
       },
       ["entity"] =
       {
         settings =
         {
-          ["quartz-ore"] = {},
-          --["calcite"] = {},
           ["fulgoran-data-source"] = {},
           ["neodymium-ore"] = {},
-          ["huge-volcanic-rock"] = {},
-          ["big-volcanic-rock"] = {},
-          ["crater-cliff"] = {},
+          ["quartz-ore"] = {},
+          --["calcite"] = {},
+          --["huge-volcanic-rock"] = {},
+          --["big-volcanic-rock"] = {},
+          --["crater-cliff"] = {},
+
           --["vulcanus-chimney"] = {},
           --["vulcanus-chimney-faded"] = {},
           --["vulcanus-chimney-cold"] = {},
@@ -244,7 +512,7 @@ data:extend({
       {
         order = {"wind", "base_ambience"},
         curve_type = "cosine",
-        from = {control = 0.35, volume_percentage = 0.0},
+        from = {control = 0.35, volume_percentage = 10.0},
         to = {control = 2, volume_percentage = 100.0}
       },
       semi_persistent =
@@ -273,11 +541,11 @@ data:extend({
       -- sun fully risen at 0.75
       day_night_cycle_color_lookup =
       {
-        {0.0, "__space-age__/graphics/lut/vulcanus-1-day.png"},
-        {0.20, "__space-age__/graphics/lut/vulcanus-1-day.png"},
-        {0.45, "__space-age__/graphics/lut/vulcanus-2-night.png"},
-        {0.55, "__space-age__/graphics/lut/vulcanus-2-night.png"},
-        {0.80, "__space-age__/graphics/lut/vulcanus-1-day.png"},
+        {0.0, "__Moshine__/graphics/lut/moshine-1-day.png"},
+        {0.25, "__Moshine__/graphics/lut/moshine-1-day.png"},
+        {0.45, "__Moshine__/graphics/lut/moshine-2-night.png"},
+        {0.55, "__Moshine__/graphics/lut/moshine-2-night.png"},
+        {0.75, "__Moshine__/graphics/lut/moshine-1-day.png"},
       },
 
       terrain_tint_effect =
@@ -314,10 +582,10 @@ data:extend({
     type = "space-connection",
     name = "vulcanus-moshine",
     subgroup = "planet-connections",
-    from = "nauvis",
+    from = "vulcanus",
     to = "moshine",
     order = "a",
-    length = 15000,
+    length = 7000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
   },
 })

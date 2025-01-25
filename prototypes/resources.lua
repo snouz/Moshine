@@ -134,16 +134,17 @@ data:extend({
     --  order = "c", -- Other resources are "b"; oil won't get placed if something else is already there.
     --  probability_expression = 0,
     --},
+
     autoplace = resource_autoplace.resource_autoplace_settings{
-      name = "crude-oil",
+      name = "fulgoran-data-source",
       order = "c", -- Other resources are "b"; oil won't get placed if something else is already there.
-      base_density = 0.01,
-      base_spots_per_km2 = 0.1,
-      random_probability = 1/480,
+      base_density = 2,
+      base_spots_per_km2 = 1,
+      random_probability = 1/48,
       random_spot_size_minimum = 0.01,
       random_spot_size_maximum = 0.01, -- don't randomize spot size
       additional_richness = 220000, -- this increases the total everywhere, so base_density needs to be decreased to compensate
-      has_starting_area_placement = true,
+      has_starting_area_placement = false,
       regular_rq_factor_multiplier = 1
     },
     stage_counts = {0},
@@ -190,7 +191,7 @@ data:extend({
     flags = {"placeable-neutral"},
     --factoriopedia_simulation = simulations.factoriopedia_uranium_ore,
     order = "a-b-e",
-    tree_removal_probability = 0.7,
+    tree_removal_probability = 1,
     tree_removal_max_distance = 32 * 32,
     walking_sound = sounds.ore,
     driving_sound = stone_driving_sound,
@@ -199,7 +200,7 @@ data:extend({
       mining_particle = "stone-particle",
       mining_time = 2,
       result = "neodymium",
-      fluid_amount = 10,
+      fluid_amount = 3,
       required_fluid = "lava"
     },
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
@@ -207,13 +208,13 @@ data:extend({
     autoplace = resource_autoplace.resource_autoplace_settings
     {
       name = "neodymium-ore",
-      order = "c",
-      base_density = 0.9,
-      base_spots_per_km2 = 1.25,
-      has_starting_area_placement = false,
-      random_spot_size_minimum = 2,
-      random_spot_size_maximum = 4,
-      regular_rq_factor_multiplier = 1
+      order = "b",
+      base_density = 600,
+      base_spots_per_km2 = 1000.25,
+      has_starting_area_placement = true,
+      random_spot_size_minimum = 20,
+      random_spot_size_maximum = 80,
+      regular_rq_factor_multiplier = 10
     },
     stage_counts = {10000, 6330, 3670, 1930, 870, 270, 100, 50},
     stages =
@@ -234,14 +235,14 @@ data:extend({
     effect_darkness_multiplier = 3.6,
     min_effect_alpha = 0.2,
     max_effect_alpha = 0.3,
-    mining_visualisation_tint = {r = 140/256, g = 120/256, b = 140/256, a = 1.000}, -- #cfff7fff
-    map_color = {r = 140/256, g = 120/256, b = 140/256, a = 1.000}
+    mining_visualisation_tint = {r = 166/256, g = 101/256, b = 190/256, a = 1.000}, -- #cfff7fff
+    map_color = {r = 166/256, g = 101/256, b = 190/256, a = 1.000}
   },
 
   resource(
     {
       name = "quartz-ore",
-      order = "b",
+      order = "c",
       map_color = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
       mining_time = 1,
       walking_sound = sounds.ore,
@@ -250,7 +251,14 @@ data:extend({
       --factoriopedia_simulation = simulations.factoriopedia_tungsten_ore,
     },
     {
-      probability_expression = 0
+      base_density = 600,
+      regular_rq_factor_multiplier = 2.0,
+      starting_rq_factor_multiplier = 2.1,
+      base_spots_per_km2 = 900.25,
+      has_starting_area_placement = true,
+      random_spot_size_minimum = 20,
+      random_spot_size_maximum = 80,
     }
   ),
+
 })
