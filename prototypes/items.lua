@@ -30,7 +30,7 @@ data:extend({
     inventory_move_sound = item_sounds.mechanical_inventory_move,
     pick_sound = item_sounds.mechanical_inventory_pickup,
     drop_sound = item_sounds.mechanical_inventory_move,
-    place_result = "biolab",
+    place_result = "supercomputer",
     stack_size = 5,
     default_import_location = "moshine",
     weight = 1000 * kg

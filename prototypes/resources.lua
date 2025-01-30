@@ -76,7 +76,7 @@ data:extend({
     type = "autoplace-control",
     name = "neodymium_ore",
     localised_name = {"", "[entity=neodymium-ore] ", {"entity-name.neodymium-ore"}},
-    richness = true,
+    richness = false,
     order = "b-d",
     category = "resource"
   },
@@ -84,7 +84,7 @@ data:extend({
     type = "autoplace-control",
     name = "quartz_ore",
     localised_name = {"", "[entity=quartz-ore] ", {"entity-name.quartz-ore"}},
-    richness = true,
+    richness = false,
     order = "b-d",
     category = "resource"
   },
@@ -209,12 +209,13 @@ data:extend({
     {
       name = "neodymium-ore",
       order = "b",
-      base_density = 600,
-      base_spots_per_km2 = 1000.25,
-      has_starting_area_placement = true,
-      random_spot_size_minimum = 20,
-      random_spot_size_maximum = 80,
-      regular_rq_factor_multiplier = 10
+      base_density = 500,
+      base_spots_per_km2 = 300.25,
+      has_starting_area_placement = false,
+      random_spot_size_minimum = 1,
+      random_spot_size_maximum = 8,
+      regular_rq_factor_multiplier = 4.02,
+      candidate_spot_count = 300,
     },
     stage_counts = {10000, 6330, 3670, 1930, 870, 270, 100, 50},
     stages =
@@ -230,35 +231,78 @@ data:extend({
         scale = 0.5
       }
     },
-    effect_animation_period = 5,
+    stages_effect =
+    {
+      sheet =
+      {
+        filename = "__Moshine__/graphics/entity/neodymium-ore/neodymium-ore-effect.png",
+        priority = "extra-high",
+        width = 128,
+        height = 128,
+        frame_count = 8,
+        variation_count = 8,
+        scale = 0.5
+      }
+    },
+    effect_animation_period = 6,
     effect_animation_period_deviation = 1,
     effect_darkness_multiplier = 3.6,
-    min_effect_alpha = 0.2,
-    max_effect_alpha = 0.3,
-    mining_visualisation_tint = {r = 166/256, g = 101/256, b = 190/256, a = 1.000}, -- #cfff7fff
-    map_color = {r = 166/256, g = 101/256, b = 190/256, a = 1.000}
+    min_effect_alpha = 0.3,
+    max_effect_alpha = 0.5,
+    mining_visualisation_tint = {r = 178/256, g = 95/256, b = 190/256, a = 1.000}, -- #cfff7fff
+    map_color = {r = 178/256, g = 95/256, b = 190/256, a = 1.000}
   },
 
-  resource(
+
+  {
+    type = "resource",
+    name = "quartz-ore",
+    icon = "__Moshine__/graphics/icons/quartz-ore.png",
+    flags = {"placeable-neutral"},
+    order="a-b-c",
+    tree_removal_probability = 0.8,
+    tree_removal_max_distance = 32 * 32,
+    minable =
+    {
+      mining_particle = "iron-ore-particle",
+      mining_time = 1,
+      result = "quartz-ore"
+    },
+    category = "basic-solid",
+    walking_sound = sounds.ore,
+    collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    autoplace = resource_autoplace.resource_autoplace_settings
     {
       name = "quartz-ore",
       order = "c",
-      map_color = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
-      mining_time = 1,
-      walking_sound = sounds.ore,
-      mining_visualisation_tint = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
-      category = "basic-solid",
-      --factoriopedia_simulation = simulations.factoriopedia_tungsten_ore,
-    },
-    {
-      base_density = 600,
-      regular_rq_factor_multiplier = 2.0,
-      starting_rq_factor_multiplier = 2.1,
-      base_spots_per_km2 = 900.25,
+      base_density = 1010,
+      base_spots_per_km2 = 450,
       has_starting_area_placement = true,
-      random_spot_size_minimum = 20,
-      random_spot_size_maximum = 80,
-    }
-  ),
+      random_spot_size_minimum = 2,
+      random_spot_size_maximum = 7,
+      regular_rq_factor_multiplier = 3.02,
+      candidate_spot_count = 340,
+    },
+    stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+    stages =
+    {
+      sheet =
+      {
+        filename = "__Moshine__/graphics/entity/quartz-ore/quartz-ore.png",
+        priority = "extra-high",
+        size = 128,
+        frame_count = 8,
+        variation_count = 8,
+        scale = 0.5
+      }
+    },
+    map_color = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
+    mining_visualisation_tint = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
+  },
+
+
+
+
 
 })

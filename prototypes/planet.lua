@@ -12,36 +12,57 @@ local tile_graphics = require("__base__/prototypes/tile/tile-graphics")
 local tile_spritesheet_layout = tile_graphics.tile_spritesheet_layout
 
 
-local lava_to_out_of_map_transition =
+local lava_stone_transitions =
 {
-  to_tiles = out_of_map_tile_type_names,
-  transition_group = out_of_map_transition_group_id,
-
-  overlay_layer_group = "zero",
-  apply_effect_color_to_overlay = true,
-  background_layer_offset = 1,
-  background_layer_group = "zero",
-  offset_background_layer_by_tile_layer = true,
-
-  spritesheet = "__base__/graphics/terrain/out-of-map-transition/water-out-of-map-transition-tintable.png",
-  layout = tile_spritesheet_layout.transition_4_4_8_1_1,
-  background_enabled = false,
-
-  apply_waving_effect_on_masks = true,
-  waving_effect_time_scale = 0.005,
-  mask_layout =
   {
-    spritesheet = "__base__/graphics/terrain/masks/water-edge-transition.png",
-    count = 1,
-    double_side_count = 0,
-    scale = 0.5,
-    outer_corner_x = 64,
-    side_x = 128,
-    u_transition_x = 192,
-    o_transition_x = 256,
-    y = 0
+    to_tiles = water_tile_type_names,
+    transition_group = water_transition_group_id,
+
+    spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone-cold.png",
+    layout = tile_spritesheet_layout.transition_16_16_16_4_4,
+    effect_map_layout =
+    {
+      spritesheet = "__base__/graphics/terrain/effect-maps/water-dirt-mask.png",
+      inner_corner_count = 8,
+      outer_corner_count = 8,
+      side_count = 8,
+      u_transition_count = 2,
+      o_transition_count = 1
+    }
+  },
+  {
+    to_tiles = lava_tile_type_names,
+    transition_group = lava_transition_group_id,
+    spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone.png",
+    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone-lightmap.png" },
+     -- this added the lightmap spritesheet
+    layout = tile_spritesheet_layout.transition_16_16_16_4_4,
+    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone-lightmap.png" },
+     -- this added the lightmap spritesheet
+    effect_map_layout =
+    {
+      spritesheet = "__space-age__/graphics/terrain/effect-maps/lava-dirt-mask.png",
+      inner_corner_count = 8,
+      outer_corner_count = 8,
+      side_count = 8,
+      u_transition_count = 2,
+      o_transition_count = 1
+    }
+  },
+  {
+    to_tiles = {"out-of-map","empty-space","oil-ocean-shallow"},
+    transition_group = out_of_map_transition_group_id,
+
+    background_layer_offset = 1,
+    background_layer_group = "zero",
+    offset_background_layer_by_tile_layer = true,
+
+    spritesheet = "__space-age__/graphics/terrain/out-of-map-transition/volcanic-out-of-map-transition.png",
+    layout = tile_spritesheet_layout.transition_4_4_8_1_1,
+    overlay_enabled = false
   }
 }
+
 
 local function transition_masks()
   return {
@@ -155,8 +176,9 @@ data:extend({
     absorptions_per_second = tile_pollution.fulgora,
     fluid = "steam",
     effect = "moshine-hot-swamp",
-    effect_color = { 74, 42, 43, 255 },
-    effect_color_secondary = { 60, 13, 5, 255 },
+    effect_color = { 127, 127, 127, 254 },
+    --effect_color_secondary = { 60, 13, 5, 255 },
+    --trigger_effect = 
     particle_tints = tile_graphics.fulgora_oil_ocean_particle_tints,
     --sprite_usage_surface = "fulgora",
     variants =
@@ -164,7 +186,7 @@ data:extend({
       transition = transition_masks(),
       material_background =
       {
-        picture = "__space-age__/graphics/terrain/oil-sand-8x.png",
+        picture = "__Moshine__/graphics/terrain/moshine-hot-swamp/oil-sand-8x.png",
         line_length = 8,
         count = 16,
         scale = 0.5
@@ -173,7 +195,7 @@ data:extend({
       material_texture_height_in_tiles = 8
     },
     --transitions = table.deepcopy(data.raw.tile["sand-1"].transitions),
-    transitions = fulgora_oil_sand_transitions,
+    transitions = lava_stone_transitions,
     --transitions_between_transitions = table.deepcopy(data.raw.tile["sand-1"].transitions_between_transitions),
     transitions_between_transitions = fulgora_sand_transitions_between_transitions,
     walking_sound = sound_variations("__base__/sound/walking/resources/oil", 7, 1, volume_multiplier("main-menu", 1.5)),
@@ -211,7 +233,7 @@ data:extend({
       }
     ),
     --allowed_neighbors={"lava-hot"},
-    transitions = {lava_to_out_of_map_transition},
+    transitions = lava_stone_transitions,
     transitions_between_transitions = data.raw.tile["water"].transitions_between_transitions,
     walking_sound = data.raw.tile["water"].walking_sound,
     map_color = {r = 150, g = 49, b = 30},
@@ -249,24 +271,24 @@ data:extend({
       textures =
       {
         {
-          filename = "__space-age__/graphics/terrain/oilNoise.png",
+          filename = "__Moshine__/graphics/terrain/moshine-hot-swamp/oilNoise.png",
           width = 512,
           height = 512
         },
         {
-          filename = "__space-age__/graphics/terrain/oil-ocean-deep-shader.png",
+          filename = "__Moshine__/graphics/terrain/moshine-hot-swamp/oil-ocean-deep-shader.png",
           width = 512 * 4,
           height = 512 * 2
         },
         --gradient map for thin film effect
         {
-          filename = "__space-age__/graphics/terrain/oilGradient.png",
+          filename = "__Moshine__/graphics/terrain/moshine-hot-swamp/oilGradient.png",
           width = 512,
           height = 32
         },
         --specular highligts
         {
-          filename = "__space-age__/graphics/terrain/oil-ocean-deep-spec.png",
+          filename = "__Moshine__/graphics/terrain/moshine-hot-swamp/oil-ocean-deep-spec.png",
           width = 512 * 4,
           height = 512 * 2
         },
@@ -276,12 +298,12 @@ data:extend({
       secondary_texture_variations_columns = 4,
       secondary_texture_variations_rows = 2,
 
-      specular_lightness = { 4, 4, 4 },
-      foam_color = {61,156,214}, -- #3d9cd6ff,
+      specular_lightness = { 2, 2, 2 },
+      foam_color = {70,70,70}, -- #4e3838ff,
       foam_color_multiplier = 0.1,
 
-      animation_speed = 2.500,
-      animation_scale = {3, 3},
+      animation_speed = 1.000,
+      animation_scale = {0, -1},
 
       dark_threshold = {2.000, 2.000},
       reflection_threshold = {5.00, 5.00},
@@ -344,20 +366,20 @@ planet_map_gen.moshine = function()
       -- but it also fails if a corner goes below zero, so we need an extra buffer of 40.
       -- So the first cliff is at 80, and terrain near the cliff shouln't go close to 0 (usually above 40).
       cliff_elevation_interval = 40,
-      cliff_smoothing = 0, -- This is critical for correct cliff placement on the coast.
-      richness = 0.5
+      cliff_smoothing = 0.1, -- This is critical for correct cliff placement on the coast.
+      richness = 0.1
     },
     autoplace_controls =
     {
-      ["quartz_ore"] = { frequency = 6000000, size = 1, richness = 155 },
-      ["fulgoran_data_source"] = { frequency = 4, size = 0.1, richness = 15 },
-      ["neodymium_ore"] = { frequency = 2000000, size = 1, richness = 155 },
+      ["fulgora_islands"] = {},
+      ["fulgora_cliff"] = {},
+      ["quartz_ore"] = { frequency = 60000000, size = 0.8, richness = 15050 },
+      ["fulgoran_data_source"] = { frequency = 4, size = 0.1, richness = 150 },
+      ["neodymium_ore"] = { frequency = 20000000, size = 0.8, richness = 15500 },
       --["calcite"] = {},
       --["vulcanus_volcanism"] = {},
       --["rocks"] = {}, -- can't add the rocks control otherwise nauvis rocks spawn
 
-      ["fulgora_islands"] = {},
-      ["fulgora_cliff"] = {},
     },
     autoplace_settings =
     {
@@ -381,9 +403,9 @@ planet_map_gen.moshine = function()
           ["moshine-lava"] = {},
 
           ["fulgoran-rock"] = {},
-          ["fulgoran-dust"] = {},
-          ["fulgoran-sand"] = {},
-          ["fulgoran-dunes"] = {},
+          --["fulgoran-dust"] = {},
+          --["fulgoran-sand"] = {},
+          --["fulgoran-dunes"] = {},
           --["fulgoran-walls"] = {},
           --["fulgoran-paving"] = {},
           --["fulgoran-conduit"] = {},
@@ -531,7 +553,52 @@ data:extend({
     },
     surface_render_parameters =
     {
-      fog = effects.default_fog_effect_properties(),
+      clouds =
+      {
+        shape_noise_texture =
+        {
+          filename = "__core__/graphics/clouds-noise.png",
+          size = 2048
+        },
+        detail_noise_texture =
+        {
+          filename = "__core__/graphics/clouds-detail-noise.png",
+          size = 2048
+        },
+
+        warp_sample_1 = { scale = 0.8 / 16 },
+        warp_sample_2 = { scale = 3.75 * 0.8 / 32, wind_speed_factor = 0 },
+        warped_shape_sample = { scale = 2 * 0.18 / 32 },
+        additional_density_sample = { scale = 1.5 * 0.18 / 32, wind_speed_factor = 1.77 },
+        detail_sample_1 = { scale = 1.709 / 32, wind_speed_factor = 0.2 / 1.709 },
+        detail_sample_2 = { scale = 2.179 / 32, wind_speed_factor = 0.33 / 2.179 },
+
+        scale = 1,
+        movement_speed_multiplier = 0.75,
+        opacity = 0.25,
+        opacity_at_night = 0.25,
+        density_at_night = 1,
+        detail_factor = 1.5,
+        detail_factor_at_night = 2,
+        shape_warp_strength = 0.06,
+        shape_warp_weight = 0.4,
+        detail_sample_morph_duration = 0,
+      },
+      fog = {
+        shape_noise_texture =
+        {
+          filename = "__core__/graphics/clouds-noise.png",
+          size = 2048
+        },
+        detail_noise_texture =
+        {
+          filename = "__core__/graphics/clouds-detail-noise.png",
+          size = 2048
+        },
+        color1 = {1, 1, 1},
+        color2 = {1, 1, 1},
+        tick_factor = 0.000005,
+      },
       -- clouds = effects.default_clouds_effect_properties(),
 
       -- Should be based on the default day/night times, ie
@@ -589,3 +656,9 @@ data:extend({
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
   },
 })
+
+
+
+table.insert(lava_tile_type_names, "moshine-lava")
+table.insert(water_tile_type_names, "moshine-lava")
+table.insert(water_tile_type_names, "moshine-hot-swamp")
