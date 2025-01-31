@@ -56,7 +56,7 @@ data:extend({
     category = "smelting",
     energy_required = 3.2,
     ingredients = {
-      {type = "item", name = "quartz-ore", amount = 1}
+      {type = "item", name = "sand", amount = 1}
     },
     results = {{type = "item", name = "silicon", amount = 1}},
     allow_productivity = true,

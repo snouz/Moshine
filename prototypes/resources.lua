@@ -82,8 +82,8 @@ data:extend({
   },
   {
     type = "autoplace-control",
-    name = "quartz_ore",
-    localised_name = {"", "[entity=quartz-ore] ", {"entity-name.quartz-ore"}},
+    name = "multi_ore",
+    localised_name = {"", "[entity=multi-ore] ", {"entity-name.multi-ore"}},
     richness = false,
     order = "b-d",
     category = "resource"
@@ -256,53 +256,113 @@ data:extend({
 
   {
     type = "resource",
-    name = "quartz-ore",
-    icon = "__Moshine__/graphics/icons/quartz-ore.png",
+    name = "multi-ore",
+    icon = "__Moshine__/graphics/icons/multi-ore.png",
     flags = {"placeable-neutral"},
     order="a-b-c",
+    infinite = true,
+    minimum = 6000000,
+    normal = 30000000,
+    highlight = false,
+    map_grid = true,
     tree_removal_probability = 0.8,
     tree_removal_max_distance = 32 * 32,
+
+
     minable =
     {
       mining_particle = "iron-ore-particle",
       mining_time = 1,
-      result = "quartz-ore"
+      results =
+      {
+        {
+          type = "item",
+          name = "sand",
+          amount = 1,
+          probability = 16 /100,
+        },
+        {
+          type = "item",
+          name = "neodymium",
+          amount = 273,
+          probability = 0.01 /100,
+        },
+        {
+          type = "item",
+          name = "sulfur",
+          amount = 1,
+          probability = 8 /100,
+        },
+        {
+          type = "item",
+          name = "carbon",
+          amount = 1,
+          probability = 2 /100,
+        },
+        {
+          type = "item",
+          name = "coal",
+          amount = 1,
+          probability = 3 /100,
+        },
+        {
+          type = "item",
+          name = "iron-ore",
+          amount = 1,
+          probability = 5 /100,
+        },
+        {
+          type = "item",
+          name = "copper-ore",
+          amount = 1,
+          probability = 10 /100,
+        },
+        {
+          type = "item",
+          name = "stone",
+          amount = 1,
+          probability = 7 /100,
+        },
+        {
+          type = "item",
+          name = "calcite",
+          amount = 1,
+          probability = 4 /100,
+        },
+      }
     },
     category = "basic-solid",
     walking_sound = sounds.ore,
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    selection_box = {{-0.4, -0.4}, {0.4, 0.4}},
+    randomize_visual_position = true,
     autoplace = resource_autoplace.resource_autoplace_settings
     {
-      name = "quartz-ore",
+      name = "multi-ore",
       order = "c",
-      base_density = 1010,
-      base_spots_per_km2 = 450,
+      base_density = 100000000,
+      base_spots_per_km2 = 100000000,
       has_starting_area_placement = true,
-      random_spot_size_minimum = 2,
-      random_spot_size_maximum = 7,
-      regular_rq_factor_multiplier = 3.02,
-      candidate_spot_count = 340,
+      random_spot_size_minimum = 10000000,
+      random_spot_size_maximum = 100000000,
+      regular_rq_factor_multiplier = 0.5,
+      candidate_spot_count = 370,
     },
-    stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+    stage_counts = {0},
     stages =
     {
-      sheet =
+      sheet = 
       {
-        filename = "__Moshine__/graphics/entity/quartz-ore/quartz-ore.png",
+        filename = "__Moshine__/graphics/entity/multi-ore/multi-ore.png", --"__Moshine__/graphics/entity/multi-ore/multi-ore-2.png"},
+        --lines_per_file = 1,
         priority = "extra-high",
         size = 128,
-        frame_count = 8,
-        variation_count = 8,
-        scale = 0.5
-      }
+        frame_count = 32,
+        variation_count = 1,
+        scale = 0.5,
+      },
     },
     map_color = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
     mining_visualisation_tint = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
   },
-
-
-
-
-
 })

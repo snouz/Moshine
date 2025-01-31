@@ -19,7 +19,7 @@ data:extend({
     prerequisites = {"space-platform-thruster"},
     unit =
     {
-      count = 100,
+      count = 1000,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -48,7 +48,7 @@ data:extend({
   research_trigger =
   {
     type = "mine-entity",
-    entity = "quartz-ore"
+    entity = "multi-ore"
   }
 },
 

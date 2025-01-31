@@ -102,6 +102,7 @@ data:extend({
 
 
 
+  --[[
   {
     type = "noise-expression",
     name = "moshine_neodymium_ore_probability",
@@ -126,7 +127,7 @@ data:extend({
     expression = "vulcanus_coal_region * random_penalty_between(0.9, 1, 1)\z
                   * 18000 * vulcanus_starting_area_multiplier\z
                   * control:quartz_ore:richness / vulcanus_coal_size"
-  },
+  },]]
   --[[{
     type = "noise-expression",
     name = "moshine_calcite_probability",
@@ -175,8 +176,8 @@ data:extend({
     default_cover_tile = "foundation",
     absorptions_per_second = tile_pollution.fulgora,
     fluid = "steam",
-    effect = "moshine-hot-swamp",
-    effect_color = { 127, 127, 127, 254 },
+    --effect = "moshine-hot-swamp",
+    --effect_color = { 127, 127, 127, 254 },
     --effect_color_secondary = { 60, 13, 5, 255 },
     --trigger_effect = 
     particle_tints = tile_graphics.fulgora_oil_ocean_particle_tints,
@@ -261,6 +262,7 @@ data:extend({
   },
 
   ----- Deep oil effect
+  --[[
   {
     type = "tile-effect",
     name = "moshine-hot-swamp",
@@ -313,7 +315,7 @@ data:extend({
       near_zoom = 0.063,
       far_zoom = 0.063,
     }
-  }
+  }]]
 })
 
 
@@ -330,8 +332,8 @@ planet_map_gen.moshine = function()
       --aux = "vulcanus_aux",
       aux = "fulgora_aux",
       --cliffiness = "cliffiness_basic",
-      cliffiness = "fulgora_cliffiness",
-      cliff_elevation = "cliff_elevation_from_elevation",
+      --cliffiness = "fulgora_cliffiness",
+      --cliff_elevation = "cliff_elevation_from_elevation",
       --["entity:neodymium-ore:probability"] = "moshine_neodymium_ore_probability",
       --["entity:neodymium-ore:richness"] = "moshine_neodymium_ore_richness",
       --["entity:quartz-ore:probability"] = "moshine_quartz_ore_probability",
@@ -355,7 +357,7 @@ planet_map_gen.moshine = function()
       minimum_territory_size = 10
     },]]
 
-    cliff_settings =
+    --[[cliff_settings =
     {
       name = "cliff-vulcanus",
       control = "fulgora_cliff",
@@ -368,14 +370,14 @@ planet_map_gen.moshine = function()
       cliff_elevation_interval = 40,
       cliff_smoothing = 0.1, -- This is critical for correct cliff placement on the coast.
       richness = 0.1
-    },
+    },]]
     autoplace_controls =
     {
-      ["fulgora_islands"] = {},
-      ["fulgora_cliff"] = {},
-      ["quartz_ore"] = { frequency = 60000000, size = 0.8, richness = 15050 },
       ["fulgoran_data_source"] = { frequency = 4, size = 0.1, richness = 150 },
-      ["neodymium_ore"] = { frequency = 20000000, size = 0.8, richness = 15500 },
+      ["fulgora_islands"] = {},
+      --["fulgora_cliff"] = {},
+      ["multi_ore"] = { frequency = 600000000, size = 10000000, richness = 150500000 },
+      --["neodymium_ore"] = { frequency = 20000000, size = 0.8, richness = 15500 },
       --["calcite"] = {},
       --["vulcanus_volcanism"] = {},
       --["rocks"] = {}, -- can't add the rocks control otherwise nauvis rocks spawn
@@ -462,8 +464,8 @@ planet_map_gen.moshine = function()
         settings =
         {
           ["fulgoran-data-source"] = {},
-          ["neodymium-ore"] = {},
-          ["quartz-ore"] = {},
+          --["neodymium-ore"] = {},
+          ["multi-ore"] = {},
           --["calcite"] = {},
           --["huge-volcanic-rock"] = {},
           --["big-volcanic-rock"] = {},

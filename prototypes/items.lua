@@ -81,27 +81,18 @@ data:extend({
 
 
 --- items
-
-  
   {
     type = "item",
-    name = "quartz-ore",
-    icon = "__Moshine__/graphics/icons/quartz-ore.png",
+    name = "sand",
+    icon = "__Moshine__/graphics/icons/sand-3.png",
+    icon_size = 64,
     pictures =
     {
-      { size = 64, filename = "__Moshine__/graphics/icons/quartz-ore.png",   scale = 0.5 },
-      { size = 64, filename = "__Moshine__/graphics/icons/quartz-ore-1.png", scale = 0.5 },
-      { size = 64, filename = "__Moshine__/graphics/icons/quartz-ore-2.png", scale = 0.5 },
-      { size = 64, filename = "__Moshine__/graphics/icons/quartz-ore-3.png", scale = 0.5 }
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-1.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-2.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-3.png", scale = 0.5 },
     },
-    subgroup = "moshine-processes",
-    order = "aaa",
-    inventory_move_sound = item_sounds.resource_inventory_move,
-    pick_sound = item_sounds.resource_inventory_pickup,
-    drop_sound = item_sounds.resource_inventory_move,
-    stack_size = 50,
-    default_import_location = "moshine",
-    weight = 10*kg
+    stack_size = 100,
   },
   {
     type = "item",
