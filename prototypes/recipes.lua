@@ -4,10 +4,10 @@ data:extend({
   {
     type = "recipe",
     name = "supercomputer",
-    energy_required = 10,
+    energy_required = 40,
     ingredients =
     {
-      {type = "item", name = "lab", amount = 1},
+      {type = "item", name = "lab", amount = 2},
       {type = "item", name = "heat-shielding", amount = 40},
       {type = "item", name = "magnet", amount = 20},
 
@@ -22,7 +22,7 @@ data:extend({
     ingredients =
     {
       {type = "item", name = "assembling-machine-3", amount = 1},
-      --{type = "item", name = "quantum-processor", amount = 5},
+      {type = "item", name = "productivity-module-2", amount = 5},
     },
     results = {{type = "item", name = "data-processor", amount = 1}},
     enabled = false,
@@ -31,7 +31,10 @@ data:extend({
     type = "recipe",
     name = "data-extractor",
     ingredients = {
-      {type = "item", name = "iron-plate", amount = 2},
+      {type = "item", name = "display-panel", amount = 10},
+      {type = "item", name = "magnet", amount = 5},
+      {type = "item", name = "constant-combinator", amount = 4},
+      {type = "item", name = "processing-unit", amount = 4},
     },
     results = {{type = "item", name = "data-extractor", amount = 1}},
     allow_productivity = true,
@@ -41,7 +44,8 @@ data:extend({
     type = "recipe",
     name = "optical-fiber",
     ingredients = {
-      {type = "item", name = "iron-plate", amount = 1},
+      {type = "item", name = "silicon", amount = 1},
+      {type = "item", name = "iron-stick", amount = 1},
     },
     results = {{type = "item", name = "optical-fiber", amount = 1}},
     enabled = false,
@@ -110,19 +114,7 @@ data:extend({
     ingredients = {
       {type = "item", name = "magnet", amount = 5},
       {type = "item", name = "silicon-cell", amount = 5},
-    },
-    results = {{type = "item", name = "hard-drive", amount = 1}},
-    enabled = false,
-  },
-  {
-    type = "recipe",
-    name = "3d-data-storage",
-    category = "electronics",
-    energy_required = 3.2,
-    ingredients = {
-      {type = "item", name = "magnet", amount = 5},
-      {type = "item", name = "silicon-cell", amount = 5},
-      {type = "item", name = "hard-drive", amount = 5},
+      {type = "item", name = "advanced-circuit", amount = 5},
     },
     results = {{type = "item", name = "hard-drive", amount = 1}},
     enabled = false,

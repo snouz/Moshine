@@ -179,6 +179,9 @@ data:extend({
     researching_speed = 2,
     inputs =
     {
+      "hard-drive",
+      "model-stable"
+      --[[
       "automation-science-pack",
       "logistic-science-pack",
       "military-science-pack",
@@ -191,6 +194,8 @@ data:extend({
       "electromagnetic-science-pack",
       "cryogenic-science-pack",
       "promethium-science-pack"
+
+      ]]
     },
     science_pack_drain_rate_percent = 50,
     energy_source =

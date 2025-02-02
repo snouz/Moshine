@@ -72,6 +72,9 @@ data:extend({
     {
       {"automation-science-pack", 1},
       {"logistic-science-pack", 1},
+      {"chemical-science-pack", 1},
+      {"utility-science-pack", 1},
+      {"space-science-pack", 1},
     },
     time = 60
   }
@@ -96,6 +99,10 @@ data:extend({
     {
       {"automation-science-pack", 1},
       {"logistic-science-pack", 1},
+      {"chemical-science-pack", 1},
+      {"utility-science-pack", 1},
+      {"space-science-pack", 1},
+      {"electromagnetic-science-pack", 1}
     },
     time = 60
   }
@@ -113,15 +120,10 @@ data:extend({
     },
   },
   prerequisites = {"planet-discovery-moshine", "electromagnetic-plant"},
-  unit =
+  research_trigger =
   {
-    count = 100,
-    ingredients =
-    {
-      {"automation-science-pack", 1},
-      {"logistic-science-pack", 1},
-    },
-    time = 60
+    type = "mine-entity",
+    entity = "multi-ore"
   }
 },
 {
@@ -139,11 +141,15 @@ data:extend({
   prerequisites = {"moshine-tech-magnet", "moshine-tech-silicon-cell"},
   unit =
   {
-    count = 100,
+    count = 200,
     ingredients =
     {
       {"automation-science-pack", 1},
       {"logistic-science-pack", 1},
+      {"chemical-science-pack", 1},
+      {"utility-science-pack", 1},
+      {"space-science-pack", 1},
+      {"electromagnetic-science-pack", 1}
     },
     time = 60
   }
@@ -163,11 +169,15 @@ data:extend({
   prerequisites = {"moshine-tech-hard-drive", "moshine-tech-heat-shielding"},
   unit =
   {
-    count = 100,
+    count = 500,
     ingredients =
     {
       {"automation-science-pack", 1},
       {"logistic-science-pack", 1},
+      {"chemical-science-pack", 1},
+      {"utility-science-pack", 1},
+      {"space-science-pack", 1},
+      {"electromagnetic-science-pack", 1}
     },
     time = 60
   }
@@ -191,11 +201,10 @@ data:extend({
   prerequisites = {"moshine-tech-supercomputer"},
   unit =
   {
-    count = 100,
+    count = 10,
     ingredients =
     {
-      {"automation-science-pack", 1},
-      {"logistic-science-pack", 1},
+      {"hard-drive", 1},
     },
     time = 60
   }
@@ -215,11 +224,10 @@ data:extend({
   prerequisites = {"moshine-tech-hard-drive"},
   unit =
   {
-    count = 100,
+    count = 200,
     ingredients =
     {
-      {"automation-science-pack", 1},
-      {"logistic-science-pack", 1},
+      {"hard-drive", 1},
     },
     time = 60
   }
@@ -248,11 +256,10 @@ data:extend({
   prerequisites = {"moshine-tech-data-extractor", "moshine-tech-3d-data-storage"},
   unit =
   {
-    count = 100,
+    count = 1000,
     ingredients =
     {
-      {"automation-science-pack", 1},
-      {"logistic-science-pack", 1},
+      {"hard-drive", 1},
     },
     time = 60
   }

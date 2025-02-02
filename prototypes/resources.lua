@@ -385,13 +385,15 @@ data:extend({
     {
       control = "multi_ore",
       order = "b",
+      additional_richness = 220000, -- this increases the total everywhere, so base_density needs to be decreased to compensate
+      has_starting_area_placement = true,
       probability_expression = "(control:multi_ore:size > 0)\z
                                 * (1 - fulgora_starting_mask)\z
                                 * (min((fulgora_structure_cells < min(0.1 * frequency, 0.05 + 0.05 * frequency))\z
                                    * (1 + fulgora_structure_subnoise) * abs_mult_height_over * fulgora_artificial_mask\z
                                    + (fulgora_spots_prebanding < (1.2 + 0.4 * linear_size)) * fulgora_vaults_and_starting_vault * 10,\z
                                    0.5) * (1 - fulgora_road_paving_2c))",
-      richness_expression = "(1 + fulgora_structure_subnoise) * 1000 * (7 / (6 + frequency) + 100 * fulgora_vaults_and_starting_vault) * richness",
+      richness_expression = "((1 + fulgora_structure_subnoise) * 1000 * (7 / (6 + frequency) + 100 * fulgora_vaults_and_starting_vault) * richness) + 220000",
       local_expressions =
       {
         abs_mult_height_over = "fulgora_elevation > (fulgora_coastline + 10)", -- Resources prevent cliffs from spawning. This gets resources away from cliffs.
@@ -432,8 +434,8 @@ data:extend({
     min_effect_alpha = 0.1,
     max_effect_alpha = 0.3,
     map_color = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
-    map_grid = true,
     mining_visualisation_tint = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
+    map_grid = true,
   },
 
 
