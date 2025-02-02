@@ -168,13 +168,19 @@ data:extend({
   {
     type = "noise-expression",
     name = "moshine_spot_size",
-    expression = 5
+    expression = 8
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_starting_mask",
+    -- exclude random spots from the inner 300 tiles, 80 tile blur
+    expression = "clamp((distance - 30) / 10, -1, 1)"
   },
   {
     type = "noise-expression",
     name = "moshine_molten_copper_geyser_spots",
     expression = "aquilo_spot_noise{seed = 567,\z
-                                    count = 40,\z
+                                    count = 80,\z
                                     skip_offset = 0,\z
                                     region_size = 600 + 400 / control:molten_copper_geyser:frequency,\z
                                     density = 1,\z
@@ -191,7 +197,7 @@ data:extend({
     name = "moshine_molten_copper_geyser_probability",
     expression = "(control:molten_copper_geyser:size > 0)\z
                   * (max(moshine_starting_molten_copper_geyser * 0.08,\z
-                         min(aquilo_starting_mask, moshine_molten_copper_geyser_spots) * 0.015))"
+                         min(moshine_starting_mask, moshine_molten_copper_geyser_spots) * 0.015))"
   },
   {
     type = "noise-expression",
@@ -204,7 +210,7 @@ data:extend({
     type = "noise-expression",
     name = "moshine_steam_geyser_spots",
     expression = "aquilo_spot_noise{seed = 567,\z
-                                    count = 30,\z
+                                    count = 60,\z
                                     skip_offset = 1,\z
                                     region_size = 600 + 400 / control:steam_geyser:frequency,\z
                                     density = 1,\z
@@ -221,7 +227,7 @@ data:extend({
     name = "moshine_steam_geyser_probability",
     expression = "(control:steam_geyser:size > 0)\z
                   * (max(moshine_starting_steam_geyser * 1.3,\z
-                         min(aquilo_starting_mask, moshine_steam_geyser_spots) * 0.22))"
+                         min(moshine_starting_mask, moshine_steam_geyser_spots) * 0.22))"
   },
   {
     type = "noise-expression",
@@ -250,7 +256,6 @@ data:extend({
     autoplace = {probability_expression = "50 * fulgora_oil_mask * water_base(fulgora_coastline, 1000)"}, -- target coast at cliff elevation
     layer = 4,
     layer_group = "ground-natural",
-    map_color = { 74, 42, 43},
     vehicle_friction_modifier = 4,
     walking_speed_modifier = 0.8,
     default_cover_tile = "foundation",
@@ -283,7 +288,8 @@ data:extend({
     landing_steps_sound = sound_variations("__base__/sound/walking/resources/oil", 7, 1, volume_multiplier("main-menu", 2.9)),
     driving_sound = oil_driving_sound,
     scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
-    trigger_effect = tile_trigger_effects.sand_trigger_effect()
+    trigger_effect = tile_trigger_effects.sand_trigger_effect(),
+    map_color = { 74, 42, 43},
   },
   ----------- "SHALLOW" LAVA
 
@@ -361,7 +367,6 @@ data:extend({
     transitions = lava_stone_transitions,
     transitions_between_transitions = data.raw.tile["water"].transitions_between_transitions,
     walking_sound = data.raw.tile["water"].walking_sound,
-    map_color = {r = 150, g = 49, b = 30},
     walking_speed_modifier = 1,
     vehicle_friction_modifier = 1,
     absorptions_per_second = tile_pollution.lava,
@@ -382,7 +387,8 @@ data:extend({
       max_entity_count = 30,
       entity_to_sound_ratio = 0.1,
       average_pause_seconds = 3
-    }
+    },
+    map_color = {r = 150, g = 49, b = 30},
   },
 
   ----- Deep oil effect

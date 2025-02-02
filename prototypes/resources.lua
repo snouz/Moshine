@@ -66,10 +66,10 @@ end
 data:extend({
   {
     type = "autoplace-control",
-    name = "fulgoran_data_source",
-    localised_name = {"", "[entity=fulgoran-data-source] ", {"entity-name.fulgoran-data-source"}},
-    richness = false,
-    order = "b-c",
+    name = "multi_ore",
+    localised_name = {"", "[entity=multi-ore] ", {"entity-name.multi-ore"}},
+    richness = true,
+    order = "m-a",
     category = "resource"
   },
   --[[{
@@ -80,14 +80,6 @@ data:extend({
     order = "b-d",
     category = "resource"
   },]]
-  {
-    type = "autoplace-control",
-    name = "multi_ore",
-    localised_name = {"", "[entity=multi-ore] ", {"entity-name.multi-ore"}},
-    richness = true,
-    order = "d-a",
-    category = "resource"
-  },
 
   --[[{
     type = "autoplace-control",
@@ -103,7 +95,7 @@ data:extend({
     name = "molten_copper_geyser",
     localised_name = {"", "[entity=molten-copper-geyser] ", {"entity-name.molten-copper-geyser"}},
     richness = true,
-    order = "b-c",
+    order = "m-b",
     category = "resource"
   },
 
@@ -112,7 +104,15 @@ data:extend({
     name = "steam_geyser",
     localised_name = {"", "[entity=steam-geyser] ", {"entity-name.steam-geyser"}},
     richness = true,
-    order = "b-c",
+    order = "m-c",
+    category = "resource"
+  },
+  {
+    type = "autoplace-control",
+    name = "fulgoran_data_source",
+    localised_name = {"", "[entity=fulgoran-data-source] ", {"entity-name.fulgoran-data-source"}},
+    richness = false,
+    order = "m-d",
     category = "resource"
   },
 
