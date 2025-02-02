@@ -152,6 +152,86 @@ data:extend({
                   * 80000 * 40 * vulcanus_richness_multiplier * vulcanus_starting_area_multiplier\z
                   * control:fulgoran_data_source:richness / vulcanus_sulfuric_acid_geyser_size"
   },]]
+  --[[{
+    type = "noise-expression",
+    name = "moshine_molten_iron_geyser_probability",
+    expression = "(control:sulfuric_acid_geyser:size > 0) * (0.025 * ((vulcanus_sulfuric_acid_region_patchy > 0) + 2 * vulcanus_sulfuric_acid_region_patchy))"
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_molten_iron_geyser_richness",
+    expression = "(vulcanus_sulfuric_acid_region > 0) * random_penalty_between(0.5, 1, 1)\z
+                  * 80000 * 40 * vulcanus_richness_multiplier * vulcanus_starting_area_multiplier\z
+                  * control:sulfuric_acid_geyser:richness / vulcanus_sulfuric_acid_geyser_size"
+  },]]
+
+  {
+    type = "noise-expression",
+    name = "moshine_spot_size",
+    expression = 5
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_molten_copper_geyser_spots",
+    expression = "aquilo_spot_noise{seed = 567,\z
+                                    count = 40,\z
+                                    skip_offset = 0,\z
+                                    region_size = 600 + 400 / control:molten_copper_geyser:frequency,\z
+                                    density = 1,\z
+                                    radius = moshine_spot_size * sqrt(control:molten_copper_geyser:size),\z
+                                    favorability = 1}"
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_starting_molten_copper_geyser",
+    expression = "starting_spot_at_angle{angle = aquilo_angle, distance = 40, radius = moshine_spot_size * 0.8, x_distortion = 0, y_distortion = 0}"
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_molten_copper_geyser_probability",
+    expression = "(control:molten_copper_geyser:size > 0)\z
+                  * (max(moshine_starting_molten_copper_geyser * 0.08,\z
+                         min(aquilo_starting_mask, moshine_molten_copper_geyser_spots) * 0.015))"
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_molten_copper_geyser_richness",
+    expression = "max(moshine_starting_molten_copper_geyser * 1800000,\z
+                      moshine_molten_copper_geyser_spots * 1440000) * control:molten_copper_geyser:richness"
+  },
+
+  {
+    type = "noise-expression",
+    name = "moshine_steam_geyser_spots",
+    expression = "aquilo_spot_noise{seed = 567,\z
+                                    count = 30,\z
+                                    skip_offset = 1,\z
+                                    region_size = 600 + 400 / control:steam_geyser:frequency,\z
+                                    density = 1,\z
+                                    radius = moshine_spot_size * 1.2 * sqrt(control:steam_geyser:size),\z
+                                    favorability = 1}"
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_starting_steam_geyser",
+    expression = "starting_spot_at_angle{angle = aquilo_angle + 120, distance = 80, radius = moshine_spot_size * 0.6, x_distortion = 0, y_distortion = 0}"
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_steam_geyser_probability",
+    expression = "(control:steam_geyser:size > 0)\z
+                  * (max(moshine_starting_steam_geyser * 1.3,\z
+                         min(aquilo_starting_mask, moshine_steam_geyser_spots) * 0.22))"
+  },
+  {
+    type = "noise-expression",
+    name = "moshine_steam_geyser_richness",
+    expression = "max(moshine_starting_steam_geyser * 480000,\z
+                      moshine_steam_geyser_spots * 7200000) * control:steam_geyser:richness"
+  },
+
+
+
 
 
   ----- Shallow Oil
@@ -164,7 +244,7 @@ data:extend({
       layers =
       {
         ground_tile = true,
-        resource = true,
+        --resource = true,
       }
     },
     autoplace = {probability_expression = "50 * fulgora_oil_mask * water_base(fulgora_coastline, 1000)"}, -- target coast at cliff elevation
@@ -175,7 +255,7 @@ data:extend({
     walking_speed_modifier = 0.8,
     default_cover_tile = "foundation",
     absorptions_per_second = tile_pollution.fulgora,
-    fluid = "steam",
+    --fluid = "steam",
     --effect = "moshine-hot-swamp",
     --effect_color = { 127, 127, 127, 254 },
     --effect_color_secondary = { 60, 13, 5, 255 },
@@ -206,6 +286,50 @@ data:extend({
     trigger_effect = tile_trigger_effects.sand_trigger_effect()
   },
   ----------- "SHALLOW" LAVA
+
+
+
+  {
+    type = "tile-effect",
+    name = "moshine-lava",
+    shader = "water",
+    water =
+    {
+      shader_variation = "lava",
+      textures =
+      {
+        {
+          filename = "__Moshine__/graphics/terrain/moshine-lava/moshine-lava-noise-texture.png",
+          width = 512,
+          height = 512
+        },
+        {
+          filename = "__Moshine__/graphics/terrain/moshine-lava/moshine-coastal-lava.png",
+          width = 512 * 4,
+          height = 512 * 2
+        }
+      },
+      texture_variations_columns = 1,
+      texture_variations_rows = 1,
+      secondary_texture_variations_columns = 4,
+      secondary_texture_variations_rows = 2,
+
+      animation_speed = 1.5,
+      animation_scale = { 0.75, 0.75 },
+      tick_scale = 1,
+
+      specular_lightness = { 30, 48, 22 },
+      foam_color = { 73, 5, 5 },
+      foam_color_multiplier = 1,
+
+      dark_threshold = { 0.755, 0.755 },
+      reflection_threshold = { 1, 1 },
+      specular_threshold = { 0.889, 0.291 },
+
+      near_zoom = 1 / 16,
+      far_zoom = 1 / 16
+    }
+  },
   {
     type = "tile",
     name = "moshine-lava",
@@ -213,8 +337,8 @@ data:extend({
     order = "a-b",
     collision_mask = tile_collision_masks.lava(),
     autoplace = {probability_expression = "100 * fulgora_oil_mask * water_base(fulgora_coastline - 50 - fulgora_coastline_drop / 2, 2000)"},
-    effect = "lava",
-    fluid = "lava",
+    effect = "moshine-lava",
+    fluid = "molten-iron",
     effect_color = { 167, 59, 27 },
     effect_color_secondary = { 49, 80, 14 },
     particle_tints = tile_graphics.lava_particle_tints,
@@ -316,6 +440,16 @@ data:extend({
       far_zoom = 0.063,
     }
   }]]
+
+
+  {
+    type = "autoplace-control",
+    name = "moshine_islands",
+    order = "c-z-d",
+    category = "terrain",
+    can_be_disabled = false
+  },
+
 })
 
 
@@ -342,6 +476,18 @@ planet_map_gen.moshine = function()
       --["entity:calcite:richness"] = "moshine_calcite_richness",
       --["entity:fulgoran-data-source:probability"] = "moshine_fulgoran_data_source_probability",
       --["entity:fulgoran-data-source:richness"] = "moshine_fulgoran_data_source_richness",
+
+      --["entity:molten-iron-geyser:probability"] = "moshine_molten_iron_geyser_probability",
+      --["entity:molten-iron-geyser:richness"] = "moshine_molten_iron_geyser_richness",
+
+      ["entity:molten-copper-geyser:probability"] = "moshine_molten_copper_geyser_probability",
+      ["entity:molten-copper-geyser:richness"] = "moshine_molten_copper_geyser_richness",
+
+      ["entity:steam-geyser:probability"] = "moshine_steam_geyser_probability",
+      ["entity:steam-geyser:richness"] = "moshine_steam_geyser_richness",
+
+      ["entity:multi-ore:probability"] = "moshine_multi_ore_probability",
+      ["entity:multi-ore:richness"] = "moshine_multi_ore_richness",
     },
     --[[cliff_settings =
     {
@@ -373,10 +519,14 @@ planet_map_gen.moshine = function()
     },]]
     autoplace_controls =
     {
+      --["molten_iron_geyser"] = {},
+      ["molten_copper_geyser"] = {},
+      ["steam_geyser"] = {},
       ["fulgoran_data_source"] = { frequency = 4, size = 0.1, richness = 150 },
-      ["fulgora_islands"] = {},
+      ["moshine_islands"] = {},
       --["fulgora_cliff"] = {},
-      ["multi_ore"] = { frequency = 600000000, size = 10000000, richness = 150500000 },
+      ["multi_ore"] = {},-- frequency = 600000000, size = 10000000, richness = 150500000 },
+
       --["neodymium_ore"] = { frequency = 20000000, size = 0.8, richness = 15500 },
       --["calcite"] = {},
       --["vulcanus_volcanism"] = {},
@@ -401,10 +551,10 @@ planet_map_gen.moshine = function()
           --["volcanic-cracks-warm"] = {},
           --["volcanic-folds"] = {},
           --["volcanic-folds-flat"] = {},
+          ["fulgoran-rock"] = {},
           ["moshine-hot-swamp"] = {},
           ["moshine-lava"] = {},
 
-          ["fulgoran-rock"] = {},
           --["fulgoran-dust"] = {},
           --["fulgoran-sand"] = {},
           --["fulgoran-dunes"] = {},
@@ -463,6 +613,9 @@ planet_map_gen.moshine = function()
       {
         settings =
         {
+          --["molten-iron-geyser"] = {},
+          ["molten-copper-geyser"] = {},
+          ["steam-geyser"] = {},
           ["fulgoran-data-source"] = {},
           --["neodymium-ore"] = {},
           ["multi-ore"] = {},
