@@ -345,26 +345,28 @@ planet_map_gen.moshine = function()
           --["volcanic-jagged-ground"] = {},
           --["volcanic-smooth-stone"] = {},
           --["volcanic-smooth-stone-warm"] = {},
-          ["volcanic-ash-cracks"] = {},
+          --["volcanic-ash-cracks"] = {},
         }
       },
       ["decorative"] =
       {
         settings =
         {
+          ["moshine-medium-fulgora-rock"] = {},
+          ["moshine-small-fulgora-rock"] = {},
+          ["moshine-tiny-fulgora-rock"] = {},
           
+          ["moshine-barnacles-decal"] = {},
+          ["moshine-rock-decal-large"] = {},
+          ["moshine-snow-drift-decal"] = {},
           -- nauvis decoratives
           --["v-brown-carpet-grass"] = {},
           --["v-green-hairy-grass"] = {},
           --["v-brown-hairy-grass"] = {},
           --["v-red-pita"] = {},
           -- end of nauvis
-          ["moshine-rock-decal-large"] = {},
-          ["moshine-crack-decal-large"] = {},
+          --["moshine-crack-decal-large"] = {},
           --["vulcanus-crack-decal-huge-warm"] = {},
-          ["moshine-dune-decal"] = {},
-          ["moshine-sand-decal"] = {},
-          ["moshine-snow-drift-decal"] = {},
           --["vulcanus-lava-fire"] = {},
           --["calcite-stain"] = {},
           --["calcite-stain-small"] = {},
@@ -374,7 +376,12 @@ planet_map_gen.moshine = function()
           --["sulfuric-acid-puddle-small"] = {},
           ["moshine-crater-small"] = {},
           ["moshine-crater-large"] = {},
-          ["moshine-pumice-relief-decal"] = {},
+
+          --["moshine-pumice-relief-decal"] = {},
+          --["moshine-dune-decal"] = {},
+          --["moshine-sand-decal"] = {},
+
+
           --["small-volcanic-rock"] = {},
           --["medium-volcanic-rock"] = {},
           --["tiny-volcanic-rock"] = {},
@@ -400,6 +407,7 @@ planet_map_gen.moshine = function()
 
 
           ["moshine-huge-volcanic-rock"] = {},
+          ["moshine-big-fulgora-rock"] = {}
           --["big-volcanic-rock"] = {},
           --["moshine-crater-cliff"] = {},
 
@@ -452,7 +460,7 @@ data:extend({
     procession_graphic_catalogue = planet_catalogue_vulcanus,
     surface_properties =
     {
-      ["day-night-cycle"] = 3 * minute,
+      ["day-night-cycle"] = 15 * minute,
       ["magnetic-field"] = 25,
       ["solar-power"] = 4000,
       pressure = 800,
@@ -543,10 +551,11 @@ data:extend({
       day_night_cycle_color_lookup =
       {
         {0.0, "__Moshine__/graphics/terrain/moshine-1-day.png"},
-        {0.35, "__Moshine__/graphics/terrain/moshine-1-day.png"},
-        {0.37, "__Moshine__/graphics/terrain/moshine-2-night.png"},
-        {0.55, "__Moshine__/graphics/terrain/moshine-2-night.png"},
-        {0.59, "__Moshine__/graphics/terrain/moshine-1-day.png"},
+        {0.35, "__Moshine__/graphics/terrain/moshine-4-partialday.png"},
+        {0.40, "__Moshine__/graphics/terrain/moshine-3-dusk.png"},
+        {0.45, "__Moshine__/graphics/terrain/moshine-2-night.png"},
+        {0.60, "__Moshine__/graphics/terrain/moshine-2-night.png"},
+        {0.70, "__Moshine__/graphics/terrain/moshine-4-partialday.png"},
       },
 
       terrain_tint_effect =
@@ -558,7 +567,7 @@ data:extend({
         },
 
         offset = { 0.2, 0, 0.4, 0.8 },
-        intensity = { 0.6, 0.6, 0.3, 0.5 },
+        intensity = { 0.6, 0.6, 0.3, 0.4 },
         scale_u = { 3, 1, 1, 1 },
         scale_v = { 1, 1, 1, 1 },
 

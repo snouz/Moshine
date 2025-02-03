@@ -94,7 +94,7 @@ local function transition_masks()
     }
   }
 end
-
+--[[
 local function sunny_ground_effect(groundtexture, w, h)
   data:extend({
     ----- Hot swamp
@@ -143,6 +143,7 @@ local function sunny_ground_effect(groundtexture, w, h)
     },
   })
 end
+]]
 
 --sunny_ground_effect("moshine-hot-swamp", 8, 2)
 --sunny_ground_effect(groundtexture, w, h)
@@ -191,7 +192,7 @@ data:extend({
     driving_sound = oil_driving_sound,
     scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
     trigger_effect = tile_trigger_effects.sand_trigger_effect(),
-    map_color = { 74, 42, 43},
+    map_color = { 121, 88, 59},
   },
 })
 
@@ -293,7 +294,7 @@ data:extend({
       entity_to_sound_ratio = 0.1,
       average_pause_seconds = 3
     },
-    map_color = {r = 150, g = 49, b = 30},
+    map_color = {r = 135, g = 51, b = 25},
   },
 
 
@@ -313,7 +314,7 @@ data:extend({
       probability_expression = "fulgora_scrap_medium + max(0, fulgora_natural, 2 * fulgora_mesa * fulgora_pyramids) * 2 - 0.9 + fulgora_rock + fulgora_road_dust * fulgora_sprawl"
     },
     layer = 6,
-    map_color={112, 65, 50},
+    map_color={155, 127, 98},
     vehicle_friction_modifier = 4,
     absorptions_per_second = tile_pollution.fulgora,
     sprite_usage_surface = "fulgora",
@@ -349,7 +350,7 @@ data:extend({
       probability_expression = "1 + fulgora_dunes"
     },
     layer = 7,
-    map_color={125, 71, 59},
+    map_color={141, 125, 91},
     vehicle_friction_modifier = 4,
     absorptions_per_second = tile_pollution.fulgora,
     sprite_usage_surface = "fulgora",
@@ -385,7 +386,7 @@ data:extend({
       probability_expression = "1 - fulgora_dunes"
     },
     layer = 8,
-    map_color={118, 68, 56},
+    map_color={169, 131, 86},
     vehicle_friction_modifier = 4,
     absorptions_per_second = tile_pollution.fulgora,
     sprite_usage_surface = "fulgora",
@@ -421,7 +422,7 @@ data:extend({
       probability_expression = "0.8 + fulgora_rock * 2 - max(0, fulgora_mix_oil) * 6"
     },
     layer = 9,
-    map_color={131, 85, 66},
+    map_color={171, 121, 69},
     vehicle_friction_modifier = 4,
     absorptions_per_second = tile_pollution.fulgora,
     sprite_usage_surface = "fulgora",

@@ -154,7 +154,7 @@ data:extend({
       }
     },
     render_layer = "object",
-    collision_mask = {layers={is_object = true, is_lower_object = true}},
+    collision_mask = {layers={is_object = true, is_lower_object = true, water_tile = true}},
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     --autoplace =
@@ -209,7 +209,7 @@ data:extend({
       }
     },
     stateless_visualisation = nil;
-    map_color = {1, 1, 1},
+    map_color = {252, 255, 39},
     map_grid = false
   },
 
@@ -387,7 +387,7 @@ data:extend({
     {
       control = "multi_ore",
       order = "b",
-      additional_richness = 220000, -- this increases the total everywhere, so base_density needs to be decreased to compensate
+      additional_richness = 22000, -- this increases the total everywhere, so base_density needs to be decreased to compensate
       has_starting_area_placement = true,
       probability_expression = "(control:multi_ore:size > 0)\z
                                 * (1 - fulgora_starting_mask)\z
@@ -435,8 +435,8 @@ data:extend({
     effect_darkness_multiplier = 3.6,
     min_effect_alpha = 0.1,
     max_effect_alpha = 0.3,
-    map_color = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
-    mining_visualisation_tint = {r = 130/256, g = 190/256, b = 170/256, a = 1.000},
+    map_color = {r = 51, g = 229, b = 170, a = 255},
+    mining_visualisation_tint = {r = 130, g = 190, b = 170, a = 255},
     map_grid = true,
   },
 
@@ -603,6 +603,7 @@ data:extend({
       },
       max_sounds_per_prototype = 3,
     },
+    collision_mask = {layers={is_object = true, is_lower_object = true, water_tile = true}},
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     autoplace =
@@ -640,7 +641,7 @@ data:extend({
         }
       }
     },
-    --[[stateless_visualisation =
+    stateless_visualisation =
     {
       -- expanded 2 animation layers into 2 visualisations to demo multiple visualisations
       {
@@ -656,7 +657,7 @@ data:extend({
           animation_speed = 0.3,
           shift = util.by_pixel(-6, -89),
           scale = 1,
-          --tint = util.multiply_color({r=0.72, g=0.79, b=0.43}, 0.3)
+          tint = util.multiply_color({r=1, g=1, b=1}, 0.15)
         }
       },
       {
@@ -669,14 +670,14 @@ data:extend({
            line_length = 16,
            width = 40,
            height = 84,
-           animation_speed = 0.4,
+           animation_speed = 0.3,
            shift = util.by_pixel(-4, -30),
            scale = 1,
-           --tint = util.multiply_color({r=1, g=0.84, b=0}, 0.5)
+           tint = util.multiply_color({r=1, g=1, b=1}, 0.2)
         }
       }
-    },]]--
-    map_color = {r = 221/256, g = 111/256, b = 68/256, a = 1.000},
+    },
+    map_color = {r = 250, g = 126, b = 58, a = 255},
     map_grid = false
   },
 
@@ -726,6 +727,7 @@ data:extend({
       },
       max_sounds_per_prototype = 3,
     },
+    collision_mask = {layers={is_object = true, is_lower_object = true, water_tile = true}},
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     autoplace =

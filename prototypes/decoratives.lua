@@ -45,22 +45,6 @@ data:extend({
     },
     pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-rock-decal/vulcanus-rock-decal-", "large-", 256, 5)
   },
-    --- LARGE CRACK DECALS
-  {
-    name = "moshine-crack-decal-large",
-    type = "optimized-decorative",
-    order = "a[vulcanus]-b[decorative]-b[sand]",
-    collision_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    collision_mask = {layers={water_tile=true}, colliding_with_tiles_only=true},
-    render_layer = "decals",
-    tile_layer =  decal_tile_layer -4,
-    walking_sound = sounds.pebble,
-    autoplace = {
-      order = "d[ground-surface]-g[cracks]-b[cold]-a[large]",
-      probability_expression = "vulcanus_crack_decal_large"
-    },
-    pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-cracks-cold/vulcanus-cracks-cold-", "huge-", 256, 20)
-  },
   {
     name = "moshine-dune-decal",
     type = "optimized-decorative",
@@ -554,7 +538,7 @@ data:extend({
     {
       mod_name = "__Moshine__",
       name = "cliff-moshine",
-      map_color = {144, 119, 87},
+      map_color = {59, 45, 37},
       suffix = "moshine",
       subfolder = "moshine",
       scale = 1.0,
@@ -564,4 +548,141 @@ data:extend({
     }
   ),
 
+
+  {
+    name = "moshine-barnacles-decal",
+    type = "optimized-decorative",
+    order = "b[decorative]-b[red-desert-decal]",
+    collision_box = {{-3.375, -2.3125}, {3.25, 2.3125}},
+    -- don't collide with water so can overlap shallows, but tile restricturion means it cannot be placed directly on shallows
+    collision_mask = {layers={doodad=true}, colliding_with_tiles_only=true, not_colliding_with_itself=true},
+    render_layer = "decals",
+    tile_layer = decal_tile_layer - 1,
+    autoplace = {
+      tile_restriction = gleba_land_tiles,
+      probability_expression = "grpi(0.2) + gleba_select(gleba_barnacles - clamp(gleba_decorative_knockout, 0, 1), 0.2, 2, 0.1, 0, 1)"
+    },
+    pictures =
+    {
+      --lightDecal
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-00.png",
+        width = 400,
+        height = 299,
+        shift = util.by_pixel(4.5, -2.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-01.png",
+        width = 419,
+        height = 320,
+        shift = util.by_pixel(-0.75, 2),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-02.png",
+        width = 417,
+        height = 287,
+        shift = util.by_pixel(-1.25, 1.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-03.png",
+        width = 421,
+        height = 298,
+        shift = util.by_pixel(-0.25, 5.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-04.png",
+        width = 396,
+        height = 302,
+        shift = util.by_pixel(6, 4),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-05.png",
+        width = 408,
+        height = 295,
+        shift = util.by_pixel(-2.5, 7.75),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-06.png",
+        width = 417,
+        height = 317,
+        shift = util.by_pixel(-1.25, 3.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-07.png",
+        width = 419,
+        height = 312,
+        shift = util.by_pixel(0.75, 2.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-08.png",
+        width = 413,
+        height = 317,
+        shift = util.by_pixel(-2.25, 2.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-09.png",
+        width = 403,
+        height = 310,
+        shift = util.by_pixel(0.25, 1.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-10.png",
+        width = 411,
+        height = 307,
+        shift = util.by_pixel(-0.75, 1.75),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/barnacles-decal/barnacles-decal-11.png",
+        width = 421,
+        height = 295,
+        shift = util.by_pixel(-0.25, -0.75),
+        scale = 0.5
+      },
+    }
+  },
+
+
+
+
+
 })
+
+
+
+local rocks = {
+  ["moshine-big-fulgora-rock"] = data.raw["simple-entity"]["big-sand-rock"],
+  ["moshine-medium-fulgora-rock"] = data.raw["optimized-decorative"]["medium-sand-rock"],
+  ["moshine-small-fulgora-rock"] = data.raw["optimized-decorative"]["small-sand-rock"],
+  ["moshine-tiny-fulgora-rock"] = data.raw["optimized-decorative"]["tiny-rock"]
+}
+local i = 0
+for name, original in pairs(rocks) do
+  i = i + 1
+  local rock = table.deepcopy(original)
+  rock.name = name
+  if name == "moshine-big-fulgora-rock" then
+    rock.order = "b[decorative]-l[rock]-j[ruin]-a[" .. name .. "]"
+    rock.icon = "__Moshine__/graphics/icons/" .. name .. ".png"
+  end
+  for j, picture in pairs(rock.pictures) do
+    picture.filename = "__Moshine__/graphics/decorative/fulgora-rock/" .. name .. "-".. string.format("%02d", j) ..".png"
+  end
+  rock.autoplace = {
+    order = "r[rock]-" .. i,
+    probability_expression = "(1 - fulgora_oil_mask) * (fulgora_natural_mask + fulgora_mesa)\z
+                              * min(" ..(0.1 * i - 0.05)..",\z
+                                    0.3 * " .. i .. " - 2.4 + fulgora_rock - 0.5 * fulgora_mix_oil + 0.7 * fulgora_basis_oil)"
+  }
+  data:extend({rock})
+end
