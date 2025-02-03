@@ -153,6 +153,8 @@ data:extend({
         }
       }
     },
+    render_layer = "object",
+    collision_mask = {layers={is_object = true, is_lower_object = true}},
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     --autoplace =

@@ -32,8 +32,8 @@ function Public.create_lab_ruin(surface)
 	})
 	surface.destroy_decoratives({
         area = {
-            { common.LAB_POSITION.x - 4, common.LAB_POSITION.y - 4 },
-            { common.LAB_POSITION.x + 4, common.LAB_POSITION.y + 4 },
+            { common.LAB_POSITION.x - 8, common.LAB_POSITION.y - 8 },
+            { common.LAB_POSITION.x + 8, common.LAB_POSITION.y + 8 },
         },
     })
 

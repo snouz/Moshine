@@ -1,5 +1,6 @@
 
 require "prototypes.terrain"
+require "prototypes.decoratives"
 require "prototypes.resources"
 require "prototypes.planet"
 require "prototypes.technology"
