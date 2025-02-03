@@ -247,7 +247,7 @@ data:extend({
     subgroup = "vulcanus-tiles",
     order = "a-b",
     collision_mask = tile_collision_masks.lava(),
-    autoplace = {probability_expression = "100 * fulgora_oil_mask * water_base(fulgora_coastline - 50 - fulgora_coastline_drop / 2, 2000)"},
+    autoplace = {probability_expression = "100 * fulgora_oil_mask * water_base(fulgora_coastline - 90 - fulgora_coastline_drop / 2, 2000)"},
     effect = "moshine-lava",
     fluid = "molten-iron",
     effect_color = { 167, 59, 27 },
@@ -294,6 +294,157 @@ data:extend({
       average_pause_seconds = 3
     },
     map_color = {r = 150, g = 49, b = 30},
+  },
+
+
+
+
+
+
+
+
+  {
+    name = "moshine-dust",
+    type = "tile",
+    order = "b[natural]-a[dust]",
+    subgroup = "fulgora-tiles",
+    collision_mask = tile_collision_masks.ground(),
+    autoplace = {
+      probability_expression = "fulgora_scrap_medium + max(0, fulgora_natural, 2 * fulgora_mesa * fulgora_pyramids) * 2 - 0.9 + fulgora_rock + fulgora_road_dust * fulgora_sprawl"
+    },
+    layer = 6,
+    map_color={112, 65, 50},
+    vehicle_friction_modifier = 4,
+    absorptions_per_second = tile_pollution.fulgora,
+    sprite_usage_surface = "fulgora",
+    variants =
+    {
+      transition = transition_masks(),
+      material_background =
+      {
+        picture = "__space-age__/graphics/terrain/fulgoran-dust.png",
+        line_length = 8,
+        count = 16,
+        scale = 0.5
+      },
+      material_texture_width_in_tiles = 8,
+      material_texture_height_in_tiles = 8
+    },
+    transitions = fulgora_rock_sand_transitions,
+    transitions_between_transitions = fulgora_sand_transitions_between_transitions,
+    walking_sound = sound_variations("__space-age__/sound/walking/soft-sand", 9, 0.6, volume_multiplier("main-menu", 2.9)),
+    landing_steps_sound = tile_sounds.landing.sand,
+    driving_sound = sand_driving_sound,
+    ambient_sounds = sand_ambient_sound,
+    scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
+    trigger_effect = tile_trigger_effects.sand_trigger_effect()
+  },
+  {
+    name = "moshine-dunes",
+    type = "tile",
+    order = "b[natural]-b[dunes]",
+    subgroup = "fulgora-tiles",
+    collision_mask = tile_collision_masks.ground(),
+    autoplace = {
+      probability_expression = "1 + fulgora_dunes"
+    },
+    layer = 7,
+    map_color={125, 71, 59},
+    vehicle_friction_modifier = 4,
+    absorptions_per_second = tile_pollution.fulgora,
+    sprite_usage_surface = "fulgora",
+    variants =
+    {
+      transition = transition_masks(),
+      material_background =
+      {
+        picture = "__space-age__/graphics/terrain/fulgoran-dunes.png",
+        line_length = 4,
+        count = 16,
+        scale = 0.5
+      },
+      material_texture_width_in_tiles = 10,
+      material_texture_height_in_tiles = 7
+    },
+    transitions = fulgora_rock_sand_transitions,
+    transitions_between_transitions = fulgora_sand_transitions_between_transitions,
+    walking_sound = sound_variations("__base__/sound/walking/sand", 9, 0.8, volume_multiplier("main-menu", 2.9)),
+    landing_steps_sound = tile_sounds.landing.sand,
+    driving_sound = sand_driving_sound,
+    ambient_sounds = sand_ambient_sound,
+    scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
+    trigger_effect = tile_trigger_effects.sand_trigger_effect()
+  },
+  {
+    name = "moshine-sand",
+    type = "tile",
+    order = "b[natural]-c[sand]",
+    subgroup = "fulgora-tiles",
+    collision_mask = tile_collision_masks.ground(),
+    autoplace = {
+      probability_expression = "1 - fulgora_dunes"
+    },
+    layer = 8,
+    map_color={118, 68, 56},
+    vehicle_friction_modifier = 4,
+    absorptions_per_second = tile_pollution.fulgora,
+    sprite_usage_surface = "fulgora",
+    variants =
+    {
+      transition = transition_masks(),
+      material_background =
+      {
+        picture = "__space-age__/graphics/terrain/fulgoran-sand.png",
+        line_length = 4,
+        count = 16,
+        scale = 0.5
+      },
+      material_texture_width_in_tiles = 10,
+      material_texture_height_in_tiles = 7
+    },
+    transitions = fulgora_rock_sand_transitions,
+    transitions_between_transitions = fulgora_sand_transitions_between_transitions,
+    walking_sound = sound_variations("__base__/sound/walking/sand", 9, 0.8, volume_multiplier("main-menu", 2.9)),
+    landing_steps_sound = tile_sounds.landing.sand,
+    driving_sound = sand_driving_sound,
+    ambient_sounds = sand_ambient_sound,
+    scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
+    trigger_effect = tile_trigger_effects.sand_trigger_effect()
+  },
+  {
+    name = "moshine-rock",
+    type = "tile",
+    order = "b[natural]-d[rock]",
+    subgroup = "fulgora-tiles",
+    collision_mask = tile_collision_masks.ground(),
+    autoplace = {
+      probability_expression = "0.8 + fulgora_rock * 2 - max(0, fulgora_mix_oil) * 6"
+    },
+    layer = 9,
+    map_color={131, 85, 66},
+    vehicle_friction_modifier = 4,
+    absorptions_per_second = tile_pollution.fulgora,
+    sprite_usage_surface = "fulgora",
+    variants =
+    {
+      transition = transition_masks(),
+      material_background =
+      {
+        picture = "__space-age__/graphics/terrain/fulgoran-rock.png",
+        line_length = 8,
+        count = 16,
+        scale = 0.5
+      },
+      material_texture_width_in_tiles = 8,
+      material_texture_height_in_tiles = 8
+    },
+    transitions = fulgora_rock_sand_transitions,
+    transitions_between_transitions = fulgora_sand_transitions_between_transitions,
+    walking_sound = sound_variations("__space-age__/sound/walking/rocky-stone", 10, 0.8, volume_multiplier("main-menu", 2.9)),
+    landing_steps_sound = tile_sounds.landing.rock,
+    driving_sound = stone_driving_sound,
+    scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
+    trigger_effect = tile_trigger_effects.sand_trigger_effect()
   },
 
 })

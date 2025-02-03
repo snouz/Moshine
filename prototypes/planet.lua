@@ -220,9 +220,14 @@ data:extend({
     category = "terrain",
     can_be_disabled = false
   },
-
-})
-
+  {
+    type = "autoplace-control",
+    name = "moshine_volcanism",
+    order = "c-z-a",
+    category = "terrain",
+    can_be_disabled = false
+  },
+}) 
 
 planet_map_gen.moshine = function()
   return
@@ -237,8 +242,8 @@ planet_map_gen.moshine = function()
       --aux = "vulcanus_aux",
       aux = "fulgora_aux",
       --cliffiness = "cliffiness_basic",
-      --cliffiness = "fulgora_cliffiness",
-      --cliff_elevation = "cliff_elevation_from_elevation",
+      cliffiness = "fulgora_cliffiness",
+      cliff_elevation = "cliff_elevation_from_elevation",
       --["entity:neodymium-ore:probability"] = "moshine_neodymium_ore_probability",
       --["entity:neodymium-ore:richness"] = "moshine_neodymium_ore_richness",
       --["entity:quartz-ore:probability"] = "moshine_quartz_ore_probability",
@@ -274,9 +279,9 @@ planet_map_gen.moshine = function()
       minimum_territory_size = 10
     },]]
 
-    --[[cliff_settings =
+    cliff_settings =
     {
-      name = "cliff-vulcanus",
+      name = "cliff-fulgora",
       control = "fulgora_cliff",
       cliff_elevation_0 = 80,
       -- Ideally the first cliff would be at elevation 0 on the coastline, but that doesn't work,
@@ -285,9 +290,9 @@ planet_map_gen.moshine = function()
       -- but it also fails if a corner goes below zero, so we need an extra buffer of 40.
       -- So the first cliff is at 80, and terrain near the cliff shouln't go close to 0 (usually above 40).
       cliff_elevation_interval = 40,
-      cliff_smoothing = 0.1, -- This is critical for correct cliff placement on the coast.
-      richness = 0.1
-    },]]
+      cliff_smoothing = 0, -- This is critical for correct cliff placement on the coast.
+      richness = 1
+    },
     autoplace_controls =
     {
       --["molten_iron_geyser"] = {},
@@ -295,12 +300,12 @@ planet_map_gen.moshine = function()
       ["steam_geyser"] = {richness = 1500000000},
       ["fulgoran_data_source"] = { frequency = 4, size = 0.1, richness = 1500000000 },
       ["moshine_islands"] = {},
-      --["fulgora_cliff"] = {},
+      ["fulgora_cliff"] = {},
       ["multi_ore"] = {richness = 1500000000},-- frequency = 600000000, size = 10000000, richness = 150500000 },
 
       --["neodymium_ore"] = { frequency = 20000000, size = 0.8, richness = 15500 },
       --["calcite"] = {},
-      --["vulcanus_volcanism"] = {},
+      --["moshine_volcanism"] = {},
       --["rocks"] = {}, -- can't add the rocks control otherwise nauvis rocks spawn
 
     },
@@ -322,13 +327,13 @@ planet_map_gen.moshine = function()
           --["volcanic-cracks-warm"] = {},
           --["volcanic-folds"] = {},
           --["volcanic-folds-flat"] = {},
-          ["fulgoran-rock"] = {},
+          ["moshine-rock"] = {},
           ["moshine-hot-swamp"] = {},
           ["moshine-lava"] = {},
 
-          --["fulgoran-dust"] = {},
-          --["fulgoran-sand"] = {},
-          --["fulgoran-dunes"] = {},
+          ["moshine-dust"] = {},
+          ["moshine-sand"] = {},
+          ["moshine-dunes"] = {},
           --["fulgoran-walls"] = {},
           --["fulgoran-paving"] = {},
           --["fulgoran-conduit"] = {},
@@ -340,26 +345,26 @@ planet_map_gen.moshine = function()
           --["volcanic-jagged-ground"] = {},
           --["volcanic-smooth-stone"] = {},
           --["volcanic-smooth-stone-warm"] = {},
-          --["volcanic-ash-cracks"] = {},
+          ["volcanic-ash-cracks"] = {},
         }
       },
       ["decorative"] =
       {
         settings =
         {
-          --[[
+          
           -- nauvis decoratives
-          ["v-brown-carpet-grass"] = {},
-          ["v-green-hairy-grass"] = {},
-          ["v-brown-hairy-grass"] = {},
-          ["v-red-pita"] = {},
+          --["v-brown-carpet-grass"] = {},
+          --["v-green-hairy-grass"] = {},
+          --["v-brown-hairy-grass"] = {},
+          --["v-red-pita"] = {},
           -- end of nauvis
           ["vulcanus-rock-decal-large"] = {},
           ["vulcanus-crack-decal-large"] = {},
           ["vulcanus-crack-decal-huge-warm"] = {},
           ["vulcanus-dune-decal"] = {},
           ["vulcanus-sand-decal"] = {},
-          ["vulcanus-lava-fire"] = {},
+          --["vulcanus-lava-fire"] = {},
           --["calcite-stain"] = {},
           --["calcite-stain-small"] = {},
           --["sulfur-stain"] = {},
@@ -369,15 +374,15 @@ planet_map_gen.moshine = function()
           ["crater-small"] = {},
           ["crater-large"] = {},
           ["pumice-relief-decal"] = {},
-          ["small-volcanic-rock"] = {},
-          ["medium-volcanic-rock"] = {},
-          ["tiny-volcanic-rock"] = {},
+          --["small-volcanic-rock"] = {},
+          --["medium-volcanic-rock"] = {},
+          --["tiny-volcanic-rock"] = {},
           --["tiny-rock-cluster"] = {},
           --["small-sulfur-rock"] = {},
           --["tiny-sulfur-rock"] = {},
           --["sulfur-rock-cluster"] = {},
           ["waves-decal"] = {},
-          ]]
+          
         }
       },
       ["entity"] =
@@ -391,9 +396,9 @@ planet_map_gen.moshine = function()
           --["neodymium-ore"] = {},
           ["multi-ore"] = {},
           --["calcite"] = {},
-          --["huge-volcanic-rock"] = {},
-          --["big-volcanic-rock"] = {},
-          --["crater-cliff"] = {},
+          ["huge-volcanic-rock"] = {},
+          ["big-volcanic-rock"] = {},
+          ["crater-cliff"] = {},
 
           --["vulcanus-chimney"] = {},
           --["vulcanus-chimney-faded"] = {},
