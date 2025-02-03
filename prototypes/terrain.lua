@@ -322,7 +322,7 @@ data:extend({
       transition = transition_masks(),
       material_background =
       {
-        picture = "__space-age__/graphics/terrain/fulgoran-dust.png",
+        picture = "__Moshine__/graphics/terrain/moshine-dust.png",
         line_length = 8,
         count = 16,
         scale = 0.5
@@ -358,7 +358,7 @@ data:extend({
       transition = transition_masks(),
       material_background =
       {
-        picture = "__space-age__/graphics/terrain/fulgoran-dunes.png",
+        picture = "__Moshine__/graphics/terrain/moshine-dunes.png",
         line_length = 4,
         count = 16,
         scale = 0.5
@@ -394,7 +394,7 @@ data:extend({
       transition = transition_masks(),
       material_background =
       {
-        picture = "__space-age__/graphics/terrain/fulgoran-sand.png",
+        picture = "__Moshine__/graphics/terrain/moshine-sand.png",
         line_length = 4,
         count = 16,
         scale = 0.5
@@ -430,7 +430,7 @@ data:extend({
       transition = transition_masks(),
       material_background =
       {
-        picture = "__space-age__/graphics/terrain/fulgoran-rock.png",
+        picture = "__Moshine__/graphics/terrain/moshine-rock.png",
         line_length = 8,
         count = 16,
         scale = 0.5

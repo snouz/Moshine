@@ -43,7 +43,7 @@ data:extend({
       order = "d[ground-surface]-f[cracked-rock]-b[cold]",
       probability_expression = "vulcanus_rock_decal_large"
     },
-    pictures = get_decal_pictures("__space-age__/graphics/decorative/vulcanus-rock-decal/vulcanus-rock-decal-", "large-", 256, 5)
+    pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-rock-decal/vulcanus-rock-decal-", "large-", 256, 5)
   },
     --- LARGE CRACK DECALS
   {
@@ -59,7 +59,7 @@ data:extend({
       order = "d[ground-surface]-g[cracks]-b[cold]-a[large]",
       probability_expression = "vulcanus_crack_decal_large"
     },
-    pictures = get_decal_pictures("__space-age__/graphics/decorative/vulcanus-cracks-cold/vulcanus-cracks-cold-", "huge-", 256, 20)
+    pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-cracks-cold/vulcanus-cracks-cold-", "huge-", 256, 20)
   },
   {
     name = "moshine-dune-decal",
@@ -74,7 +74,7 @@ data:extend({
       order = "d[ground-surface]-h[dune]-a[relief]",
       probability_expression = "vulcanus_dune_decal"
     },
-    pictures = get_decal_pictures("__space-age__/graphics/decorative/vulcanus-dune-decal/vulcanus-dune-decal-", "", 512, 20)
+    pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-dune-decal/vulcanus-dune-decal-", "", 512, 20)
   },
   {
     name = "moshine-sand-decal",
@@ -89,82 +89,8 @@ data:extend({
       order = "d[ground-surface]-h[dune]-b[patch]",
       probability_expression = "vulcanus_sand_decal"
     },
-    pictures = get_decal_pictures("__space-age__/graphics/decorative/vulcanus-sand-decal/vulcanus-sand-decal-", "", 256, 23)
+    pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-sand-decal/vulcanus-sand-decal-", "", 256, 23)
   },
-  --- WAVES
-  {
-    name = "moshine-waves-decal",
-    type = "optimized-decorative",
-    order = "a[vulcanus]-b[decorative]",
-    collision_box = {{-8, -8}, {8, 8}},
-    collision_mask = {layers={water_tile=true}, colliding_with_tiles_only=true},
-    render_layer = "decals",
-    tile_layer = 220,
-    walking_sound = sounds.pebble,
-    autoplace = {
-      order = "d[ground-surface]-d[relief]-a[waves]",
-      probability_expression = "waves_decal"
-    },
-    pictures = {
-      {
-        filename =  "__space-age__/graphics/decorative/waves-relief/waves-01.png",
-        priority = base_decorative_sprite_priority,
-        width =  1387,
-        height =  1387,
-        scale = 0.5
-      },
-      {
-        filename =  "__space-age__/graphics/decorative/waves-relief/waves-02.png",
-        priority = base_decorative_sprite_priority,
-        width =  1387,
-        height =  1387,
-        scale = 0.5
-      },
-      {
-        filename =  "__space-age__/graphics/decorative/waves-relief/waves-03.png",
-        priority = base_decorative_sprite_priority,
-        width =  1387,
-        height =  1387,
-        scale = 0.5
-      },
-      {
-        filename =  "__space-age__/graphics/decorative/waves-relief/waves-04.png",
-        priority = base_decorative_sprite_priority,
-        width =  1387,
-        height =  1387,
-        scale = 0.5
-      },
-      {
-        filename =  "__space-age__/graphics/decorative/waves-relief/waves-05.png",
-        priority = base_decorative_sprite_priority,
-        width =  1387,
-        height =  1387,
-        scale = 0.5
-      },
-      {
-        filename =  "__space-age__/graphics/decorative/waves-relief/waves-06.png",
-        priority = base_decorative_sprite_priority,
-        width =  1387,
-        height =  1387,
-        scale = 0.5
-      },
-      {
-        filename =  "__space-age__/graphics/decorative/waves-relief/waves-07.png",
-        priority = base_decorative_sprite_priority,
-        width =  1387,
-        height =  1387,
-        scale = 0.5
-      },
-      {
-        filename =  "__space-age__/graphics/decorative/waves-relief/waves-08.png",
-        priority = base_decorative_sprite_priority,
-        width =  1387,
-        height =  1387,
-        scale = 0.5
-      }
-    }
-  },
-
 
 
 
@@ -175,7 +101,7 @@ data:extend({
     name = "moshine-huge-volcanic-rock",
     type = "simple-entity",
     flags = {"placeable-neutral", "placeable-off-grid"},
-    icon = "__space-age__/graphics/icons/huge-volcanic-rock.png",
+    icon = "__Moshine__/graphics/icons/huge-volcanic-rock.png",
     subgroup = "grass",
     order = "b[decorative]-l[rock]-f[huge-volcanic-rock]",
     collision_box = {{-1.5, -1.1}, {1.5, 1.1}},
@@ -191,7 +117,6 @@ data:extend({
         {type = "item", name = "stone", amount_min = 6, amount_max = 18},
         {type = "item", name = "iron-ore", amount_min = 9, amount_max = 27},
         {type = "item", name = "copper-ore", amount_min = 6, amount_max = 18},
-        {type = "item", name = "tungsten-ore", amount_min = 3, amount_max = 15}
       },
     },
     map_color = {129, 105, 78},
@@ -214,7 +139,7 @@ data:extend({
     pictures =
     {
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-05.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-05.png",
         width = 201,
         height = 179,
         scale = 0.5,
@@ -222,7 +147,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-06.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-06.png",
         width = 233,
         height = 171,
         scale = 0.5,
@@ -230,7 +155,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-07.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-07.png",
         width = 240,
         height = 192,
         scale = 0.5,
@@ -238,7 +163,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-08.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-08.png",
         width = 219,
         height = 175,
         scale = 0.5,
@@ -246,7 +171,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-09.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-09.png",
         width = 240,
         height = 208,
         scale = 0.5,
@@ -254,7 +179,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-10.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-10.png",
         width = 243,
         height = 190,
         scale = 0.5,
@@ -262,7 +187,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-11.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-11.png",
         width = 249,
         height = 185,
         scale = 0.5,
@@ -270,7 +195,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-12.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-12.png",
         width = 273,
         height = 163,
         scale = 0.5,
@@ -278,7 +203,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-13.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-13.png",
         width = 275,
         height = 175,
         scale = 0.5,
@@ -286,7 +211,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-14.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-14.png",
         width = 241,
         height = 215,
         scale = 0.5,
@@ -294,7 +219,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-15.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-15.png",
         width = 318,
         height = 181,
         scale = 0.5,
@@ -302,7 +227,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-16.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-16.png",
         width = 217,
         height = 224,
         scale = 0.5,
@@ -310,7 +235,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-17.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-17.png",
         width = 332,
         height = 228,
         scale = 0.5,
@@ -318,7 +243,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-18.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-18.png",
         width = 290,
         height = 243,
         scale = 0.5,
@@ -326,7 +251,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-19.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-19.png",
         width = 349,
         height = 225,
         scale = 0.5,
@@ -334,7 +259,7 @@ data:extend({
         tint = tungsten_rock_tint
       },
       {
-        filename = "__space-age__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-20.png",
+        filename = "__Moshine__/graphics/decorative/huge-volcanic-rock/huge-volcanic-rock-20.png",
         width = 287,
         height = 250,
         scale = 0.5,
@@ -351,13 +276,13 @@ data:extend({
     collision_box = {{-0.5, -0.5}, {0.5, 0.5}},
     collision_mask = {layers={water_tile=true}, colliding_with_tiles_only=true},
     render_layer = "decals",
-    tile_layer =  decal_tile_layer,
+    tile_layer = decal_tile_layer,
     walking_sound = sounds.pebble,
     autoplace = {
       order = "d[ground-surface]-e[crater]-a[small]",
       probability_expression = "crater_small"
     },
-    pictures = get_decal_pictures("__space-age__/graphics/decorative/vulcanus-crater/vulcanus-crater-", "", 128, 20)
+    pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-crater/vulcanus-crater-", "", 128, 20)
   },
   --- LARGE CRATERS
   {
@@ -367,13 +292,13 @@ data:extend({
     collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
     collision_mask = {layers={water_tile=true}, colliding_with_tiles_only=true},
     render_layer = "decals",
-    tile_layer =  decal_tile_layer,
+    tile_layer = decal_tile_layer,
     walking_sound = sounds.pebble,
     autoplace = {
       order = "d[ground-surface]-e[crater]-a[large]",
       probability_expression = "crater_large"
     },
-    pictures = get_decal_pictures("__space-age__/graphics/decorative/vulcanus-crater/vulcanus-crater-", "huge-", 512, 14)
+    pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-crater/vulcanus-crater-", "huge-", 512, 14)
   },
   {
     name = "moshine-pumice-relief-decal",
@@ -388,33 +313,255 @@ data:extend({
       order = "d[ground-surface]-d[relief]-b[rocky]",
       probability_expression = "pumice_relief_decal"
     },
-    pictures = get_decal_pictures("__space-age__/graphics/decorative/vulcanus-relief-decal/vulcanus-pumice-relief-", "", 1024, 19)
+    pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-relief-decal/vulcanus-pumice-relief-", "", 1024, 19)
   },
 
-  scaled_cliff_crater(
-  {
-    mod_name = "__space-age__",
-    name = "moshine-crater-cliff",
-    icon = "__space-age__/graphics/icons/crater-cliff.png",
-    map_color = {r=144, g=119, b=87},
-    subfolder = "vulcanus",
-    prefix = "vulcanus-crater-section",
-    scale = 1.0,
-    collision_mask = {layers={item=true, object=true, player=true, water_tile=true}},
-    has_lower_layer = true,
-    sprite_size_multiplier = 2,
-    flags = { "placeable-off-grid", "placeable-neutral" },
-    factoriopedia_simulation = simulations.factoriopedia_crater_cliff,
 
-    crater_radius = 7, --3.5,
-    crater_edge_thickness = 5,
-    crater_segment_orientation_offset = 0, --1 / 16,
-    --segment_probability = 1,
+
+
+
+
+  {
+    name = "moshine-snow-drift-decal",
+    type = "optimized-decorative",
+    order = "b[decorative]-b[red-desert-decal]",
+    collision_box = {{-3.375, -2.3125}, {3.25, 2.3125}},
+    collision_mask = {layers={water_tile=true}, colliding_with_tiles_only=true},
+    render_layer = "decals",
+    tile_layer = 255,
     autoplace =
     {
-      order = "a[landscape]-a[cliff]-b[crater]",
-      probability_expression = "crater_cliff"
+      order = "d[decal]-c",
+      probability_expression = "min(1, random_penalty{x = x, y = y, seed = 1, source = 1, amplitude = 1/0.1} + 0.3 -aquilo_high_frequency_peaks / 2)"
+    },
+    pictures =
+    {
+      --lightDecal
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-00.png",
+        width = 400,
+        height = 299,
+        shift = util.by_pixel(4.5, -2.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-01.png",
+        width = 419,
+        height = 320,
+        shift = util.by_pixel(-0.75, 2),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-02.png",
+        width = 417,
+        height = 287,
+        shift = util.by_pixel(-1.25, 1.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-03.png",
+        width = 421,
+        height = 298,
+        shift = util.by_pixel(-0.25, 5.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-04.png",
+        width = 396,
+        height = 302,
+        shift = util.by_pixel(6, 4),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-05.png",
+        width = 408,
+        height = 295,
+        shift = util.by_pixel(-2.5, 7.75),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-06.png",
+        width = 417,
+        height = 317,
+        shift = util.by_pixel(-1.25, 3.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-07.png",
+        width = 419,
+        height = 312,
+        shift = util.by_pixel(0.75, 2.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-08.png",
+        width = 413,
+        height = 317,
+        shift = util.by_pixel(-2.25, 2.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-09.png",
+        width = 403,
+        height = 310,
+        shift = util.by_pixel(0.25, 1.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-10.png",
+        width = 411,
+        height = 307,
+        shift = util.by_pixel(-0.75, 1.75),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-11.png",
+        width = 421,
+        height = 295,
+        shift = util.by_pixel(-0.25, -0.75),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-12.png",
+        width = 420,
+        height = 280,
+        shift = util.by_pixel(-0.5, -7),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-13.png",
+        width = 403,
+        height = 311,
+        shift = util.by_pixel(0.75, 3.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-14.png",
+        width = 418,
+        height = 304,
+        shift = util.by_pixel(0, 2),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-15.png",
+        width = 398,
+        height = 284,
+        shift = util.by_pixel(-3.5, 6.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-16.png",
+        width = 406,
+        height = 313,
+        shift = util.by_pixel(4, 0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-17.png",
+        width = 420,
+        height = 294,
+        shift = util.by_pixel(0.5, 4.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-18.png",
+        width = 379,
+        height = 289,
+        shift = util.by_pixel(0.25, 5.75),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-19.png",
+        width = 401,
+        height = 311,
+        shift = util.by_pixel(-5.25, 1.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-20.png",
+        width = 418,
+        height = 315,
+        shift = util.by_pixel(0.5, 1.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-21.png",
+        width = 418,
+        height = 154,
+        shift = util.by_pixel(1, 3),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-22.png",
+        width = 421,
+        height = 270,
+        shift = util.by_pixel(-0.25, 1),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-23.png",
+        width = 403,
+        height = 290,
+        shift = util.by_pixel(2.25, -2.5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-24.png",
+        width = 418,
+        height = 315,
+        shift = util.by_pixel(-0.5, 2.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-25.png",
+        width = 414,
+        height = 310,
+        shift = util.by_pixel(-2, 4),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-26.png",
+        width = 403,
+        height = 306,
+        shift = util.by_pixel(-3.75, 5),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-27.png",
+        width = 416,
+        height = 303,
+        shift = util.by_pixel(1, 0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-28.png",
+        width = 422,
+        height = 311,
+        shift = util.by_pixel(0, 2.25),
+        scale = 0.5
+      },
+      {
+        filename = "__Moshine__/graphics/decorative/snow-drift-decal/snow-drift-decal-29.png",
+        width = 406,
+        height = 292,
+        shift = util.by_pixel(-3.5, 2),
+        scale = 0.5
+      }
     }
-  })
+  },
+
+  scaled_cliff(
+    {
+      mod_name = "__Moshine__",
+      name = "cliff-moshine",
+      map_color = {144, 119, 87},
+      suffix = "moshine",
+      subfolder = "moshine",
+      scale = 1.0,
+      has_lower_layer = true,
+      sprite_size_multiplier = 2,
+      factoriopedia_simulation = simulations.factoriopedia_cliff_vulcanus
+    }
+  ),
 
 })

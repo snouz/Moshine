@@ -281,7 +281,7 @@ planet_map_gen.moshine = function()
 
     cliff_settings =
     {
-      name = "cliff-vulcanus",
+      name = "cliff-moshine",
       control = "fulgora_cliff",
       cliff_elevation_0 = 80,
       -- Ideally the first cliff would be at elevation 0 on the coastline, but that doesn't work,
@@ -364,6 +364,7 @@ planet_map_gen.moshine = function()
           --["vulcanus-crack-decal-huge-warm"] = {},
           ["moshine-dune-decal"] = {},
           ["moshine-sand-decal"] = {},
+          ["moshine-snow-drift-decal"] = {},
           --["vulcanus-lava-fire"] = {},
           --["calcite-stain"] = {},
           --["calcite-stain-small"] = {},
@@ -381,7 +382,7 @@ planet_map_gen.moshine = function()
           --["small-sulfur-rock"] = {},
           --["tiny-sulfur-rock"] = {},
           --["sulfur-rock-cluster"] = {},
-          ["moshine-waves-decal"] = {},
+          --["moshine-waves-decal"] = {},
           
         }
       },
@@ -400,7 +401,7 @@ planet_map_gen.moshine = function()
 
           ["moshine-huge-volcanic-rock"] = {},
           --["big-volcanic-rock"] = {},
-          ["moshine-crater-cliff"] = {},
+          --["moshine-crater-cliff"] = {},
 
           --["vulcanus-chimney"] = {},
           --["vulcanus-chimney-faded"] = {},
