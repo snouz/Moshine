@@ -85,6 +85,8 @@ data:extend({
     type = "item",
     name = "sand",
     icon = "__Moshine__/graphics/icons/sand-3.png",
+    subgroup = "moshine-processes",
+    order = "aaa",
     icon_size = 64,
     pictures =
     {
@@ -93,6 +95,8 @@ data:extend({
       { size = 64, filename = "__Moshine__/graphics/icons/sand-3.png", scale = 0.5 },
     },
     stack_size = 100,
+    default_import_location = "moshine",
+    weight = 10*kg,
   },
   {
     type = "item",
@@ -104,6 +108,7 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
+    random_tint_color = item_tints.iron_rust,
     stack_size = 50,
     weight = 10*kg,
   },
@@ -202,6 +207,7 @@ data:extend({
       { size = 64, filename = "__Moshine__/graphics/icons/model-unstable.png", scale = 0.5 },
     },
     subgroup = "moshine-processes",
+    default_import_location = "moshine",
     order = "iii",
     inventory_move_sound = item_sounds.metal_small_inventory_move,
     pick_sound = item_sounds.metal_small_inventory_pickup,

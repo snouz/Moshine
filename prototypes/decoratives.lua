@@ -87,7 +87,7 @@ data:extend({
     flags = {"placeable-neutral", "placeable-off-grid"},
     icon = "__Moshine__/graphics/icons/huge-volcanic-rock.png",
     subgroup = "grass",
-    order = "b[decorative]-l[rock]-f[huge-volcanic-rock]",
+    order = "r[decorative]-l[rock]-f[huge-volcanic-rock]",
     collision_box = {{-1.5, -1.1}, {1.5, 1.1}},
     selection_box = {{-1.7, -1.3}, {1.7, 1.3}},
     damaged_trigger_effect = hit_effects.rock(),
@@ -117,7 +117,7 @@ data:extend({
       }
     },
     autoplace = {
-      order = "a[landscape]-c[rock]-a[huge]",
+      order = "r[landscape]-c[rock]-a[huge]",
       probability_expression = "vulcanus_rock_huge"
     },
     pictures =
@@ -672,7 +672,7 @@ for name, original in pairs(rocks) do
   local rock = table.deepcopy(original)
   rock.name = name
   if name == "moshine-big-fulgora-rock" then
-    rock.order = "b[decorative]-l[rock]-j[ruin]-a[" .. name .. "]"
+    rock.order = "r[decorative]-l[rock]-j[ruin]-a[" .. name .. "]"
     rock.icon = "__Moshine__/graphics/icons/" .. name .. ".png"
   end
   for j, picture in pairs(rock.pictures) do

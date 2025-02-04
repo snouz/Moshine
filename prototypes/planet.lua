@@ -517,7 +517,7 @@ data:extend({
 
         scale = 1,
         movement_speed_multiplier = 0.75,
-        opacity = 0.25,
+        opacity = 0.15,
         opacity_at_night = 0.25,
         density_at_night = 1,
         detail_factor = 1.5,
@@ -567,11 +567,11 @@ data:extend({
         },
 
         offset = { 0.2, 0, 0.4, 0.8 },
-        intensity = { 0.6, 0.6, 0.3, 0.4 },
+        intensity = { 0.6, 0.6, 0.3, 0.3 },
         scale_u = { 3, 1, 1, 1 },
         scale_v = { 1, 1, 1, 1 },
 
-        global_intensity = 0.5,
+        global_intensity = 0.4,
         global_scale = 0.1,
         zoom_factor = 3,
         zoom_intensity = 0.6
