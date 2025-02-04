@@ -482,12 +482,12 @@ data:extend({
       semi_persistent =
       {
         {
-          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-rumble", 3, 0.6)},
+          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-rumble", 3, 1.5)},
           delay_mean_seconds = 10,
           delay_variance_seconds = 5
         },
         {
-          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-flames", 5, 1.1)},
+          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-flames", 5, 1.0)},
           delay_mean_seconds = 15,
           delay_variance_seconds = 7.0
         }
