@@ -14,6 +14,14 @@ data:extend({
       {type = "item", name = "hard-drive", amount = 100},
 
     },
+    surface_conditions =
+    {
+      {
+        property = "magnetic-field",
+        min = 0,
+        max = 5
+      }
+    },
     results = {{type="item", name="supercomputer", amount = 1}},
     enabled = false,
   },
@@ -25,6 +33,14 @@ data:extend({
     {
       {type = "item", name = "assembling-machine-3", amount = 1},
       {type = "item", name = "productivity-module-2", amount = 5},
+    },
+    surface_conditions =
+    {
+      {
+        property = "magnetic-field",
+        min = 0,
+        max = 5
+      }
     },
     results = {{type = "item", name = "data-processor", amount = 1}},
     enabled = false,

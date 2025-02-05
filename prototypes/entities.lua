@@ -131,13 +131,13 @@ data:extend({
     type = "lab",
     name = "supercomputer",
     icon = "__Moshine__/graphics/icons/supercomputer.png",
-    minable = {mining_time = 0.5, result = "supercomputer"},
+    minable = {mining_time = 3, result = "supercomputer"},
     subgroup = "production-machine",
     order = "z-a[z-lab]",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     collision_box = { { -2.65, -1.9 }, { 2.65, 3.2 } },
     selection_box = { { -3, -2 }, { 3, 3.4 } },
-    drawing_box = { { -3, -3 }, { 3, 3 } },
+    drawing_box = { { -2, -2 }, { 2, 2 } },
     max_health = 900,
     impact_category = "metal",
     alert_icon_shift = util.by_pixel(0, -12),
@@ -148,7 +148,7 @@ data:extend({
     {
       {
         type = "fire",
-        percent = 70
+        percent = 99
       }
     },
     --[[surface_conditions =
@@ -159,6 +159,14 @@ data:extend({
         max = 1000
       }
     },]]
+    surface_conditions =
+    {
+      {
+        property = "magnetic-field",
+        min = 0,
+        max = 5
+      }
+    },
     damaged_trigger_effect = hit_effects.entity(),
     on_animation = planetary_teleporter_on_animation,
     off_animation = planetary_teleporter_off_animation,
@@ -166,7 +174,13 @@ data:extend({
     close_sound = sounds.machine_close,
     working_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/biolab/biolab-loop.ogg", volume = 0.7},
+      sound =
+      {
+        filename = "__base__/sound/accumulator-working.ogg",
+        volume = 0.4,
+        modifiers = volume_multiplier("main-menu", 1.44),
+        audible_distance_modifier = 0.5
+      },
       sound_accents =
       {
         {sound = {variations = sound_variations("__space-age__/sound/entity/spawner/spawner-respirator-push", 3, 0.3)}, frame = 1, audible_distance_modifier = 0.6},
@@ -221,7 +235,7 @@ data:extend({
     name = "data-processor",
     icon = "__Moshine__/graphics/icons/data-processor.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 0.2, result = "data-processor"},
+    minable = {mining_time = 1, result = "data-processor"},
     crafting_categories = {"data-processing"},
     max_health = 300,
     corpse = "assembling-machine-1-remnants",
@@ -231,7 +245,7 @@ data:extend({
     {
       {
         type = "fire",
-        percent = 70
+        percent = 98
       }
     },
     fluid_boxes =
@@ -396,11 +410,18 @@ data:extend({
     impact_category = "metal",
     working_sound =
     {
-      sound = { filename = "__base__/sound/assembling-machine-t1-1.ogg", volume = 0.5 },
-      audible_distance_modifier = 0.5,
+      sound =
+      {
+        filename = "__base__/sound/accumulator-working.ogg",
+        volume = 0.4,
+        modifiers = volume_multiplier("main-menu", 1.44),
+        audible_distance_modifier = 0.5
+      },
+      match_volume_to_activity = true,
+      activity_to_volume_modifiers = {offset = 2, inverted = true},
       fade_in_ticks = 4,
       fade_out_ticks = 20
-    }
+    },
   },
 
 
