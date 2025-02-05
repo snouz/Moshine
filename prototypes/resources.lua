@@ -290,8 +290,8 @@ data:extend({
     flags = {"placeable-neutral"},
     order="a-b-c",
     infinite = true,
-    minimum = 6000000,
-    normal = 30000000,
+    minimum = 600000,
+    normal = 3000000,
     highlight = false,
     tree_removal_probability = 0.8,
     tree_removal_max_distance = 32 * 32,
@@ -300,7 +300,7 @@ data:extend({
     minable =
     {
       mining_particle = "iron-ore-particle",
-      mining_time = 1,
+      mining_time = 2,
       results =
       {
         {
@@ -362,7 +362,7 @@ data:extend({
     category = "basic-solid",
     walking_sound = sounds.ore,
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-    selection_box = {{-0.4, -0.4}, {0.4, 0.4}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     randomize_visual_position = true,
     --[[autoplace = resource_autoplace.resource_autoplace_settings
     {
@@ -387,7 +387,7 @@ data:extend({
     {
       control = "multi_ore",
       order = "b",
-      additional_richness = 22000, -- this increases the total everywhere, so base_density needs to be decreased to compensate
+      additional_richness = 2200, -- this increases the total everywhere, so base_density needs to be decreased to compensate
       has_starting_area_placement = true,
       probability_expression = "(control:multi_ore:size > 0)\z
                                 * (1 - fulgora_starting_mask)\z
@@ -568,10 +568,10 @@ data:extend({
     order="a-b-a",
     infinite = true,
     highlight = true,
-    minimum = 60000000,
-    normal = 300000000,
+    minimum = 600000,
+    normal = 3000000,
     infinite_depletion_amount = 10,
-    resource_patch_search_radius = 12,
+    resource_patch_search_radius = 10,
     tree_removal_probability = 0.7,
     tree_removal_max_distance = 32 * 32,
     draw_stateless_visualisation_under_building = false,
@@ -692,8 +692,8 @@ data:extend({
     order="a-b-a",
     infinite = true,
     highlight = true,
-    minimum = 6000000,
-    normal = 30000000,
+    minimum = 70000,
+    normal = 7000000,
     infinite_depletion_amount = 10,
     resource_patch_search_radius = 9,
     tree_removal_probability = 0.7,

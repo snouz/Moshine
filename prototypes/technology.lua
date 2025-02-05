@@ -54,14 +54,14 @@ data:extend({
 
 {
   type = "technology",
-  name = "moshine-tech-heat-shielding",
-  icon = "__Moshine__/graphics/technology/moshine-tech-heat-shielding.png",
+  name = "moshine-tech-silicon-carbide",
+  icon = "__Moshine__/graphics/technology/moshine-tech-silicon-carbide.png",
   icon_size = 256,
   effects =
   {
     {
       type = "unlock-recipe",
-      recipe = "heat-shielding"
+      recipe = "silicon-carbide"
     },
   },
   prerequisites = {"moshine-tech-silicon"},
@@ -166,7 +166,7 @@ data:extend({
       recipe = "supercomputer"
     },
   },
-  prerequisites = {"moshine-tech-hard-drive", "moshine-tech-heat-shielding"},
+  prerequisites = {"moshine-tech-hard-drive", "moshine-tech-silicon-carbide"},
   unit =
   {
     count = 500,

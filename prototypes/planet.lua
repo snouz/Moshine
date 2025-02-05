@@ -438,9 +438,9 @@ data:extend({
 
     starmap_icon = "__Moshine__/graphics/icons/starmap-planet-moshine.png",
     starmap_icon_size = 512,
-    gravity_pull = 15,
-    distance = 5,
-    orientation = 0.2,
+    gravity_pull = 10,
+    distance = 6,
+    orientation = 0.05,
     magnitude = 0.9,
     order = "e[moshine]",
     subgroup = "planets",
@@ -461,10 +461,11 @@ data:extend({
     surface_properties =
     {
       ["day-night-cycle"] = 15 * minute,
-      ["magnetic-field"] = 25,
+      ["magnetic-field"] = 1,
       ["solar-power"] = 4000,
-      pressure = 800,
-      gravity = 8
+      pressure = 700,
+      gravity = 7,
+      temperature = 369,
     },
     asteroid_spawn_influence = 1,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus, 0.9),
@@ -482,7 +483,7 @@ data:extend({
       semi_persistent =
       {
         {
-          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-rumble", 3, 1.5)},
+          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/distant-rumble", 3, 1.6)},
           delay_mean_seconds = 10,
           delay_variance_seconds = 5
         },
@@ -585,7 +586,7 @@ data:extend({
     from = "nauvis",
     to = "moshine",
     order = "a",
-    length = 3000,
+    length = 17000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
   },
   {
@@ -595,7 +596,7 @@ data:extend({
     from = "vulcanus",
     to = "moshine",
     order = "a",
-    length = 7000,
+    length = 3000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
   },
 })
