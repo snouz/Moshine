@@ -284,7 +284,7 @@ data:extend({
     },
     pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-crater/vulcanus-crater-", "huge-", 512, 14)
   },
-  {
+  --[[{
     name = "moshine-pumice-relief-decal",
     type = "optimized-decorative",
     order = "a[vulcanus]-b[decorative]",
@@ -298,7 +298,7 @@ data:extend({
       probability_expression = "pumice_relief_decal"
     },
     pictures = get_decal_pictures("__Moshine__/graphics/decorative/vulcanus-relief-decal/vulcanus-pumice-relief-", "", 1024, 19)
-  },
+  },]]
 
 
 

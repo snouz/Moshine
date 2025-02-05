@@ -7,7 +7,8 @@ Custom terrain generation, custom music, a tech tree, some original challenges. 
 ![image](https://i.imgur.com/haylrXm.png)
 ![image](https://i.imgur.com/SUHonr6.png)![image](https://i.imgur.com/CARDwQ6.png)
 
-
+# FEEDBACK ENCOURAGED
+- Any sort of feedback is immensely welcome, be it corrections, balance, ideas, criticism, contributions... From here or on github issues. Note that this is the base for potentially more content, so future updates might break your setup by changing recipes or adding mechanics...
 
 # LICENCE
 - Some graphics (supercomputer, data extractor, mixed ore icon, sand icons) include modified versions of Krastorio2 and are under the GNU LGPLv3 license.
