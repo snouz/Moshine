@@ -129,6 +129,7 @@ data:extend({
     energy_required = 5,
     ingredients = {
       {type = "item", name = "neodymium", amount = 5},
+      {type = "fluid", name = "molten-iron", amount = 2},
     },
     results = {{type = "item", name = "magnet", amount = 1}},
     allow_productivity = true,

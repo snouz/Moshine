@@ -2,7 +2,7 @@
 
 A very hot desert planet with almost no magnetic field (propice to precise computations). Rich in metals (neodymium, silicon...). The Fulgorans deployed some scientific outposts here that you can harvest to establish a dataset.
 
-Custom terrain generation, custom music, a tech tree, some original challenges. Unlock electric trains, big solar panels, big accumulators, a supercomputer...
+Custom terrain generation, custom music, a tech tree, some original challenges, and no modification to the base Space Age, so it is safe to add to your existing save. Unlock electric trains, big solar panels, big accumulators, a supercomputer...
 
 ![image](https://i.imgur.com/haylrXm.png)
 ![image](https://i.imgur.com/SUHonr6.png)![image](https://i.imgur.com/CARDwQ6.png)

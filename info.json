@@ -1,7 +1,7 @@
 {
   "name": "Moshine",
-  "version": "0.1.0",
-  "title": "Moshine (WIP, BETA)",
+  "version": "0.1.1",
+  "title": "Moshine (WIP)",
   "author": "snouz",
   "homepage": "https://github.com/snouz/Moshine",
   "description": "(WIP, more content to come, BETA) Moshine is a hot desert planet with no magnetic field. Rich in metals (neodymium, silicon...). The Fulgorans deployed some scientific outposts here that you can harvest to develop an AI.",
@@ -9,10 +9,10 @@
   "dependencies": [
     "base",
     "space-age",
-    "? PlanetsLib",
-    "snouz-big-accumulator",
-    "snouz-big-solar-panel",
-    "se-space-trains"
+    "Moshine-assets >= 0.1.0",
+    "snouz-big-accumulator >= 1.0.3",
+    "snouz-big-solar-panel >= 1.0.4",
+    "se-space-trains >= 1.0.4"
   ],
   "space_travel_required": true,
   "spoiling_required": true

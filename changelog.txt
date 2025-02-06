@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2025-02-05
+  Changes:
+    - Moved all planet assets to a separate mod (Moshine-assets)
+    - Magnet recipe use molten iron
+    - Added tech descriptions
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2025-02-05
+  Info:
+    - Initial release
