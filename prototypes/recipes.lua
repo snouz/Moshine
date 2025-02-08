@@ -33,6 +33,7 @@ data:extend({
     {
       {type = "item", name = "assembling-machine-3", amount = 1},
       {type = "item", name = "productivity-module-2", amount = 5},
+      {type = "item", name = "silicon-carbide", amount = 5},
     },
     surface_conditions =
     {

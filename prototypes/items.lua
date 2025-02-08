@@ -129,7 +129,7 @@ data:extend({
     weight = 25*kg,
   },
   {
-    type = "item",
+    type = "tool",
     name = "hard-drive",
     icon = "__Moshine__/graphics/icons/hard-drive.png",
     subgroup = "moshine-processes",
@@ -138,6 +138,10 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value",
     stack_size = 40,
     weight = 25*kg,
   },
@@ -201,7 +205,7 @@ data:extend({
     }
   },
   {
-    type = "item",
+    type = "tool",
     name = "model-stable",
     icon = "__Moshine__/graphics/icons/model-stable.png",
     subgroup = "moshine-processes",
@@ -211,6 +215,10 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
     stack_size = 20,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value",
     weight = 50*kg,
   },
 })

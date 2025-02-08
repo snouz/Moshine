@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.5
+Date: 2025-02-07
+  Changes:
+    - Forced update of Moshine-assets (fixes)
+    - Added Silicon carbide to the Data processor recipe
+  Bugfixes:
+    - Fixed crash when researching with hard drive or model in Supercomputer
+    - Fixed compatibility with AAI Industries (made silicon a normal crafting recipe in that case only)
+---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 2025-02-07
   Changes:
