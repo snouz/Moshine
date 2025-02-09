@@ -177,7 +177,7 @@ data:extend({
     spoil_ticks = 0.5 * minute,
     spoil_to_trigger_result =
     {
-      items_per_trigger = 5, -- per 5 items the trigger is run
+      items_per_trigger = 1, -- per 5 items the trigger is run
       trigger =
       {
         type = "direct",

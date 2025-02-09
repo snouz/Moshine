@@ -21,7 +21,7 @@ local planetary_teleporter_on_animation = {
       repeat_count = 20,
       draw_as_shadow = true,
       animation_speed = 0.5,
-      shift = { 1.9, 1.2 },
+      shift = { 1.9, 1.2 - 0.5},
     },
     --BUILDING
     {
@@ -31,6 +31,7 @@ local planetary_teleporter_on_animation = {
       height = 475,
       scale = 0.5,
       repeat_count = 20,
+      shift = {0,-0.5},
       animation_speed = 0.5,
     },
     -- GLOWS
@@ -45,6 +46,7 @@ local planetary_teleporter_on_animation = {
       animation_speed = 0.5,
       draw_as_glow = true,
       fadeout = true,
+      shift = {0,-0.5},
       blend_mode = "additive-soft",
     },
     -- LIGHTS
@@ -58,6 +60,7 @@ local planetary_teleporter_on_animation = {
       line_length = 5,
       animation_speed = 0.5,
       draw_as_light = true,
+      shift = {0,-0.5},
       blend_mode = "additive-soft",
     },
   },
@@ -76,7 +79,7 @@ local planetary_teleporter_off_animation = {
       repeat_count = 20,
       draw_as_shadow = true,
       animation_speed = 0.5,
-      shift = { 1.9, 1.2 },
+      shift = { 1.9, 1.2 -0.5 },
     },
     --BUILDING
     {
@@ -86,6 +89,7 @@ local planetary_teleporter_off_animation = {
       height = 475,
       scale = 0.5,
       repeat_count = 20,
+      shift = {0,-0.5},
       animation_speed = 0.5,
     },
   },
@@ -135,9 +139,9 @@ data:extend({
     subgroup = "production-machine",
     order = "z-a[z-lab]",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    collision_box = { { -2.65, -1.9 }, { 2.65, 3.2 } },
-    selection_box = { { -3, -2 }, { 3, 3.4 } },
-    drawing_box = { { -2, -2 }, { 2, 2 } },
+    collision_box = { { -2.7, -2.7 }, { 2.7, 2.7 } },
+    selection_box = { { -3, -3 }, { 3, 3 } },
+    drawing_box = { { -2.5, -2.5 }, { 2.5, 2.5 } },
     max_health = 900,
     impact_category = "metal",
     alert_icon_shift = util.by_pixel(0, -12),
@@ -170,32 +174,29 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity(),
     on_animation = planetary_teleporter_on_animation,
     off_animation = planetary_teleporter_off_animation,
-    open_sound = sounds.machine_open,
-    close_sound = sounds.machine_close,
+    open_sound = { filename = "__base__/sound/open-close/lab-open.ogg", volume = 0.6 },
+    close_sound = { filename = "__base__/sound/open-close/lab-close.ogg", volume = 0.6 },
     working_sound =
     {
       sound =
       {
-        filename = "__base__/sound/accumulator-working.ogg",
-        volume = 0.4,
-        modifiers = volume_multiplier("main-menu", 1.44),
-        audible_distance_modifier = 0.5
+        filename = "__base__/sound/lab.ogg",
+        volume = 0.7,
+        modifiers = {volume_multiplier("main-menu", 2.2), volume_multiplier("tips-and-tricks", 0.8)},
+        audible_distance_modifier = 0.7,
       },
-      sound_accents =
-      {
-        {sound = {variations = sound_variations("__space-age__/sound/entity/spawner/spawner-respirator-push", 3, 0.3)}, frame = 1, audible_distance_modifier = 0.6},
-        {sound = {variations = sound_variations("__space-age__/sound/entity/biolab/biolab-beaker", 7, 0.8)}, frame = 1, audible_distance_modifier = 0.4},
-        {sound = {variations = sound_variations("__space-age__/sound/entity/biolab/biolab-centrifuge", 4, 0.7)}, frame = 14, audible_distance_modifier = 0.3},
-        {sound = {variations = sound_variations("__space-age__/sound/entity/spawner/spawner-respirator-pull", 3, 0.3)}, frame = 17, audible_distance_modifier = 0.6},
-      },
-      max_sounds_per_type = 2,
+      fade_in_ticks = 4,
+      fade_out_ticks = 20
     },
     researching_speed = 2,
     inputs =
     {
+      -- declared in data-final-fixes.lua
+      
+      --[[
       "hard-drive",
       "model-stable"
-      --[[
+      
       "automation-science-pack",
       "logistic-science-pack",
       "military-science-pack",
@@ -461,7 +462,7 @@ data:extend({
     icon = "__Moshine__/graphics/icons/optical-fiber.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 0.1, result = "optical-fiber"},
-    max_health = 100,
+    max_health = 10,
     corpse = "opticalfiber-remnants",
     dying_explosion = "pipe-explosion",
     icon_draw_specification = {scale = 0},
@@ -482,7 +483,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity(),
     fluid_box =
     {
-      volume = 100,
+      volume = 1,
       pipe_covers = opticalfibercoverspictures(), -- in case a real pipe is connected to a ghost
       filter = "raw-data",
       pipe_connections =

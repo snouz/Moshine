@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.6
+Date: 2025-02-09
+  Changes:
+    - (Thanks to all the players who joined the beta and gave feedback)
+    - Supercomputer sound changed to lab (instead of biolab)
+    - Supercomputer won't add science packs added by other mods when they add it to all labs
+    - Reduced crafting time for models (red/white cubes)
+    - Reduced health and data quantity on optical fiber
+    - Changed unstable model to 10s and stable to 40s
+    - Unstable model costs only 3D storage, but 3D storage costs 30 magnets
+    - Aligned to Moshine-assets version
+  Bugfixes
+    - Fixed unstable models never actually spawning
+    - Fixed Supercomputer's funky collision/selection box (made it 6x6 square)
+---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 2025-02-07
   Changes:

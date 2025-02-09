@@ -156,7 +156,7 @@ data:extend({
     category = "electronics",
     energy_required = 30,
     ingredients = {
-      {type = "item", name = "magnet", amount = 5},
+      {type = "item", name = "magnet", amount = 30},
       {type = "item", name = "silicon-cell", amount = 30},
       {type = "item", name = "hard-drive", amount = 4},
     },
@@ -177,10 +177,10 @@ data:extend({
     type = "recipe",
     name = "model-unstable",
     category = "data-processing",
-    energy_required = 300,
+    energy_required = 10,
     ingredients = {
+      {type = "item", name = "3d-data-storage", amount = 1},
       {type = "fluid", name = "raw-data", amount = 500},
-      {type = "item", name = "3d-data-storage", amount = 5},
     },
     results = {{type = "item", name = "model-unstable", amount = 1}},
     enabled = false,
@@ -189,7 +189,7 @@ data:extend({
     type = "recipe",
     name = "model-stable",
     category = "data-processing",
-    energy_required = 300,
+    energy_required = 40,
     ingredients = {
       {type = "item", name = "model-unstable", amount = 1},
       {type = "fluid", name = "raw-data", amount = 1000},
