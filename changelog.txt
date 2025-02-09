@@ -10,6 +10,10 @@ Date: 2025-02-09
     - Changed unstable model to 10s and stable to 40s
     - Unstable model costs only 3D storage, but 3D storage costs 30 magnets
     - Aligned to Moshine-assets version
+    - Dramatically reduced the yield of mixed ore patches
+    - 10x less neodymium dropped (drop 273 at once but very rarely)
+    - Added a recipe for Petroleum (using sand, carbon, sulfur and steam)
+    - Lowered luminosity a bit, except at noon
   Bugfixes
     - Fixed unstable models never actually spawning
     - Fixed Supercomputer's funky collision/selection box (made it 6x6 square)
