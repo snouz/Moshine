@@ -137,7 +137,7 @@ data:extend({
     icon = "__Moshine__/graphics/icons/supercomputer.png",
     minable = {mining_time = 3, result = "supercomputer"},
     subgroup = "production-machine",
-    order = "z-a[z-lab]",
+    order = "z-zz[z-lab]",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     collision_box = { { -2.7, -2.7 }, { 2.7, 2.7 } },
     selection_box = { { -3, -3 }, { 3, 3 } },
