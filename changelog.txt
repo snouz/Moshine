@@ -2,7 +2,8 @@
 Version: 0.1.6
 Date: 2025-02-09
   Changes:
-    - (Thanks to all the players who joined the beta and gave feedback)
+    - (Thank you to all the players who joined the beta and gave feedback)
+    - Removed the ability to build accumulators on the planet
     - Supercomputer sound changed to lab (instead of biolab)
     - Supercomputer won't add science packs added by other mods when they add it to all labs
     - Reduced crafting time for models (red/white cubes)
@@ -14,7 +15,7 @@ Date: 2025-02-09
     - 10x less neodymium dropped (drop 273 at once but very rarely)
     - Added a recipe for Petroleum (using sand, carbon, sulfur and steam)
     - Lowered luminosity a bit, except at noon
-  Bugfixes
+  Bugfixes:
     - Fixed unstable models never actually spawning
     - Fixed Supercomputer's funky collision/selection box (made it 6x6 square)
 ---------------------------------------------------------------------------------------------------
