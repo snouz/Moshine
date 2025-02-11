@@ -74,6 +74,47 @@ data:extend({
   },
 
 
+  {
+    type = "recipe",
+    name = "computer-farm",
+    energy_required = 10,
+    ingredients =
+    {
+      {type = "item", name = "steel-plate", amount = 10},
+      {type = "item", name = "electronic-circuit", amount = 3},
+      {type = "item", name = "spoilage", amount = 20},
+      {type = "item", name = "landfill", amount = 1}
+    },
+    results = {{type="item", name="computer-farm", amount=1}},
+    enabled = true
+  },
+
+  {
+    type = "recipe",
+    name = "computer-farm-server",
+    category = "crafting",
+    energy_required = 5,
+    ingredients = {
+      {type = "item", name = "sand", amount = 1}
+    },
+    results = {{type = "item", name = "computer-farm-server", amount = 1}},
+    allow_productivity = true,
+    enabled = true,
+  },
+  {
+    type = "recipe",
+    name = "coolingmat",
+    energy_required = 1,
+    category = "crafting-with-fluid",
+    ingredients =
+    {
+      {type = "item", name = "stone-brick", amount = 5},
+    },
+    results = {{type="item", name="coolingmat", amount=10}},
+    allow_productivity = false,
+    enabled = true,
+  },
+
 -- post-nauvis
 
   {

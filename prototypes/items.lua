@@ -73,6 +73,63 @@ data:extend({
     random_tint_color = item_tints.iron_rust
   },
 
+  {
+    type = "item",
+    name = "computer-farm",
+    icon = "__space-age__/graphics/icons/agricultural-tower.png",
+    subgroup = "moshine-production-machine",
+    order = "ffj",
+    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
+    pick_sound = item_sounds.mechanical_large_inventory_pickup,
+    drop_sound = item_sounds.mechanical_large_inventory_move,
+    place_result = "computer-farm",
+    stack_size = 20,
+    default_import_location = "moshine"
+  },
+
+  {
+    type = "item",
+    name = "computer-farm-server",
+    --localised_name = {"item-name.yumako-seed"},
+    --localised_description = {"item-description.yumako-seed"},
+    icon = "__space-age__/graphics/icons/asteroid-collector.png",
+    pictures =
+    {
+      { size = 64, filename = "__space-age__/graphics/icons/asteroid-collector.png", scale = 0.5, mipmap_count = 4 },
+    },
+    subgroup = "moshine-processes",
+    order = "a[seeds]-a[yumako-seed]",
+    plant_result = "computer-farm-server",
+    inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+    pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+    drop_sound = space_age_item_sounds.agriculture_inventory_move,
+    stack_size = 10,
+    default_import_location = "moshine",
+    weight = 10 * kg,
+    fuel_category = "chemical",
+    fuel_value = "4MJ"
+  },
+
+
+  {
+    type = "item",
+    name = "coolingmat",
+    icon = "__Moshine__/graphics/icons/coolingmat.png",
+    subgroup = "terrain",
+    order = "b[concrete]-a[plain]",
+    inventory_move_sound = item_sounds.concrete_inventory_move,
+    pick_sound = item_sounds.concrete_inventory_pickup,
+    drop_sound = item_sounds.concrete_inventory_move,
+    stack_size = 100,
+    weight = 10 * kg,
+    place_as_tile =
+    {
+      result = "coolingmat",
+      condition_size = 1,
+      condition = {layers={water_tile=true}}
+    },
+    random_tint_color = item_tints.bluish_concrete
+  },
 
 --- items
   {
