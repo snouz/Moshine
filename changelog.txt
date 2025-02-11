@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.7
-Date: 2025-02-10
+Version: 0.2.0
+Date: 2025-02-11
   Changes:
+    - Added Quantum-processor productivity infinite research (gives a reward at the end of the planet, makes the experience complete until more content is made in the future)
     - Made supercomputer display after biolab in reseach
+    - Forced update of Moshine-assets (fixed recycling coal would give sand/sulfur/carbon, Molten-iron lava more blue, mixed ore non-infinite)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 2025-02-09

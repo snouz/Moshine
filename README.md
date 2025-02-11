@@ -19,6 +19,12 @@ The soundtrack is by these two albums by Anemoia: [Forever](https://freemusicarc
 # Intermediates and rockets
 ![Intermediates](https://i.imgur.com/s3dTolH.png)
 
+# Rewards
+- SE space trains
+- Big accumulators
+- Big solar panels
+- Quantum-processor infinite productivity
+
 ![screenshot](https://i.imgur.com/0jmHYaH.png)
 
 # LICENCE
