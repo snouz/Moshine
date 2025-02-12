@@ -1,4 +1,4 @@
-# Moshine
+# MOSHINE
 
 -- Doesn't affect vanilla, addable at any time --
 
@@ -12,8 +12,9 @@ Custom terrain generation, custom music, a tech tree, some original challenges. 
 
 Any sort of feedback is immensely welcome, be it corrections, balance, ideas, criticism, contributions, or even questions... From here or on github issues. Note that this is the base for potentially more content, so future updates might break your setup by changing recipes or adding mechanics...
 
-# Music
-The soundtrack is by these two albums by Anemoia: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6)
+# CREDITS
+- The soundtrack is these two albums by Anemoia: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6)
+- Chinese translation by rlcyyg1108
 
 # Main mod (phase 1, the rest TBD)
 ![phase1](https://i.imgur.com/7KRp4Dn.png)
