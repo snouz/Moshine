@@ -1,8 +1,10 @@
 # Moshine
 
+-- Doesn't affect vanilla, addable at any time --
+
 A very hot desert planet with almost no magnetic field (propice to precise computations). Rich in metals (neodymium, silicon...). The Fulgorans deployed some scientific outposts here that you can harvest to establish a dataset.
 
-Custom terrain generation, custom music, a tech tree, some original challenges, and no modification to the base Space Age, so it is safe to add to your existing save. It unlocks after Vulcanus, and you should not be able to get stranded. Unlock electric trains, big solar panels, big accumulators, a supercomputer...
+Custom terrain generation, custom music, a tech tree, some original challenges. Unlocks after Vulcanus, and you should not be able to get stranded. Unlock electric trains, big solar panels, big accumulators, a supercomputer...
 
 # FEEDBACK ENCOURAGED!
 
@@ -17,7 +19,7 @@ The soundtrack is by these two albums by Anemoia: [Forever](https://freemusicarc
 ![phase1](https://i.imgur.com/7KRp4Dn.png)
 
 # Intermediates and rockets
-![Intermediates](https://i.imgur.com/s3dTolH.png)
+![Intermediates](https://i.imgur.com/m1aMr2V.png)
 
 # Rewards
 - SE space trains
