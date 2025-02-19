@@ -1,0 +1,14 @@
+{
+  "recipe":
+  [
+    ["optical-fiber", "optical-cable"]
+  ],
+  "item":
+  [
+    ["optical-fiber", "optical-cable"]
+  ],
+  "pipe":
+  [
+    ["optical-fiber", "optical-cable"]
+  ]
+}

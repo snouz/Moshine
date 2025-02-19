@@ -221,7 +221,7 @@ data:extend({
     },
     energy_usage = "300kW",
     module_slots = 4,
-    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    allowed_effects = {"consumption", "speed", "pollution", "quality"}, --"productivity"
     icons_positioning =
     {
       {inventory_index = defines.inventory.lab_modules, shift = {0, 1.6}},
@@ -258,7 +258,8 @@ data:extend({
         volume = 1000,
         filter = "raw-data",
         pipe_connections = {{ flow_direction="input-output", direction = defines.direction.north, position = {0, -1}, connection_category = "raw-data"}},
-        secondary_draw_orders = { north = -1 }
+        secondary_draw_orders = { north = -1 },
+        max_pipeline_extent = 4294967294,
       },
       {
         production_type = "input",
@@ -267,7 +268,8 @@ data:extend({
         volume = 1000,
         filter = "raw-data",
         pipe_connections = {{ flow_direction="input-output", direction = defines.direction.south, position = {0, 1}, connection_category = "raw-data"}},
-        secondary_draw_orders = { north = -1 }
+        secondary_draw_orders = { north = -1 },
+        max_pipeline_extent = 4294967294,
       },
       {
         production_type = "input",
@@ -276,7 +278,8 @@ data:extend({
         volume = 1000,
         filter = "raw-data",
         pipe_connections = {{ flow_direction="input-output", direction = defines.direction.east, position = {1, 0}, connection_category = "raw-data"}},
-        secondary_draw_orders = { north = -1 }
+        secondary_draw_orders = { north = -1 },
+        max_pipeline_extent = 4294967294,
       },
       {
         production_type = "input",
@@ -285,7 +288,8 @@ data:extend({
         volume = 1000,
         filter = "raw-data",
         pipe_connections = {{ flow_direction="input-output", direction = defines.direction.west, position = {-1, 0}, connection_category = "raw-data"}},
-        secondary_draw_orders = { north = -1 }
+        secondary_draw_orders = { north = -1 },
+        max_pipeline_extent = 4294967294,
       },
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
@@ -458,10 +462,10 @@ data:extend({
 
   {
     type = "pipe",
-    name = "optical-fiber",
+    name = "optical-cable",
     icon = "__Moshine__/graphics/icons/optical-fiber.png",
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.1, result = "optical-fiber"},
+    minable = {mining_time = 0.1, result = "optical-cable"},
     max_health = 10,
     corpse = "opticalfiber-remnants",
     dying_explosion = "pipe-explosion",
@@ -477,7 +481,7 @@ data:extend({
         percent = 50
       }
     },
-    fast_replaceable_group = "optical-fiber",
+    fast_replaceable_group = "optical-cable",
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{-0.4, -0.4}, {0.4, 0.4}},
     damaged_trigger_effect = hit_effects.entity(),
@@ -493,7 +497,8 @@ data:extend({
         { direction = defines.direction.south, position = {0, 0}, connection_category = "raw-data" },
         { direction = defines.direction.west, position = {0, 0}, connection_category = "raw-data" }
       },
-      hide_connection_info = true
+      hide_connection_info = true,
+      max_pipeline_extent = 4294967294,
     },
     impact_category = "glass",
     pictures = opticalfiberpictures(),
@@ -535,7 +540,8 @@ data:extend({
     output_fluid_box =
     {
       volume = 1000,
-      --pipe_covers = pipecoverspictures(),
+      --pipe_covers = pipecoverspictures(),,
+      max_pipeline_extent = 4294967294,
       pipe_connections =
       {
         {

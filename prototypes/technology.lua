@@ -165,7 +165,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "optical-fiber"
+        recipe = "optical-cable"
       },
     },
     prerequisites = {"moshine-tech-supercomputer"},

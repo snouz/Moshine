@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 2025-02-19
+  Changes:
+    - (in Moshine-assets) Modified mixed-ores ratios (Neodymium*5, sand-, sulfur-, coal+, copper+)
+    - (in Moshine-assets) Petroleum custom recipe changed (coal required instead of carbon, and outputs carbon instad of coal)
+    - Made optical fiber length (almost) infinite
+    - Disallow productivity modules in supercomputers
+  Compatibility:
+    - Added compatibility with Silica & Silicon (thanks to Dh4mpyr)
+  Locale:
+    - Chinese translation by rlcyyg1108
+    - Russian translation by GafarovMaxim
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 2025-02-11
   Compatibility:

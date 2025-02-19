@@ -1,6 +1,6 @@
 {
   "name": "Moshine",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "title": "Moshine",
   "author": "snouz",
   "homepage": "https://github.com/snouz/Moshine",
@@ -9,10 +9,11 @@
   "dependencies": [
     "base",
     "space-age",
-    "Moshine-assets >= 0.3.5",
+    "Moshine-assets >= 0.3.6",
     "snouz-big-accumulator >= 1.0.3",
     "snouz-big-solar-panel >= 1.0.4",
-    "se-space-trains >= 1.0.4"
+    "se-space-trains >= 1.0.4",
+    "(?) bzsilicon"
   ],
   "space_travel_required": true,
   "spoiling_required": true
