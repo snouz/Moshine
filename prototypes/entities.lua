@@ -259,7 +259,7 @@ data:extend({
         filter = "raw-data",
         pipe_connections = {{ flow_direction="input-output", direction = defines.direction.north, position = {0, -1}, connection_category = "raw-data"}},
         secondary_draw_orders = { north = -1 },
-        max_pipeline_extent = 4294967294,
+        max_pipeline_extent = 1000000000,
       },
       {
         production_type = "input",
@@ -269,7 +269,7 @@ data:extend({
         filter = "raw-data",
         pipe_connections = {{ flow_direction="input-output", direction = defines.direction.south, position = {0, 1}, connection_category = "raw-data"}},
         secondary_draw_orders = { north = -1 },
-        max_pipeline_extent = 4294967294,
+        max_pipeline_extent = 1000000000,
       },
       {
         production_type = "input",
@@ -279,7 +279,7 @@ data:extend({
         filter = "raw-data",
         pipe_connections = {{ flow_direction="input-output", direction = defines.direction.east, position = {1, 0}, connection_category = "raw-data"}},
         secondary_draw_orders = { north = -1 },
-        max_pipeline_extent = 4294967294,
+        max_pipeline_extent = 1000000000,
       },
       {
         production_type = "input",
@@ -289,7 +289,7 @@ data:extend({
         filter = "raw-data",
         pipe_connections = {{ flow_direction="input-output", direction = defines.direction.west, position = {-1, 0}, connection_category = "raw-data"}},
         secondary_draw_orders = { north = -1 },
-        max_pipeline_extent = 4294967294,
+        max_pipeline_extent = 1000000000,
       },
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
@@ -498,7 +498,7 @@ data:extend({
         { direction = defines.direction.west, position = {0, 0}, connection_category = "raw-data" }
       },
       hide_connection_info = true,
-      max_pipeline_extent = 4294967294,
+      max_pipeline_extent = 1000000000,
     },
     impact_category = "glass",
     pictures = opticalfiberpictures(),
@@ -541,7 +541,7 @@ data:extend({
     {
       volume = 1000,
       --pipe_covers = pipecoverspictures(),,
-      max_pipeline_extent = 4294967294,
+      max_pipeline_extent = 1000000000,
       pipe_connections =
       {
         {
