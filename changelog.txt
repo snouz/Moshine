@@ -1,9 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 2025-02-19
+  Bugfixes:
+    - Fixed removal of placed optical fibers
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 2025-02-19
   Changes:
     - (in Moshine-assets) Modified mixed-ores ratios (Neodymium*5, sand-, sulfur-, coal+, copper+)
     - (in Moshine-assets) Petroleum custom recipe changed (coal required instead of carbon, and outputs carbon instad of coal)
+    - (in Moshine-assets) Prevented nuclear/fusion reactors from being built on the planet
     - Made optical fiber length (almost) infinite
     - Disallow productivity modules in supercomputers
   Compatibility:
