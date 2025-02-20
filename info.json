@@ -1,18 +1,19 @@
 {
   "name": "Moshine",
-  "version": "0.1.7",
-  "title": "Moshine (WIP)",
+  "version": "0.2.2",
+  "title": "Moshine",
   "author": "snouz",
   "homepage": "https://github.com/snouz/Moshine",
-  "description": "(WIP) Hot planet, 12 technologies, 2 new minerals, 4 entities, 7 items, custom terrain and music, unique challenges...",
+  "description": "Hot planet, 13 technologies, 2 new minerals, 4 entities, 7 items, custom terrain and music, unique challenges... (more content in the future)",
   "factorio_version": "2.0",
   "dependencies": [
     "base",
     "space-age",
-    "Moshine-assets >= 0.3.2",
+    "Moshine-assets >= 0.3.6",
     "snouz-big-accumulator >= 1.0.3",
     "snouz-big-solar-panel >= 1.0.4",
-    "se-space-trains >= 1.0.4"
+    "se-space-trains >= 1.0.4",
+    "(?) bzsilicon"
   ],
   "space_travel_required": true,
   "spoiling_required": true

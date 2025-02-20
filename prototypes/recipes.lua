@@ -62,13 +62,13 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "optical-fiber",
+    name = "optical-cable",
     energy_required = 3,
     ingredients = {
       {type = "item", name = "silicon", amount = 1},
       {type = "item", name = "silicon-carbide", amount = 1},
     },
-    results = {{type = "item", name = "optical-fiber", amount = 2}},
+    results = {{type = "item", name = "optical-cable", amount = 2}},
     --allow_productivity = true,
     enabled = false,
   },
