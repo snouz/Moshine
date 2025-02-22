@@ -13,6 +13,23 @@ data:extend({
     order = "ea"
   },
 
+
+--- fluids
+
+
+  {
+    type = "fluid",
+    name = "processing-power-fluid",
+    auto_barrel = false,
+    subgroup = "fluid",
+    fuel_value = "2kJ",
+    default_temperature = 15,
+    base_color = {0, 0.34, 0.6},
+    flow_color = {0.7, 0.7, 0.7},
+    icon = "__Moshine__/graphics/icons/processing-power-fluid.png",
+    order = "a[fluid]-a[water]-a[water]"
+  },
+
 --- entities begin
 
   {
@@ -72,49 +89,49 @@ data:extend({
     weight = 20 * kg,
     random_tint_color = item_tints.iron_rust
   },
-
   {
     type = "item",
-    name = "computer-farm",
-    icon = "__space-age__/graphics/icons/agricultural-tower.png",
+    name = "ai-support",
+    icon = "__Moshine__/graphics/icons/ai-support.png",
     subgroup = "moshine-production-machine",
     order = "ffj",
     inventory_move_sound = item_sounds.mechanical_large_inventory_move,
     pick_sound = item_sounds.mechanical_large_inventory_pickup,
     drop_sound = item_sounds.mechanical_large_inventory_move,
-    place_result = "computer-farm",
+    place_result = "ai-support",
     stack_size = 20,
     default_import_location = "moshine"
   },
-
   {
     type = "item",
-    name = "computer-farm-server",
-    --localised_name = {"item-name.yumako-seed"},
-    --localised_description = {"item-description.yumako-seed"},
-    icon = "__space-age__/graphics/icons/asteroid-collector.png",
-    pictures =
-    {
-      { size = 64, filename = "__space-age__/graphics/icons/asteroid-collector.png", scale = 0.5, mipmap_count = 4 },
-    },
-    subgroup = "moshine-processes",
-    order = "a[seeds]-a[yumako-seed]",
-    plant_result = "computer-farm-server",
-    inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
-    pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
-    drop_sound = space_age_item_sounds.agriculture_inventory_move,
-    stack_size = 10,
-    default_import_location = "moshine",
-    weight = 10 * kg,
-    fuel_category = "chemical",
-    fuel_value = "4MJ"
+    name = "ai-trainer",
+    icon = "__Moshine__/graphics/icons/ai-trainer.png",
+    subgroup = "moshine-production-machine",
+    order = "ffj",
+    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
+    pick_sound = item_sounds.mechanical_large_inventory_pickup,
+    drop_sound = item_sounds.mechanical_large_inventory_move,
+    place_result = "ai-trainer",
+    stack_size = 20,
+    default_import_location = "moshine"
   },
-
-
   {
     type = "item",
-    name = "coolingmat",
-    icon = "__Moshine__/graphics/icons/coolingmat.png",
+    name = "processing-grid",
+    icon = "__Moshine__/graphics/icons/processing-grid.png",
+    subgroup = "moshine-production-machine",
+    order = "ffj",
+    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
+    pick_sound = item_sounds.mechanical_large_inventory_pickup,
+    drop_sound = item_sounds.mechanical_large_inventory_move,
+    place_result = "processing-grid",
+    stack_size = 20,
+    default_import_location = "moshine"
+  },
+  {
+    type = "item",
+    name = "processing-tile",
+    icon = "__Moshine__/graphics/icons/processing-tile.png",
     subgroup = "terrain",
     order = "b[concrete]-a[plain]",
     inventory_move_sound = item_sounds.concrete_inventory_move,
@@ -124,7 +141,7 @@ data:extend({
     weight = 10 * kg,
     place_as_tile =
     {
-      result = "coolingmat",
+      result = "processing-tile",
       condition_size = 1,
       condition = {layers={water_tile=true}}
     },
@@ -278,4 +295,86 @@ data:extend({
     durability_description_value = "description.science-pack-remaining-amount-value",
     weight = 50*kg,
   },
+
+
+-- datacells
+  {
+    type = "item",
+    name = "datacell-empty",
+    icon = "__Moshine__/graphics/icons/datacell-empty.png",
+    subgroup = "moshine-processes",
+    order = "fff",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+
+  {
+    type = "item",
+    name = "datacell-equation",
+    --localised_name = {"item-name.yumako-seed"},
+    --localised_description = {"item-description.yumako-seed"},
+    icon = "__Moshine__/graphics/icons/datacell-equation.png",
+    pictures =
+    {
+      { size = 64, filename = "__space-age__/graphics/icons/asteroid-collector.png", scale = 0.5, mipmap_count = 4 },
+    },
+    subgroup = "moshine-processes",
+    order = "a[seeds]-a[yumako-seed]",
+    plant_result = "processing-grid-process",
+    inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+    pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+    drop_sound = space_age_item_sounds.agriculture_inventory_move,
+    stack_size = 10,
+    default_import_location = "moshine",
+    weight = 10 * kg,
+  },
+
+  {
+    type = "item",
+    name = "datacell-solved-equation",
+    icon = "__Moshine__/graphics/icons/datacell-solved-equation.png",
+    subgroup = "moshine-processes",
+    order = "fff",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+
+  {
+    type = "item",
+    name = "datacell-raw-data",
+    icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
+    subgroup = "moshine-processes",
+    order = "fff",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+
+
+
+  {
+    type = "item",
+    name = "ai-tier-02",
+    icon = "__Moshine__/graphics/icons/ai-tier-02.png",
+    subgroup = "moshine-processes",
+    order = "fff",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+
 })

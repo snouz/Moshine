@@ -1,5 +1,11 @@
 data:extend({
 
+
+  {
+    type = "recipe-category",
+    name = "ai-training"
+  },
+
 -- entities
   {
     type = "recipe",
@@ -76,41 +82,53 @@ data:extend({
 
   {
     type = "recipe",
-    name = "computer-farm",
+    name = "processing-grid",
     energy_required = 10,
     ingredients =
     {
-      {type = "item", name = "steel-plate", amount = 10},
-      {type = "item", name = "electronic-circuit", amount = 3},
-      {type = "item", name = "spoilage", amount = 20},
-      {type = "item", name = "landfill", amount = 1}
+      {type = "item", name = "iron-plate", amount = 1},
     },
-    results = {{type="item", name="computer-farm", amount=1}},
+    results = {{type="item", name="processing-grid", amount=1}},
     enabled = true
   },
 
   {
     type = "recipe",
-    name = "computer-farm-server",
-    category = "crafting",
-    energy_required = 5,
-    ingredients = {
-      {type = "item", name = "sand", amount = 1}
-    },
-    results = {{type = "item", name = "computer-farm-server", amount = 1}},
-    allow_productivity = true,
-    enabled = true,
-  },
-  {
-    type = "recipe",
-    name = "coolingmat",
+    name = "processing-tile",
     energy_required = 1,
     category = "crafting-with-fluid",
     ingredients =
     {
-      {type = "item", name = "stone-brick", amount = 5},
+      {type = "item", name = "iron-plate", amount = 1},
     },
-    results = {{type="item", name="coolingmat", amount=10}},
+    results = {{type="item", name="processing-tile", amount=10}},
+    allow_productivity = false,
+    enabled = true,
+  },
+
+  {
+    type = "recipe",
+    name = "ai-trainer",
+    energy_required = 1,
+    category = "crafting-with-fluid",
+    ingredients =
+    {
+      {type = "item", name = "iron-plate", amount = 1},
+    },
+    results = {{type="item", name="ai-trainer", amount=10}},
+    allow_productivity = false,
+    enabled = true,
+  },
+  {
+    type = "recipe",
+    name = "ai-support",
+    energy_required = 1,
+    category = "crafting-with-fluid",
+    ingredients =
+    {
+      {type = "item", name = "iron-plate", amount = 1},
+    },
+    results = {{type="item", name="ai-support", amount=10}},
     allow_productivity = false,
     enabled = true,
   },
@@ -237,6 +255,34 @@ data:extend({
     },
     results = {{type = "item", name = "model-stable", amount = 1}},
     enabled = false,
+  },
+
+  
+  {
+    type = "recipe",
+    name = "ai-tier-02",
+    icon = "__Moshine__/graphics/icons/ai-tier-02.png",
+    category = "ai-training",
+    energy_required = 3.2,
+    ingredients = {{type = "item", name = "steel-plate", amount = 1}},
+    results = {
+      {type="item", name="ai-tier-02", amount=1, probability=0.5},
+      {type="item", name="steel-plate", amount=1, probability=0.5},
+    },
+    allow_productivity = true
+  },
+
+  {
+    type = "recipe",
+    name = "processing-power-fluid",
+    icon = "__Moshine__/graphics/icons/processing-power-fluid.png",
+    category = "data-processing",
+    energy_required = 0.1,
+    ingredients = {},
+    results = {
+      {type="fluid", name="processing-power-fluid", amount=1000},
+    },
+    allow_productivity = true
   },
 
 })

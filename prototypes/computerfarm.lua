@@ -485,10 +485,10 @@ data:extend({
 
   {
     type = "agricultural-tower",
-    name = "computer-farm",
+    name = "processing-grid",
     icon = "__space-age__/graphics/icons/agricultural-tower.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 0.2, result = "computer-farm"},
+    minable = {mining_time = 0.2, result = "processing-grid"},
     fast_replaceable_group = "computer-farm",
     max_health = 500,
     corpse = "agricultural-tower-remnants",
@@ -695,14 +695,14 @@ data:extend({
 
   {
     type = "plant",
-    name = "computer-farm-server", -- food
-    icon = "__space-age__/graphics/icons/yumako-tree.png",
+    name = "processing-grid-process",
+    icon = "__Moshine__/graphics/icons/processing-grid-process.png",
     flags = {"placeable-neutral"},
     minable =
     {
       mining_particle = "wooden-particle",
       mining_time = 0.5,
-      results = {{type = "item", name = "computer-farm-server", amount = 1}},
+      results = {},
       mining_trigger =
       {
         {
@@ -738,7 +738,7 @@ data:extend({
       --probability_expression = "min(0.2, 0.3 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
       --richness_expression = "random_penalty_at(3, 1)",
       probability_expression = 0,
-      tile_restriction = {"coolingmat"}
+      tile_restriction = {"processing-tile"}
     },
     --variations = gleba_tree_variations("yumako-tree", 8, 4, 1.3),
     pictures =
@@ -804,7 +804,7 @@ data:extend({
 
   {
     type = "tile-effect",
-    name = "coolingmat",
+    name = "processing-tile",
     shader = "water",
     water =
     {
@@ -812,23 +812,23 @@ data:extend({
       textures =
       {
         {
-          filename = "__Moshine__/graphics/entity/coolingmat/coolingmat-noise-texture.png",
+          filename = "__Moshine__/graphics/entity/processing-tile/coolingmat-noise-texture-poly.png",
           width = 512,
           height = 512
         },
         {
-          filename = "__Moshine__/graphics/entity/coolingmat/hr_solarfloor.png",
+          filename = "__Moshine__/graphics/entity/processing-tile/hr_solarfloor.png",
           width = 512,
           height = 512
         }
       },
       texture_variations_columns = 1,
       texture_variations_rows = 1,
-      secondary_texture_variations_columns = 4,
-      secondary_texture_variations_rows = 2,
+      secondary_texture_variations_columns = 1,
+      secondary_texture_variations_rows = 1,
 
-      animation_speed = 0.5,
-      animation_scale = { 0.75, 0.75 },
+      animation_speed = 0.3,
+      animation_scale = { 1, 1 },
       tick_scale = 1,
 
       specular_lightness = { 30, 48, 22 },
@@ -848,11 +848,11 @@ data:extend({
 
   {
   type = "tile",
-  name = "coolingmat",
-  icon = "__Moshine__/graphics/icons/coolingmat.png",
+  name = "processing-tile",
+  icon = "__Moshine__/graphics/icons/processing-tile.png",
   icon_size = 64,
   order = "a[artificial]-b[tier-2]-a[concrete]",
-  effect = "coolingmat",
+  effect = "processing-tile",
   effect_color = { 167, 59, 27 },
   effect_color_secondary = { 49, 80, 14 },
 
@@ -876,31 +876,31 @@ data:extend({
       {
         inner_corner =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_inner-corner.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_inner-corner.png",
           count = 1,
           scale = 0.5,
         },
         outer_corner =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_outer-corner.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_outer-corner.png",
           count = 1,
           scale = 0.5,
         },
         side =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_side.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_side.png",
           count = 1,
           scale = 0.5,
         },
         u_transition =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_u.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_u.png",
           count = 1,
           scale = 0.5,
         },
         o_transition =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_o.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_o.png",
           count = 1,
           scale = 0.5,
         }
@@ -909,31 +909,31 @@ data:extend({
       {
         inner_corner =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_inner-corner-mask.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_inner-corner-mask.png",
           count = 1,
           scale = 0.5,
         },
         outer_corner =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_outer-corner-mask.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_outer-corner-mask.png",
           count = 1,
           scale = 0.5,
         },
         side =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_side-mask.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_side-mask.png",
           count = 1,
           scale = 0.5,
         },
         u_transition =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_u-mask.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_u-mask.png",
           count = 1,
           scale = 0.5,
         },
         o_transition =
         {
-          spritesheet = ENTITYPATH .. "/coolingmat/hr_solarfloor_o-mask.png",
+          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_o-mask.png",
           count = 1,
           scale = 0.5,
         }
@@ -942,7 +942,7 @@ data:extend({
 
     material_background =
     {
-      picture = ENTITYPATH .. "/coolingmat/hr_solarfloor.png",
+      picture = ENTITYPATH .. "/processing-tile/hr_solarfloor.png",
       count = 1,
       scale = 0.5,
     }
