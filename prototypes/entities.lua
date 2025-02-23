@@ -708,14 +708,14 @@ data:extend({
     close_sound = sounds.machine_close,
     allowed_effects = {"speed", "consumption", "pollution"},
     effect_receiver = {uses_module_effects = false, uses_beacon_effects = false, uses_surface_effects = true},
-    impact_category = "stone",
-    icon_draw_specification = {scale = 0.66, shift = {0, -0.1}},
+    impact_category = "metal",
+    icon_draw_specification = {scale = 0},
     ignore_output_full = true,
     working_sound =
     {
       sound =
       {
-        filename = "__base__/sound/furnace.ogg",
+        filename = "__Moshine__/sound/ai-trainer/ai-trainer-loop.ogg",
         volume = 0.6,
         modifiers = {volume_multiplier("main-menu", 1.5), volume_multiplier("tips-and-tricks", 1.4)},
         audible_distance_modifier = 0.4
@@ -738,14 +738,14 @@ data:extend({
         percent = 30
       }
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-3.2, -3.2}, {3.2, 3.2}},
+    selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     damaged_trigger_effect = hit_effects.rock(),
     crafting_categories = {"ai-training"},
-    result_inventory_size = 12,
-    energy_usage = "1kW",
+    energy_usage = "20kW",
     crafting_speed = 1,
     source_inventory_size = 1,
+    result_inventory_size = 12,
     --[[energy_source =
     {
       type = "fluid",
@@ -773,22 +773,19 @@ data:extend({
         layers =
         {
           {
-            filename = "__base__/graphics/entity/stone-furnace/stone-furnace.png",
+            filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-base.png",
             priority = "extra-high",
-            width = 151,
-            height = 146,
-            shift = util.by_pixel(-0.25, 6),
-            scale = 0.5
+            width = 620,
+            height = 620,
+            scale = 0.5,
           },
           {
-            filename = "__base__/graphics/entity/stone-furnace/stone-furnace-shadow.png",
-            priority = "extra-high",
-            width = 164,
-            height = 74,
+            filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-base-shadow.png",
+            width = 620,
+            height = 620,
             draw_as_shadow = true,
-            shift = util.by_pixel(14.5, 13),
-            scale = 0.5
-          }
+            scale = 0.5,
+          },
         }
       },
       working_visualisations =
@@ -801,30 +798,29 @@ data:extend({
             layers =
             {
               {
-                filename = "__base__/graphics/entity/stone-furnace/stone-furnace-fire.png",
-                priority = "extra-high",
-                line_length = 8,
-                width = 41,
-                height = 100,
-                frame_count = 48,
-                draw_as_glow = true,
-                shift = util.by_pixel(-0.75, 5.5),
-                scale = 0.5
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim.png",
+                width = 620,
+                height = 620,
+                frame_count = 16,
+                line_length = 4,
+                animation_speed = 0.4,
+                scale = 0.5,
               },
               {
-                filename = "__base__/graphics/entity/stone-furnace/stone-furnace-light.png",
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-glow.png",
                 blend_mode = "additive",
-                width = 106,
-                height = 144,
-                repeat_count = 48,
-                draw_as_glow = true,
-                shift = util.by_pixel(0, 5),
+                width = 620,
+                height = 620,
+                frame_count = 16,
+                line_length = 4,
+                animation_speed = 0.4,
+                draw_as_light = true,
                 scale = 0.5,
               },
             }
           }
         },
-        {
+        --[[{
           fadeout = true,
           effect = "flicker",
           animation =
@@ -838,7 +834,7 @@ data:extend({
             shift = util.by_pixel(-1, 44),
             scale = 0.5,
           },
-        },
+        },]]--
       },
       water_reflection =
       {
