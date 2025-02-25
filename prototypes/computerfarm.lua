@@ -695,8 +695,8 @@ data:extend({
 
   {
     type = "plant",
-    name = "processing-grid-process",
-    icon = "__Moshine__/graphics/icons/processing-grid-process.png",
+    name = "processing-grid-process-equation",
+    icon = "__Moshine__/graphics/icons/processing-grid-process-equation.png",
     flags = {"placeable-neutral"},
     minable =
     {

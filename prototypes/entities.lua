@@ -220,8 +220,9 @@ data:extend({
       emissions_per_minute = { pollution = 8 }
     },
     energy_usage = "300kW",
-    module_slots = 4,
-    allowed_effects = {"consumption", "speed", "pollution", "quality"}, --"productivity"
+    module_slots = 20,
+    allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
+    allowed_module_categories = {"ai-speed"},
     icons_positioning =
     {
       {inventory_index = defines.inventory.lab_modules, shift = {0, 1.6}},
@@ -699,7 +700,7 @@ data:extend({
     --next_upgrade = "steel-furnace",
     circuit_wire_max_distance = furnace_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["stone-furnace"],
-    max_health = 200,
+    max_health = 1000,
     corpse = "stone-furnace-remnants",
     dying_explosion = "stone-furnace-explosion",
     repair_sound = sounds.manual_repair,
@@ -854,7 +855,7 @@ data:extend({
     }
   },
 
-
+--[[
 
   {
     type = "assembling-machine",
@@ -954,5 +955,5 @@ data:extend({
     module_slots = 4,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"}
   },
-
+]]--
 })

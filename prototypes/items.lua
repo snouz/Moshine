@@ -89,7 +89,7 @@ data:extend({
     weight = 20 * kg,
     random_tint_color = item_tints.iron_rust
   },
-  {
+  --[[{
     type = "item",
     name = "ai-support",
     icon = "__Moshine__/graphics/icons/ai-support.png",
@@ -101,7 +101,7 @@ data:extend({
     place_result = "ai-support",
     stack_size = 20,
     default_import_location = "moshine"
-  },
+  },]]--
   {
     type = "item",
     name = "ai-trainer",
@@ -278,15 +278,85 @@ data:extend({
       }
     }
   },
+
+
+-- datacells
+  {
+    type = "item",
+    name = "datacell-empty",
+    icon = "__Moshine__/graphics/icons/datacell-empty.png",
+    subgroup = "moshine-processes",
+    order = "kka",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+  {
+    type = "item",
+    name = "datacell-raw-data",
+    icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
+    subgroup = "moshine-processes",
+    order = "kkb",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+  {
+    type = "item",
+    name = "datacell-equation",
+    icon = "__Moshine__/graphics/icons/datacell-equation.png",
+    subgroup = "moshine-processes",
+    order = "kkc",
+    plant_result = "processing-grid-process-equation",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+
+  {
+    type = "tool",
+    name = "datacell-solved-equation",
+    icon = "__Moshine__/graphics/icons/datacell-solved-equation.png",
+    subgroup = "moshine-processes",
+    order = "kkd",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+
+
+
+  {
+    type = "module-category",
+    name = "ai-speed"
+  },
+
+
   {
     type = "tool",
     name = "model-stable",
     icon = "__Moshine__/graphics/icons/model-stable.png",
     subgroup = "moshine-processes",
     order = "jjj",
-    inventory_move_sound = item_sounds.metal_small_inventory_move,
-    pick_sound = item_sounds.metal_small_inventory_pickup,
-    drop_sound = item_sounds.metal_small_inventory_move,
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
     default_import_location = "moshine",
     stack_size = 20,
     durability = 1,
@@ -296,85 +366,31 @@ data:extend({
     weight = 50*kg,
   },
 
-
--- datacells
-  {
-    type = "item",
-    name = "datacell-empty",
-    icon = "__Moshine__/graphics/icons/datacell-empty.png",
-    subgroup = "moshine-processes",
-    order = "fff",
-    inventory_move_sound = item_sounds.metal_small_inventory_move,
-    pick_sound = item_sounds.metal_small_inventory_pickup,
-    drop_sound = item_sounds.metal_small_inventory_move,
-    default_import_location = "moshine",
-    stack_size = 40,
-    weight = 25*kg,
-  },
-
-  {
-    type = "item",
-    name = "datacell-equation",
-    --localised_name = {"item-name.yumako-seed"},
-    --localised_description = {"item-description.yumako-seed"},
-    icon = "__Moshine__/graphics/icons/datacell-equation.png",
-    pictures =
-    {
-      { size = 64, filename = "__space-age__/graphics/icons/asteroid-collector.png", scale = 0.5, mipmap_count = 4 },
-    },
-    subgroup = "moshine-processes",
-    order = "a[seeds]-a[yumako-seed]",
-    plant_result = "processing-grid-process",
-    inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
-    pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
-    drop_sound = space_age_item_sounds.agriculture_inventory_move,
-    stack_size = 10,
-    default_import_location = "moshine",
-    weight = 10 * kg,
-  },
-
-  {
-    type = "item",
-    name = "datacell-solved-equation",
-    icon = "__Moshine__/graphics/icons/datacell-solved-equation.png",
-    subgroup = "moshine-processes",
-    order = "fff",
-    inventory_move_sound = item_sounds.metal_small_inventory_move,
-    pick_sound = item_sounds.metal_small_inventory_pickup,
-    drop_sound = item_sounds.metal_small_inventory_move,
-    default_import_location = "moshine",
-    stack_size = 40,
-    weight = 25*kg,
-  },
-
-  {
-    type = "item",
-    name = "datacell-raw-data",
-    icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
-    subgroup = "moshine-processes",
-    order = "fff",
-    inventory_move_sound = item_sounds.metal_small_inventory_move,
-    pick_sound = item_sounds.metal_small_inventory_pickup,
-    drop_sound = item_sounds.metal_small_inventory_move,
-    default_import_location = "moshine",
-    stack_size = 40,
-    weight = 25*kg,
-  },
-
-
-
-  {
-    type = "item",
-    name = "ai-tier-02",
-    icon = "__Moshine__/graphics/icons/ai-tier-02.png",
-    subgroup = "moshine-processes",
-    order = "fff",
-    inventory_move_sound = item_sounds.metal_small_inventory_move,
-    pick_sound = item_sounds.metal_small_inventory_pickup,
-    drop_sound = item_sounds.metal_small_inventory_move,
-    default_import_location = "moshine",
-    stack_size = 40,
-    weight = 25*kg,
-  },
-
 })
+
+
+
+for i=1,10 do
+  data:extend({
+    {
+      type = "module",
+      name = "ai-tier-" .. i,
+      icons = {
+        {icon = "__Moshine__/graphics/icons/ai-tier.png"},
+        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png"},
+      },
+      --icon = "__Moshine__/graphics/icons/ai-tier-" .. i .. ".png",
+      subgroup = "moshine-processes",
+      tier = i,
+      category = "ai-speed",
+      effect = {speed = i * i}, --, consumption = 0.5, quality = -0.1},
+      order = (i == 10) and "jjk-" .. i or "jjk-0" .. i,
+      inventory_move_sound = item_sounds.module_inventory_move,
+      pick_sound = item_sounds.module_inventory_pickup,
+      drop_sound = item_sounds.module_inventory_move,
+      default_import_location = "moshine",
+      stack_size = 20,
+      weight = 20 * kg,
+    },
+  })
+end
