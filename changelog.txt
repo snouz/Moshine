@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2025-02-
-  Changes:
-    - Phase 2 of the mod...
+  Content:
+    - Added AI trainer, model training mechanic (gambling to improve the model until it reaches tier 10, slot it into the supercomputer)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 2025-02-19
