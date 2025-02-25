@@ -82,7 +82,7 @@ data:extend({
   },
 
 
-  {
+  --[[{
     type = "recipe",
     name = "processing-grid",
     energy_required = 10,
@@ -92,7 +92,7 @@ data:extend({
     },
     results = {{type="item", name="processing-grid", amount=1}},
     allow_productivity = false,
-    enabled = true
+    enabled = false,
   },
 
   {
@@ -106,8 +106,8 @@ data:extend({
     },
     results = {{type="item", name="processing-tile", amount=1}},
     allow_productivity = false,
-    enabled = true,
-  },
+    enabled = false,
+  },]]
 
   {
     type = "recipe",

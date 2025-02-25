@@ -258,7 +258,7 @@ data:extend({
       {
         {"model-stable", 1},
       },
-      time = 60
+      time = 80
     }
   },
   {

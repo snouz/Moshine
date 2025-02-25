@@ -115,7 +115,7 @@ data:extend({
     stack_size = 20,
     default_import_location = "moshine"
   },
-  {
+  --[[{
     type = "item",
     name = "processing-grid",
     icon = "__Moshine__/graphics/icons/processing-grid.png",
@@ -146,7 +146,7 @@ data:extend({
       condition = {layers={water_tile=true}}
     },
     random_tint_color = item_tints.bluish_concrete
-  },
+  },]]
 
 --- items
   {
@@ -307,7 +307,7 @@ data:extend({
     stack_size = 40,
     weight = 25*kg,
   },
-  {
+  --[[{
     type = "item",
     name = "datacell-equation",
     icon = "__Moshine__/graphics/icons/datacell-equation.png",
@@ -320,7 +320,7 @@ data:extend({
     default_import_location = "moshine",
     stack_size = 40,
     weight = 25*kg,
-  },
+  },]]
 
   {
     type = "tool",
