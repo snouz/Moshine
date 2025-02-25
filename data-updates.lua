@@ -183,3 +183,24 @@ if mods["bzsilicon"] then
     })
   end
 end
+
+-- disable ai-speed module from everything where it's not manually added
+local moduled_building_types = { "beacon", "assembling-machine", "rocket-silo", "furnace", "lab", "mining-drill" }
+
+for _, moduled_building_type in pairs(moduled_building_types) do
+  for _,moduled_building in pairs(data.raw[moduled_building_type]) do
+    if moduled_building then
+      if not moduled_building.allowed_module_categories then
+        moduled_building.allowed_module_categories = {}
+        for _, module_cat in pairs(data.raw["module-category"]) do
+          --log(moduled_building.name .. " - " .. module_cat.name)
+          if not (module_cat.name == "ai-speed") then
+            table.insert(moduled_building.allowed_module_categories, module_cat.name)
+            --log(moduled_building.name .. " - " .. module_cat.name)
+          end
+        end
+      end
+    end
+  end
+end
+

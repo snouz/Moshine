@@ -15,6 +15,8 @@ Any sort of feedback is immensely welcome, be it corrections, balance, ideas, cr
 # CREDITS
 - The soundtrack is these two albums by Anemoia: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6)
 - Chinese translation by rlcyyg1108
+- Russian translation by GafarovMaxim
+- Compatibility to Silica and Silicon by Dh4mpyr
 
 # Main mod (phase 1, the rest TBD)
 ![phase1](https://i.imgur.com/7KRp4Dn.png)
@@ -31,6 +33,7 @@ Any sort of feedback is immensely welcome, be it corrections, balance, ideas, cr
 ![screenshot](https://i.imgur.com/0jmHYaH.png)
 
 # LICENCE
-- Some graphics (supercomputer, data extractor, mixed ore icon, sand icons) include modified versions of Krastorio2 and are under the GNU LGPLv3 license.
-- The data extractor and data processor contain some graphics from Hurricane046's buildings (CC BY license)
+- Some graphics (Supercomputer, Data extractor, AI trainer, mixed ore icon, sand icons) include modified versions of Krastorio 1 and 2 and are under the GNU LGPLv3 license.
+- The Data extractor, Data processor and AI trainer contain some graphics from Hurricane046's buildings (CC BY license)
 - The mod includes music by Anemoia, found on Free Music Archive under license CC-BY-NC-SA
+- AI trainer sound by Euphrosyyn -- https://freesound.org/s/382687/ -- License: Creative Commons 0

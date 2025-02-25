@@ -236,6 +236,33 @@ data:extend({
   },
   {
     type = "technology",
+    name = "moshine-tech-ai-trainer",
+    icon = "__Moshine__/graphics/technology/moshine-tech-ai-trainer.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "ai-trainer"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-0"
+      },
+    },
+    prerequisites = {"moshine-tech-data-processor"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"model-stable", 1},
+      },
+      time = 80
+    }
+  },
+  {
+    type = "technology",
     name = "moshine-tech-quantum-processor-productivity",
     icons = util.technology_icon_constant_recipe_productivity("__Moshine__/graphics/technology/moshine-tech-quantum-processor-productivity.png"),
     icon_size = 256,

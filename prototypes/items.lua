@@ -13,6 +13,23 @@ data:extend({
     order = "ea"
   },
 
+
+--- fluids
+
+
+  {
+    type = "fluid",
+    name = "processing-power-fluid",
+    auto_barrel = false,
+    subgroup = "fluid",
+    fuel_value = "2kJ",
+    default_temperature = 15,
+    base_color = {0, 0.34, 0.6},
+    flow_color = {0.7, 0.7, 0.7},
+    icon = "__Moshine__/graphics/icons/processing-power-fluid.png",
+    order = "a[fluid]-a[water]-a[water]"
+  },
+
 --- entities begin
 
   {
@@ -72,7 +89,64 @@ data:extend({
     weight = 20 * kg,
     random_tint_color = item_tints.iron_rust
   },
-
+  --[[{
+    type = "item",
+    name = "ai-support",
+    icon = "__Moshine__/graphics/icons/ai-support.png",
+    subgroup = "moshine-production-machine",
+    order = "ffj",
+    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
+    pick_sound = item_sounds.mechanical_large_inventory_pickup,
+    drop_sound = item_sounds.mechanical_large_inventory_move,
+    place_result = "ai-support",
+    stack_size = 20,
+    default_import_location = "moshine"
+  },]]--
+  {
+    type = "item",
+    name = "ai-trainer",
+    icon = "__Moshine__/graphics/icons/ai-trainer.png",
+    subgroup = "moshine-production-machine",
+    order = "ffj",
+    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
+    pick_sound = item_sounds.mechanical_large_inventory_pickup,
+    drop_sound = item_sounds.mechanical_large_inventory_move,
+    place_result = "ai-trainer",
+    stack_size = 20,
+    default_import_location = "moshine"
+  },
+  --[[{
+    type = "item",
+    name = "processing-grid",
+    icon = "__Moshine__/graphics/icons/processing-grid.png",
+    subgroup = "moshine-production-machine",
+    order = "ffj",
+    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
+    pick_sound = item_sounds.mechanical_large_inventory_pickup,
+    drop_sound = item_sounds.mechanical_large_inventory_move,
+    place_result = "processing-grid",
+    stack_size = 20,
+    default_import_location = "moshine"
+  },
+  {
+    type = "item",
+    name = "processing-tile",
+    icon = "__Moshine__/graphics/icons/processing-tile.png",
+    subgroup = "terrain",
+    order = "b[concrete]-a[plain]",
+    inventory_move_sound = item_sounds.concrete_inventory_move,
+    pick_sound = item_sounds.concrete_inventory_pickup,
+    drop_sound = item_sounds.concrete_inventory_move,
+    stack_size = 100,
+    weight = 10 * kg,
+    place_as_tile =
+    {
+      result = "processing-tile",
+      condition_size = 1,
+      condition = {layers={water_tile=true}}
+    },
+    random_tint_color = item_tints.bluish_concrete
+  },]]
 
 --- items
   {
@@ -204,15 +278,85 @@ data:extend({
       }
     }
   },
+
+
+-- datacells
+  {
+    type = "item",
+    name = "datacell-empty",
+    icon = "__Moshine__/graphics/icons/datacell-empty.png",
+    subgroup = "moshine-processes",
+    order = "kka",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+  {
+    type = "item",
+    name = "datacell-raw-data",
+    icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
+    subgroup = "moshine-processes",
+    order = "kkb",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+  --[[{
+    type = "item",
+    name = "datacell-equation",
+    icon = "__Moshine__/graphics/icons/datacell-equation.png",
+    subgroup = "moshine-processes",
+    order = "kkc",
+    plant_result = "processing-grid-process-equation",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    stack_size = 40,
+    weight = 25*kg,
+  },]]
+
+  {
+    type = "tool",
+    name = "datacell-solved-equation",
+    icon = "__Moshine__/graphics/icons/datacell-solved-equation.png",
+    subgroup = "moshine-processes",
+    order = "kkd",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value",
+    stack_size = 40,
+    weight = 25*kg,
+  },
+
+
+
+  {
+    type = "module-category",
+    name = "ai-speed"
+  },
+
+
   {
     type = "tool",
     name = "model-stable",
     icon = "__Moshine__/graphics/icons/model-stable.png",
     subgroup = "moshine-processes",
     order = "jjj",
-    inventory_move_sound = item_sounds.metal_small_inventory_move,
-    pick_sound = item_sounds.metal_small_inventory_pickup,
-    drop_sound = item_sounds.metal_small_inventory_move,
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
     default_import_location = "moshine",
     stack_size = 20,
     durability = 1,
@@ -221,4 +365,32 @@ data:extend({
     durability_description_value = "description.science-pack-remaining-amount-value",
     weight = 50*kg,
   },
+
 })
+
+
+
+for i=1,10 do
+  data:extend({
+    {
+      type = "module",
+      name = "ai-tier-" .. i,
+      icons = {
+        {icon = "__Moshine__/graphics/icons/ai-tier.png"},
+        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png"},
+      },
+      --icon = "__Moshine__/graphics/icons/ai-tier-" .. i .. ".png",
+      subgroup = "moshine-processes",
+      tier = i,
+      category = "ai-speed",
+      effect = {speed = i * i}, --, consumption = 0.5, quality = -0.1},
+      order = (i == 10) and "jjk-" .. i or "jjk-0" .. i,
+      inventory_move_sound = item_sounds.module_inventory_move,
+      pick_sound = item_sounds.module_inventory_pickup,
+      drop_sound = item_sounds.module_inventory_move,
+      default_import_location = "moshine",
+      stack_size = 20,
+      weight = 20 * kg,
+    },
+  })
+end

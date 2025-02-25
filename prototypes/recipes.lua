@@ -1,5 +1,11 @@
 data:extend({
 
+
+  {
+    type = "recipe-category",
+    name = "ai-training"
+  },
+
 -- entities
   {
     type = "recipe",
@@ -23,6 +29,7 @@ data:extend({
       }
     },
     results = {{type="item", name="supercomputer", amount = 1}},
+    allow_productivity = false,
     enabled = false,
   },
   {
@@ -44,6 +51,7 @@ data:extend({
       }
     },
     results = {{type = "item", name = "data-processor", amount = 1}},
+    allow_productivity = false,
     enabled = false,
   },
   {
@@ -57,7 +65,7 @@ data:extend({
       {type = "item", name = "processing-unit", amount = 4},
     },
     results = {{type = "item", name = "data-extractor", amount = 1}},
-    --allow_productivity = true,
+    allow_productivity = false,
     enabled = false,
   },
   {
@@ -69,10 +77,70 @@ data:extend({
       {type = "item", name = "silicon-carbide", amount = 1},
     },
     results = {{type = "item", name = "optical-cable", amount = 2}},
-    --allow_productivity = true,
+    allow_productivity = false,
     enabled = false,
   },
 
+
+  --[[{
+    type = "recipe",
+    name = "processing-grid",
+    energy_required = 10,
+    ingredients =
+    {
+      {type = "item", name = "iron-plate", amount = 1},
+    },
+    results = {{type="item", name="processing-grid", amount=1}},
+    allow_productivity = false,
+    enabled = false,
+  },
+
+  {
+    type = "recipe",
+    name = "processing-tile",
+    energy_required = 1,
+    category = "crafting",
+    ingredients =
+    {
+      {type = "item", name = "iron-plate", amount = 1},
+    },
+    results = {{type="item", name="processing-tile", amount=1}},
+    allow_productivity = false,
+    enabled = false,
+  },]]
+
+  {
+    type = "recipe",
+    name = "ai-trainer",
+    energy_required = 10,
+    category = "crafting",
+    ingredients =
+    {
+      {type = "item", name = "model-unstable", amount = 1},
+      {type = "item", name = "model-stable", amount = 10},
+      {type = "item", name = "data-processor", amount = 1},
+      {type = "item", name = "processing-unit", amount = 100},
+
+    },
+    results = {{type="item", name="ai-trainer", amount=1}},
+    allow_productivity = false,
+    enabled = false,
+  },
+  --[[
+  {
+    type = "recipe",
+    name = "ai-support",
+    energy_required = 1,
+    category = "crafting-with-fluid",
+    ingredients =
+    {
+      {type = "item", name = "iron-plate", amount = 1},
+    },
+    results = {{type="item", name="ai-support", amount=10}},
+    allow_productivity = false,
+    enabled = true,
+  },
+  ]]
 
 -- post-nauvis
 
@@ -185,6 +253,12 @@ data:extend({
     results = {{type = "item", name = "model-unstable", amount = 1}},
     enabled = false,
   },
+
+
+
+
+
+
   {
     type = "recipe",
     name = "model-stable",
@@ -197,5 +271,84 @@ data:extend({
     results = {{type = "item", name = "model-stable", amount = 1}},
     enabled = false,
   },
-
+  {
+    type = "recipe",
+    name = "ai-tier-0",
+    icons = {
+      {icon = "__Moshine__/graphics/icons/ai-tier-0.png"},
+      --{icon = "__Moshine__/graphics/icons/tiers/tier-1.png"},
+    },
+    --hide_from_player_crafting = true,
+    --hidden_in_factoriopedia = true,
+    category = "ai-training",
+    energy_required = 10,
+    ingredients = {{type = "item", name = "model-stable", amount = 1}},
+    results = {
+      {type="item", name="ai-tier-1", amount=1, probability=1},
+    },
+    allow_productivity = false,
+    enabled = false,
+  },
+  {
+    type = "recipe",
+    name = "ai-tier-1",
+    icons = {
+      {icon = "__Moshine__/graphics/icons/ai-tier-recipe.png"},
+      {icon = "__Moshine__/graphics/icons/tiers/tier-1.png"},
+    },
+    hide_from_player_crafting = true,
+    hidden_in_factoriopedia = true,
+    category = "ai-training",
+    energy_required = 10,
+    ingredients = {{type = "item", name = "ai-tier-1", amount = 1}},
+    results = {
+      {type="item", name="ai-tier-1", amount=1, probability=0.76},
+      {type="item", name="ai-tier-2", amount=1, probability=0.20},
+      --{type="item", name="ai-tier-3", amount=1, probability=0.13},
+      {type="item", name="model-unstable", amount=1, probability=0.01},
+    },
+    allow_productivity = false,
+  },
 })
+
+for i=2,9 do
+  data:extend({
+    {
+      type = "recipe",
+      name = "ai-tier-" .. i,
+      icons = {
+        {icon = "__Moshine__/graphics/icons/ai-tier.png"},
+        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png"},
+      },
+      hide_from_player_crafting = true,
+      hidden_in_factoriopedia = true,
+      category = "ai-training",
+      energy_required = 10,
+      ingredients = {{type = "item", name = "ai-tier-" .. i, amount = 1}},
+      results = {
+        {type="item", name="ai-tier-" .. i, amount=1, probability=0.76},
+        {type="item", name="ai-tier-" .. i+1, amount=1, probability= (0.20 - i/100) },
+        {type="item", name="ai-tier-" .. i-1, amount=1, probability= (0.3 + i/100) },
+        {type="item", name="model-unstable", amount=1, probability=0.01},
+      },
+      allow_productivity = false,
+    },
+  })
+end
+--data:extend({
+--[[
+  {
+    type = "recipe",
+    name = "processing-power-fluid",
+    icon = "__Moshine__/graphics/icons/processing-power-fluid.png",
+    category = "data-processing",
+    energy_required = 0.1,
+    ingredients = {},
+    results = {
+      {type="fluid", name="processing-power-fluid", amount=1000},
+    },
+    allow_productivity = true
+  },
+  ]]--
+
+--})
