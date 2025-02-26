@@ -3,6 +3,12 @@ Version: 0.3.0
 Date: 2025-02-
   Content:
     - Added AI trainer, model training mechanic (gambling to improve the model until it reaches tier 10, slot it into the supercomputer)
+  Changes:
+    - (Moshine-assets) Made steam 500°C (instead of 175)
+    - (Moshine-assets) Doubled Neodymium probability
+    - Changed some names and descriptions (3D-data-storage -> holographic core)
+    - Made magnets cheaper (5 -> 1 Neodymium)
+    - Made unstable models explosions ~5x more damaging
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 2025-02-19
