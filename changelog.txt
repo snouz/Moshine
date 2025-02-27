@@ -4,8 +4,9 @@ Date: 2025-02-
   Content:
     - Added AI trainer, model training mechanic (gambling to improve the model until it reaches tier 10, slot it into the supercomputer)
   Changes:
-    - (Moshine-assets) Made steam 500°C (instead of 175)
-    - (Moshine-assets) Doubled Neodymium probability
+    - (planet) Made the planet locked behind electromagnetic plant
+    - (planet) Made steam 500°C (instead of 175)
+    - (planet) Doubled Neodymium probability
     - Changed some names and descriptions (3D-data-storage -> holographic core)
     - Made magnets cheaper (5 -> 1 Neodymium)
     - Made unstable models explosions ~5x more damaging
@@ -18,9 +19,9 @@ Date: 2025-02-19
 Version: 0.2.2
 Date: 2025-02-19
   Changes:
-    - (in Moshine-assets) Modified mixed-ores ratios (Neodymium*5, sand-, sulfur-, coal+, copper+)
-    - (in Moshine-assets) Petroleum custom recipe changed (coal required instead of carbon, and outputs carbon instad of coal)
-    - (in Moshine-assets) Prevented nuclear/fusion reactors from being built on the planet
+    - (planet) Modified mixed-ores ratios (Neodymium*5, sand-, sulfur-, coal+, copper+)
+    - (planet) Petroleum custom recipe changed (coal required instead of carbon, and outputs carbon instad of coal)
+    - (planet) Prevented nuclear/fusion reactors from being built on the planet
     - Made optical fiber length (almost) infinite
     - Disallow productivity modules in supercomputers
   Compatibility:
@@ -45,17 +46,16 @@ Version: 0.1.6
 Date: 2025-02-09
   Changes:
     - (Thank you to all the players who joined the beta and gave feedback)
-    - Removed the ability to build accumulators on the planet
+    - (planet) Removed the ability to build accumulators on the planet
+    - (planet) Dramatically reduced the yield of mixed ore patches
+    - (planet) 10x less neodymium dropped (drop 273 at once but very rarely)
+    - (planet) Added a recipe for Petroleum (using sand, carbon, sulfur and steam)
     - Supercomputer sound changed to lab (instead of biolab)
     - Supercomputer won't add science packs added by other mods when they add it to all labs
     - Reduced crafting time for models (red/white cubes)
     - Reduced health and data quantity on optical fiber
     - Changed unstable model to 10s and stable to 40s
     - Unstable model costs only 3D storage, but 3D storage costs 30 magnets
-    - Aligned to Moshine-assets version
-    - Dramatically reduced the yield of mixed ore patches
-    - 10x less neodymium dropped (drop 273 at once but very rarely)
-    - Added a recipe for Petroleum (using sand, carbon, sulfur and steam)
     - Lowered luminosity a bit, except at noon
   Bugfixes:
     - Fixed unstable models never actually spawning
@@ -64,28 +64,28 @@ Date: 2025-02-09
 Version: 0.1.5
 Date: 2025-02-07
   Changes:
-    - Forced update of Moshine-assets (fixes)
+    - (planet) Fixes
     - Added Silicon carbide to the Data processor recipe
   Bugfixes:
     - Fixed crash when researching with hard drive or model in Supercomputer
-    - Fixed compatibility with AAI Industries (made silicon a normal crafting recipe in that case only)
+    - (planet) Fixed compatibility with AAI Industries (made silicon a normal crafting recipe in that case only)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 2025-02-07
   Changes:
-    - Forced update of Moshine-assets (balance tweaks)
+    - (planet) Balance tweaks
   Info:
     - Changed description
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 2025-02-06
   Changes:
-    - Forced update of Moshine-assets (fixed crash if no PlanetsLib)
+    - (planet) Fixed crash if no PlanetsLib
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 2025-02-06
   Changes:
-    - Forced update of Moshine-assets (fixed geysers, removal of molten copper, removal of auto-barrel of data)
+    - (planet) Fixed geysers, removal of molten copper, removal of auto-barrel of data
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2025-02-05

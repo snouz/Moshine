@@ -89,7 +89,7 @@ data:extend({
         recipe = "magnet"
       },
     },
-    prerequisites = {"planet-discovery-moshine", "electromagnetic-plant"},
+    prerequisites = {"planet-discovery-moshine"},
     research_trigger =
     {
       type = "mine-entity",

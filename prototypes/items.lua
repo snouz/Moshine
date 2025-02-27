@@ -16,7 +16,7 @@ data:extend({
 
 --- fluids
 
-
+--[[
   {
     type = "fluid",
     name = "processing-power-fluid",
@@ -29,6 +29,7 @@ data:extend({
     icon = "__Moshine__/graphics/icons/processing-power-fluid.png",
     order = "a[fluid]-a[water]-a[water]"
   },
+]]
 
 --- entities begin
 
@@ -307,20 +308,20 @@ data:extend({
     stack_size = 40,
     weight = 25*kg,
   },
-  --[[{
+  {
     type = "item",
     name = "datacell-equation",
     icon = "__Moshine__/graphics/icons/datacell-equation.png",
     subgroup = "moshine-processes",
     order = "kkc",
-    plant_result = "processing-grid-process-equation",
+    --plant_result = "processing-grid-process-equation",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
     drop_sound = item_sounds.module_inventory_move,
     default_import_location = "moshine",
     stack_size = 40,
     weight = 25*kg,
-  },]]
+  },
 
   {
     type = "tool",
@@ -351,6 +352,10 @@ data:extend({
   {
     type = "tool",
     name = "model-stable",
+    icons = {
+      {icon = "__Moshine__/graphics/icons/aicores/tier-0.png"},
+      --{icon = "__Moshine__/graphics/icons/tiers/tier-0.png", scale = 0.5},
+    },
     icon = "__Moshine__/graphics/icons/model-stable.png",
     subgroup = "moshine-processes",
     order = "jjj",
@@ -376,8 +381,8 @@ for i=1,10 do
       type = "module",
       name = "ai-tier-" .. i,
       icons = {
-        {icon = "__Moshine__/graphics/icons/ai-tier.png"},
-        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png"},
+        {icon = "__Moshine__/graphics/icons/aicores/tier-" .. i .. ".png", icon_size = 64, scale = 0.5},
+        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
       },
       --icon = "__Moshine__/graphics/icons/ai-tier-" .. i .. ".png",
       subgroup = "moshine-processes",
