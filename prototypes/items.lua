@@ -164,6 +164,23 @@ data:extend({
     stack_size = 50,
     weight = 20*kg,
   },
+})
+if not data.raw.item["glass"] then
+  data:extend({
+    {
+      icon = "__Moshine__/graphics/icons/glass.png",
+      name = "glass",
+      order = "ccc",
+      stack_size = 100,
+      subgroup = "moshine-processes",
+      type = "item",
+      pick_sound = item_sounds.grenade_inventory_pickup,
+      drop_sound = item_sounds.grenade_inventory_move,
+      inventory_move_sound = item_sounds.grenade_inventory_move,
+    }
+  })
+end
+data:extend({
   {
     type = "item",
     name = "magnet",

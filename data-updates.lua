@@ -13,7 +13,7 @@ if mods["se-space-trains"] then
   end
 end
 
-
+--[[
 --fix for AAI industries sand -> glass, makes silicon a normal craft then
 for _, rec in pairs(data.raw.recipe) do
   if rec.name ~= "silicon" then
@@ -24,6 +24,7 @@ for _, rec in pairs(data.raw.recipe) do
     end
   end
 end
+]]
 
 if mods["bzsilicon"] then
 
@@ -33,6 +34,7 @@ if mods["bzsilicon"] then
     data.raw["recipe"]["optical-cable"].ingredients = {
       {type = "item", name = "optical-fiber", amount = 1},
       {type = "item", name = "silicon-carbide", amount = 1},
+      {type = "item", name = "glass", amount = 1},
     }
   end
 
@@ -62,10 +64,17 @@ if mods["bzsilicon"] then
         },
       },
       prerequisites = {"planet-discovery-moshine"},
-      research_trigger =
+      unit =
       {
-        type = "mine-entity",
-        entity = "multi-ore"
+        count = 50,
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"utility-science-pack", 1},
+        },
+        time = 60
       }
     },
     {
@@ -157,10 +166,11 @@ if mods["bzsilicon"] then
       {
         type = "recipe",
         name = "advanced-silicon",
-        category = "smelting",
+        category = "chemistry",
         energy_required = 5,
         ingredients = {
-          {type = "item", name = "silica", amount = 5}
+          {type = "item", name = "silica", amount = 10},
+          {type = "item", name = "coal", amount = 1}
         },
         results = {{type = "item", name = "silicon", amount = 1}},
         allow_productivity = true,
@@ -169,12 +179,13 @@ if mods["bzsilicon"] then
       {
         type = "recipe",
         name = "silicon",
-        category = "smelting",
+        category = "chemistry",
         icon = "__Moshine__/graphics/technology/moshine-tech-silicon.png",
         icon_size = 256,
         energy_required = 5,
         ingredients = {
-          {type = "item", name = "silica", amount = 10}
+          {type = "item", name = "silica", amount = 10},
+          {type = "item", name = "coal", amount = 1}
         },
         results = {{type = "item", name = "silicon", amount = 1}},
         allow_productivity = true,

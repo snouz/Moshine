@@ -28,6 +28,32 @@ data:extend({
       time = 60
     }
   },
+  {
+    type = "technology",
+    name = "moshine-tech-glass",
+    icon = "__Moshine__/graphics/technology/moshine-tech-glass.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "glass"
+      },
+    },
+    prerequisites = {"planet-discovery-moshine"},
+    unit =
+    {
+      count = 70,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"utility-science-pack", 1},
+      },
+      time = 60
+    }
+  },
 
   {
     type = "technology",
@@ -97,10 +123,17 @@ data:extend({
       },
     },
     prerequisites = {"planet-discovery-moshine"},
-    research_trigger =
+    unit =
     {
-      type = "mine-entity",
-      entity = "multi-ore"
+      count = 50,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"utility-science-pack", 1},
+      },
+      time = 60
     }
   },
   {
@@ -187,7 +220,7 @@ data:extend({
         recipe = "optical-cable"
       },
     },
-    prerequisites = {"moshine-tech-supercomputer"},
+    prerequisites = {"moshine-tech-supercomputer", "moshine-tech-glass"},
     unit =
     {
       count = 10,
@@ -264,6 +297,22 @@ data:extend({
         type = "unlock-recipe",
         recipe = "ai-tier-0"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-1"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-2"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-3"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-4"
+      },
     },
     prerequisites = {"moshine-tech-data-processor"},
     unit =
@@ -275,6 +324,46 @@ data:extend({
         {"model-stable", 1},
       },
       time = 80
+    }
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-advanced-ai-cores",
+    icon = "__Moshine__/graphics/technology/moshine-tech-advanced-ai-cores.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-5"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-6"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-7"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-8"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "ai-tier-9"
+      },
+    },
+    prerequisites = {"moshine-tech-ai-trainer"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      },
+      time = 16000
     }
   },
   {

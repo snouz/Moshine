@@ -75,6 +75,7 @@ data:extend({
     ingredients = {
       {type = "item", name = "silicon", amount = 1},
       {type = "item", name = "silicon-carbide", amount = 1},
+      {type = "item", name = "glass", amount = 1},
     },
     results = {{type = "item", name = "optical-cable", amount = 2}},
     allow_productivity = false,
@@ -119,8 +120,9 @@ data:extend({
       {type = "item", name = "model-unstable", amount = 1},
       {type = "item", name = "model-stable", amount = 10},
       {type = "item", name = "data-processor", amount = 1},
-      {type = "item", name = "processing-unit", amount = 100},
-
+      {type = "item", name = "processing-unit", amount = 50},
+      {type = "item", name = "concrete", amount = 100},
+      {type = "item", name = "glass", amount = 100},
     },
     results = {{type="item", name="ai-trainer", amount=1}},
     allow_productivity = false,
@@ -147,15 +149,37 @@ data:extend({
   {
     type = "recipe",
     name = "silicon",
-    category = "smelting",
+    category = "chemistry",
     energy_required = 5,
     ingredients = {
-      {type = "item", name = "sand", amount = 1}
+      {type = "item", name = "sand", amount = 10},
+      {type = "item", name = "coal", amount = 1},
+      {type = "fluid", name = "steam", amount = 10},
     },
     results = {{type = "item", name = "silicon", amount = 1}},
     allow_productivity = true,
     enabled = false,
   },
+})
+
+if not data.raw.recipe["glass"] then
+  data:extend({
+    {
+      type = "recipe",
+      name = "glass",
+      category = "smelting",
+      energy_required = 4,
+      ingredients = {
+        {type = "item", name = "sand", amount = 4}
+      },
+      results = {{type = "item", name = "glass", amount = 1}},
+      allow_productivity = true,
+      enabled = false,
+    },
+  })
+end
+
+data:extend({
   {
     type = "recipe",
     name = "silicon-carbide",
@@ -262,9 +286,10 @@ data:extend({
     category = "electronics",
     energy_required = 30,
     ingredients = {
-      {type = "item", name = "magnet", amount = 30},
+      {type = "item", name = "magnet", amount = 2},
       {type = "item", name = "silicon-cell", amount = 30},
       {type = "item", name = "hard-drive", amount = 4},
+      {type = "item", name = "glass", amount = 4},
     },
     results = {{type = "item", name = "3d-data-storage", amount = 1}},
     allow_productivity = true,
@@ -342,12 +367,13 @@ data:extend({
     energy_required = 10,
     ingredients = {{type = "item", name = "ai-tier-1", amount = 1}},
     results = {
-      {type="item", name="ai-tier-1", amount=1, probability=0.76},
-      {type="item", name="ai-tier-2", amount=1, probability=0.20},
+      {type="item", name="ai-tier-1", amount=1, probability=0.59},
+      {type="item", name="ai-tier-2", amount=1, probability=0.40},
       --{type="item", name="ai-tier-3", amount=1, probability=0.13},
       {type="item", name="model-unstable", amount=1, probability=0.01},
     },
     allow_productivity = false,
+    enabled = false,
   },
 })
 
@@ -367,12 +393,13 @@ for i=2,9 do
       energy_required = 10,
       ingredients = {{type = "item", name = "ai-tier-" .. i, amount = 1}},
       results = {
-        {type="item", name="ai-tier-" .. i, amount=1, probability=0.76},
-        {type="item", name="ai-tier-" .. i+1, amount=1, probability= (0.20 - i/100) },
-        {type="item", name="ai-tier-" .. i-1, amount=1, probability= (0.3 + i/100) },
+        {type="item", name="ai-tier-" .. i, amount=1, probability=0.49},
+        {type="item", name="ai-tier-" .. i+1, amount=1, probability= (0.34 - i/100) },
+        {type="item", name="ai-tier-" .. i-1, amount=1, probability= (0.16 + i/100) },
         {type="item", name="model-unstable", amount=1, probability=0.01},
       },
       allow_productivity = false,
+      enabled = false,
     },
   })
 end
