@@ -145,7 +145,7 @@ data:extend({
     max_health = 900,
     impact_category = "metal",
     alert_icon_shift = util.by_pixel(0, -12),
-    icon_draw_specification = {shift = {0, -0.3}},
+    icon_draw_specification = {shift = {0, -0.3}, scale = 1.2},
     corpse = "biolab-remnants",
     dying_explosion = "biolab-explosion",
     resistances =
@@ -225,8 +225,8 @@ data:extend({
     allowed_module_categories = {"ai-speed"},
     icons_positioning =
     {
-      {inventory_index = defines.inventory.lab_modules, shift = {0, 1.6}},
-      {inventory_index = defines.inventory.lab_input, shift = {0, 0.4}, max_icons_per_row = 6, separation_multiplier = 1/1.1}
+      {inventory_index = defines.inventory.lab_modules, shift = {0, 1.5}, scale = 0.35, max_icons_per_row = 10},
+      {inventory_index = defines.inventory.lab_input, shift = {0, -0.8}, scale = 0.7, max_icons_per_row = 6, separation_multiplier = 1/1.1}
     }
   },
 

@@ -2,7 +2,7 @@
 Version: 0.3.0
 Date: 2025-02-
   Content:
-    - Added AI trainer, model training mechanic (gambling to improve the model until it reaches tier 10, slot it into the supercomputer)
+    - Added AI trainer, model training mechanic (gambling to improve models until they higher tiers, slot them into the neural computer)
     - Hard drives become "datacells", added recipes to load and unload data in them
     - Tech tree reorganized
   Changes:
