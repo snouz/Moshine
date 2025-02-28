@@ -7,6 +7,7 @@ Date: 2025-02-
     - (planet) Made the planet locked behind electromagnetic plant
     - (planet) Made steam 500°C (instead of 175)
     - (planet) Doubled Neodymium probability
+    - (planet) Made foundations buildable on iron lava pools
     - Changed some names and descriptions (3D-data-storage -> holographic core)
     - Made magnets cheaper (5 -> 1 Neodymium)
     - Made unstable models explosions ~5x more damaging

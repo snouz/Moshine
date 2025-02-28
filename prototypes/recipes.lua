@@ -275,8 +275,9 @@ data:extend({
     type = "recipe",
     name = "ai-tier-0",
     icons = {
-      {icon = "__Moshine__/graphics/icons/aicores/tier-1.png", icon_size = 64, scale = 0.5},
-      {icon = "__Moshine__/graphics/icons/tiers/tier-1.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
+      {icon = "__Moshine__/graphics/icons/aicores/tier-0.png", icon_size = 64, scale = 0.5},
+      --{icon = "__Moshine__/graphics/icons/tiers/tier-1.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
+      {icon = "__Moshine__/graphics/icons/training-arrows.png", icon_size = 64, scale = 0.5},
     },
     --hide_from_player_crafting = true,
     --hidden_in_factoriopedia = true,
