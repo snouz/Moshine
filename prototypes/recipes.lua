@@ -206,18 +206,56 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "hard-drive",
+    name = "hard-drive", -- datacell empty
     category = "electronics",
     energy_required = 10,
     ingredients = {
-      {type = "item", name = "magnet", amount = 5},
+      {type = "item", name = "magnet", amount = 1},
       {type = "item", name = "silicon-cell", amount = 5},
-      {type = "item", name = "advanced-circuit", amount = 5},
+      {type = "item", name = "advanced-circuit", amount = 1},
     },
     results = {{type = "item", name = "hard-drive", amount = 1}},
     allow_productivity = true,
     enabled = false,
   },
+  {
+    type = "recipe",
+    name = "datacell-add-raw-data",
+    icon = "__Moshine__/graphics/icons/datacell-add-raw-data.png",
+    category = "data-processing",
+    subgroup = "moshine-processes",
+    order = "ggb",
+    hide_from_player_crafting = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "item", name = "hard-drive", amount = 1},
+      {type = "fluid", name = "raw-data", amount = 1000},
+    },
+    results = {{type = "item", name = "datacell-raw-data", amount = 1}},
+    allow_productivity = false,
+    enabled = false,
+  },
+  {
+    type = "recipe",
+    name = "datacell-remove-raw-data",
+    icon = "__Moshine__/graphics/icons/datacell-remove-raw-data.png",
+    category = "data-processing",
+    subgroup = "moshine-processes",
+    order = "ggb",
+    hide_from_player_crafting = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "item", name = "datacell-raw-data", amount = 1},
+    },
+    results = {
+      {type = "item", name = "hard-drive", amount = 1},
+      {type = "fluid", name = "raw-data", amount = 1000},
+    },
+    allow_productivity = false,
+    enabled = false,
+  },
+
+
   {
     type = "recipe",
     name = "3d-data-storage",

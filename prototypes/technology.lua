@@ -15,10 +15,17 @@ data:extend({
       },
     },
     prerequisites = {"planet-discovery-moshine"},
-    research_trigger =
+    unit =
     {
-      type = "mine-entity",
-      entity = "multi-ore"
+      count = 50,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"utility-science-pack", 1},
+      },
+      time = 60
     }
   },
 
@@ -105,7 +112,19 @@ data:extend({
     {
       {
         type = "unlock-recipe",
+        recipe = "data-processor"
+      },
+      {
+        type = "unlock-recipe",
         recipe = "hard-drive"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-add-raw-data"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-remove-raw-data"
       },
     },
     prerequisites = {"moshine-tech-magnet", "moshine-tech-silicon-cell"},
@@ -191,13 +210,13 @@ data:extend({
         recipe = "3d-data-storage"
       },
     },
-    prerequisites = {"moshine-tech-hard-drive"},
+    prerequisites = {"moshine-tech-data-extractor"},
     unit =
     {
       count = 200,
       ingredients =
       {
-        {"hard-drive", 1},
+        {"datacell-raw-data", 1},
       },
       time = 60
     }
@@ -212,10 +231,6 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = "data-processor"
-      },
-      {
-        type = "unlock-recipe",
         recipe = "model-unstable"
       },
       {
@@ -223,13 +238,13 @@ data:extend({
         recipe = "model-stable"
       },
     },
-    prerequisites = {"moshine-tech-data-extractor", "moshine-tech-3d-data-storage"},
+    prerequisites = {"moshine-tech-3d-data-storage"},
     unit =
     {
       count = 1000,
       ingredients =
       {
-        {"hard-drive", 1},
+        {"datacell-raw-data", 1},
       },
       time = 60
     }
@@ -256,6 +271,7 @@ data:extend({
       count = 100,
       ingredients =
       {
+        {"datacell-raw-data", 1},
         {"model-stable", 1},
       },
       time = 80
@@ -277,12 +293,13 @@ data:extend({
     prerequisites = {"moshine-tech-data-processor", "quantum-processor"},
     unit =
     {
-      count_formula = "1.4^L*200",
+      count_formula = "1.4^L*700",
       ingredients =
       {
         {"model-stable", 1},
+        {"datacell-raw-data", 1},
       },
-      time = 60
+      time = 6000
     },
     max_level = "infinite",
     upgrade = true

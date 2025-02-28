@@ -133,7 +133,7 @@ local data_extractor_sheet =
 data:extend({
   {
     type = "lab",
-    name = "supercomputer",
+    name = "supercomputer", -- Neural computer
     icon = "__Moshine__/graphics/icons/supercomputer.png",
     minable = {mining_time = 3, result = "supercomputer"},
     subgroup = "production-machine",

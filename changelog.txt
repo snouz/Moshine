@@ -3,14 +3,21 @@ Version: 0.3.0
 Date: 2025-02-
   Content:
     - Added AI trainer, model training mechanic (gambling to improve the model until it reaches tier 10, slot it into the supercomputer)
+    - Hard drives become "datacells", added recipes to load and unload data in them
+    - Tech tree reorganized
   Changes:
     - (planet) Made the planet locked behind electromagnetic plant
     - (planet) Made steam 500°C (instead of 175)
     - (planet) Doubled Neodymium probability
     - (planet) Made foundations buildable on iron lava pools
-    - Changed some names and descriptions (3D-data-storage -> holographic core)
+    - Changed some names and descriptions (3D-data-storage -> holographic core, supercomputer -> Neural computer, raw data -> training data... )
+    - Quantum-processor-productivity research 3.5* more expensive, and 100* slower (forces you to use AI cores as modules)
+    - Computers can use training data for research, added as ingredients
     - Made magnets cheaper (5 -> 1 Neodymium)
+    - Made hard-drives/datacells cheaper (5 -> 1 Magnets, 5 -> 1 Advanced-circuits)
     - Made unstable models explosions ~5x more damaging
+  Bugfixes
+    - Silicon isn't reasearch on planet discovery anymore
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 2025-02-19
