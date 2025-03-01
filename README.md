@@ -1,10 +1,10 @@
 # MOSHINE
 
--- Doesn't affect vanilla, addable at any time --
+-- Doesn't affect vanilla recipes, techs or balance, addable at any stage and any save --
 
 A very hot desert planet with almost no magnetic field (propice to precise computations). Rich in metals (neodymium, silicon...). The Fulgorans deployed some scientific outposts here that you can harvest to establish a dataset.
 
-Custom terrain generation, custom music, a tech tree, some original challenges. Unlocks after Vulcanus, and you should not be able to get stranded. Unlock electric trains, big solar panels, big accumulators, a supercomputer...
+Custom terrain generation, music, tech tree, some original challenges. Unlocks after Vulcanus and Fulgora, there's everything to not get stranded. Unlock electric trains, big solar panels, big accumulators, computers...
 
 # FEEDBACK ENCOURAGED!
 
@@ -19,11 +19,7 @@ Any sort of feedback is immensely welcome, be it corrections, balance, ideas, cr
 - Compatibility to Silica and Silicon by Dh4mpyr
 - Starmap icon partially from DjKolekson
 
-# Main mod (phase 1, the rest TBD)
-![phase1](https://i.imgur.com/7KRp4Dn.png)
-
-# Intermediates and rockets
-![Intermediates](https://i.imgur.com/m1aMr2V.png)
+![phase](https://i.imgur.com/UvsKNpJ.png)
 
 # Rewards
 - SE space trains
