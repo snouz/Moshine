@@ -1,10 +1,12 @@
 {
   "name": "Moshine",
-  "version": "0.3.0",
   "title": "Moshine",
+  "description": "Hot planet, 13 technologies, 2 new minerals, 4 entities, 7 items, custom terrain and music, unique challenges... (more content in the future)",
+  
   "author": "snouz",
   "homepage": "https://github.com/snouz/Moshine",
-  "description": "Hot planet, 13 technologies, 2 new minerals, 4 entities, 7 items, custom terrain and music, unique challenges... (more content in the future)",
+
+  "version": "0.3.0",
   "factorio_version": "2.0",
   "dependencies": [
     "base",

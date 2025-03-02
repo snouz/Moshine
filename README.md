@@ -18,6 +18,7 @@ Any sort of feedback is immensely welcome, be it corrections, balance, ideas, cr
 - Russian translation by GafarovMaxim
 - Compatibility to Silica and Silicon by Dh4mpyr
 - Starmap icon partially from DjKolekson
+- French localisation Buy Fr_Dae
 
 ![phase](https://i.imgur.com/UvsKNpJ.png)
 
