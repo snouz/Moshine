@@ -1,19 +1,13 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.3.1
-Date: 2025-03-02
-  Info:
-  - Update by Fr_Dae
-  Changes:
-    - info.json improve for humain reading
-    - add fr loc
----------------------------------------------------------------------------------------------------
 Version: 0.3.0
-Date: 2025-02-20
+Date: 2025-03-..
   Content:
     - Added AI trainer, model training mechanic (gambling to improve models until they higher tiers, slot them into the neural computer)
     - Hard drives become "datacells", added recipes to load and unload data in them
     - Added glass, glass tech
     - Tech tree reorganized
+  Locale:
+    - French translation by Fr_Dae
   Changes:
     - (planet) Made the planet locked behind electromagnetic plant
     - (planet) Made steam 500°C (instead of 175)
