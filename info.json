@@ -14,7 +14,8 @@
     "snouz-big-solar-panel >= 1.0.4",
     "se-space-trains >= 1.0.4",
     "(?) bzsilicon",
-    "(?) aai-industry"
+    "(?) aai-industry",
+    "(?) omnimatter_compression"
   ],
   "space_travel_required": true,
   "spoiling_required": true

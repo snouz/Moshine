@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2025-03-..
+  Info:
+    - /!\ This update changes some recipes, so you'll have to adapt your existing setups /!\
   Content:
     - Added AI trainer, model training mechanic (gambling to improve models until they higher tiers, slot them into the neural computer)
     - Hard drives become "datacells", added recipes to load and unload data in them
@@ -27,6 +29,7 @@ Date: 2025-03-..
     - (planet) Improved starmap icon (thanks to DjKolekson's contribution)
   Bugfixes:
     - Silicon isn't reasearch on planet discovery anymore
+    - Fixed compatibility with Omnicompression
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 2025-02-19
