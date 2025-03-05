@@ -9,4 +9,3 @@ require ("prototypes.items")
 --require "prototypes.fluid"
 require ("prototypes.recipes")
 require ("prototypes.entities")
---require "prototypes.computerfarm"

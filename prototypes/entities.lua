@@ -2,6 +2,7 @@ require ("sound-util")
 require ("opticalfiberpictures")
 require ("supercomputer")
 require ("dataprocessor")
+require ("computerfarm")
 
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
