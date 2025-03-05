@@ -62,8 +62,8 @@ local craneprop = {
   {
     arm =
     {
-      turn_rate = 0.02,
-      extension_speed = 0.02
+      turn_rate = 0.01,
+      extension_speed = 0.3
     },
     grappler =
     {
@@ -352,7 +352,7 @@ data:extend({
     {
       sound =
       {
-        filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.ogg",
+        filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.wav",
         volume = 0.7,
         audible_distance_modifier = 0.7,
       },
@@ -362,30 +362,30 @@ data:extend({
     },
     central_orienting_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-rotation-loop.ogg", volume = 0.3},
-      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-rotation-stop.ogg", volume = 0.5}
+      sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-loop.wav", volume = 0.9},
+      stopped_sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-stop.wav", volume = 0.9}
     },
     central_orienting_sound_source = "hub",
     arm_extending_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-arm-extend-loop.ogg", volume = 0.25},
-      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-arm-extend-stop.ogg", volume = 0.6}
+      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-arm-extend-loop.ogg", volume = 0},
+      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-arm-extend-stop.ogg", volume = 0}
     },
     arm_extending_sound_source = "arm_central_joint",
     grappler_orienting_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-orient-loop.ogg", volume = 0.25},
-      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-orient-stop.ogg", volume = 0.4}
+      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-orient-loop.ogg", volume = 0},
+      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-orient-stop.ogg", volume = 0}
     },
     grappler_orienting_sound_source = "grappler-hub",
     grappler_extending_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-loop.ogg", volume = 0.4},
-      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-stop.ogg", volume = 0.45}
+      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-loop.ogg", volume = 0},
+      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-stop.ogg", volume = 0}
     },
     grappler_extending_sound_source = "grappler-hub",
-    planting_sound = sound_variations("__space-age__/sound/entity/agricultural-tower/agricultural-tower-planting", 5, 0.7),
-    harvesting_sound = sound_variations("__space-age__/sound/entity/agricultural-tower/agricultural-tower-harvesting", 6, 0.6),
+    planting_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9),
+    harvesting_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9),
     resistances =
     {
       {
@@ -577,8 +577,8 @@ data:extend({
         }
       }
     },
-    mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
-    mined_sound = sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
+    mining_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
+    mined_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
     growth_ticks = 10 * minutes,
     harvest_emissions = plant_harvest_emissions,
     emissions_per_second = plant_emissions,
@@ -639,7 +639,7 @@ data:extend({
       secondary = {r = 0.561, g = 0.613, b = 0.308, a = 1.000}, -- #8f4f4eff
     },]]
     -- tile_buildability_rules = { {area = {{-0.55, -0.55}, {0.55, 0.55}}, required_tiles = {"natural-yumako-soil", "artificial-yumako-soil"}, remove_on_collision = true} },
-    ambient_sounds =
+    --[[ambient_sounds =
     {
       sound =
       {
@@ -654,7 +654,7 @@ data:extend({
       max_entity_count = 10,
       entity_to_sound_ratio = 0.2,
       average_pause_seconds = 8
-    },
+    },]]--
     map_color = {255, 255, 255},
   },
 
