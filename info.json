@@ -14,6 +14,7 @@
     "snouz-big-accumulator >= 1.0.3",
     "snouz-big-solar-panel >= 1.0.4",
     "se-space-trains >= 1.0.4",
+    "long_stack_inserter >= 1.0.1",
     "(?) bzsilicon",
     "(?) aai-industry",
     "(?) omnimatter_compression"

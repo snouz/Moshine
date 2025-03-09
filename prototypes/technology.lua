@@ -439,3 +439,18 @@ if mods["snouz-big-accumulator"] then
   table.insert(data.raw["recipe"]["big-accumulator"].ingredients, {type = "item", name = "magnet", amount = 10})
   table.insert(data.raw["technology"]["electric-energy-big-accumulators"].prerequisites, "moshine-tech-magnet")
 end
+
+
+if data.raw.technology["long-stack-inserter"] then
+  table.insert(data.raw.technology["long-stack-inserter"].prerequisites, "moshine-tech-processing-grid")
+  data.raw.technology["long-stack-inserter"].unit =
+    {
+      count = 10,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-solved-equation", 1},
+      },
+      time = 2000
+    }
+end

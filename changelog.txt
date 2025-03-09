@@ -7,8 +7,10 @@ Date: 2025-03-..
     - Added the AI trainer, and model training mechanic (gambling to improve models until they higher tiers, slot them into the neural computer)
     - Added the Indexer and Webbed processors (a process farm for equations)
     - Hard drives become "datacells", added recipes to load and unload data in them
+    - Added long-handed inserters as a reward
     - Added glass, glass tech
     - Tech tree reorganized
+    - Added space platform ground tiles
   Locale:
     - French translation by Fr_Dae
   Changes:
