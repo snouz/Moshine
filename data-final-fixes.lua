@@ -55,6 +55,19 @@ if data.raw["technology"]["moshine-tech-ai-trainer"] then
       time = 60
     }
 end
+
+if data.raw["technology"]["moshine-tech-processing-grid"] then
+  data.raw["technology"]["moshine-tech-processing-grid"].unit =
+    {
+      count = 10,
+      ingredients =
+      {
+        {"datacell-raw-data", 10},
+        {"model-stable", 1},
+      },
+      time = 20000
+    }
+end
 if data.raw["technology"]["moshine-tech-quantum-processor-productivity"] then
   data.raw["technology"]["moshine-tech-quantum-processor-productivity"].unit =
     {

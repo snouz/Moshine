@@ -130,13 +130,12 @@ data:extend({
     default_import_location = "moshine"
   }, 
 
---[[
   {
     type = "item",
     name = "processing-tile",
     icon = "__Moshine__/graphics/icons/processing-tile.png",
-    subgroup = "terrain",
-    order = "b[concrete]-a[plain]",
+    subgroup = "moshine-production-machine",
+    order = "ffh",
     inventory_move_sound = item_sounds.concrete_inventory_move,
     pick_sound = item_sounds.concrete_inventory_pickup,
     drop_sound = item_sounds.concrete_inventory_move,
@@ -149,7 +148,7 @@ data:extend({
       condition = {layers={water_tile=true}}
     },
     random_tint_color = item_tints.bluish_concrete
-  },]]
+  },
 
 --- items
   {

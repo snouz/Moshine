@@ -284,6 +284,38 @@ data:extend({
   },
   {
     type = "technology",
+    name = "moshine-tech-processing-grid",
+    icon = "__Moshine__/graphics/technology/moshine-tech-processing-grid.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "processing-grid"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "processing-tile"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-add-equation"
+      },
+    },
+    prerequisites = {"moshine-tech-data-processor"},
+    unit =
+    {
+      count = 10,
+      ingredients =
+      {
+        {"datacell-raw-data", 10},
+        {"model-stable", 1},
+      },
+      time = 20000
+    }
+  },
+  {
+    type = "technology",
     name = "moshine-tech-ai-trainer",
     icon = "__Moshine__/graphics/technology/moshine-tech-ai-trainer.png",
     icon_size = 256,

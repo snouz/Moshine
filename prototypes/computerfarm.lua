@@ -5,7 +5,9 @@ require ("__space-age__.prototypes.entity.circuit-network")
 require ("__space-age__.prototypes.entity.space-platform-hub-cockpit")
 local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
 local tile_trigger_effects = require("__base__.prototypes.tile.tile-trigger-effects")
-
+local tile_sounds = require("__base__/prototypes/tile/tile-sounds")
+local space_platform_tile_animations = require("__space-age__.prototypes.tile.platform-tile-animations")
+local space_age_tile_sounds = require("__space-age__/prototypes/tile/tile-sounds")
 
 local ENTITYPATH = "__Moshine__/graphics/entity"
 
@@ -121,26 +123,26 @@ local craneprop = {
       rotated_sprite =
       {
         filename = "__Moshine__/graphics/entity/agricultural-tower/laser-artillery-turret.png",
-        width = 440,
-        height = 380,
-        shift = util.by_pixel( 0.0, -4.0),
+        width = 220,
+        height = 190,
+        shift = util.by_pixel(0, 0),
         line_length = 8,
         priority = "very-low",
         direction_count = 64,
-        scale = 0.25,
+        scale = 0.5,
       },
-      rotated_sprite_shadow = nuthin,
-      --[[{
+      rotated_sprite_shadow = --nuthin,
+      {
         filename = "__Moshine__/graphics/entity/agricultural-tower/laser-artillery-turret-shadow.png",
-        width = 460,
-        height = 380,
-        shift = util.by_pixel(10, 10),
+        width = 230,
+        height = 190,
+        shift = util.by_pixel(5, 5),
         line_length = 8,
         priority = "very-low",
         direction_count = 64,
-        scale = 0.25,
+        scale = 0.5,
         draw_as_shadow = true
-      },]]
+      },
       rotated_sprite_reflection = nuthin,
       layer = 1,
       allow_sprite_rotation = false,
@@ -579,13 +581,14 @@ data:extend({
     },
     mining_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
     mined_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
-    growth_ticks = 10 * minutes,
+    growth_ticks = 7 * minutes,
     harvest_emissions = plant_harvest_emissions,
     emissions_per_second = plant_emissions,
     max_health = 50,
     collision_box = {{-0.3, -0.3}, {0.3, 0.3}},
     --collision_mask = {layers={player=true, ground_tile=true, train=true}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    sticker_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
     order = "a[tree]-c[gleba]-a[seedable]-a[yumako-tree]",
@@ -598,7 +601,13 @@ data:extend({
       --probability_expression = "min(0.2, 0.3 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
       --richness_expression = "random_penalty_at(3, 1)",
       probability_expression = 0,
-      --tile_restriction = {"processing-tile"}
+      tile_restriction = {"processing-tile"},
+    },
+    tile_buildability_rules = {
+      {
+        area = {{-0.5, -0.5}, {0.5, 0.5}},
+        required_tiles = {layers = {ground_tile = true}},
+      }
     },
     --variations = gleba_tree_variations("yumako-tree", 8, 4, 1.3),
     stateless_visualisation_variations = {
@@ -824,5 +833,258 @@ data:extend({
   },
 ]]--
 
+--[[
+  {
+    type = "tile",
+    name = "processing-tile",
+    order = "a[artificial]-c[tier-3]-a[refined-concrete]",
+    subgroup = "artificial-tiles",
+    needs_correction = false,
+    minable = {mining_time = 0.1, result = "processing-tile"},
+    mined_sound = sounds.deconstruct_bricks(0.8),
+    collision_mask = tile_collision_masks.ground(),
+    --walking_speed_modifier = 1.5,
+    layer = 17,
+    layer_group = "ground-artificial",
+    transition_overlay_layer_offset = 2, -- need to render border overlay on top of hazard-concrete
+    decorative_removal_probability = 1, --0.25,
+    variants =
+    {
+      transition =
+      {
+        overlay_layout =
+        {
+          inner_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-inner-corner.png",
+            count = 16,
+            scale = 0.5
+          },
+          outer_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-outer-corner.png",
+            count = 8,
+            scale = 0.5
+          },
+          side =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-side.png",
+            count = 16,
+            scale = 0.5
+          },
+          u_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-u.png",
+            count = 8,
+            scale = 0.5
+          },
+          o_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-o.png",
+            count = 4,
+            scale = 0.5
+          }
+        },
+        mask_layout =
+        {
+          inner_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-inner-corner-mask.png",
+            count = 16,
+            scale = 0.5
+          },
+          outer_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-outer-corner-mask.png",
+            count = 8,
+            scale = 0.5
+          },
+          side =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-side-mask.png",
+            count = 16,
+            scale = 0.5
+          },
+          u_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-u-mask.png",
+            count = 8,
+            scale = 0.5
+          },
+          o_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-o-mask.png",
+            count = 4,
+            scale = 0.5
+          }
+        }
+      },
+
+      material_background =
+      {
+        picture = "__Moshine__/graphics/terrain/concrete/space-platform-2x2.png",
+        count = 16,
+        scale = 0.5
+      }
+    },
+
+    transitions = concrete_transitions,
+    transitions_between_transitions = concrete_transitions_between_transitions,
+
+    walking_sound = tile_sounds.walking.refined_concrete,
+    driving_sound = tile_sounds.driving.concrete,
+    build_sound = tile_sounds.building.concrete,
+
+    map_color={49, 48, 45},
+    scorch_mark_color = {r = 0.373, g = 0.307, b = 0.243, a = 1.000},
+    vehicle_friction_modifier = concrete_vehicle_speed_modifier,
+
+    trigger_effect = tile_trigger_effects.concrete_trigger_effect()
+  },
+]]
+
+
+
+--[[
+  {
+    type = "tile",
+    name = "processing-tile",
+    order = "a[artificial]-d[utility]-b[space-platform-foundation]",
+    subgroup = "artificial-tiles",
+    minable = {mining_time = 0.5, result = "processing-tile"},
+    mined_sound = sounds.deconstruct_bricks(0.8),
+    --is_foundation = true,
+    allows_being_covered = false,
+    max_health = 50,
+    weight = 200,
+    collision_mask = tile_collision_masks.ground(),
+    layer = 17,
+    layer_group = "ground-artificial",
+    transitions = concrete_transitions,
+    transitions_between_transitions = concrete_transitions_between_transitions,
+    transition_overlay_layer_offset = 2, -- need to render border overlay on top of hazard-concrete
+    decorative_removal_probability = 0.99, --0.25,
+    -- transitions = landfill_transitions,
+    -- transitions_between_transitions = landfill_transitions_between_transitions,
+    dying_explosion = "space-platform-foundation-explosion",
+    trigger_effect = tile_trigger_effects.landfill_trigger_effect(),
+
+    bound_decoratives =
+    {
+      "space-platform-decorative-pipes-2x1",
+      "space-platform-decorative-pipes-1x2",
+      "space-platform-decorative-pipes-1x1",
+      "space-platform-decorative-4x4",
+      "space-platform-decorative-2x2",
+      "space-platform-decorative-1x1",
+      "space-platform-decorative-tiny",
+    },
+
+    --build_animations = space_platform_tile_animations.top_animation,
+    --build_animations_background = space_platform_tile_animations.animation,
+    --built_animation_frame = 0,
+
+    sprite_usage_surface = "any",
+    variants =
+    {
+      transition =
+      {
+        overlay_layout =
+        {
+          inner_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-inner-corner.png",
+            count = 16,
+            scale = 0.5
+          },
+          outer_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-outer-corner.png",
+            count = 16,
+            scale = 0.5
+          },
+          side =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-side.png",
+            count = 32,
+            scale = 0.5
+          },
+          u_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-u.png",
+            count = 4,
+            scale = 0.5
+          },
+          o_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-o.png",
+            count = 1,
+            scale = 0.5
+          }
+        },
+        mask_layout =
+        {
+          inner_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-inner-corner-mask.png",
+            count = 16,
+            scale = 0.5
+          },
+          outer_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-outer-corner-mask.png",
+            count = 16,
+            scale = 0.5
+          },
+          side =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-side-mask.png",
+            count = 32,
+            scale = 0.5
+          },
+          u_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-u-mask.png",
+            count = 4,
+            scale = 0.5
+          },
+          o_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-o-mask.png",
+            count = 1,
+            scale = 0.5
+          }
+        }
+      },
+
+      material_background =
+      {
+        picture = "__Moshine__/graphics/terrain/concrete/refined-concrete.png",
+        count = 1,
+        scale = 0.5
+      }
+    },
+
+    walking_sound = tile_sounds.walking.concrete,
+    build_sound = space_age_tile_sounds.building.space_platform,
+    map_color = {63, 61, 59},
+    scorch_mark_color = {r = 0.373, g = 0.307, b = 0.243, a = 1.000}
+  },
+  ]]
+
 
 })
+
+local processingtile = table.deepcopy(data.raw.tile["space-platform-for-ground"])
+processingtile.name = "processing-tile"
+processingtile.order = "a[artificial]-d[utility]-c[space-platform-foundation]"
+processingtile.minable = {mining_time = 0.5, result = "processing-tile"}
+processingtile.layer = 18,
+--[[processingtile.surface_conditions = {
+  {
+    property = "magnetic-field",
+    min = 0,
+    max = 5
+  }
+}]]
+data:extend({processingtile})

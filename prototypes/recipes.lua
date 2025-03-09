@@ -86,34 +86,40 @@ data:extend({
   {
     type = "recipe",
     name = "processing-grid",
-    energy_required = 10,
+    energy_required = 20,
+    category = "crafting",
     ingredients =
     {
-      {type = "item", name = "iron-plate", amount = 1},
+      {type = "item", name = "data-processor", amount = 1},
+      {type = "item", name = "model-stable", amount = 50},
+      {type = "item", name = "silicon-carbide", amount = 10},
+      {type = "item", name = "processing-unit", amount = 5},
     },
     results = {{type="item", name="processing-grid", amount=1}},
     allow_productivity = false,
     enabled = false,
   },
-  --[[
+  
   {
     type = "recipe",
     name = "processing-tile",
-    energy_required = 1,
+    energy_required = 10,
     category = "crafting",
     ingredients =
     {
-      {type = "item", name = "iron-plate", amount = 1},
+      {type = "item", name = "model-stable", amount = 1},
+      {type = "item", name = "space-platform-foundation", amount = 1},
+      {type = "item", name = "processing-unit", amount = 1},
+      {type = "item", name = "optical-cable", amount = 1},
     },
     results = {{type="item", name="processing-tile", amount=1}},
     allow_productivity = false,
     enabled = false,
-  },]]
-
+  },
   {
     type = "recipe",
     name = "ai-trainer",
-    energy_required = 10,
+    energy_required = 20,
     category = "crafting",
     ingredients =
     {
@@ -278,8 +284,22 @@ data:extend({
     allow_productivity = false,
     enabled = false,
   },
-
-
+  {
+    type = "recipe",
+    name = "datacell-add-equation",
+    icon = "__Moshine__/graphics/icons/datacell-add-equation.png",
+    category = "data-processing",
+    subgroup = "moshine-processes",
+    order = "ggc",
+    --hide_from_player_crafting = true,
+    energy_required = 1000,
+    ingredients = {
+      {type = "item", name = "hard-drive", amount = 1},
+    },
+    results = {{type = "item", name = "datacell-equation", amount = 1}},
+    allow_productivity = false,
+    enabled = false,
+  },
   {
     type = "recipe",
     name = "3d-data-storage",

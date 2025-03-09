@@ -192,8 +192,11 @@ data:extend({
     energy_usage = "75kW",
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
-    allowed_effects = {"speed", "consumption", "pollution"},
-    effect_receiver = {uses_module_effects = false, uses_beacon_effects = false, uses_surface_effects = true},
+    --allowed_effects = {"speed", "consumption", "pollution"},
+    --effect_receiver = {uses_module_effects = false, uses_beacon_effects = false, uses_surface_effects = true},
+    module_slots = 5,
+    allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
+    allowed_module_categories = {"ai-speed"},
     impact_category = "metal",
     working_sound =
     {
@@ -207,7 +210,7 @@ data:extend({
       match_volume_to_activity = true,
       activity_to_volume_modifiers = {offset = 2, inverted = true},
       fade_in_ticks = 4,
-      fade_out_ticks = 20
+      fade_out_ticks = 20,
     },
   },
 })
