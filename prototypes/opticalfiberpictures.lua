@@ -274,7 +274,7 @@ opticalfibercoverspictures = function()
       layers =
       {
         {
-          filename = "__Moshine__/graphics/entity/opticalfiber-covers/opticalfiber-cover-north.png",
+          filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cover-north.png",
           priority = "extra-high",
           width = 128,
           height = 128,
@@ -287,7 +287,7 @@ opticalfibercoverspictures = function()
       layers =
       {
         {
-          filename = "__Moshine__/graphics/entity/opticalfiber-covers/opticalfiber-cover-east.png",
+          filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cover-east.png",
           priority = "extra-high",
           width = 128,
           height = 128,
@@ -300,7 +300,7 @@ opticalfibercoverspictures = function()
       layers =
       {
         {
-          filename = "__Moshine__/graphics/entity/opticalfiber-covers/opticalfiber-cover-south.png",
+          filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cover-south.png",
           priority = "extra-high",
           width = 128,
           height = 128,
@@ -313,7 +313,7 @@ opticalfibercoverspictures = function()
       layers =
       {
         {
-          filename = "__Moshine__/graphics/entity/opticalfiber-covers/opticalfiber-cover-west.png",
+          filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cover-west.png",
           priority = "extra-high",
           width = 128,
           height = 128,
