@@ -320,11 +320,12 @@ data:extend({
       priority = "extra-high",
       width = 10,
       height = 10,
-      scale = 0.0666,
+      scale = 1,
 
     },
     random_growth_offset = 0,
     growth_grid_tile_size = 2,
+    growth_area_radius = 0.66,
     radius = 4,
     crane = craneprop,
     planting_procedure_points =
@@ -355,7 +356,7 @@ data:extend({
       sound =
       {
         filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.wav",
-        volume = 0.7,
+        volume = 0.5,
         audible_distance_modifier = 0.7,
       },
       max_sounds_per_prototype = 4,

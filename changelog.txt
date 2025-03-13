@@ -11,6 +11,7 @@ Date: 2025-03-..
     - Added glass, glass tech
     - Tech tree reorganized
     - Added space platform ground tiles
+    - Added minimalist rails (costs neodymium and silicon carbide)
   Locale:
     - French translation by Fr_Dae
   Changes:
@@ -31,6 +32,7 @@ Date: 2025-03-..
     - Made unstable models explosions ~5x more damaging
   Graphics:
     - (planet) Improved starmap icon (thanks to DjKolekson's contribution)
+    - Reworked some tech icons
   Bugfixes:
     - Silicon isn't reasearch on planet discovery anymore
     - Fixed compatibility with Omnicompression
