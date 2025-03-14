@@ -95,19 +95,11 @@ data:extend({
       },
     },
     prerequisites = {"moshine-tech-silicon"},
-    unit =
+    research_trigger =
     {
-      count = 100,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"utility-science-pack", 1},
-        {"space-science-pack", 1},
-        {"electromagnetic-science-pack", 1}
-      },
-      time = 60
+      type = "craft-item",
+      item = "silicon",
+      count = 60
     }
   },
   {
@@ -160,7 +152,7 @@ data:extend({
         recipe = "datacell-remove-raw-data"
       },
     },
-    prerequisites = {"moshine-tech-magnet", "moshine-tech-silicon-cell"},
+    prerequisites = {"moshine-tech-magnet", "moshine-tech-silicon-cell", "moshine-tech-silicon-carbide"},
     unit =
     {
       count = 200,
@@ -188,20 +180,12 @@ data:extend({
         recipe = "supercomputer"
       },
     },
-    prerequisites = {"moshine-tech-hard-drive", "moshine-tech-silicon-carbide"},
-    unit =
+    prerequisites = {"moshine-tech-hard-drive"},
+    research_trigger =
     {
-      count = 500,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"utility-science-pack", 1},
-        {"space-science-pack", 1},
-        {"electromagnetic-science-pack", 1}
-      },
-      time = 60
+      type = "craft-item",
+      item = "data-processor",
+      count = 1
     }
   },
   {
