@@ -4,10 +4,14 @@ Date: 2025-03-..
   Info:
     - /!\ This update changes some recipes, so you'll have to adapt your existing setups /!\
   Content:
-    - Added AI trainer, model training mechanic (gambling to improve models until they higher tiers, slot them into the neural computer)
+    - Added the AI trainer, and model training mechanic (gambling to improve models until they higher tiers, slot them into the neural computer)
+    - Added the Indexer and Webbed processors (a process farm for equations)
     - Hard drives become "datacells", added recipes to load and unload data in them
+    - Added long-handed inserters as a reward
     - Added glass, glass tech
     - Tech tree reorganized
+    - Added space platform ground tiles
+    - Added minimalist rails (costs neodymium and silicon carbide)
   Locale:
     - French translation by Fr_Dae
   Changes:
@@ -20,6 +24,7 @@ Date: 2025-03-..
     - Changed some names and descriptions (3D-data-storage -> holographic core, supercomputer -> Neural computer, raw data -> training data... )
     - Quantum-processor-productivity research 3.5* more expensive, and 100* slower (forces you to use AI cores as modules)
     - Computers can use training data for research, added as ingredients
+    - Neural computer and data processor can use AI cores to speed up research/production
     - Made magnets cheaper (5 -> 1 Neodymium)
     - Made hard-drives/datacells cheaper (5 -> 1 Magnets, 5 -> 1 Advanced-circuits)
     - Optical fiber require glass
@@ -27,6 +32,7 @@ Date: 2025-03-..
     - Made unstable models explosions ~5x more damaging
   Graphics:
     - (planet) Improved starmap icon (thanks to DjKolekson's contribution)
+    - Reworked some tech icons
   Bugfixes:
     - Silicon isn't reasearch on planet discovery anymore
     - Fixed compatibility with Omnicompression

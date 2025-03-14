@@ -116,7 +116,7 @@ data:extend({
     stack_size = 20,
     default_import_location = "moshine"
   },
-  --[[{
+{
     type = "item",
     name = "processing-grid",
     icon = "__Moshine__/graphics/icons/processing-grid.png",
@@ -128,13 +128,14 @@ data:extend({
     place_result = "processing-grid",
     stack_size = 20,
     default_import_location = "moshine"
-  },
+  }, 
+
   {
     type = "item",
     name = "processing-tile",
     icon = "__Moshine__/graphics/icons/processing-tile.png",
-    subgroup = "terrain",
-    order = "b[concrete]-a[plain]",
+    subgroup = "moshine-production-machine",
+    order = "ffh",
     inventory_move_sound = item_sounds.concrete_inventory_move,
     pick_sound = item_sounds.concrete_inventory_pickup,
     drop_sound = item_sounds.concrete_inventory_move,
@@ -147,7 +148,7 @@ data:extend({
       condition = {layers={water_tile=true}}
     },
     random_tint_color = item_tints.bluish_concrete
-  },]]
+  },
 
 --- items
   {
@@ -277,7 +278,7 @@ data:extend({
     icon = "__Moshine__/graphics/icons/datacell-equation.png",
     subgroup = "moshine-processes",
     order = "ggc",
-    --plant_result = "processing-grid-process-equation",
+    plant_result = "processing-grid-process-equation",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
     drop_sound = item_sounds.module_inventory_move,
@@ -287,7 +288,7 @@ data:extend({
     factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value",
     stack_size = 40,
-    weight = 25*kg,
+    weight = 10000*kg,
   },
 
   {

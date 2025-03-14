@@ -2,6 +2,7 @@ require ("sound-util")
 require ("opticalfiberpictures")
 require ("supercomputer")
 require ("dataprocessor")
+require ("computerfarm")
 
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
@@ -221,18 +222,6 @@ data:extend({
               repeat_count = 24,
               shift = util.by_pixel(0, 0),
             },
-            {
-              filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-repaired-beams-idle.png",
-              priority = "high",
-              width = 130,
-              height = 100,
-              frame_count = 24,
-              line_length = 6,
-              animation_speed = 1/3,
-              shift = util.by_pixel(11, -27),
-              blend_mode = "additive",
-              scale = 0.5
-            },
           }
         }
       },
@@ -243,7 +232,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-repaired-beams.png",
+              filename = "__Moshine__/graphics/entity/data-extractor/hr-crash-site-lab-repaired-beams.png",
               priority = "high",
               width = 130,
               height = 100,
@@ -256,7 +245,7 @@ data:extend({
               scale = 0.5
             },
             {
-              filename = "__Moshine__/graphics/entity/crash-site-lab/hr-crash-site-lab-repaired-beams.png",
+              filename = "__Moshine__/graphics/entity/data-extractor/hr-crash-site-lab-repaired-beams.png",
               priority = "high",
               width = 130,
               height = 100,
@@ -419,7 +408,7 @@ data:extend({
                 scale = 0.5,
               },
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-glow.png",
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim.png",
                 blend_mode = "additive",
                 width = 620,
                 height = 620,

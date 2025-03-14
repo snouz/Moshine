@@ -11,6 +11,52 @@ if mods["se-space-trains"] then
   if data.raw["recipe"]["space-cargo-wagon"] then
     table.insert(data.raw["recipe"]["space-cargo-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
   end
+  if data.raw["item-with-entity-data"]["space-locomotive"] then
+    data.raw["item-with-entity-data"]["space-locomotive"].order = "c[rolling-stock]-e[space-locomotive]"
+  end
+  if data.raw["item-with-entity-data"]["space-cargo-wagon"] then
+    data.raw["item-with-entity-data"]["space-cargo-wagon"].order = "c[rolling-stock]-f[space-cargo-wagon]"
+  end
+  if data.raw["item-with-entity-data"]["space-fluid-wagon"] then
+    data.raw["item-with-entity-data"]["space-fluid-wagon"].order = "c[rolling-stock]-g[space-fluid-wagon]"
+  end
+end
+
+if mods["minimalist-rails"] then
+
+  if data.raw["recipe"]["rail-minimal"] then
+    data.raw["recipe"]["rail-minimal"].ingredients = {
+      {type = "item", name = "silicon-carbide", amount = 1},
+      {type = "item", name = "neodymium", amount = 1},
+    }
+  end
+
+  if data.raw["item"]["rail-minimal"] then
+    data.raw["item"]["rail-minimal"].default_import_location = "moshine"
+  end
+
+  --local railmcollision = {layers={floor=true, item=true, object=true, is_lower_object=true}} --, rail=true, water_tile=true
+
+--[[{layers={
+  water_tile=true,
+  item=true,
+  resource=true,
+  player=true,
+  doodad=true,
+  --object=true,
+  lava_tile=true,
+  rail=true -- to prevent rail supports from being buildable on lava, guarded by TEST(RailSupportOverTilesAssumptions)
+}}]]
+
+
+  --data.raw["curved-rail-b"]["curved-rail-b-minimal"].collision_mask = railmcollision
+  --data.raw["curved-rail-a"]["curved-rail-a-minimal"].collision_mask = railmcollision
+  --data.raw["half-diagonal-rail"]["half-diagonal-rail-minimal"].collision_mask = railmcollision
+  --data.raw["straight-rail"]["straight-rail-minimal"].collision_mask = railmcollision
+
+
+  table.insert(data.raw["technology"]["minimalist-rails"].prerequisites, "moshine-tech-silicon-carbide")
+
 end
 
 --[[

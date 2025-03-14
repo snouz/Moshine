@@ -95,19 +95,11 @@ data:extend({
       },
     },
     prerequisites = {"moshine-tech-silicon"},
-    unit =
+    research_trigger =
     {
-      count = 100,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"utility-science-pack", 1},
-        {"space-science-pack", 1},
-        {"electromagnetic-science-pack", 1}
-      },
-      time = 60
+      type = "craft-item",
+      item = "silicon",
+      count = 60
     }
   },
   {
@@ -160,7 +152,7 @@ data:extend({
         recipe = "datacell-remove-raw-data"
       },
     },
-    prerequisites = {"moshine-tech-magnet", "moshine-tech-silicon-cell"},
+    prerequisites = {"moshine-tech-magnet", "moshine-tech-silicon-cell", "moshine-tech-silicon-carbide"},
     unit =
     {
       count = 200,
@@ -188,20 +180,12 @@ data:extend({
         recipe = "supercomputer"
       },
     },
-    prerequisites = {"moshine-tech-hard-drive", "moshine-tech-silicon-carbide"},
-    unit =
+    prerequisites = {"moshine-tech-hard-drive"},
+    research_trigger =
     {
-      count = 500,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"utility-science-pack", 1},
-        {"space-science-pack", 1},
-        {"electromagnetic-science-pack", 1}
-      },
-      time = 60
+      type = "craft-item",
+      item = "data-processor",
+      count = 1
     }
   },
   {
@@ -280,6 +264,38 @@ data:extend({
         {"datacell-raw-data", 1},
       },
       time = 60
+    }
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-processing-grid",
+    icon = "__Moshine__/graphics/technology/moshine-tech-processing-grid.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "processing-grid"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "processing-tile"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-add-equation"
+      },
+    },
+    prerequisites = {"moshine-tech-data-processor"},
+    unit =
+    {
+      count = 10,
+      ingredients =
+      {
+        {"datacell-raw-data", 10},
+        {"model-stable", 1},
+      },
+      time = 20000
     }
   },
   {
@@ -406,4 +422,19 @@ end
 if mods["snouz-big-accumulator"] then
   table.insert(data.raw["recipe"]["big-accumulator"].ingredients, {type = "item", name = "magnet", amount = 10})
   table.insert(data.raw["technology"]["electric-energy-big-accumulators"].prerequisites, "moshine-tech-magnet")
+end
+
+
+if data.raw.technology["long-stack-inserter"] then
+  table.insert(data.raw.technology["long-stack-inserter"].prerequisites, "moshine-tech-processing-grid")
+  data.raw.technology["long-stack-inserter"].unit =
+    {
+      count = 10,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-solved-equation", 1},
+      },
+      time = 2000
+    }
 end

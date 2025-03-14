@@ -10,9 +10,12 @@
     "base",
     "space-age",
     "Moshine-assets >= 0.3.7",
+    "space-platform-for-ground >= 1.0.0",
     "snouz-big-accumulator >= 1.0.3",
     "snouz-big-solar-panel >= 1.0.4",
     "se-space-trains >= 1.0.4",
+    "long_stack_inserter >= 1.0.1",
+    "minimalist-rails >= 1.2.0",
     "(?) bzsilicon",
     "(?) aai-industry",
     "(?) omnimatter_compression"

@@ -5,7 +5,9 @@ require ("__space-age__.prototypes.entity.circuit-network")
 require ("__space-age__.prototypes.entity.space-platform-hub-cockpit")
 local tile_collision_masks = require("__base__/prototypes/tile/tile-collision-masks")
 local tile_trigger_effects = require("__base__.prototypes.tile.tile-trigger-effects")
-
+local tile_sounds = require("__base__/prototypes/tile/tile-sounds")
+local space_platform_tile_animations = require("__space-age__.prototypes.tile.platform-tile-animations")
+local space_age_tile_sounds = require("__space-age__/prototypes/tile/tile-sounds")
 
 local ENTITYPATH = "__Moshine__/graphics/entity"
 
@@ -15,125 +17,21 @@ local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
 local meld = require("meld")
 local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
-local procession_graphic_catalogue_types = require("__base__/prototypes/planet/procession-graphic-catalogue-types")
+--local procession_graphic_catalogue_types = require("__base__/prototypes/planet/procession-graphic-catalogue-types")
 
-local function minor_tints() -- Only for leaves where most if the colour is baked in.
-  return {
-    {r = 255, g = 255, b =  255},
-    {r = 220, g = 255, b =  255},
-    {r = 255, g = 220, b =  255},
-    {r = 255, g = 255, b =  220},
-    {r = 220, g = 220, b =  255},
-    {r = 255, g = 220, b =  220},
-    {r = 220, g = 255, b =  220},
-  }
-end
 
 local seconds = 60
-local minutes = 60*seconds
-local plant_flags = {"placeable-neutral", "placeable-off-grid", "breaths-air"}
+local minutes = 60 * seconds
+local plant_flags = {"placeable-neutral"} --"placeable-off-grid"  "breaths-air"
 local gleba_tree_underwater_things = {}
 
-local function gleba_tree_variations(name, variation_count, per_row, scale_multiplier, width, height, shift)
-  variation_count = variation_count or 5
-  per_row = per_row or 5
-  scale_multiplier = scale_multiplier or 1
-  local width = width or 640
-  local height = height or 560
-  local variations = {}
-  local shift = shift or util.by_pixel(52, -40)
-  for i = 1, variation_count do
-    local x = ((i - 1) % per_row) * width
-    local y = math.floor((i-1)/per_row) * height
-    local variation = {
-      trunk = {
-        filename = "__space-age__/graphics/entity/plant/"..name.."/"..name.."-trunk.png",
-        flags = { "mipmap" },
-        surface = "gleba",
-        width = width,
-        height = height,
-        x = x,
-        y = y,
-        frame_count = 1,
-        shift = shift,
-        scale = 0.33 * scale_multiplier
-      },
-      leaves = {
-        filename = "__space-age__/graphics/entity/plant/"..name.."/"..name.."-harvest.png",
-        flags = { "mipmap" },
-        surface = "gleba",
-        width = width,
-        height = height,
-        x = x,
-        y = y,
-        frame_count = 1,
-        shift = shift,
-        scale = 0.33 * scale_multiplier
-      },
-      normal = {
-        filename = "__space-age__/graphics/entity/plant/"..name.."/"..name.."-normal.png",
-        surface = "gleba",
-        width = width,
-        height = height,
-        x = x,
-        y = y,
-        frame_count = 1,
-        shift = shift,
-        scale = 0.33 * scale_multiplier
-      },
-      shadow = {
-        frame_count = 2,
-        lines_per_file = 1,
-        line_length = 1,
-        flags = { "mipmap", "shadow" },
-        surface = "gleba",
-        filenames =
-        {
-          "__space-age__/graphics/entity/plant/"..name.."/"..name.."-harvest-shadow.png",
-          "__space-age__/graphics/entity/plant/"..name.."/"..name.."-shadow.png"
-        },
-        width = width,
-        height = height,
-        x = x,
-        y = y,
-        shift = shift,
-        scale = 0.33 * scale_multiplier
-      },
-
-      underwater       = gleba_tree_underwater_things[name] and gleba_tree_underwater_things[name].underwater or nil,
-      water_reflection = gleba_tree_underwater_things[name] and gleba_tree_underwater_things[name].water_reflection or nil,
-
-      leaf_generation =
-      {
-        type = "create-particle",
-        particle_name = "leaf-particle",
-        offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}},
-        initial_height = 2,
-        initial_vertical_speed = 0.01,
-        initial_height_deviation = 0.05,
-        speed_from_center = 0.01,
-        speed_from_center_deviation = 0.01
-      },
-      branch_generation =
-      {
-        type = "create-particle",
-        particle_name = "branch-particle",
-        offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}},
-        initial_height = 2,
-        initial_height_deviation = 2,
-        initial_vertical_speed = 0.01,
-        speed_from_center = 0.03,
-        speed_from_center_deviation = 0.01,
-        frame_speed = 0.4,
-        repeat_count = 15
-      }
-    }
-    table.insert(variations, variation)
-  end
-  return variations
-end
-
-
+local nuthin = {
+  filename = "__Moshine__/graphics/empty.png",
+  priority = "very-low",
+  height = 1,
+  width = 1,
+  direction_count = 1,
+}
 
 
 local default_dying_effect =
@@ -159,21 +57,21 @@ local default_dying_effect =
 }
 
 local craneprop = {
-  origin = {0.5, -0.55, 4.6},
+  origin = {0, 0, 2.8},
   shadow_direction = {-0.59502, 0.009124, 0.803659},
 
   speed =
   {
     arm =
     {
-      turn_rate = 0.02,
-      extension_speed = 0.05
+      turn_rate = 0.01,
+      extension_speed = 0.3
     },
     grappler =
     {
-      vertical_turn_rate = 0.02,
-      horizontal_turn_rate = 0.1,
-      extension_speed = 0.01,
+      vertical_turn_rate = 1,
+      horizontal_turn_rate = 1,
+      extension_speed = 1,
       allow_transpolar_movement = true
     }
   },
@@ -184,9 +82,10 @@ local craneprop = {
 
   parts =
   {
+    --[[
     {
       rotated_sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-1",
+      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-1",
       {
         priority = "very-low",
         dice = 4,
@@ -194,7 +93,7 @@ local craneprop = {
         scale = 0.5
       }),
       rotated_sprite_shadow =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-1-shadow",
+      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-1-shadow",
       {
         priority = "very-low",
         direction_count = 64,
@@ -202,7 +101,7 @@ local craneprop = {
         draw_as_shadow = true
       }),
       rotated_sprite_reflection =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-1-reflection",
+      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-1-reflection",
       {
         priority = "very-low",
         direction_count = 64,
@@ -219,29 +118,48 @@ local craneprop = {
       dying_effect = default_dying_effect,
       name = "hub"
     },
+    ]]
     {
       rotated_sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-3",
       {
+        filename = "__Moshine__/graphics/entity/agricultural-tower/laser-artillery-turret.png",
+        width = 220,
+        height = 190,
+        shift = util.by_pixel(0, 0),
+        line_length = 8,
         priority = "very-low",
-        direction_count = 128,
-        scale = 0.5
-      }),
-      rotated_sprite_shadow =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-3-shadow",
-        {
-          priority = "very-low",
-          direction_count = 32,
-          scale = 1,
-          draw_as_shadow = true
-      }),
-      rotated_sprite_reflection =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-3-reflection",
-        {
-          priority = "very-low",
-          direction_count = 8,
-          scale = 5
-      }),
+        direction_count = 64,
+        scale = 0.5,
+      },
+      rotated_sprite_shadow = --nuthin,
+      {
+        filename = "__Moshine__/graphics/entity/agricultural-tower/laser-artillery-turret-shadow.png",
+        width = 230,
+        height = 190,
+        shift = util.by_pixel(5, 5),
+        line_length = 8,
+        priority = "very-low",
+        direction_count = 64,
+        scale = 0.5,
+        draw_as_shadow = true
+      },
+      rotated_sprite_reflection = nuthin,
+      layer = 1,
+      allow_sprite_rotation = false,
+      should_scale_for_perspective = false,
+      relative_position = {0.0, 0.0, 0.0 },
+      extendable_length = {0.0, 0.0, 0.0 },
+      static_length = {0.0, 0.0, 0.88 },
+      snap_start = 1.0,
+      snap_end = 1.0,
+      dying_effect = default_dying_effect,
+      name = "hub"
+    },
+
+    {
+      rotated_sprite = nuthin,
+      rotated_sprite_shadow = nuthin,
+      rotated_sprite_reflection = nuthin,
       layer = -1,
       should_scale_for_perspective = false,
       relative_position = {0.0, 0.45, 0.0 },
@@ -253,28 +171,9 @@ local craneprop = {
       name = "arm_inner"
     },
     {
-      rotated_sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-4",
-      {
-        priority = "very-low",
-        direction_count = 128,
-        scale = 0.5
-      }),
-      rotated_sprite_shadow =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-4-shadow",
-      {
-        priority = "very-low",
-        direction_count = 32,
-        scale = 1,
-        draw_as_shadow = true
-      }),
-      rotated_sprite_reflection =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-4-reflection",
-        {
-          priority = "very-low",
-          direction_count = 8,
-          scale = 5
-      }),
+      rotated_sprite = nuthin,
+      rotated_sprite_shadow = nuthin,
+      rotated_sprite_reflection = nuthin,
       layer = 2,
       should_scale_for_perspective = false,
       relative_position = {0.0, 0.4, 0.4 * 0.76179585 + 0.1 },
@@ -287,28 +186,9 @@ local craneprop = {
       name = "arm_inner_joint"
     },
     {
-      rotated_sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-5",
-      {
-        priority = "very-low",
-        direction_count = 128,
-        scale = 0.5
-      }),
-      rotated_sprite_shadow =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-5-shadow",
-      {
-        priority = "very-low",
-        direction_count = 32,
-        scale = 1,
-        draw_as_shadow = true
-      }),
-      rotated_sprite_reflection =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-5-reflection",
-        {
-          priority = "very-low",
-          direction_count = 8,
-          scale = 5
-      }),
+      rotated_sprite = nuthin,
+      rotated_sprite_shadow = nuthin,
+      rotated_sprite_reflection = nuthin,
       is_contractible_by_cropping = true,
       relative_position = {0.0, -1.5, -1.5 * 0.1228},
       extendable_length = {0.0, 4.5, 4.5 * 0.1228 }, -- tg(7°)
@@ -319,28 +199,9 @@ local craneprop = {
       name = "arm_central"
     },
     {
-      rotated_sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-6",
-      {
-        priority = "very-low",
-        direction_count = 128,
-        scale = 0.5
-      }),
-      rotated_sprite_shadow =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-6-shadow",
-      {
-        priority = "very-low",
-        direction_count = 32,
-        scale = 1,
-        draw_as_shadow = true
-      }),
-      rotated_sprite_reflection =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-6-reflection",
-        {
-          priority = "very-low",
-          direction_count = 8,
-          scale = 5
-      }),
+      rotated_sprite = nuthin,
+      rotated_sprite_shadow = nuthin,
+      rotated_sprite_reflection = nuthin,
       layer = 1,
       orientation_shift = 0.0,
       relative_position = {0, -0.2, 0.3 * 0.1228},
@@ -353,28 +214,9 @@ local craneprop = {
       name = "arm_central_joint"
     },
     {
-      rotated_sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-7",
-      {
-        priority = "very-low",
-        direction_count = 128,
-        scale = 0.5
-      }),
-      rotated_sprite_shadow =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-7-shadow",
-      {
-        priority = "very-low",
-        direction_count = 32,
-        scale = 1,
-        draw_as_shadow = true
-      }),
-      rotated_sprite_reflection =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-7-reflection",
-        {
-          priority = "very-low",
-          direction_count = 8,
-          scale = 5
-      }),
+      rotated_sprite = nuthin,
+      rotated_sprite_shadow = nuthin,
+      rotated_sprite_reflection = nuthin,
       layer = 0,
       is_contractible_by_cropping = true,
       relative_position = {0.0, -0.5, -0.5 * -0.1944},
@@ -386,27 +228,9 @@ local craneprop = {
       name = "arm_outer"
     },
     {
-      rotated_sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-8",
-      {
-        priority = "very-low",
-        direction_count = 64,
-        scale = 0.5
-      }),
-      rotated_sprite_shadow =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-8-shadow",
-      {
-        priority = "very-low",
-        direction_count = 32,
-        scale = 1,
-        draw_as_shadow = true
-      }),
-      sprite_reflection =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-8-reflection",
-        {
-          priority = "very-low",
-          scale = 5
-      }),
+      rotated_sprite = nuthin,
+      rotated_sprite_shadow = nuthin,
+      rotated_sprite_reflection = nuthin,
       layer = -1,
       relative_position = {0.0, 0.0, -0.17 },
       static_length_grappler = {0, 0, -0.6 },
@@ -415,20 +239,20 @@ local craneprop = {
     },
     {
       sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-9",
+      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-9",
       {
         priority = "very-low",
         scale = 0.5
       }),
       sprite_shadow =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-9-shadow",
+      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-9-shadow",
       {
         priority = "very-low",
         scale = 1,
         draw_as_shadow = true
       }),
       sprite_reflection =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-9-reflection",
+        util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-9-reflection",
         {
           priority = "very-low",
           scale = 5
@@ -443,24 +267,18 @@ local craneprop = {
     },
     {
       sprite =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-10",
       {
-        priority = "very-low",
-        scale = 0.5
-      }),
-      sprite_shadow =
-      util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-10",
-      {
+        filename = "__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-10.png",
+        shift = util.by_pixel(0, -16),
+        line_length = 1,
         priority = "very-low",
         scale = 0.5,
-        draw_as_shadow = true
-      }),
-      sprite_reflection =
-        util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-crane-10-reflection",
-        {
-          priority = "very-low",
-          scale = 5
-      }),
+        height = 64,
+        width = 64,
+        draw_as_glow = true,
+      },
+      rotated_sprite_shadow = nuthin,
+      rotated_sprite_reflection = nuthin,
       layer = -3,
       should_scale_for_perspective = false,
       relative_position = {0.0, 0.0, 0.0 },
@@ -486,7 +304,7 @@ data:extend({
   {
     type = "agricultural-tower",
     name = "processing-grid",
-    icon = "__space-age__/graphics/icons/agricultural-tower.png",
+    icon = "__Moshine__/graphics/icons/processing-grid.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "processing-grid"},
     fast_replaceable_group = "computer-farm",
@@ -499,12 +317,16 @@ data:extend({
     radius_visualisation_picture =
     {
       filename = "__core__/graphics/white-square.png",
-      priority = "extra-high-no-scale",
+      priority = "extra-high",
       width = 10,
-      height = 10
+      height = 10,
+      scale = 1,
+
     },
-    --growth_grid_tile_size = 3,
-    radius = 6,
+    random_growth_offset = 0,
+    growth_grid_tile_size = 2,
+    growth_area_radius = 0.66,
+    radius = 4,
     crane = craneprop,
     planting_procedure_points =
     {
@@ -533,8 +355,8 @@ data:extend({
     {
       sound =
       {
-        filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.ogg",
-        volume = 0.7,
+        filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.wav",
+        volume = 0.5,
         audible_distance_modifier = 0.7,
       },
       max_sounds_per_prototype = 4,
@@ -543,30 +365,30 @@ data:extend({
     },
     central_orienting_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-rotation-loop.ogg", volume = 0.3},
-      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-rotation-stop.ogg", volume = 0.5}
+      sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-loop.wav", volume = 0.9},
+      stopped_sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-stop.wav", volume = 0.9}
     },
     central_orienting_sound_source = "hub",
     arm_extending_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-arm-extend-loop.ogg", volume = 0.25},
-      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-arm-extend-stop.ogg", volume = 0.6}
+      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-arm-extend-loop.ogg", volume = 0},
+      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-arm-extend-stop.ogg", volume = 0}
     },
     arm_extending_sound_source = "arm_central_joint",
     grappler_orienting_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-orient-loop.ogg", volume = 0.25},
-      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-orient-stop.ogg", volume = 0.4}
+      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-orient-loop.ogg", volume = 0},
+      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-orient-stop.ogg", volume = 0}
     },
     grappler_orienting_sound_source = "grappler-hub",
     grappler_extending_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-loop.ogg", volume = 0.4},
-      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-stop.ogg", volume = 0.45}
+      sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-loop.ogg", volume = 0},
+      stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-stop.ogg", volume = 0}
     },
     grappler_extending_sound_source = "grappler-hub",
-    planting_sound = sound_variations("__space-age__/sound/entity/agricultural-tower/agricultural-tower-planting", 5, 0.7),
-    harvesting_sound = sound_variations("__space-age__/sound/entity/agricultural-tower/agricultural-tower-harvesting", 6, 0.6),
+    planting_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9),
+    harvesting_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9),
     resistances =
     {
       {
@@ -574,8 +396,8 @@ data:extend({
         percent = 100
       }
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-2.7, -2.7}, {2.7, 2.7}},
+    selection_box = {{-3, -3}, {3, 3}},
     collision_mask = {layers={item=true, object=true, player=true, water_tile=true, elevated_rail=true, is_object=true, is_lower_object=true}},
     surface_conditions =
     {
@@ -604,26 +426,67 @@ data:extend({
       {
         layers =
         {
-          util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-base",
           {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer.png",
+            width = 400,
+            height = 420,
+            shift = util.by_pixel(0, -6),
+            line_length = 8,
             priority = "high",
-            animation_speed = 0.25,
-            frame_count = 64,
-            scale = 0.5
-          }),
-          util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-base-shadow",
+            animation_speed = 0.5,
+            frame_count = 48,
+            scale = 0.5,
+          },
           {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-sh.png",
+            width = 402,
+            height = 362,
+            shift = util.by_pixel(6, 10),
+            line_length = 1,
             priority = "high",
             frame_count = 1,
-            repeat_count = 64,
+            repeat_count = 48,
             draw_as_shadow = true,
-            scale = 0.5
-          })
+            scale = 0.5,
+          },
+          {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-glow.png",
+            --always_draw = true,
+            width = 400,
+            height = 420,
+            shift = util.by_pixel(0, -6),
+            line_length = 8,
+            priority = "high",
+            animation_speed = 0.5,
+            frame_count = 48,
+            scale = 0.5,
+            draw_as_glow = true,
+          },
+          {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-light.png",
+            --always_draw = true,
+            width = 400,
+            height = 420,
+            shift = util.by_pixel(0, -6),
+            line_length = 8,
+            priority = "high",
+            animation_speed = 0.5,
+            frame_count = 48,
+            scale = 0.5,
+            draw_as_light = true,
+          },
         }
       },
-      recipe_not_set_tint = { primary = {r = 0.6, g = 0.6, b =  0.5, a = 1}, secondary = {r = 0.6, g =  0.6, b = 0.5, a = 1} },
-      working_visualisations =
+      --recipe_not_set_tint = { primary = {r = 0.6, g = 0.6, b =  0.5, a = 1}, secondary = {r = 0.6, g =  0.6, b = 0.5, a = 1} },
+      --[[working_visualisations =
       {
+        always_draw = true,
+        animation = {
+          layers = {
+            
+          }
+        }]]
+        --[[
         {
           always_draw = true,
           fog_mask = { rect = {{-30, -30}, {30, -2.75}}, falloff = 1 },
@@ -671,8 +534,8 @@ data:extend({
           effect = "flicker",
           fadeout = true,
           light = {intensity = 1.0, size = 16, shift = {-1.2, -0.5}, color = {r = 1, g = 1, b = 1}}
-        }
-      },
+        }]]
+      --},
       water_reflection =
       {
         pictures =
@@ -702,7 +565,7 @@ data:extend({
     {
       mining_particle = "wooden-particle",
       mining_time = 0.5,
-      results = {},
+      results = {{type = "item", name = "datacell-solved-equation", amount = 1}},
       mining_trigger =
       {
         {
@@ -717,15 +580,16 @@ data:extend({
         }
       }
     },
-    mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
-    mined_sound = sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
-    growth_ticks = 10 * minutes,
+    mining_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
+    mined_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
+    growth_ticks = 7 * minutes,
     harvest_emissions = plant_harvest_emissions,
     emissions_per_second = plant_emissions,
     max_health = 50,
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    collision_box = {{-0.3, -0.3}, {0.3, 0.3}},
     --collision_mask = {layers={player=true, ground_tile=true, train=true}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    sticker_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
     order = "a[tree]-c[gleba]-a[seedable]-a[yumako-tree]",
@@ -738,46 +602,54 @@ data:extend({
       --probability_expression = "min(0.2, 0.3 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
       --richness_expression = "random_penalty_at(3, 1)",
       probability_expression = 0,
-      tile_restriction = {"processing-tile"}
+      tile_restriction = {"processing-tile"},
+    },
+    tile_buildability_rules = {
+      {
+        area = {{-0.5, -0.5}, {0.5, 0.5}},
+        required_tiles = {layers = {ground_tile = true}},
+      }
     },
     --variations = gleba_tree_variations("yumako-tree", 8, 4, 1.3),
-    pictures =
-    {
-      layers =
+    stateless_visualisation_variations = {
       {
-        {
-          filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1.png",
-          priority="high",
-          width = 214,
-          height = 226,
-          --frame_count = 32,
-          --line_length = 8,
-          shift = util.by_pixel(0, 2),
-          scale = 0.5
-        },
-        {
-          filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1-shadow.png",
-          priority="high",
-          width = 190,
-          height = 165,
-          --line_length = 1,
-          --repeat_count = 32,
-          draw_as_shadow = true,
-          shift = util.by_pixel(8.5, 5),
-          scale = 0.5
+        animation = {
+          sheet = {
+            variation_count = 1,
+            filenames = {"__Moshine__/graphics/entity/quantum-computer/plant.png"},
+            size = 128,
+            lines_per_file = 25,
+            frame_count = 25,
+            animation_speed = 0.3,
+            scale = 0.5,
+            draw_as_glow = true,
+          }
         }
       }
     },
 
 
-    colors = minor_tints(),
+    pictures =
+    {
+      layers =
+      {
+        {
+          filename = "__Moshine__/graphics/empty.png",
+          width = 1,
+          height = 1,
+        }
+      }
+    },
+
+
+    --[[colors = minor_tints(),
     agricultural_tower_tint =
     {
       primary = {r = 0.552, g = 0.218, b = 0.218, a = 1.000}, -- #8c3737ff
       secondary = {r = 0.561, g = 0.613, b = 0.308, a = 1.000}, -- #8f4f4eff
-    },
+    },]]
     -- tile_buildability_rules = { {area = {{-0.55, -0.55}, {0.55, 0.55}}, required_tiles = {"natural-yumako-soil", "artificial-yumako-soil"}, remove_on_collision = true} },
-    ambient_sounds =
+    --[[ambient_sounds =
     {
       sound =
       {
@@ -792,7 +664,7 @@ data:extend({
       max_entity_count = 10,
       entity_to_sound_ratio = 0.2,
       average_pause_seconds = 8
-    },
+    },]]--
     map_color = {255, 255, 255},
   },
 
@@ -801,7 +673,7 @@ data:extend({
 
 
 
-
+--[[
   {
     type = "tile-effect",
     name = "processing-tile",
@@ -847,120 +719,373 @@ data:extend({
 
 
   {
-  type = "tile",
-  name = "processing-tile",
-  icon = "__Moshine__/graphics/icons/processing-tile.png",
-  icon_size = 64,
-  order = "a[artificial]-b[tier-2]-a[concrete]",
-  effect = "processing-tile",
-  effect_color = { 167, 59, 27 },
-  effect_color_secondary = { 49, 80, 14 },
+    type = "tile",
+    name = "processing-tile",
+    icon = "__Moshine__/graphics/icons/processing-tile.png",
+    icon_size = 64,
+    order = "a[artificial]-b[tier-2]-a[concrete]",
+    effect = "processing-tile",
+    effect_color = { 167, 59, 27 },
+    effect_color_secondary = { 49, 80, 14 },
 
-  subgroup = "artificial-tiles",
-  needs_correction = false,
-  minable = {mining_time = 0.1, result = "concrete"},
-  mined_sound = sounds.deconstruct_bricks(0.8),
-  collision_mask = tile_collision_masks.ground(),
-  walking_speed_modifier = 1.4,
-  layer = 255,
-  layer_group = "top",
-  transition_overlay_layer_offset = 2, -- need to render border overlay on top of hazard-concrete
-  decorative_removal_probability = 100,
+    subgroup = "artificial-tiles",
+    needs_correction = false,
+    minable = {mining_time = 0.1, result = "concrete"},
+    mined_sound = sounds.deconstruct_bricks(0.8),
+    collision_mask = tile_collision_masks.ground(),
+    walking_speed_modifier = 1.4,
+    layer = 255,
+    layer_group = "top",
+    transition_overlay_layer_offset = 2, -- need to render border overlay on top of hazard-concrete
+    decorative_removal_probability = 100,
 
 
-  variants =
-  {
-    transition =
+    variants =
     {
-      overlay_layout =
+      transition =
       {
-        inner_corner =
+        overlay_layout =
         {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_inner-corner.png",
-          count = 1,
-          scale = 0.5,
+          inner_corner =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_inner-corner.png",
+            count = 1,
+            scale = 0.5,
+          },
+          outer_corner =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_outer-corner.png",
+            count = 1,
+            scale = 0.5,
+          },
+          side =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_side.png",
+            count = 1,
+            scale = 0.5,
+          },
+          u_transition =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_u.png",
+            count = 1,
+            scale = 0.5,
+          },
+          o_transition =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_o.png",
+            count = 1,
+            scale = 0.5,
+          }
         },
-        outer_corner =
+        mask_layout =
         {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_outer-corner.png",
-          count = 1,
-          scale = 0.5,
-        },
-        side =
-        {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_side.png",
-          count = 1,
-          scale = 0.5,
-        },
-        u_transition =
-        {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_u.png",
-          count = 1,
-          scale = 0.5,
-        },
-        o_transition =
-        {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_o.png",
-          count = 1,
-          scale = 0.5,
+          inner_corner =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_inner-corner-mask.png",
+            count = 1,
+            scale = 0.5,
+          },
+          outer_corner =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_outer-corner-mask.png",
+            count = 1,
+            scale = 0.5,
+          },
+          side =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_side-mask.png",
+            count = 1,
+            scale = 0.5,
+          },
+          u_transition =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_u-mask.png",
+            count = 1,
+            scale = 0.5,
+          },
+          o_transition =
+          {
+            spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_o-mask.png",
+            count = 1,
+            scale = 0.5,
+          }
         }
       },
-      mask_layout =
+
+      material_background =
       {
-        inner_corner =
-        {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_inner-corner-mask.png",
-          count = 1,
-          scale = 0.5,
-        },
-        outer_corner =
-        {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_outer-corner-mask.png",
-          count = 1,
-          scale = 0.5,
-        },
-        side =
-        {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_side-mask.png",
-          count = 1,
-          scale = 0.5,
-        },
-        u_transition =
-        {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_u-mask.png",
-          count = 1,
-          scale = 0.5,
-        },
-        o_transition =
-        {
-          spritesheet = ENTITYPATH .. "/processing-tile/hr_solarfloor_o-mask.png",
-          count = 1,
-          scale = 0.5,
-        }
+        picture = ENTITYPATH .. "/processing-tile/hr_solarfloor.png",
+        count = 1,
+        scale = 0.5,
       }
     },
 
-    material_background =
-    {
-      picture = ENTITYPATH .. "/processing-tile/hr_solarfloor.png",
-      count = 1,
-      scale = 0.5,
-    }
+    --transitions = concrete_transitions,
+    --transitions_between_transitions = concrete_transitions_between_transitions,
+
+    walking_sound = concrete_sounds,
+    driving_sound = concrete_driving_sound,
+    build_sound = concrete_tile_build_sounds,
+    map_color={10, 10, 10},
+    scorch_mark_color = {r = 0.373, g = 0.307, b = 0.243, a = 1.000},
+    --vehicle_friction_modifier = concrete_vehicle_speed_modifier,
+
+    trigger_effect = tile_trigger_effects.concrete_trigger_effect()
   },
+]]--
 
-  --transitions = concrete_transitions,
-  --transitions_between_transitions = concrete_transitions_between_transitions,
+--[[
+  {
+    type = "tile",
+    name = "processing-tile",
+    order = "a[artificial]-c[tier-3]-a[refined-concrete]",
+    subgroup = "artificial-tiles",
+    needs_correction = false,
+    minable = {mining_time = 0.1, result = "processing-tile"},
+    mined_sound = sounds.deconstruct_bricks(0.8),
+    collision_mask = tile_collision_masks.ground(),
+    --walking_speed_modifier = 1.5,
+    layer = 17,
+    layer_group = "ground-artificial",
+    transition_overlay_layer_offset = 2, -- need to render border overlay on top of hazard-concrete
+    decorative_removal_probability = 1, --0.25,
+    variants =
+    {
+      transition =
+      {
+        overlay_layout =
+        {
+          inner_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-inner-corner.png",
+            count = 16,
+            scale = 0.5
+          },
+          outer_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-outer-corner.png",
+            count = 8,
+            scale = 0.5
+          },
+          side =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-side.png",
+            count = 16,
+            scale = 0.5
+          },
+          u_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-u.png",
+            count = 8,
+            scale = 0.5
+          },
+          o_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-o.png",
+            count = 4,
+            scale = 0.5
+          }
+        },
+        mask_layout =
+        {
+          inner_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-inner-corner-mask.png",
+            count = 16,
+            scale = 0.5
+          },
+          outer_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-outer-corner-mask.png",
+            count = 8,
+            scale = 0.5
+          },
+          side =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-side-mask.png",
+            count = 16,
+            scale = 0.5
+          },
+          u_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-u-mask.png",
+            count = 8,
+            scale = 0.5
+          },
+          o_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-o-mask.png",
+            count = 4,
+            scale = 0.5
+          }
+        }
+      },
 
-  walking_sound = concrete_sounds,
-  driving_sound = concrete_driving_sound,
-  build_sound = concrete_tile_build_sounds,
-  map_color={10, 10, 10},
-  scorch_mark_color = {r = 0.373, g = 0.307, b = 0.243, a = 1.000},
-  --vehicle_friction_modifier = concrete_vehicle_speed_modifier,
+      material_background =
+      {
+        picture = "__Moshine__/graphics/terrain/concrete/space-platform-2x2.png",
+        count = 16,
+        scale = 0.5
+      }
+    },
 
-  trigger_effect = tile_trigger_effects.concrete_trigger_effect()
-},
+    transitions = concrete_transitions,
+    transitions_between_transitions = concrete_transitions_between_transitions,
 
+    walking_sound = tile_sounds.walking.refined_concrete,
+    driving_sound = tile_sounds.driving.concrete,
+    build_sound = tile_sounds.building.concrete,
+
+    map_color={49, 48, 45},
+    scorch_mark_color = {r = 0.373, g = 0.307, b = 0.243, a = 1.000},
+    vehicle_friction_modifier = concrete_vehicle_speed_modifier,
+
+    trigger_effect = tile_trigger_effects.concrete_trigger_effect()
+  },
+]]
+
+
+
+--[[
+  {
+    type = "tile",
+    name = "processing-tile",
+    order = "a[artificial]-d[utility]-b[space-platform-foundation]",
+    subgroup = "artificial-tiles",
+    minable = {mining_time = 0.5, result = "processing-tile"},
+    mined_sound = sounds.deconstruct_bricks(0.8),
+    --is_foundation = true,
+    allows_being_covered = false,
+    max_health = 50,
+    weight = 200,
+    collision_mask = tile_collision_masks.ground(),
+    layer = 17,
+    layer_group = "ground-artificial",
+    transitions = concrete_transitions,
+    transitions_between_transitions = concrete_transitions_between_transitions,
+    transition_overlay_layer_offset = 2, -- need to render border overlay on top of hazard-concrete
+    decorative_removal_probability = 0.99, --0.25,
+    -- transitions = landfill_transitions,
+    -- transitions_between_transitions = landfill_transitions_between_transitions,
+    dying_explosion = "space-platform-foundation-explosion",
+    trigger_effect = tile_trigger_effects.landfill_trigger_effect(),
+
+    bound_decoratives =
+    {
+      "space-platform-decorative-pipes-2x1",
+      "space-platform-decorative-pipes-1x2",
+      "space-platform-decorative-pipes-1x1",
+      "space-platform-decorative-4x4",
+      "space-platform-decorative-2x2",
+      "space-platform-decorative-1x1",
+      "space-platform-decorative-tiny",
+    },
+
+    --build_animations = space_platform_tile_animations.top_animation,
+    --build_animations_background = space_platform_tile_animations.animation,
+    --built_animation_frame = 0,
+
+    sprite_usage_surface = "any",
+    variants =
+    {
+      transition =
+      {
+        overlay_layout =
+        {
+          inner_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-inner-corner.png",
+            count = 16,
+            scale = 0.5
+          },
+          outer_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-outer-corner.png",
+            count = 16,
+            scale = 0.5
+          },
+          side =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-side.png",
+            count = 32,
+            scale = 0.5
+          },
+          u_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-u.png",
+            count = 4,
+            scale = 0.5
+          },
+          o_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-o.png",
+            count = 1,
+            scale = 0.5
+          }
+        },
+        mask_layout =
+        {
+          inner_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-inner-corner-mask.png",
+            count = 16,
+            scale = 0.5
+          },
+          outer_corner =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-outer-corner-mask.png",
+            count = 16,
+            scale = 0.5
+          },
+          side =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-side-mask.png",
+            count = 32,
+            scale = 0.5
+          },
+          u_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-u-mask.png",
+            count = 4,
+            scale = 0.5
+          },
+          o_transition =
+          {
+            spritesheet = "__Moshine__/graphics/terrain/concrete/concrete-o-mask.png",
+            count = 1,
+            scale = 0.5
+          }
+        }
+      },
+
+      material_background =
+      {
+        picture = "__Moshine__/graphics/terrain/concrete/refined-concrete.png",
+        count = 1,
+        scale = 0.5
+      }
+    },
+
+    walking_sound = tile_sounds.walking.concrete,
+    build_sound = space_age_tile_sounds.building.space_platform,
+    map_color = {63, 61, 59},
+    scorch_mark_color = {r = 0.373, g = 0.307, b = 0.243, a = 1.000}
+  },
+  ]]
 
 
 })
+
+local processingtile = table.deepcopy(data.raw.tile["space-platform-for-ground"])
+processingtile.name = "processing-tile"
+processingtile.order = "a[artificial]-d[utility]-c[space-platform-foundation]"
+processingtile.minable = {mining_time = 0.5, result = "processing-tile"}
+processingtile.layer = 18,
+--[[processingtile.surface_conditions = {
+  {
+    property = "magnetic-field",
+    min = 0,
+    max = 5
+  }
+}]]
+data:extend({processingtile})
