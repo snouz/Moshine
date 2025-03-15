@@ -182,7 +182,7 @@ data:extend({
         },
       }
     },
-    crafting_speed = 0.5,
+    crafting_speed = 1,
     energy_source =
     {
       type = "electric",
@@ -194,9 +194,10 @@ data:extend({
     close_sound = sounds.machine_close,
     --allowed_effects = {"speed", "consumption", "pollution"},
     --effect_receiver = {uses_module_effects = false, uses_beacon_effects = false, uses_surface_effects = true},
-    module_slots = 5,
+    module_slots = 4,
     allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
     allowed_module_categories = {"ai-speed"},
+    effect_receiver = {uses_module_effects = true, uses_beacon_effects = false, uses_surface_effects = false},
     impact_category = "metal",
     working_sound =
     {

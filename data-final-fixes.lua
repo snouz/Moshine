@@ -46,13 +46,13 @@ end
 if data.raw["technology"]["moshine-tech-ai-trainer"] then
   data.raw["technology"]["moshine-tech-ai-trainer"].unit =
     {
-      count = 1000,
+      count = 50,
       ingredients =
       {
         {"datacell-raw-data", 1},
         {"model-stable", 1},
       },
-      time = 10
+      time = 80
     }
 end
 

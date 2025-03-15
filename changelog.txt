@@ -24,7 +24,7 @@ Date: 2025-03-..
     - Changed some names and descriptions (3D-data-storage -> holographic core, supercomputer -> Neural computer, raw data -> training data... )
     - Quantum-processor-productivity research 3.5* more expensive, and 100* slower (forces you to use AI cores as modules)
     - Computers can use training data for research, added as ingredients
-    - Neural computer and data processor can use AI cores to speed up research/production
+    - Neural computer and data processor can use AI cores to speed up research/production, become unaffected by beacons
     - Made magnets cheaper (5 -> 1 Neodymium)
     - Silicon cell cheaper (10 -> 5 Silicon)
     - Made hard-drives/datacells cheaper (5 -> 1 Magnets, 5 -> 1 Advanced-circuits)
@@ -35,6 +35,7 @@ Date: 2025-03-..
     - (planet) Improved starmap icon (thanks to DjKolekson's contribution)
     - Reworked some tech icons
     - Neural computer: added animation graphics
+    - Improved icons
   Sounds:
     - Neural computer custom sound
     - Data extractor custom sound

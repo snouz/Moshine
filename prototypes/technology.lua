@@ -333,7 +333,7 @@ data:extend({
     prerequisites = {"moshine-tech-data-processor"},
     unit =
     {
-      count = 100,
+      count = 50,
       ingredients =
       {
         {"datacell-raw-data", 1},

@@ -329,6 +329,25 @@ data:extend({
     {
       { size = 64, filename = "__Moshine__/graphics/icons/model-unstable.png", scale = 0.5 },
     },
+
+
+    pictures =
+    {
+      layers =
+      {
+        {
+          size = 64,
+          filename = "__Moshine__/graphics/icons/model-unstable.png",
+          scale = 0.5,
+        },
+        {
+          draw_as_light = true,
+          size = 64,
+          filename = "__Moshine__/graphics/icons/model-unstable-light.png",
+          scale = 0.5
+        }
+      }
+    },
     subgroup = "moshine-processes",
     default_import_location = "moshine",
     order = "iii",
@@ -409,7 +428,7 @@ for i=1,10 do
       name = "ai-tier-" .. i,
       icons = {
         {icon = "__Moshine__/graphics/icons/aicores/tier-" .. i .. ".png", icon_size = 64, scale = 0.5},
-        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
+        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.5}},
       },
       --icon = "__Moshine__/graphics/icons/ai-tier-" .. i .. ".png",
       subgroup = "moshine-processes",
