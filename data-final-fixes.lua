@@ -40,7 +40,7 @@ if data.raw["technology"]["moshine-tech-data-processor"] then
       {
         {"datacell-raw-data", 1},
       },
-      time = 60
+      time = 10
     }
 end
 if data.raw["technology"]["moshine-tech-ai-trainer"] then
@@ -52,7 +52,7 @@ if data.raw["technology"]["moshine-tech-ai-trainer"] then
         {"datacell-raw-data", 1},
         {"model-stable", 1},
       },
-      time = 60
+      time = 10
     }
 end
 
@@ -74,10 +74,24 @@ if data.raw["technology"]["moshine-tech-quantum-processor-productivity"] then
       count_formula = "1.4^L*700",
       ingredients =
       {
-        {"model-stable", 1},
         {"datacell-raw-data", 1},
+        {"datacell-solved-equation", 1},
       },
       time = 6000
+    }
+end
+
+
+if data.raw["technology"]["long-stack-inserter"] then
+  data.raw["technology"]["long-stack-inserter"].unit =
+    {
+      count = 10,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-solved-equation", 1},
+      },
+      time = 2000
     }
 end
 

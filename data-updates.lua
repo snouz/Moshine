@@ -53,10 +53,11 @@ if mods["minimalist-rails"] then
   --data.raw["curved-rail-a"]["curved-rail-a-minimal"].collision_mask = railmcollision
   --data.raw["half-diagonal-rail"]["half-diagonal-rail-minimal"].collision_mask = railmcollision
   --data.raw["straight-rail"]["straight-rail-minimal"].collision_mask = railmcollision
-
-
-  table.insert(data.raw["technology"]["minimalist-rails"].prerequisites, "moshine-tech-silicon-carbide")
-
+  if data.raw["technology"]["minimalist-rails"] then
+    table.insert(data.raw["technology"]["minimalist-rails"].prerequisites, "moshine-tech-silicon-carbide")
+    table.insert(data.raw["technology"]["minimalist-rails"].unit.ingredients, {"utility-science-pack", 1})
+    table.insert(data.raw["technology"]["minimalist-rails"].unit.ingredients, {"space-science-pack", 1})
+  end
 end
 
 --[[

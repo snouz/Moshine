@@ -265,8 +265,8 @@ data:extend({
     close_sound = {filename = "__base__/sound/open-close/pumpjack-close.ogg", volume = 0.5},
     working_sound =
     {
-      sound = {filename = "__base__/sound/pumpjack.ogg", volume = 0.7},
-      max_sounds_per_type = 3,
+      sound = {filename = "__Moshine__/sound/data-extractor/extractor_buzz.ogg", volume = 0.9},
+      --max_sounds_per_type = 3,
       audible_distance_modifier = 0.6,
       fade_in_ticks = 4,
       fade_out_ticks = 10

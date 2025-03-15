@@ -17,6 +17,7 @@ Any sort of feedback is immensely welcome, be it corrections, balance, ideas, cr
 - Some graphics (Neural computer, Data extractor, Indexer, AI trainer, mixed ore icon, sand icons) include modified versions of Krastorio 1 and 2 and are under the GNU LGPLv3 license.
 - The Data extractor, Data processor and AI trainer contain some graphics from Hurricane046's buildings (CC BY license)
 - AI trainer sound by Euphrosyyn -- https://freesound.org/s/382687/ -- License: Creative Commons 0
+- Processor sound by LOVEBURD -- https://freesound.org/s/343387/ -- License: Creative Commons 0
 - 0.2 translations: Chinese by rlcyyg1108, Russian by GafarovMaxim, French by Fr_Dae
 - Compatibility to Silica and Silicon by Dh4mpyr
 - Starmap icon partially from DjKolekson

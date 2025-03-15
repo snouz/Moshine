@@ -70,7 +70,7 @@ data:extend({
     prerequisites = {"moshine-tech-silicon"},
     unit =
     {
-      count = 100,
+      count = 200,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -235,7 +235,7 @@ data:extend({
       {
         {"datacell-raw-data", 1},
       },
-      time = 60
+      time = 30
     }
   },
 
@@ -263,7 +263,7 @@ data:extend({
       {
         {"datacell-raw-data", 1},
       },
-      time = 60
+      time = 10
     }
   },
   {
@@ -395,16 +395,16 @@ data:extend({
         change = 0.1
       },
     },
-    prerequisites = {"moshine-tech-data-processor", "quantum-processor"},
+    prerequisites = {"moshine-tech-processing-grid", "quantum-processor"},
     unit =
     {
       count_formula = "1.4^L*700",
       ingredients =
       {
-        {"model-stable", 1},
         {"datacell-raw-data", 1},
+        {"datacell-solved-equation", 1},
       },
-      time = 6000
+      time = 60000
     },
     max_level = "infinite",
     upgrade = true

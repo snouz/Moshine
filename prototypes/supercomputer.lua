@@ -7,6 +7,7 @@ supercomputer = "__Moshine__/graphics/entity/supercomputer/"
 
 
 local planetary_teleporter_on_animation = {
+
   layers = {
     --SHADOW
     {
@@ -16,7 +17,7 @@ local planetary_teleporter_on_animation = {
       height = 292,
       scale = 0.5,
       frame_count = 1,
-      repeat_count = 20,
+      repeat_count = 95,
       draw_as_shadow = true,
       animation_speed = 0.5,
       shift = { 1.9, 1.2 - 0.5},
@@ -24,11 +25,11 @@ local planetary_teleporter_on_animation = {
     --BUILDING
     {
       filename = supercomputer .. "teleporter-base.png",
-      priority = "medium",
+      priority = "high",
       width = 400,
       height = 475,
       scale = 0.5,
-      repeat_count = 20,
+      repeat_count = 95,
       shift = {0,-0.5},
       animation_speed = 0.5,
     },
@@ -39,27 +40,42 @@ local planetary_teleporter_on_animation = {
       width = 400,
       height = 475,
       scale = 0.5,
-      frame_count = 20,
+      frame_count = 19,
       line_length = 5,
+      repeat_count = 5,
       animation_speed = 0.5,
       draw_as_glow = true,
-      fadeout = true,
       shift = {0,-0.5},
-      blend_mode = "additive-soft",
+      blend_mode = "additive",
     },
     -- LIGHTS
     {
       filename = supercomputer .. "teleporter-base-combined-light.png",
-      priority = "extra-high",
+      priority = "high",
       width = 400,
       height = 475,
       scale = 0.5,
-      frame_count = 20,
+      frame_count = 19,
       line_length = 5,
+      repeat_count = 5,
       animation_speed = 0.5,
       draw_as_light = true,
       shift = {0,-0.5},
-      blend_mode = "additive-soft",
+      blend_mode = "additive",
+    },
+    {
+      filename = supercomputer .. "ball-anim.png",
+      priority = "high",
+      width = 256,
+      height = 256,
+      scale = 0.4,
+      frame_count = 95,
+      line_length = 10,
+      animation_speed = 1,
+      draw_as_glow = true,
+      apply_special_effect = true,
+      shift = {0,-2.4},
+      blend_mode = "additive",
     },
   },
 }
@@ -145,15 +161,15 @@ data:extend({
     {
       sound =
       {
-        filename = "__base__/sound/lab.ogg",
-        volume = 0.7,
+        filename = "__Moshine__/sound/neural-computer/computer_buzz.ogg",
+        volume = 0.6,
         modifiers = {volume_multiplier("main-menu", 2.2), volume_multiplier("tips-and-tricks", 0.8)},
         audible_distance_modifier = 0.7,
       },
       fade_in_ticks = 4,
       fade_out_ticks = 20
     },
-    researching_speed = 2,
+    researching_speed = 1,
     inputs =
     {
       -- declared in data-final-fixes.lua

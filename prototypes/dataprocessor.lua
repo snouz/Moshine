@@ -202,10 +202,10 @@ data:extend({
     {
       sound =
       {
-        filename = "__base__/sound/accumulator-working.ogg",
-        volume = 0.4,
+        filename = "__Moshine__/sound/data-processor/processor_buzz.ogg",
+        volume = 0.7,
         modifiers = volume_multiplier("main-menu", 1.44),
-        audible_distance_modifier = 0.5
+        audible_distance_modifier = 0.6
       },
       match_volume_to_activity = true,
       activity_to_volume_modifiers = {offset = 2, inverted = true},

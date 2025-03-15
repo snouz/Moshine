@@ -9,6 +9,28 @@ data:extend({
 -- entities
   {
     type = "recipe",
+    name = "data-processor",
+    energy_required = 10,
+    ingredients =
+    {
+      {type = "item", name = "assembling-machine-3", amount = 1},
+      {type = "item", name = "productivity-module-2", amount = 5},
+      {type = "item", name = "silicon-carbide", amount = 5},
+    },
+    surface_conditions =
+    {
+      {
+        property = "magnetic-field",
+        min = 0,
+        max = 5
+      }
+    },
+    results = {{type = "item", name = "data-processor", amount = 1}},
+    allow_productivity = false,
+    enabled = false,
+  },
+  {
+    type = "recipe",
     name = "supercomputer",
     energy_required = 120,
     ingredients =
@@ -29,28 +51,6 @@ data:extend({
       }
     },
     results = {{type="item", name="supercomputer", amount = 1}},
-    allow_productivity = false,
-    enabled = false,
-  },
-  {
-    type = "recipe",
-    name = "data-processor",
-    energy_required = 10,
-    ingredients =
-    {
-      {type = "item", name = "assembling-machine-3", amount = 1},
-      {type = "item", name = "productivity-module-2", amount = 5},
-      {type = "item", name = "silicon-carbide", amount = 5},
-    },
-    surface_conditions =
-    {
-      {
-        property = "magnetic-field",
-        min = 0,
-        max = 5
-      }
-    },
-    results = {{type = "item", name = "data-processor", amount = 1}},
     allow_productivity = false,
     enabled = false,
   },
@@ -156,9 +156,9 @@ data:extend({
     type = "recipe",
     name = "silicon",
     category = "chemistry",
-    energy_required = 5,
+    energy_required = 2,
     ingredients = {
-      {type = "item", name = "sand", amount = 10},
+      {type = "item", name = "sand", amount = 5},
       {type = "item", name = "coal", amount = 1},
       {type = "fluid", name = "steam", amount = 10},
     },
@@ -208,7 +208,7 @@ data:extend({
     energy_required = 2,
     ingredients =
     {
-      {type = "item", name = "silicon", amount = 10},
+      {type = "item", name = "silicon", amount = 5},
       {type = "item", name = "electronic-circuit", amount = 1},
     },
     results = {{type = "item", name = "silicon-cell", amount = 1}},
@@ -241,7 +241,7 @@ data:extend({
     energy_required = 10,
     ingredients = {
       {type = "item", name = "magnet", amount = 1},
-      {type = "item", name = "silicon-cell", amount = 5},
+      {type = "item", name = "silicon-cell", amount = 1},
       {type = "item", name = "advanced-circuit", amount = 1},
     },
     results = {{type = "item", name = "hard-drive", amount = 1}},
@@ -304,12 +304,12 @@ data:extend({
     type = "recipe",
     name = "3d-data-storage",
     category = "electronics",
-    energy_required = 30,
+    energy_required = 10,
     ingredients = {
-      {type = "item", name = "magnet", amount = 2},
-      {type = "item", name = "silicon-cell", amount = 30},
+      {type = "item", name = "magnet", amount = 3},
+      {type = "item", name = "silicon-cell", amount = 3},
       {type = "item", name = "hard-drive", amount = 4},
-      {type = "item", name = "glass", amount = 4},
+      {type = "item", name = "glass", amount = 5},
     },
     results = {{type = "item", name = "3d-data-storage", amount = 1}},
     allow_productivity = true,

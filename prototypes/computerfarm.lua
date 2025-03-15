@@ -355,7 +355,7 @@ data:extend({
     {
       sound =
       {
-        filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.wav",
+        filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.ogg",
         volume = 0.5,
         audible_distance_modifier = 0.7,
       },
@@ -365,8 +365,8 @@ data:extend({
     },
     central_orienting_sound =
     {
-      sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-loop.wav", volume = 0.9},
-      stopped_sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-stop.wav", volume = 0.9}
+      sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-loop.ogg", volume = 0.9},
+      stopped_sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-stop.ogg", volume = 0.9}
     },
     central_orienting_sound_source = "hub",
     arm_extending_sound =
