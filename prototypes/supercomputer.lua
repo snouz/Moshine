@@ -201,14 +201,14 @@ data:extend({
       emissions_per_minute = { pollution = 8 }
     },
     energy_usage = "300kW",
-    module_slots = 20,
+    module_slots = 10,
     allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
     allowed_module_categories = {"ai-speed"},
     effect_receiver = {uses_module_effects = true, uses_beacon_effects = false, uses_surface_effects = false},
     icons_positioning =
     {
-      {inventory_index = defines.inventory.lab_modules, shift = {0, 1.5}, scale = 0.35, max_icons_per_row = 10},
-      {inventory_index = defines.inventory.lab_input, shift = {0, -0.8}, scale = 0.7, max_icons_per_row = 6, separation_multiplier = 1/1.1}
+      {inventory_index = defines.inventory.lab_modules, shift = {0, 1.8}, scale = 0.5, max_icons_per_row = 5},
+      {inventory_index = defines.inventory.lab_input, shift = {0, 0}, scale = 0.7, max_icons_per_row = 6, separation_multiplier = 1/1.1}
     }
   },
 

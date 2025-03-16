@@ -309,26 +309,6 @@ data:extend({
         type = "unlock-recipe",
         recipe = "ai-trainer"
       },
-      {
-        type = "unlock-recipe",
-        recipe = "ai-tier-0"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "ai-tier-1"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "ai-tier-2"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "ai-tier-3"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "ai-tier-4"
-      },
     },
     prerequisites = {"moshine-tech-data-processor"},
     unit =
@@ -343,6 +323,106 @@ data:extend({
     }
   },
   {
+    type = "technology",
+    name = "moshine-tech-ai-tier-1",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-1.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-0" }},
+    prerequisites = {"moshine-tech-ai-trainer"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-2",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-2.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-1" }},
+    prerequisites = {"moshine-tech-ai-tier-1"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-3",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-3.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-2" }},
+    prerequisites = {"moshine-tech-ai-tier-2"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-4",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-4.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-3" }},
+    prerequisites = {"moshine-tech-ai-tier-3"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-5",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-5.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-4" }},
+    prerequisites = {"moshine-tech-ai-tier-4"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-6",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-6.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-5" }},
+    prerequisites = {"moshine-tech-ai-tier-5"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-7",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-7.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-6" }},
+    prerequisites = {"moshine-tech-ai-tier-6"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-8",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-8.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-7" }},
+    prerequisites = {"moshine-tech-ai-tier-7"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-9",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-9.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-8" }},
+    prerequisites = {"moshine-tech-ai-tier-8"},
+    unit = {},
+    upgrade = true,
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-ai-tier-10",
+    icon = "__Moshine__/graphics/technology/ai-tiers/tier-10.png",
+    icon_size = 256,
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-9" }},
+    prerequisites = {"moshine-tech-ai-tier-9"},
+    unit = {},
+    upgrade = true,
+  },
+  --[[{
     type = "technology",
     name = "moshine-tech-advanced-ai-cores",
     icon = "__Moshine__/graphics/technology/moshine-tech-advanced-ai-cores.png",
@@ -381,7 +461,7 @@ data:extend({
       },
       time = 16000
     }
-  },
+  },]]
   {
     type = "technology",
     name = "moshine-tech-quantum-processor-productivity",

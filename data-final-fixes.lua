@@ -56,6 +56,127 @@ if data.raw["technology"]["moshine-tech-ai-trainer"] then
     }
 end
 
+if data.raw["technology"]["moshine-tech-ai-tier-1"] then
+  data.raw["technology"]["moshine-tech-ai-tier-1"].unit =
+    {
+      count = 8,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      },
+      time = 100
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-2"] then
+  data.raw["technology"]["moshine-tech-ai-tier-2"].unit =
+    {
+      count = 10,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, -- 20
+      time = 2000
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-3"] then
+  data.raw["technology"]["moshine-tech-ai-tier-3"].unit =
+    {
+      count = 15,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, -- 160
+      time = 16000
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-4"] then
+  data.raw["technology"]["moshine-tech-ai-tier-4"].unit =
+    {
+      count = 20,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, --540
+      time = 54000
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-5"] then
+  data.raw["technology"]["moshine-tech-ai-tier-5"].unit =
+    {
+      count = 25,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, --1280
+      time = 128000
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-6"] then
+  data.raw["technology"]["moshine-tech-ai-tier-6"].unit =
+    {
+      count = 30,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, --2500
+      time = 250000
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-7"] then
+  data.raw["technology"]["moshine-tech-ai-tier-7"].unit =
+    {
+      count = 35,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, --4320
+      time = 432000
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-8"] then
+  data.raw["technology"]["moshine-tech-ai-tier-8"].unit =
+    {
+      count = 40,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, --6860
+      time = 686000
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-9"] then
+  data.raw["technology"]["moshine-tech-ai-tier-9"].unit =
+    {
+      count = 45,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, --10240
+      time = 1024000
+    }
+end
+if data.raw["technology"]["moshine-tech-ai-tier-10"] then
+  data.raw["technology"]["moshine-tech-ai-tier-10"].unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"model-stable", 1},
+      }, --14580
+      time = 1458000
+    }
+end
+
 if data.raw["technology"]["moshine-tech-processing-grid"] then
   data.raw["technology"]["moshine-tech-processing-grid"].unit =
     {
@@ -65,7 +186,7 @@ if data.raw["technology"]["moshine-tech-processing-grid"] then
         {"datacell-raw-data", 10},
         {"model-stable", 1},
       },
-      time = 20000
+      time = 145800
     }
 end
 if data.raw["technology"]["moshine-tech-quantum-processor-productivity"] then
@@ -91,7 +212,7 @@ if data.raw["technology"]["long-stack-inserter"] then
         {"datacell-raw-data", 1},
         {"datacell-solved-equation", 1},
       },
-      time = 2000
+      time = 245800
     }
 end
 

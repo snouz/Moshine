@@ -121,7 +121,7 @@ data:extend({
     name = "processing-grid",
     icon = "__Moshine__/graphics/icons/processing-grid.png",
     subgroup = "moshine-production-machine",
-    order = "ffj",
+    order = "ffk",
     inventory_move_sound = item_sounds.mechanical_large_inventory_move,
     pick_sound = item_sounds.mechanical_large_inventory_pickup,
     drop_sound = item_sounds.mechanical_large_inventory_move,
@@ -135,7 +135,7 @@ data:extend({
     name = "processing-tile",
     icon = "__Moshine__/graphics/icons/processing-tile.png",
     subgroup = "moshine-production-machine",
-    order = "ffh",
+    order = "ffl",
     inventory_move_sound = item_sounds.concrete_inventory_move,
     pick_sound = item_sounds.concrete_inventory_pickup,
     drop_sound = item_sounds.concrete_inventory_move,
@@ -327,12 +327,6 @@ data:extend({
     icon = "__Moshine__/graphics/icons/model-unstable.png",
     pictures =
     {
-      { size = 64, filename = "__Moshine__/graphics/icons/model-unstable.png", scale = 0.5 },
-    },
-
-
-    pictures =
-    {
       layers =
       {
         {
@@ -434,7 +428,7 @@ for i=1,10 do
       subgroup = "moshine-processes",
       tier = i,
       category = "ai-speed",
-      effect = {speed = i * i}, --, consumption = 0.5, quality = -0.1},
+      effect = {speed = (i * i * i)/50}, --, consumption = 0.5, quality = -0.1},
       order = (i == 10) and "jjk-" .. i or "jjk-0" .. i,
       inventory_move_sound = item_sounds.module_inventory_move,
       pick_sound = item_sounds.module_inventory_pickup,

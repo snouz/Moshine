@@ -358,7 +358,7 @@ data:extend({
     type = "recipe",
     name = "ai-tier-0",
     icons = {
-      {icon = "__Moshine__/graphics/icons/aicores/tier-0.png", icon_size = 64, scale = 0.5},
+      {icon = "__Moshine__/graphics/icons/aicores/tier-1.png", icon_size = 64, scale = 0.5},
       --{icon = "__Moshine__/graphics/icons/tiers/tier-1.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
       {icon = "__Moshine__/graphics/icons/training-arrows.png", icon_size = 64, scale = 0.5},
     },
@@ -368,7 +368,8 @@ data:extend({
     energy_required = 10,
     ingredients = {{type = "item", name = "model-stable", amount = 1}},
     results = {
-      {type="item", name="ai-tier-1", amount=1, probability=1},
+      {type="item", name="model-stable", amount=1, probability=0.50},
+      {type="item", name="ai-tier-1", amount=1, probability=0.50},
     },
     allow_productivity = false,
     enabled = false,
@@ -377,8 +378,8 @@ data:extend({
     type = "recipe",
     name = "ai-tier-1",
     icons = {
-      {icon = "__Moshine__/graphics/icons/aicores/tier-1.png", icon_size = 64, scale = 0.5},
-      {icon = "__Moshine__/graphics/icons/tiers/tier-1.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
+      {icon = "__Moshine__/graphics/icons/aicores/tier-2.png", icon_size = 64, scale = 0.5},
+      {icon = "__Moshine__/graphics/icons/tiers/tier-2.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
       {icon = "__Moshine__/graphics/icons/training-arrows.png", icon_size = 64, scale = 0.5},
     },
     hide_from_player_crafting = true,
@@ -403,8 +404,8 @@ for i=2,9 do
       type = "recipe",
       name = "ai-tier-" .. i,
       icons = {
-        {icon = "__Moshine__/graphics/icons/aicores/tier-" .. i .. ".png", icon_size = 64, scale = 0.5},
-        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
+        {icon = "__Moshine__/graphics/icons/aicores/tier-" .. i+1 .. ".png", icon_size = 64, scale = 0.5},
+        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i+1 .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
         {icon = "__Moshine__/graphics/icons/training-arrows.png", icon_size = 64, scale = 0.5},
       },
       hide_from_player_crafting = true,

@@ -320,12 +320,12 @@ data:extend({
       priority = "extra-high",
       width = 10,
       height = 10,
-      scale = 1,
+      scale = 0.65,
 
     },
     random_growth_offset = 0,
     growth_grid_tile_size = 2,
-    growth_area_radius = 0.66,
+    growth_area_radius = 0.65,
     radius = 4,
     crane = craneprop,
     planting_procedure_points =
