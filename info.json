@@ -1,7 +1,7 @@
 {
   "name": "Moshine",
   "title": "Moshine",
-  "description": "Hot planet, 13 technologies, 2 new minerals, 4 entities, 7 items, custom terrain and music, unique challenges... (more content in the future)",
+  "description": "Hot planet to develop AI, 26 technologies, 2 new minerals, 5 buildings, many items, custom terrain, music, unique challenges...",
   "author": "snouz",
   "homepage": "https://github.com/snouz/Moshine",
   "version": "1.0.0",
@@ -9,11 +9,11 @@
   "dependencies": [
     "base",
     "space-age",
-    "Moshine-assets >= 0.3.7",
+    "Moshine-assets >= 0.3.9",
     "space-platform-for-ground >= 1.0.0",
     "snouz-big-accumulator >= 1.0.3",
     "snouz-big-solar-panel >= 1.0.4",
-    "se-space-trains >= 1.0.4",
+    "se-space-trains >= 1.0.5",
     "long_stack_inserter >= 1.0.1",
     "minimalist-rails >= 1.2.0",
     "(?) bzsilicon",
