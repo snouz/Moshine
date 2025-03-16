@@ -582,7 +582,7 @@ data:extend({
     },
     mining_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
     mined_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
-    growth_ticks = 7 * minutes,
+    growth_ticks = 4 * minutes,
     harvest_emissions = plant_harvest_emissions,
     emissions_per_second = plant_emissions,
     max_health = 50,
