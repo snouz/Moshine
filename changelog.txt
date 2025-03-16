@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.3.0
-Date: 2025-03-..
+Version: 1.0.0
+Date: 2025-03-16
   Info:
     - /!\ This update changes some recipes, so you'll have to adapt your existing setups /!\
   Content:
@@ -17,14 +17,17 @@ Date: 2025-03-..
   Changes:
     - (planet) Made the planet locked behind electromagnetic plant
     - (planet) Made steam 500°C (instead of 175)
-    - (planet) Doubled Neodymium probability
+    - (planet) Doubled Neodymium output
+    - (planet) Doubled copper output
+    - (planet) Raised sand output
+    - (planet) Raised (x10) data output
     - (planet) Made foundations buildable on iron lava pools
     - Heating sand gives glass instead of silicon (like aai-industry)
     - Silicon is made in chem plants using additional coal and steam, made faster
     - Changed some names and descriptions (3D-data-storage -> holographic core, supercomputer -> Neural computer, raw data -> training data... )
     - Quantum-processor-productivity research 3.5* more expensive, and 100* slower (forces you to use AI cores as modules)
     - Computers can use training data for research, added as ingredients
-    - Neural computer and data processor can use AI cores to speed up research/production, become unaffected by beacons
+    - Neural computer and data processor can use AI cores to speed up research/production, but unaffected by beacons
     - Made magnets cheaper (5 -> 1 Neodymium)
     - Silicon cell cheaper (10 -> 5 Silicon)
     - Made hard-drives/datacells cheaper (5 -> 1 Magnets, 5 -> 1 Advanced-circuits)
@@ -35,11 +38,17 @@ Date: 2025-03-..
     - (planet) Improved starmap icon (thanks to DjKolekson's contribution)
     - Reworked some tech icons
     - Neural computer: added animation graphics
-    - Improved icons
+    - Reworked icons
+    - Added diversity to sand texture
+    - Optimized images size
+    - Better geyser anim
+    - Made sand icon prioritized over Maraxsis'
   Sounds:
     - Neural computer custom sound
     - Data extractor custom sound
     - Data processor custom sound
+    - (planet) Geyser custom sound
+    - (planet) Improved music
   Bugfixes:
     - Silicon isn't reasearch on planet discovery anymore
     - Fixed compatibility with Omnicompression
