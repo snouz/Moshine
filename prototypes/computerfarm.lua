@@ -320,7 +320,7 @@ data:extend({
       priority = "extra-high",
       width = 10,
       height = 10,
-      scale = 0.65,
+      scale = 0.60,
 
     },
     random_growth_offset = 0,
@@ -348,9 +348,9 @@ data:extend({
       {0.0, 0.0, 1.0}
     },
     drawing_box_vertical_extension = 5.5,
-    heating_energy = "100kW",
-    energy_usage = "100kW",
-    crane_energy_usage = "100kW",
+    heating_energy = "1000kW",
+    energy_usage = "1000kW",
+    crane_energy_usage = "1000kW",
     working_sound =
     {
       sound =
@@ -451,7 +451,6 @@ data:extend({
           },
           {
             filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-glow.png",
-            --always_draw = true,
             width = 400,
             height = 420,
             shift = util.by_pixel(0, -6),
@@ -464,7 +463,6 @@ data:extend({
           },
           {
             filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-light.png",
-            --always_draw = true,
             width = 400,
             height = 420,
             shift = util.by_pixel(0, -6),
@@ -477,65 +475,6 @@ data:extend({
           },
         }
       },
-      --recipe_not_set_tint = { primary = {r = 0.6, g = 0.6, b =  0.5, a = 1}, secondary = {r = 0.6, g =  0.6, b = 0.5, a = 1} },
-      --[[working_visualisations =
-      {
-        always_draw = true,
-        animation = {
-          layers = {
-            
-          }
-        }]]
-        --[[
-        {
-          always_draw = true,
-          fog_mask = { rect = {{-30, -30}, {30, -2.75}}, falloff = 1 },
-          animation = util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-base",
-          {
-            frame_count = 1,
-            scale = 0.5
-          }),
-        },
-
-        {
-          --constant_speed = true,
-          always_draw = true,
-          apply_recipe_tint = "primary",
-          animation = util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-base-plant-mask",
-          {
-            priority = "high",
-            frame_count = 64,
-            animation_speed = 0.25,
-            tint_as_overlay = true,
-            scale = 0.5
-          }),
-        },
-        {
-          --constant_speed = true,
-          apply_recipe_tint = "secondary",
-          effect = "flicker",
-          fadeout = true,
-          animation = util.sprite_load("__space-age__/graphics/entity/agricultural-tower/agricultural-tower-base-light",
-          {
-            priority = "high",
-            frame_count = 64,
-            animation_speed = 0.25,
-            blend_mode = "additive",
-            scale = 0.5
-          }),
-        },
-        {
-          effect = "flicker",
-          fadeout = true,
-          light = {intensity = 1.0, size = 6, shift = {-0.45, -0.25}, color = {r = 1, g = 1, b = 1}}
-        },
-        {
-          apply_recipe_tint = "secondary",
-          effect = "flicker",
-          fadeout = true,
-          light = {intensity = 1.0, size = 16, shift = {-1.2, -0.5}, color = {r = 1, g = 1, b = 1}}
-        }]]
-      --},
       water_reflection =
       {
         pictures =
@@ -564,7 +503,7 @@ data:extend({
     minable =
     {
       mining_particle = "wooden-particle",
-      mining_time = 0.5,
+      mining_time = 0.2,
       results = {{type = "item", name = "datacell-solved-equation", amount = 1}},
       mining_trigger =
       {
@@ -574,7 +513,13 @@ data:extend({
           {
             {
               type = "instant",
-              target_effects = leaf_sound_trigger
+              target_effects = {
+                {
+                  type = "play-sound",
+                  sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9),
+                  damage_type_filters = "fire"
+                }
+              }
             }
           }
         }
@@ -583,18 +528,18 @@ data:extend({
     mining_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
     mined_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
     growth_ticks = 4 * minutes,
-    harvest_emissions = plant_harvest_emissions,
-    emissions_per_second = plant_emissions,
+    --harvest_emissions = plant_harvest_emissions,
+    --emissions_per_second = plant_emissions,
     max_health = 50,
     collision_box = {{-0.3, -0.3}, {0.3, 0.3}},
     --collision_mask = {layers={player=true, ground_tile=true, train=true}},
-    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    sticker_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    selection_box = {{-1, -1}, {1, 1}},
+    sticker_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
     order = "a[tree]-c[gleba]-a[seedable]-a[yumako-tree]",
     impact_category = "tree",
-    factoriopedia_simulation = simulations.factoriopedia_yumako_tree,
+    --factoriopedia_simulation = simulations.factoriopedia_yumako_tree,
     autoplace =
     {
       --control = "gleba_plants",
@@ -614,15 +559,28 @@ data:extend({
     stateless_visualisation_variations = {
       {
         animation = {
-          sheet = {
-            variation_count = 1,
-            filenames = {"__Moshine__/graphics/entity/quantum-computer/plant.png"},
-            size = 128,
-            lines_per_file = 25,
-            frame_count = 25,
-            animation_speed = 0.3,
-            scale = 0.5,
-            draw_as_glow = true,
+          sheets = {
+            {
+              variation_count = 1,
+              filenames = {"__Moshine__/graphics/entity/quantum-computer/plant-datacell.png"},
+              size = 128,
+              --repeat_count = 1,
+              lines_per_file = 1,
+              frame_count = 25,
+              animation_speed = 0.3,
+              scale = 0.5,
+              frame_sequence = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+            },
+            {
+              variation_count = 1,
+              filenames = {"__Moshine__/graphics/entity/quantum-computer/plant.png"},
+              size = 128,
+              lines_per_file = 25,
+              frame_count = 25,
+              animation_speed = 0.3,
+              scale = 0.5,
+              draw_as_glow = true,
+            },
           }
         }
       }
@@ -634,9 +592,17 @@ data:extend({
       layers =
       {
         {
+
           filename = "__Moshine__/graphics/empty.png",
           width = 1,
           height = 1,
+
+          --[[
+          filename = "__Moshine__/graphics/entity/quantum-computer/plant-processing.png",
+          size = 128,
+          scale = 0.5,
+          draw_as_glow = true,
+          ]]
         }
       }
     },

@@ -1,3 +1,16 @@
+local aicorecolors = {
+  {168,161,159}, --1
+  {150,124,177}, --2
+  {87,85,218},   --3
+  {127,130,206}, --4
+  {165,181,137}, --5
+  {164,106,161}, --6
+  {98,82,190},   --7
+  {122,163,177}, --8
+  {73,167,214},  --9
+  {72,91,188},  --10
+}
+
 data:extend({
 
 
@@ -373,6 +386,7 @@ data:extend({
     },
     allow_productivity = false,
     enabled = false,
+    crafting_machine_tint = {primary = aicorecolors[1]},
   },
   {
     type = "recipe",
@@ -395,6 +409,7 @@ data:extend({
     },
     allow_productivity = false,
     enabled = false,
+    crafting_machine_tint = {primary = aicorecolors[2]},
   },
 })
 
@@ -415,29 +430,13 @@ for i=2,9 do
       ingredients = {{type = "item", name = "ai-tier-" .. i, amount = 1}},
       results = {
         {type="item", name="ai-tier-" .. i, amount=1, probability=0.49},
-        {type="item", name="ai-tier-" .. i+1, amount=1, probability= (0.34 - i/100) },
-        {type="item", name="ai-tier-" .. i-1, amount=1, probability= (0.16 + i/100) },
+        {type="item", name="ai-tier-" .. i+1, amount=1, probability= (0.32 - i/100) },
+        {type="item", name="ai-tier-" .. i-1, amount=1, probability= (0.18 + i/100) },
         {type="item", name="model-unstable", amount=1, probability=0.01},
       },
       allow_productivity = false,
       enabled = false,
+      crafting_machine_tint = {primary = aicorecolors[i+1]},
     },
   })
 end
---data:extend({
---[[
-  {
-    type = "recipe",
-    name = "processing-power-fluid",
-    icon = "__Moshine__/graphics/icons/processing-power-fluid.png",
-    category = "data-processing",
-    energy_required = 0.1,
-    ingredients = {},
-    results = {
-      {type="fluid", name="processing-power-fluid", amount=1000},
-    },
-    allow_productivity = true
-  },
-  ]]--
-
---})

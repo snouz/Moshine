@@ -4,6 +4,32 @@ local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
  
 data:extend({
   {
+    type = "corpse",
+    name = "data-processor-remnants",
+    icon = "__Moshine__/graphics/icons/data-processor.png",
+    flags = {"placeable-neutral", "not-on-map"},
+    hidden_in_factoriopedia = true,
+    subgroup = "production-machine-remnants",
+    order = "a-a-a",
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    tile_width = 3,
+    tile_height = 3,
+    selectable_in_game = false,
+    time_before_removed = 60 * 60 * 15, -- 15 minutes
+    expires = false,
+    final_render_layer = "remnants",
+    animation = {
+      filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-remnants.png",
+      priority="high",
+      width = 290,
+      height = 290,
+      line_length = 1,
+      direction_count = 1,
+      shift = util.by_pixel(0, -16),
+      scale = 0.5
+    },
+  },
+  {
     type = "assembling-machine",
     name = "data-processor",
     icon = "__Moshine__/graphics/icons/data-processor.png",
@@ -11,7 +37,7 @@ data:extend({
     minable = {mining_time = 1, result = "data-processor"},
     crafting_categories = {"data-processing"},
     max_health = 300,
-    corpse = "assembling-machine-1-remnants",
+    corpse = "data-processor-remnants",
     dying_explosion = "assembling-machine-1-explosion",
     icon_draw_specification = {shift = {0, 0}, scale = 0.7},
     resistances =

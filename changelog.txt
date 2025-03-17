@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 2025-03-17
+  Changes:
+    - Process indexer locked behind AI core T2 (to make sure the player understands AI core improvement before being stuck researching the indexer for hours)
+    - Indexer is 10x more energy hungry
+    - AI trainer recipes have 2% more chance to make a core less good
+  Compatibility:
+    - Removed glass tech redundancy with AAI Industry
+    - (planet) Fixed Vortik's deep core mining compatibility
+  Graphics:
+    - Changed indexer's pointer and process graphics
+    - Custom data processor's remnant
+    - Added subtle tints to core training
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2025-03-16
   Bugfixes:

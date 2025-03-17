@@ -286,7 +286,7 @@ data:extend({
         recipe = "datacell-add-equation"
       },
     },
-    prerequisites = {"moshine-tech-data-processor"},
+    prerequisites = {"moshine-tech-ai-tier-2"},
     unit =
     {
       count = 10,
@@ -517,4 +517,9 @@ if data.raw.technology["long-stack-inserter"] then
       },
       time = 2000
     }
+end
+
+if mods["aai-industry"] and data.raw["technology"]["glass-processing"] then
+  data.raw["technology"]["moshine-tech-data-extractor"].prerequisites = {"moshine-tech-supercomputer", "glass-processing"}
+  data.raw["technology"]["moshine-tech-glass"].enabled = false
 end
