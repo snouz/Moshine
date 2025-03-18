@@ -105,7 +105,16 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity(),
     fast_replaceable_group = "data-processor",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["assembling-machine"],
+    circuit_connector = circuit_connector_definitions.create_vector
+      (
+        universal_connector_template,
+        {
+          { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
+          { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
+          { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
+          { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true }
+        }
+      ),
     alert_icon_shift = util.by_pixel(0, -12),
     graphics_set =
     {

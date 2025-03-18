@@ -12,7 +12,16 @@ data:extend({
     fast_replaceable_group = "ai-trainer",
     --next_upgrade = "steel-furnace",
     circuit_wire_max_distance = furnace_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["stone-furnace"],
+    circuit_connector = circuit_connector_definitions.create_vector
+      (
+        universal_connector_template,
+        {
+          { variation = 18, main_offset = util.by_pixel(0, 97), shadow_offset = util.by_pixel(27.5, 117), show_shadow = true },
+          { variation = 18, main_offset = util.by_pixel(0, 97), shadow_offset = util.by_pixel(27.5, 117), show_shadow = true },
+          { variation = 18, main_offset = util.by_pixel(0, 97), shadow_offset = util.by_pixel(27.5, 117), show_shadow = true },
+          { variation = 18, main_offset = util.by_pixel(0, 97), shadow_offset = util.by_pixel(27.5, 117), show_shadow = true }
+        }
+      ),
     max_health = 1000,
     corpse = "stone-furnace-remnants",
     dying_explosion = "stone-furnace-explosion",

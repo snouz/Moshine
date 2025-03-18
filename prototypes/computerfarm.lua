@@ -418,7 +418,11 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = { spores = 0 } -- necessary so attack groups find the entity
     },
-    circuit_connector = circuit_connector_definitions["agricultural-tower"],
+    circuit_connector = circuit_connector_definitions.create_single
+      (
+        universal_connector_template,
+        { variation = 30, main_offset = util.by_pixel(-52, 83), shadow_offset = util.by_pixel(-52, 83), show_shadow = true }
+      ),
     circuit_wire_max_distance = 30,
     graphics_set =
     {
