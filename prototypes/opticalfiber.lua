@@ -398,7 +398,7 @@ data:extend({
     },
     impact_category = "glass",
     pictures = opticalfiberpictures(),
-    working_sound = sounds.pipe,
+    --working_sound = sounds.pipe,
     open_sound = sounds.metal_small_open,
     close_sound = sounds.metal_small_close,
 

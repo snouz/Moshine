@@ -218,6 +218,7 @@ data:extend({
   {
     type = "recipe",
     name = "silicon-cell",
+    category = "electronics",
     energy_required = 2,
     ingredients =
     {
