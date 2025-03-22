@@ -56,18 +56,6 @@ if data.raw["technology"]["moshine-tech-ai-trainer"] then
     }
 end
 
-if data.raw["technology"]["moshine-tech-ai-tier-1"] then
-  data.raw["technology"]["moshine-tech-ai-tier-1"].unit =
-    {
-      count = 8,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      },
-      time = 100
-    }
-end
 if data.raw["technology"]["moshine-tech-ai-tier-2"] then
   data.raw["technology"]["moshine-tech-ai-tier-2"].unit =
     {

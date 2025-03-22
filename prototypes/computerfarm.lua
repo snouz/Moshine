@@ -290,17 +290,7 @@ local craneprop = {
   }
 }
 
-
-
-
-
 data:extend({
-  
-
-  
-
-
-
   {
     type = "agricultural-tower",
     name = "processing-grid",
@@ -321,7 +311,6 @@ data:extend({
       width = 10,
       height = 10,
       scale = 0.60,
-
     },
     random_growth_offset = 0,
     growth_grid_tile_size = 2,

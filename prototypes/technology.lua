@@ -329,7 +329,13 @@ data:extend({
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-0" }},
     prerequisites = {"moshine-tech-ai-trainer"},
-    unit = {},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "ai-trainer",
+      count = 1
+    },
+    --unit = {},
     upgrade = true,
   },
   {
