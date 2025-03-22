@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6
-Date: 2025-03-
+Date: 2025-03-21
   Changes:
-    - Neodymium rails have much more hitpoints than normal ones.
+    - Neodymium rails have a hidden power pole to connect power grids
+    - Neodymium rails have much more hitpoints than normal ones
+    - Neodymium rails are used as upgrade to normal rails
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 2025-03-19

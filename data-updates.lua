@@ -35,19 +35,25 @@ if mods["minimalist-rails"] then
     data.raw["item"]["rail-minimal"].default_import_location = "moshine"
   end
 
-  --local railmcollision = {layers={floor=true, item=true, object=true, is_lower_object=true}} --, rail=true, water_tile=true
+  data.raw["curved-rail-b"]["curved-rail-b-minimal"].max_health = 3000
+  data.raw["curved-rail-a"]["curved-rail-a-minimal"].max_health = 3000
+  data.raw["half-diagonal-rail"]["half-diagonal-rail-minimal"].max_health = 2000
+  data.raw["straight-rail"]["straight-rail-minimal"].max_health = 1000
 
---[[{layers={
-  water_tile=true,
-  item=true,
-  resource=true,
-  player=true,
-  doodad=true,
-  --object=true,
-  lava_tile=true,
-  rail=true -- to prevent rail supports from being buildable on lava, guarded by TEST(RailSupportOverTilesAssumptions)
-}}]]
+  data.raw["curved-rail-b"]["curved-rail-b-minimal"].fast_replaceable_group = "curved-rail-b"
+  data.raw["curved-rail-a"]["curved-rail-a-minimal"].fast_replaceable_group = "curved-rail-a"
+  data.raw["half-diagonal-rail"]["half-diagonal-rail-minimal"].fast_replaceable_group = "half-diagonal-rail"
+  data.raw["straight-rail"]["straight-rail-minimal"].fast_replaceable_group = "straight-rail"
 
+  data.raw["curved-rail-b"]["curved-rail-b"].fast_replaceable_group = "curved-rail-b"
+  data.raw["curved-rail-a"]["curved-rail-a"].fast_replaceable_group = "curved-rail-a"
+  data.raw["half-diagonal-rail"]["half-diagonal-rail"].fast_replaceable_group = "half-diagonal-rail"
+  data.raw["straight-rail"]["straight-rail"].fast_replaceable_group = "straight-rail"
+
+  data.raw["curved-rail-b"]["curved-rail-b"].next_upgrade = "curved-rail-b-minimal"
+  data.raw["curved-rail-a"]["curved-rail-a"].next_upgrade = "curved-rail-a-minimal"
+  data.raw["half-diagonal-rail"]["half-diagonal-rail"].next_upgrade = "half-diagonal-rail-minimal"
+  data.raw["straight-rail"]["straight-rail"].next_upgrade = "straight-rail-minimal"
 
   --data.raw["curved-rail-b"]["curved-rail-b-minimal"].collision_mask = railmcollision
   --data.raw["curved-rail-a"]["curved-rail-a-minimal"].collision_mask = railmcollision

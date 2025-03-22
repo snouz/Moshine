@@ -8,11 +8,11 @@ Custom terrain generation, music/sfx, 26 techs, some original challenges... Unlo
 [Discord channel](https://discord.com/channels/1309620686347702372/1337535208957677579) - Any sort of feedback is immensely welcome, (corrections, balance, ideas, criticism, contributions...)
 
 # Rewards
-![rewards](https://i.imgur.com/bNrsMyu.png)
+![rewards](https://i.imgur.com/pJ1Ldtp.png)
 # Main mod
-![mod](https://i.imgur.com/LKmoOvg.png)
+![mod](https://i.imgur.com/eALVSW5.png)
 # Base resources
-![planet](https://i.imgur.com/uUvs3bF.png)
+![planet](https://i.imgur.com/mOkVuPd.png)
 
 # CREDITS & LICENCE
 - The soundtrack is these two albums by Anemoia: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6), found on Free Music Archive under license CC-BY-NC-SA
