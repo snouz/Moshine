@@ -1,27 +1,3 @@
-if mods["se-space-trains"] then
-  if data.raw["technology"]["tech-space-trains"] then
-    table.insert(data.raw["technology"]["tech-space-trains"].prerequisites, "moshine-tech-magnet")
-  end
-  if data.raw["recipe"]["space-locomotive"] then
-    table.insert(data.raw["recipe"]["space-locomotive"].ingredients, {type = "item", name = "magnet", amount = 5})
-  end
-  if data.raw["recipe"]["space-fluid-wagon"] then
-    table.insert(data.raw["recipe"]["space-fluid-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
-  end
-  if data.raw["recipe"]["space-cargo-wagon"] then
-    table.insert(data.raw["recipe"]["space-cargo-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
-  end
-  if data.raw["item-with-entity-data"]["space-locomotive"] then
-    data.raw["item-with-entity-data"]["space-locomotive"].order = "c[rolling-stock]-e[space-locomotive]"
-  end
-  if data.raw["item-with-entity-data"]["space-cargo-wagon"] then
-    data.raw["item-with-entity-data"]["space-cargo-wagon"].order = "c[rolling-stock]-f[space-cargo-wagon]"
-  end
-  if data.raw["item-with-entity-data"]["space-fluid-wagon"] then
-    data.raw["item-with-entity-data"]["space-fluid-wagon"].order = "c[rolling-stock]-g[space-fluid-wagon]"
-  end
-end
-
 if mods["minimalist-rails"] then
 
   if data.raw["recipe"]["rail-minimal"] then
@@ -55,10 +31,6 @@ if mods["minimalist-rails"] then
   data.raw["half-diagonal-rail"]["half-diagonal-rail"].next_upgrade = "half-diagonal-rail-minimal"
   data.raw["straight-rail"]["straight-rail"].next_upgrade = "straight-rail-minimal"
 
-  --data.raw["curved-rail-b"]["curved-rail-b-minimal"].collision_mask = railmcollision
-  --data.raw["curved-rail-a"]["curved-rail-a-minimal"].collision_mask = railmcollision
-  --data.raw["half-diagonal-rail"]["half-diagonal-rail-minimal"].collision_mask = railmcollision
-  --data.raw["straight-rail"]["straight-rail-minimal"].collision_mask = railmcollision
   if data.raw["technology"]["minimalist-rails"] then
     table.insert(data.raw["technology"]["minimalist-rails"].prerequisites, "moshine-tech-silicon-carbide")
     table.insert(data.raw["technology"]["minimalist-rails"].unit.ingredients, {"utility-science-pack", 1})
@@ -66,18 +38,35 @@ if mods["minimalist-rails"] then
   end
 end
 
---[[
---fix for AAI industries sand -> glass, makes silicon a normal craft then
-for _, rec in pairs(data.raw.recipe) do
-  if rec.name ~= "silicon" then
-    if rec.category and rec.category == "smelting" then
-      if rec.ingredients and rec.ingredients[1] and rec.ingredients[1].name == "sand" then
-        data.raw["recipe"]["silicon"].category = "crafting"
-      end
-    end
+if mods["Glass"] then
+  if data.raw["recipe"]["glass-plate"] then
+    data.raw["recipe"]["glass-plate"].category = "crafting"
   end
 end
-]]
+
+if mods["se-space-trains"] then
+  if data.raw["technology"]["tech-space-trains"] then
+    table.insert(data.raw["technology"]["tech-space-trains"].prerequisites, "moshine-tech-magnet")
+  end
+  if data.raw["recipe"]["space-locomotive"] then
+    table.insert(data.raw["recipe"]["space-locomotive"].ingredients, {type = "item", name = "magnet", amount = 5})
+  end
+  if data.raw["recipe"]["space-fluid-wagon"] then
+    table.insert(data.raw["recipe"]["space-fluid-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
+  end
+  if data.raw["recipe"]["space-cargo-wagon"] then
+    table.insert(data.raw["recipe"]["space-cargo-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
+  end
+  if data.raw["item-with-entity-data"]["space-locomotive"] then
+    data.raw["item-with-entity-data"]["space-locomotive"].order = "c[rolling-stock]-e[space-locomotive]"
+  end
+  if data.raw["item-with-entity-data"]["space-cargo-wagon"] then
+    data.raw["item-with-entity-data"]["space-cargo-wagon"].order = "c[rolling-stock]-f[space-cargo-wagon]"
+  end
+  if data.raw["item-with-entity-data"]["space-fluid-wagon"] then
+    data.raw["item-with-entity-data"]["space-fluid-wagon"].order = "c[rolling-stock]-g[space-fluid-wagon]"
+  end
+end
 
 if mods["bzsilicon"] then
 
@@ -267,4 +256,3 @@ for _, moduled_building_type in pairs(moduled_building_types) do
     end
   end
 end
-

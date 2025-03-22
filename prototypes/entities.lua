@@ -1,8 +1,0 @@
-require ("sound-util")
-require ("opticalfiber")
-require ("supercomputer")
-require ("dataprocessor")
-require ("computerfarm")
-require ("dataextractor")
-require ("aitrainer")
-require ("rails")

@@ -10,173 +10,37 @@ end
 
 -- fix for potential other mods adding ingredients to all techs
 
-if data.raw["technology"]["moshine-tech-data-extractor"] then
-  data.raw["technology"]["moshine-tech-data-extractor"].unit =
+function add_tech_unit(tech, count, time, ingredients)
+  if data.raw["technology"][tech] then
+    data.raw["technology"][tech].unit =
     {
-      count = 40,
-      ingredients =
-      {
-        {"hard-drive", 1},
-      },
-      time = 60
+      count = count,
+      ingredients = ingredients,
+      time = time,
     }
-end
-if data.raw["technology"]["moshine-tech-3d-data-storage"] then
-  data.raw["technology"]["moshine-tech-3d-data-storage"].unit =
-    {
-      count = 200,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-      },
-      time = 60
-    }
-end
-if data.raw["technology"]["moshine-tech-data-processor"] then
-  data.raw["technology"]["moshine-tech-data-processor"].unit =
-    {
-      count = 1000,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-      },
-      time = 10
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-trainer"] then
-  data.raw["technology"]["moshine-tech-ai-trainer"].unit =
-    {
-      count = 50,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      },
-      time = 80
-    }
+  end
 end
 
-if data.raw["technology"]["moshine-tech-ai-tier-2"] then
-  data.raw["technology"]["moshine-tech-ai-tier-2"].unit =
-    {
-      count = 10,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, -- 20
-      time = 2000
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-tier-3"] then
-  data.raw["technology"]["moshine-tech-ai-tier-3"].unit =
-    {
-      count = 15,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, -- 160
-      time = 16000
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-tier-4"] then
-  data.raw["technology"]["moshine-tech-ai-tier-4"].unit =
-    {
-      count = 20,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, --540
-      time = 54000
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-tier-5"] then
-  data.raw["technology"]["moshine-tech-ai-tier-5"].unit =
-    {
-      count = 25,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, --1280
-      time = 128000
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-tier-6"] then
-  data.raw["technology"]["moshine-tech-ai-tier-6"].unit =
-    {
-      count = 30,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, --2500
-      time = 250000
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-tier-7"] then
-  data.raw["technology"]["moshine-tech-ai-tier-7"].unit =
-    {
-      count = 35,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, --4320
-      time = 432000
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-tier-8"] then
-  data.raw["technology"]["moshine-tech-ai-tier-8"].unit =
-    {
-      count = 40,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, --6860
-      time = 686000
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-tier-9"] then
-  data.raw["technology"]["moshine-tech-ai-tier-9"].unit =
-    {
-      count = 45,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, --10240
-      time = 1024000
-    }
-end
-if data.raw["technology"]["moshine-tech-ai-tier-10"] then
-  data.raw["technology"]["moshine-tech-ai-tier-10"].unit =
-    {
-      count = 50,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"model-stable", 1},
-      }, --14580
-      time = 1458000
-    }
-end
+add_tech_unit("moshine-tech-data-extractor", 40, 60, {{"hard-drive", 1}} )
 
-if data.raw["technology"]["moshine-tech-processing-grid"] then
-  data.raw["technology"]["moshine-tech-processing-grid"].unit =
-    {
-      count = 10,
-      ingredients =
-      {
-        {"datacell-raw-data", 10},
-        {"model-stable", 1},
-      },
-      time = 145800
-    }
-end
+
+add_tech_unit("moshine-tech-3d-data-storage", 200, 60, {{"datacell-raw-data", 1}} )
+add_tech_unit("moshine-tech-data-processor", 1000, 10, {{"datacell-raw-data", 1}} )
+add_tech_unit("moshine-tech-ai-trainer", 50, 80, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-2", 10, 2*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-3", 15, 16*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-4", 20, 54*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-5", 25, 128*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-6", 30, 250*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-7", 35, 432*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-8", 40, 686*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-9", 45, 1024*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-tier-10", 50, 1458*1000, {{"datacell-raw-data", 1},{"model-stable", 1}} )
+add_tech_unit("moshine-tech-processing-grid", 10, 145*1000, {{"datacell-raw-data", 10},{"model-stable", 1}} )
+add_tech_unit("long-stack-inserter", 10, 245*1000, {{"datacell-raw-data", 1},{"datacell-solved-equation", 1}} )
+
+
+
 if data.raw["technology"]["moshine-tech-quantum-processor-productivity"] then
   data.raw["technology"]["moshine-tech-quantum-processor-productivity"].unit =
     {
@@ -187,20 +51,6 @@ if data.raw["technology"]["moshine-tech-quantum-processor-productivity"] then
         {"datacell-solved-equation", 1},
       },
       time = 6000
-    }
-end
-
-
-if data.raw["technology"]["long-stack-inserter"] then
-  data.raw["technology"]["long-stack-inserter"].unit =
-    {
-      count = 10,
-      ingredients =
-      {
-        {"datacell-raw-data", 1},
-        {"datacell-solved-equation", 1},
-      },
-      time = 245800
     }
 end
 
