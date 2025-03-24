@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
 Date: 2025-03-
+  Changes:
+    - Mining time neodymium rails proportional to health
   Compatibility:
     - Basic compatibility with Gotlag's Glass
 ---------------------------------------------------------------------------------------------------
