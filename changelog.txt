@@ -1,6 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.9
+Date: 2025-03-25
+  Changes:
+    - Data processors data output is in every corner
+  Bugfixes:
+    - Fixed fiber length not being infinite
+    - Fixed datacells recycling into datacells with data
+---------------------------------------------------------------------------------------------------
 Version: 1.0.8
-Date: 2025-03-
+Date: 2025-03-24
   Changes:
     - Mining time neodymium rails proportional to health
   Compatibility:

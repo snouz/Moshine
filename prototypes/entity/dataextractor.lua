@@ -57,7 +57,7 @@ data:extend({
     {
       volume = 1000,
       --pipe_covers = pipecoverspictures(),,
-      max_pipeline_extent = 1000000000,
+      max_pipeline_extent = 1000000,
       pipe_connections =
       {
         {

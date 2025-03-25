@@ -277,6 +277,7 @@ data:extend({
     },
     results = {{type = "item", name = "datacell-raw-data", amount = 1}},
     allow_productivity = false,
+    auto_recycle = false,
     enabled = false,
   },
   {
@@ -296,6 +297,7 @@ data:extend({
       {type = "fluid", name = "raw-data", amount = 1000},
     },
     allow_productivity = false,
+    auto_recycle = false,
     enabled = false,
   },
   {
@@ -312,6 +314,7 @@ data:extend({
     },
     results = {{type = "item", name = "datacell-equation", amount = 1}},
     allow_productivity = false,
+    auto_recycle = false,
     enabled = false,
   },
   {

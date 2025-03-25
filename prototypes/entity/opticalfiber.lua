@@ -394,7 +394,7 @@ data:extend({
         { direction = defines.direction.west, position = {0, 0}, connection_category = "data" }
       },
       hide_connection_info = true,
-      max_pipeline_extent = 1000000000,
+      max_pipeline_extent = 1000000,
     },
     impact_category = "glass",
     pictures = opticalfiberpictures(),
