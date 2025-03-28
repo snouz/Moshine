@@ -134,7 +134,7 @@ data:extend({
 
 
 
-{
+      {
         production_type = "output",
         --pipe_picture = assembler3pipepictures(),
         --pipe_covers = pipecoverspictures(),
@@ -186,15 +186,15 @@ data:extend({
     fast_replaceable_group = "data-processor",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions.create_vector
-      (
-        universal_connector_template,
-        {
-          { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
-          { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
-          { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
-          { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true }
-        }
-      ),
+    (
+      universal_connector_template,
+      {
+        { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
+        { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
+        { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
+        { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true }
+      }
+    ),
     alert_icon_shift = util.by_pixel(0, -12),
     graphics_set =
     {
@@ -264,7 +264,8 @@ data:extend({
           draw_in_states = {"working"},
           animation = 
           { 
-            layers = {
+            layers =
+            {
               {
                 filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-animation-1.png",
                 priority="high",
@@ -295,8 +296,22 @@ data:extend({
           },
           name = "rotation"
         },
-      }
+      },
+      frozen_patch =
+      {
+        filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-frozen.png",
+        priority="high",
+        width = 290,
+        height = 290,
+        shift = util.by_pixel(0, -16),
+        scale = 0.5
+      },
+      reset_animation_when_frozen = true,
     },
+
+
+
+
     crafting_speed = 1,
     energy_source =
     {
@@ -304,7 +319,8 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = { pollution = 4 }
     },
-    energy_usage = "75kW",
+    energy_usage = "100kW",
+    heating_energy = "200kW",
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     --allowed_effects = {"speed", "consumption", "pollution"},
@@ -312,7 +328,7 @@ data:extend({
     module_slots = 4,
     allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
     allowed_module_categories = {"ai-speed"},
-    effect_receiver = {uses_module_effects = true, uses_beacon_effects = false, uses_surface_effects = false},
+    effect_receiver = {uses_module_effects = true, uses_beacon_effects = false, uses_surface_effects = true},
     impact_category = "metal",
     working_sound =
     {

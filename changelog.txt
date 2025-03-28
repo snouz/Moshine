@@ -1,11 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.10
+Date: 2025-03-28
+  Changes:
+    - Data processor can be frozen
+    - Data processor +33% energy usage
+  Graphics:
+    - Heavily edited data processor + light to be more unique and computer-like
+  Bugfixes:
+    - Fixed switched curved/diagonal rails names
+---------------------------------------------------------------------------------------------------
 Version: 1.0.9
 Date: 2025-03-25
   Changes:
-    - Data processors data output is in every corner
+    - Data processor data output is in every corner
+    - Data processor can't transfer inputed data (consequence fo fiber length fix)
   Bugfixes:
     - Fixed fiber length not being infinite
-    - Fixed datacells recycling into datacells with data
+    - Fixed that datacells were recycling into datacells with data
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
 Date: 2025-03-24
