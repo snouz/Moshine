@@ -4,6 +4,8 @@ Date: 2025-03-
   Changes:
     - Display ai training recipes with the rest of moshine's processes
     - Do away with "space platforms for ground" dependancy
+  Locale:
+    - Changed maxsis glass' name to "reinforced glass"
 
     todo add achievements
     todo rename maraxsis glass to reinforced glass

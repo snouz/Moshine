@@ -22,6 +22,12 @@ if mods["se-space-trains"] then
   end
 end
 
+if mods["maraxsis"] then
+  if data.raw.item["maraxsis-glass-panes"] then
+    data.raw.item["maraxsis-glass-panes"].localised_name = {"item-name.maraxsis-reinforced-glass"}
+  end
+end
+
 if mods["bzsilicon"] then
 
   local util = require("__bzsilicon__.data-util")
