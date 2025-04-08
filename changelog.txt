@@ -3,6 +3,11 @@ Version: 1.0.11
 Date: 2025-03-
   Changes:
     - Display ai training recipes with the rest of moshine's processes
+    - Do away with "space platforms for ground" dependancy
+
+    todo add achievements
+    todo rename maraxsis glass to reinforced glass
+---------------------------------------------------------------------------------------------------
 Version: 1.0.10
 Date: 2025-03-28
   Changes:

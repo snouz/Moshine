@@ -1055,17 +1055,3 @@ data:extend({
 
 
 })
-
-local processingtile = table.deepcopy(data.raw.tile["space-platform-for-ground"])
-processingtile.name = "processing-tile"
-processingtile.order = "a[artificial]-d[utility]-c[space-platform-foundation]"
-processingtile.minable = {mining_time = 0.5, result = "processing-tile"}
-processingtile.layer = 18,
---[[processingtile.surface_conditions = {
-  {
-    property = "magnetic-field",
-    min = 0,
-    max = 5
-  }
-}]]
-data:extend({processingtile})
