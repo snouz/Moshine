@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.11
+Date: 2025-03-
+  Changes:
+    - Display ai training recipes with the rest of moshine's processes
 Version: 1.0.10
 Date: 2025-03-28
   Changes:

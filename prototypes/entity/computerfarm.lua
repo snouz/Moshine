@@ -33,6 +33,40 @@ local nuthin = {
   direction_count = 1,
 }
 
+local function make_process_size_speed_shift(size, speed, shift_h, shift_v)
+  return 
+  {
+    --probability =0.05,
+    --scale = 1.2,--size/4,
+    animation = {
+      sheets = {
+        {
+          variation_count = 1,
+          filenames = {"__Moshine__/graphics/entity/quantum-computer/plant-datacell.png"},
+          size = 128,
+          --repeat_count = 1,
+          lines_per_file = 1,
+          frame_count = 25,
+          animation_speed = speed/10,
+          scale = 0.5,
+          frame_sequence = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+        },
+        {
+          variation_count = 1,
+          filenames = {"__Moshine__/graphics/entity/quantum-computer/plant.png"},
+          size = 128,
+          lines_per_file = 25,
+          frame_count = 25,
+          animation_speed = speed/10,
+          shift = util.by_pixel(shift_h, shift_v),
+          scale = 0.6,
+          draw_as_glow = true,
+        },
+      }
+    }
+  }
+end
+
 
 local default_dying_effect =
 {
@@ -529,8 +563,8 @@ data:extend({
     selection_box = {{-1, -1}, {1, 1}},
     sticker_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
-    subgroup = "trees",
-    order = "a[tree]-c[gleba]-a[seedable]-a[yumako-tree]",
+    subgroup = "moshine-processes",
+    order = "lll",
     impact_category = "tree",
     --factoriopedia_simulation = simulations.factoriopedia_yumako_tree,
     autoplace =
@@ -550,52 +584,39 @@ data:extend({
     },
     --variations = gleba_tree_variations("yumako-tree", 8, 4, 1.3),
     stateless_visualisation_variations = {
-      {
-        animation = {
-          sheets = {
-            {
-              variation_count = 1,
-              filenames = {"__Moshine__/graphics/entity/quantum-computer/plant-datacell.png"},
-              size = 128,
-              --repeat_count = 1,
-              lines_per_file = 1,
-              frame_count = 25,
-              animation_speed = 0.3,
-              scale = 0.5,
-              frame_sequence = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
-            },
-            {
-              variation_count = 1,
-              filenames = {"__Moshine__/graphics/entity/quantum-computer/plant.png"},
-              size = 128,
-              lines_per_file = 25,
-              frame_count = 25,
-              animation_speed = 0.3,
-              scale = 0.5,
-              draw_as_glow = true,
-            },
-          }
-        }
-      }
+      make_process_size_speed_shift(5, 3, 0, 0),
+      make_process_size_speed_shift(6, 3, 0, 0),
+      make_process_size_speed_shift(4, 3, 0, 0),
+      make_process_size_speed_shift(4.5, 3, 0, 0),
+      make_process_size_speed_shift(5.5, 3, 0, 0),
+      make_process_size_speed_shift(5, 3, 0, 0),
+
+
+      make_process_size_speed_shift(5, 4, 0, 0),
+      make_process_size_speed_shift(6, 4, 0, 0),
+      make_process_size_speed_shift(4, 4, 0, 0),
+      make_process_size_speed_shift(4.5, 4, 0, 0),
+      make_process_size_speed_shift(5.5, 4, 0, 0),
+
+      make_process_size_speed_shift(5, 2, 0, 0),
+      make_process_size_speed_shift(6, 2, 0, 0),
+      make_process_size_speed_shift(4, 2, 0, 0),
+      make_process_size_speed_shift(4.5, 2, 0, 0),
+      make_process_size_speed_shift(5.5, 2, 0, 0),
+
+      make_process_size_speed_shift(5, 3, 2, 3),
+      make_process_size_speed_shift(6, 3, -3, 2),
+      make_process_size_speed_shift(4, 3, 3, -2),
+      make_process_size_speed_shift(4.5, 3, -3, -2),
     },
-
-
     pictures =
     {
       layers =
       {
         {
-
           filename = "__Moshine__/graphics/empty.png",
           width = 1,
           height = 1,
-
-          --[[
-          filename = "__Moshine__/graphics/entity/quantum-computer/plant-processing.png",
-          size = 128,
-          scale = 0.5,
-          draw_as_glow = true,
-          ]]
         }
       }
     },

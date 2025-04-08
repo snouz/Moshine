@@ -9,6 +9,8 @@ Custom terrain generation, music/sfx, 26 techs, some original challenges... Unlo
 
 # Rewards
 ![rewards](https://i.imgur.com/pJ1Ldtp.png)
+
+![gif](https://i.imgur.com/4imr7DF.gif)![gif](https://i.imgur.com/cik827X.gif)
 # Main mod
 ![mod](https://i.imgur.com/eALVSW5.png)
 # Base resources

@@ -198,7 +198,7 @@ data:extend({
     alert_icon_shift = util.by_pixel(0, -12),
     graphics_set =
     {
-      animation_progress = 0.25,
+      animation_progress = 0.15,
       always_draw_idle_animation = true,
       states =
       {
@@ -226,7 +226,7 @@ data:extend({
             height = 290,
             repeat_count = 30,
             line_length = 1,
-            animation_speed = 1/3,
+            animation_speed = 0.15,
             shift = util.by_pixel(0, -16),
             scale = 0.5
           },
@@ -238,7 +238,7 @@ data:extend({
             repeat_count = 30,
             line_length = 1,
             draw_as_shadow = true,
-            animation_speed = 1/3,
+            animation_speed = 0.15,
             shift = util.by_pixel(0, -16),
             scale = 0.5
           },
@@ -249,7 +249,7 @@ data:extend({
             height = 290,
             frame_count = 16,
             line_length = 8,
-            animation_speed = 1/3,
+            animation_speed = 0.15,
             run_mode = "forward-then-backward",
             shift = util.by_pixel(0, -16),
             scale = 0.5
@@ -260,6 +260,7 @@ data:extend({
       working_visualisations =
       {
         {
+          constant_speed = true,
           always_draw = true,
           draw_in_states = {"working"},
           animation = 
@@ -273,7 +274,7 @@ data:extend({
                 height = 290,
                 frame_count = 16,
                 line_length = 8,
-                animation_speed = 1/3,
+                animation_speed = 0.15,
                 run_mode = "forward-then-backward",
                 shift = util.by_pixel(0, -16),
                 scale = 0.5
@@ -285,7 +286,7 @@ data:extend({
                 height = 290,
                 frame_count = 16,
                 line_length = 8,
-                animation_speed = 1/3,
+                animation_speed = 0.15,
                 run_mode = "forward-then-backward",
                 draw_as_glow = true,
                 blend_mode = "additive",
