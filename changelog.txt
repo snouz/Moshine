@@ -11,6 +11,7 @@ Date: 2025-04-
     - Reworked AI core icons (follows the colors of quality and look like a progression)
     - Increased light of AI trainer
     - Data processor tech adapted to latest changes
+    - Tweaked webbed processor graphics (color, decoratives, double-thick)
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.10
 Date: 2025-03-28
