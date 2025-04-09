@@ -13,5 +13,7 @@ require ("prototypes.entity.dataextractor")
 require ("prototypes.entity.aitrainer")
 require ("prototypes.entity.rails")
 
+require ("prototypes.achievements")
+
 require ("prototypes.compatibility")
 
