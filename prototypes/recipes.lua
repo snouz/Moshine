@@ -376,7 +376,7 @@ data:extend({
     name = "ai-tier-0",
     icons = {
       {icon = "__Moshine__/graphics/icons/aicores/tier-1.png", icon_size = 64, scale = 0.5},
-      {icon = "__Moshine__/graphics/icons/tiers/tier-1.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
+      --{icon = "__Moshine__/graphics/icons/tiers/tier-1.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
       {icon = "__Moshine__/graphics/icons/training-arrows.png", icon_size = 64, scale = 0.5},
     },
     --hide_from_player_crafting = true,
@@ -399,7 +399,7 @@ data:extend({
     name = "ai-tier-1",
     icons = {
       {icon = "__Moshine__/graphics/icons/aicores/tier-2.png", icon_size = 64, scale = 0.5},
-      {icon = "__Moshine__/graphics/icons/tiers/tier-2.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
+      --{icon = "__Moshine__/graphics/icons/tiers/tier-2.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
       {icon = "__Moshine__/graphics/icons/training-arrows.png", icon_size = 64, scale = 0.5},
     },
     hide_from_player_crafting = true,
@@ -428,7 +428,7 @@ for i=2,9 do
       name = "ai-tier-" .. i,
       icons = {
         {icon = "__Moshine__/graphics/icons/aicores/tier-" .. i+1 .. ".png", icon_size = 64, scale = 0.5},
-        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i+1 .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
+        --{icon = "__Moshine__/graphics/icons/tiers/tier-" .. i+1 .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
         {icon = "__Moshine__/graphics/icons/training-arrows.png", icon_size = 64, scale = 0.5},
       },
       hide_from_player_crafting = true,

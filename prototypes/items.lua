@@ -422,7 +422,7 @@ for i=1,10 do
       name = "ai-tier-" .. i,
       icons = {
         {icon = "__Moshine__/graphics/icons/aicores/tier-" .. i .. ".png", icon_size = 64, scale = 0.5},
-        {icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.5}},
+        --{icon = "__Moshine__/graphics/icons/tiers/tier-" .. i .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.5}},
       },
       --icon = "__Moshine__/graphics/icons/ai-tier-" .. i .. ".png",
       subgroup = "moshine-processes",

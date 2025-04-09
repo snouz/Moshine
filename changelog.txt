@@ -1,15 +1,16 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.11
-Date: 2025-03-
+Version: 1.1.0
+Date: 2025-04-
   Changes:
-    - Display ai training recipes with the rest of moshine's processes
     - Do away with "space platforms for ground" dependancy
+    - Added 5 achievements
+    - Display ai training recipes with the rest of moshine's processes
   Locale:
     - Changed maxsis glass' name to "reinforced glass"
-  Graphics
+  Graphics:
+    - Reworked AI core icons (follows the colors of quality and look like a progression)
     - Increased light of AI trainer
-
-    todo add achievements
+    - Data processor tech adapted to latest changes
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.10
 Date: 2025-03-28
