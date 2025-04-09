@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.1.0
-Date: 2025-04-
+Version: 1.0.11
+Date: 2025-04-10
   Changes:
-    - Do away with "space platforms for ground" dependancy
     - Added 5 achievements
+    - Do away with "space platforms for ground" dependancy
     - Display ai training recipes with the rest of moshine's processes
   Locale:
     - Changed maxsis glass' name to "reinforced glass"
