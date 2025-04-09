@@ -6,9 +6,10 @@ Date: 2025-03-
     - Do away with "space platforms for ground" dependancy
   Locale:
     - Changed maxsis glass' name to "reinforced glass"
+  Graphics
+    - Increased light of AI trainer
 
     todo add achievements
-    todo rename maraxsis glass to reinforced glass
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.10
 Date: 2025-03-28
