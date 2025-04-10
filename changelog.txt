@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.12
+Date: 2025-04-11
+  Sound:
+    - Increased sound of data extractor
+---------------------------------------------------------------------------------------------------
+Version: 1.0.12
+Date: 2025-04-11
+  Graphics:
+    - Reworked AI core graphics again (closer to their first version, but less random colors)
+    - Reworked webbed processors graphics
+---------------------------------------------------------------------------------------------------
 Version: 1.0.11
 Date: 2025-04-10
   Changes:
