@@ -35,7 +35,7 @@ add_tech_unit("moshine-tech-ai-tier-8", 40, 686*1000,       {{"datacell-raw-data
 add_tech_unit("moshine-tech-ai-tier-9", 45, 1024*1000,      {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-10", 50, 1458*1000,     {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-processing-grid", 10, 145*1000, {{"datacell-raw-data", 10},{"model-stable", 1}} )
-add_tech_unit("long-stack-inserter", 10, 245*1000,          {{"datacell-raw-data", 1}, {"datacell-solved-equation", 1}} )
+add_tech_unit("long-stack-inserter", 1000, 2.45*1000,          {{"datacell-raw-data", 1}, {"datacell-solved-equation", 1}} )
 
 
 if data.raw["technology"]["moshine-tech-quantum-processor-productivity"] then

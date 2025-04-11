@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.12
-Date: 2025-04-11
+Version: 1.0.13
+Date: 2025-04-
+  Changes:
+    - Long stack inserter tech: *100 ingredients, /100 time
   Sound:
     - Increased sound of data extractor
 ---------------------------------------------------------------------------------------------------
@@ -14,10 +16,10 @@ Version: 1.0.11
 Date: 2025-04-10
   Changes:
     - Added 5 achievements
-    - Do away with "space platforms for ground" dependancy
+    - Do away with "space platforms for ground" dependency
     - Display ai training recipes with the rest of moshine's processes
   Locale:
-    - Changed maxsis glass' name to "reinforced glass"
+    - Changed maraxsis glass' name to "reinforced glass"
   Graphics:
     - Reworked AI core icons (follows the colors of quality and look like a progression)
     - Increased light of AI trainer
