@@ -7,12 +7,10 @@ Custom terrain generation, music/sfx, 26 techs, some original challenges... Unlo
 
 [Discord channel](https://discord.com/channels/1309620686347702372/1337535208957677579) - Any sort of feedback is immensely welcome, (corrections, balance, ideas, criticism, contributions...)
 
-![gif](https://i.imgur.com/0dqkYaE.gif)![gif](https://i.imgur.com/4JkEmB1.gif)![gif](https://i.imgur.com/DjiEHgk.gif)![gif](https://i.imgur.com/v7z37X4.gif)![gif](https://i.imgur.com/s4py7Oo.gif)
+![gif](https://i.imgur.com/0dqkYaE.gif)![gif](https://i.imgur.com/4JkEmB1.gif)![gif](https://i.imgur.com/DjiEHgk.gif)![gif](https://i.imgur.com/v7z37X4.gif)
 
 # Rewards
 ![rewards](https://i.imgur.com/pJ1Ldtp.png)
-
-![gif](https://i.imgur.com/4imr7DF.gif)![gif](https://i.imgur.com/cik827X.gif)
 # Main mod
 ![mod](https://i.imgur.com/eALVSW5.png)
 # Base resources
@@ -28,4 +26,4 @@ Custom terrain generation, music/sfx, 26 techs, some original challenges... Unlo
 - Compatibility to Silica and Silicon by Dh4mpyr
 - Starmap icon partially from DjKolekson
 
-![screenshot](https://i.imgur.com/0jmHYaH.png)
+![gif](https://i.imgur.com/s4py7Oo.gif)
