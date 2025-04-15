@@ -2,7 +2,8 @@
 Version: 1.0.13
 Date: 2025-04-
   Changes:
-    - Long stack inserter tech: *100 ingredients, /100 time
+    - Long stack inserter tech: *100 ingredients, /100 duration
+    - Changed name of "Indexer" to "Compute farm"
   Sound:
     - Increased sound of data extractor
 ---------------------------------------------------------------------------------------------------
