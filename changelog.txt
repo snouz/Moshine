@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.13
-Date: 2025-04-
+Date: 2025-04-18
   Changes:
     - Added surface condition: temperature-celcius, removed solar flares, changed some physical lore to be more realistic
     - Re-authorized reactors (they're still useless on Moshine)
@@ -12,6 +12,7 @@ Date: 2025-04-
     - Increased sound of data extractor
   Compatibility:
     - Tech code made more robust to avoid crash with Research-Multiplier and potentially other mods
+    - Made ring-teleporter compatible
   Bugfixes:
     - optical-fiber shouldn't collide with the player diagonally
 ---------------------------------------------------------------------------------------------------
