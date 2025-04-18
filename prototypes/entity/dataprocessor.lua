@@ -40,6 +40,13 @@ data:extend({
     corpse = "data-processor-remnants",
     dying_explosion = "assembling-machine-1-explosion",
     icon_draw_specification = {shift = {0, 0}, scale = 0.7},
+    surface_conditions =
+    {
+      {
+        property = "gravity",
+        min = 0.1,
+      },
+    },
     resistances =
     {
       {

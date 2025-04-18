@@ -2,10 +2,18 @@
 Version: 1.0.13
 Date: 2025-04-
   Changes:
+    - Added surface condition: temperature-celcius, removed solar flares, changed some physical lore to be more realistic
+    - Re-authorized reactors (they're still useless on Moshine)
+    - Buildings made to be built on Moshine only, and some made too heavy for a rocket
     - Long stack inserter tech: *100 ingredients, /100 duration
     - Changed name of "Indexer" to "Compute farm"
+    - Neural computer craft time: 120 -> 30s, webbed processor: 10 -> 2s
   Sound:
     - Increased sound of data extractor
+  Compatibility:
+    - Tech code made more robust to avoid crash with Research-Multiplier and potentially other mods
+  Bugfixes:
+    - optical-fiber shouldn't collide with the player diagonally
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.12
 Date: 2025-04-11

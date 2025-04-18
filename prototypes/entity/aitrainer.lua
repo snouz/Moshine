@@ -34,13 +34,20 @@ data:extend({
     impact_category = "metal",
     icon_draw_specification = {scale = 0},
     ignore_output_full = true,
-    surface_conditions =
+    --[[surface_conditions =
     {
       {
         property = "magnetic-field",
         min = 0,
         max = 5
       }
+    },]]
+    surface_conditions =
+    {
+      {
+        property = "gravity",
+        min = 0.1,
+      },
     },
     working_sound =
     {

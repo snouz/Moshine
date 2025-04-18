@@ -144,13 +144,20 @@ data:extend({
         max = 1000
       }
     },]]
-    surface_conditions =
+    --[[surface_conditions =
     {
       {
         property = "magnetic-field",
         min = 0,
         max = 5
       }
+    },]]
+    surface_conditions =
+    {
+      {
+        property = "gravity",
+        min = 0.1,
+      },
     },
     damaged_trigger_effect = hit_effects.entity(),
     on_animation = planetary_teleporter_on_animation,

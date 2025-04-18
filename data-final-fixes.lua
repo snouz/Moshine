@@ -10,8 +10,8 @@ end
 
 -- fix for potential other mods adding ingredients to all techs
 
-function add_tech_unit(tech, count, time, ingredients)
-  if data.raw["technology"][tech] then
+local function add_tech_unit(tech, count, time, ingredients)
+  if data.raw["technology"][tech] and count and time and ingredients then
     data.raw["technology"][tech].unit =
     {
       count = count,

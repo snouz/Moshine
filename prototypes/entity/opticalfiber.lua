@@ -378,7 +378,7 @@ data:extend({
       }
     },
     fast_replaceable_group = "optical-cable",
-    collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+    collision_box = {{-0.01, -0.01}, {0.01, 0.01}},
     selection_box = {{-0.4, -0.4}, {0.4, 0.4}},
     damaged_trigger_effect = hit_effects.entity(),
     fluid_box =

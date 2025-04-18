@@ -440,11 +440,6 @@ data:extend({
     surface_conditions =
     {
       {
-        property = "magnetic-field",
-        min = 0,
-        max = 5
-      },
-      {
         property = "gravity",
         min = 0.1,
       },
