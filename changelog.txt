@@ -2,7 +2,8 @@
 Version: 1.0.14
 Date: 2025-04-
   Changes:
-    - Hypercell accumulators and solar panels unlocked after AI cores
+    - Hypercell accumulators and solar panels unlocked after AI cores, using Moshine research
+    - AI core research take half the time
     - Can put 5 Hypercell accumulators or solar panels in a rocket (instead of 1)
     - Fixed recycling recling results for MAGLEV trains
 ---------------------------------------------------------------------------------------------------
