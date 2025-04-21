@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.14
+Date: 2025-04-
+  Changes:
+    - Hypercell accumulators and solar panels unlocked after AI cores
+    - Can put 5 Hypercell accumulators or solar panels in a rocket (instead of 1)
+    - Fixed recycling recling results for MAGLEV trains
+---------------------------------------------------------------------------------------------------
 Version: 1.0.13
 Date: 2025-04-18
   Changes:

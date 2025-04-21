@@ -1,3 +1,5 @@
+local recycling = require("__quality__.prototypes.recycling")
+
 if mods["se-space-trains"] then
   if data.raw["technology"]["tech-space-trains"] then
     table.insert(data.raw["technology"]["tech-space-trains"].prerequisites, "moshine-tech-magnet")
@@ -20,6 +22,12 @@ if mods["se-space-trains"] then
   if data.raw["item-with-entity-data"]["space-fluid-wagon"] then
     data.raw["item-with-entity-data"]["space-fluid-wagon"].order = "c[rolling-stock]-g[space-fluid-wagon]"
   end
+
+  recycling.generate_recycling_recipe(data.raw["recipe"]["space-locomotive"])
+  recycling.generate_recycling_recipe(data.raw["recipe"]["space-cargo-wagon"])
+  recycling.generate_recycling_recipe(data.raw["recipe"]["space-fluid-wagon"])
+  recycling.generate_recycling_recipe(data.raw["recipe"]["space-train-battery-charging-station"])
+  recycling.generate_recycling_recipe(data.raw["recipe"]["space-train-battery-pack"])
 end
 
 if mods["maraxsis"] then
@@ -196,3 +204,4 @@ if mods["bzsilicon"] then
     })
   end
 end
+

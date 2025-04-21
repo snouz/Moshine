@@ -49,7 +49,17 @@ if mods["Glass"] then
   end
 end
 
+if mods["snouz-big-solar-panel"] then
+  table.insert(data.raw["recipe"]["big-solar-panel"].ingredients, {type = "item", name = "silicon-cell", amount = 10})
+  data.raw["item"]["big-solar-panel"].weight = 200*kg
+  table.insert(data.raw["technology"]["big-solar-energy"].prerequisites, "moshine-tech-ai-tier-2")
+end
 
+if mods["snouz-big-accumulator"] then
+  table.insert(data.raw["recipe"]["big-accumulator"].ingredients, {type = "item", name = "magnet", amount = 10})
+  data.raw["item"]["big-accumulator"].weight = 200*kg
+  table.insert(data.raw["technology"]["electric-energy-big-accumulators"].prerequisites, "moshine-tech-ai-tier-6")
+end
 
 -- disable ai-speed module from everything where it's not manually added
 local moduled_building_types = { "beacon", "assembling-machine", "rocket-silo", "furnace", "lab", "mining-drill" }
