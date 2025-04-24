@@ -207,7 +207,7 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = { pollution = 8 }
     },
-    energy_usage = "300kW",
+    energy_usage = "3000kW",
     module_slots = 10,
     allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
     allowed_module_categories = {"ai-speed"},

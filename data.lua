@@ -16,4 +16,3 @@ require ("prototypes.entity.rails")
 require ("prototypes.achievements")
 
 require ("prototypes.compatibility")
-

@@ -387,8 +387,8 @@ data:extend({
     },
     drawing_box_vertical_extension = 5.5,
     heating_energy = "1000kW",
-    energy_usage = "1000kW",
-    crane_energy_usage = "1000kW",
+    energy_usage = "2000kW",
+    crane_energy_usage = "2000kW",
     working_sound =
     {
       sound =
@@ -573,8 +573,8 @@ data:extend({
     selection_box = {{-1, -1}, {1, 1}},
     sticker_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
-    subgroup = "moshine-processes",
-    order = "lll",
+    --subgroup = "moshine-processes",
+    --order = "lll",
     impact_category = "tree",
     --factoriopedia_simulation = simulations.factoriopedia_yumako_tree,
     autoplace =

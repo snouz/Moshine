@@ -152,7 +152,7 @@ data:extend({
         recipe = "datacell-remove-raw-data"
       },
     },
-    prerequisites = {"moshine-tech-magnet", "moshine-tech-silicon-cell", "moshine-tech-silicon-carbide"},
+    prerequisites = {"automation-3", "productivity-module-2", "moshine-tech-magnet", "moshine-tech-silicon-cell", "moshine-tech-silicon-carbide"},
     unit =
     {
       count = 200,
@@ -204,7 +204,7 @@ data:extend({
         recipe = "optical-cable"
       },
     },
-    prerequisites = {"moshine-tech-supercomputer", "moshine-tech-glass"},
+    prerequisites = {"circuit-network", "moshine-tech-supercomputer", "moshine-tech-glass"},
     unit =
     {
       count = 10,
@@ -540,6 +540,7 @@ add_tech_unit("moshine-tech-ai-tier-2", 10, 2*500,            {{"datacell-raw-da
 add_tech_unit("big-solar-energy", 13, 3*500,                  {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-3", 15, 16*500,           {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-4", 20, 54*500,           {{"datacell-raw-data", 1}, {"model-stable", 1}} )
+add_tech_unit("snouz_better_substation_tech", 40, 27*500,     {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-5", 25, 128*500,          {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-processing-grid", 10, 145*500,    {{"datacell-raw-data", 10},{"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-6", 30, 250*500,          {{"datacell-raw-data", 1}, {"model-stable", 1}} )

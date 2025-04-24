@@ -1,6 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.15
+Date: 2025-04-24
+  Changes:
+    - Added Hypercell substations (adapted for Moshine)
+    - Raised energy usage of all machines considerably
+  Graphics:
+    - Custom explosion for unstable models
+  Compatibility:
+    - Disabled AI cores for other mods buildings (like Age of Production)
+  Bugfixes:
+    - Fixed not being able to put foundation of molten-iron
+    - Fixed that you could research data processor and data archeo before automation-3 and other required techs
+---------------------------------------------------------------------------------------------------
 Version: 1.0.14
-Date: 2025-04-
+Date: 2025-04-21
   Changes:
     - Hypercell accumulators and solar panels unlocked after AI cores, using Moshine research
     - AI core research take half the time

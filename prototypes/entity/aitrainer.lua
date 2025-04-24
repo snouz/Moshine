@@ -80,7 +80,7 @@ data:extend({
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     damaged_trigger_effect = hit_effects.rock(),
     crafting_categories = {"ai-training"},
-    energy_usage = "20kW",
+    energy_usage = "600kW",
     crafting_speed = 1,
     source_inventory_size = 1,
     result_inventory_size = 12,

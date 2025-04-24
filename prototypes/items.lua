@@ -1,6 +1,7 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 local item_tints = require("__base__.prototypes.item-tints")
 local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
+require("sound-util")
 
 data:extend({
 
@@ -364,7 +365,7 @@ data:extend({
           {
             {
               type = "create-entity",
-              entity_name = "medium-explosion",
+              entity_name = "model-unstable-explosion",
             },
             {
               type = "damage",
@@ -375,6 +376,106 @@ data:extend({
               entity_name = "medium-scorchmark-tintable",
               check_buildability = true
             },
+          }
+        }
+      }
+    }
+  },
+
+  {
+    type = "explosion",
+    name = "model-unstable-explosion",
+    localised_name = {"entity-name.medium-explosion"},
+    icon = "__base__/graphics/icons/explosion.png",
+    flags = {"not-on-map"},
+    hidden = true,
+    subgroup = "explosions",
+    animations = {
+      {
+        filename = "__Moshine__/graphics/entity/explosion/explosion-1.png",
+        draw_as_glow = true,
+        blend_mode = "additive",
+        priority = "high",
+        width = 150,
+        height = 150,
+        frame_count = 32,
+        line_length = 8,
+        shift = util.by_pixel(0, -2),
+        animation_speed = 0.6,
+        scale = 0.8,
+        usage = "explosion"
+      },
+      {
+        filename = "__Moshine__/graphics/entity/explosion/explosion-2.png",
+        draw_as_glow = true,
+        blend_mode = "additive",
+        priority = "high",
+        width = 150,
+        height = 150,
+        frame_count = 29,
+        line_length = 8,
+        shift = util.by_pixel(0,-2),
+        animation_speed = 0.6,
+        scale = 0.8,
+        usage = "explosion"
+      },
+    },
+    sound = {
+      aggregation =
+      {
+        max_count = 1,
+        remove = true
+      },
+      switch_vibration_data =
+      {
+        filename = "__base__/sound/fight/medium-explosion.bnvib",
+        gain = 0.4
+      },
+      audible_distance_modifier = 0.5,
+      variations = sound_variations_with_volume_variations("__base__/sound/fight/medium-explosion", 5, 0.3, 0.4, volume_multiplier("main-menu", 1.2))
+    },
+    created_effect =
+    {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        target_effects =
+        {
+          {
+            type = "create-particle",
+            repeat_count = 20,
+            particle_name = "explosion-stone-particle-medium",
+            initial_height = 0.5,
+            speed_from_center = 0.08,
+            speed_from_center_deviation = 0.15,
+            initial_vertical_speed = 0.08,
+            initial_vertical_speed_deviation = 0.15,
+            offset_deviation = { { -0.8984, -0.5 }, { 0.8984, 0.5 } }
+          },
+          {
+            type = "create-particle",
+            repeat_count = 25,
+            particle_name = "explosion-stone-particle-small",
+            offset_deviation = { { -0.8984, -0.5 }, { 0.8984, 0.5 } },
+            initial_height = 1,
+            initial_height_deviation = 0.5,
+            initial_vertical_speed = 0.1,
+            initial_vertical_speed_deviation = 0.05,
+            speed_from_center = 0.05,
+            speed_from_center_deviation = 0.05
+          },
+          {
+            type = "create-particle",
+            repeat_count = 50,
+            particle_name = "explosion-stone-particle-tiny",
+            offset_deviation = { { -0.8984, -0.5 }, { 0.8984, 0.5 } },
+            initial_height = 1,
+            initial_height_deviation = 0.5,
+            initial_vertical_speed = 0.1,
+            initial_vertical_speed_deviation = 0.05,
+            speed_from_center = 0.05,
+            speed_from_center_deviation = 0.05
           }
         }
       }

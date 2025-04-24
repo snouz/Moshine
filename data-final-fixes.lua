@@ -33,6 +33,7 @@ add_tech_unit("moshine-tech-ai-tier-2", 10, 2*500,            {{"datacell-raw-da
 add_tech_unit("big-solar-energy", 13, 3*500,                  {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-3", 15, 16*500,           {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-4", 20, 54*500,           {{"datacell-raw-data", 1}, {"model-stable", 1}} )
+add_tech_unit("snouz_better_substation_tech", 40, 27*500,     {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-5", 25, 128*500,          {{"datacell-raw-data", 1}, {"model-stable", 1}} )
 add_tech_unit("moshine-tech-processing-grid", 10, 145*500,    {{"datacell-raw-data", 10},{"model-stable", 1}} )
 add_tech_unit("moshine-tech-ai-tier-6", 30, 250*500,          {{"datacell-raw-data", 1}, {"model-stable", 1}} )
@@ -60,4 +61,27 @@ end
 -- compat omnimatter_compression
 if data.raw["technology"]["omnipressed-moshine-tech-quantum-processor-productivity"] then
   data.raw["technology"]["omnipressed-moshine-tech-quantum-processor-productivity"] = nil
+end
+
+
+
+
+-- disable ai-speed module from everything where it's not manually added
+local moduled_building_types = { "beacon", "assembling-machine", "rocket-silo", "furnace", "lab", "mining-drill" }
+
+for _, moduled_building_type in pairs(moduled_building_types) do
+  for _,moduled_building in pairs(data.raw[moduled_building_type]) do
+    if moduled_building then
+      if not moduled_building.allowed_module_categories then
+        moduled_building.allowed_module_categories = {}
+        for _, module_cat in pairs(data.raw["module-category"]) do
+          --log(moduled_building.name .. " - " .. module_cat.name)
+          if not (module_cat.name == "ai-speed") then
+            table.insert(moduled_building.allowed_module_categories, module_cat.name)
+            --log(moduled_building.name .. " - " .. module_cat.name)
+          end
+        end
+      end
+    end
+  end
 end
