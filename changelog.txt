@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.16
+Date: 2025-04-26
+  Changes:
+    - Raised rocket capacity for many intermediate products (silicon, sand, neodymium, magnets, silicon cells, datacells...)
+    - Added 3 recipe descriptions
+  Bugfixes:
+    - Fixed compatibility with mods adding new module categories (e.g. Metal and Stars)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.15
 Date: 2025-04-24
   Changes:

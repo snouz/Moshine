@@ -75,10 +75,8 @@ for _, moduled_building_type in pairs(moduled_building_types) do
       if not moduled_building.allowed_module_categories then
         moduled_building.allowed_module_categories = {}
         for _, module_cat in pairs(data.raw["module-category"]) do
-          --log(moduled_building.name .. " - " .. module_cat.name)
           if not (module_cat.name == "ai-speed") then
             table.insert(moduled_building.allowed_module_categories, module_cat.name)
-            --log(moduled_building.name .. " - " .. module_cat.name)
           end
         end
       end

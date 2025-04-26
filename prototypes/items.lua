@@ -164,7 +164,7 @@ data:extend({
     default_import_location = "moshine",
     random_tint_color = item_tints.iron_rust,
     stack_size = 50,
-    weight = 20*kg,
+    weight = 2*kg,
   },
 })
 if not data.raw.item["glass"] then
@@ -194,7 +194,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
     stack_size = 50,
-    weight = 20*kg,
+    weight = 5*kg,
   },
   {
     type = "item",
@@ -207,7 +207,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
     stack_size = 50,
-    weight = 20*kg,
+    weight = 5*kg,
   },
   {
     type = "item",
@@ -220,7 +220,7 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
     stack_size = 40,
-    weight = 25*kg,
+    weight = 12.5*kg,
   },
 
   -- datacells
@@ -239,7 +239,7 @@ data:extend({
     factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value",
     stack_size = 40,
-    weight = 25*kg,
+    weight = 5*kg,
   },
 
 
@@ -271,7 +271,7 @@ data:extend({
     factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value",
     stack_size = 40,
-    weight = 25*kg,
+    weight = 5*kg,
   },
   {
     type = "tool",
@@ -307,7 +307,7 @@ data:extend({
     factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value",
     stack_size = 40,
-    weight = 25*kg,
+    weight = 5*kg,
   },
   {
     type = "item",
