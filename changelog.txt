@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.17
+Date: 2025-04-
+  Changes:
+    - Reduced data extractor creation time
+  Bugfixes:
+    - Fixed that several archeological data extractors could be stacked on top of each other
+---------------------------------------------------------------------------------------------------
 Version: 1.0.16
 Date: 2025-04-26
   Changes:

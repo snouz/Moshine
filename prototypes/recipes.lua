@@ -57,7 +57,7 @@ data:extend({
   {
     type = "recipe",
     name = "data-extractor",
-    energy_required = 30,
+    energy_required = 10,
     surface_conditions = {{ property = "moshine-exclusive", min = 1, max = 1}},
     ingredients = {
       {type = "item", name = "display-panel", amount = 10},

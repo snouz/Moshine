@@ -42,7 +42,7 @@ data:extend({
     max_health = 200,
     corpse = "pumpjack-remnants",
     dying_explosion = "pumpjack-explosion",
-    collision_mask = {layers={},colliding_with_tiles_only = true},
+    collision_mask = {layers={doodad=true},colliding_with_tiles_only = false},
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     damaged_trigger_effect = hit_effects.entity(),
