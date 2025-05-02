@@ -169,7 +169,7 @@ local craneprop = {
     },
     ]]
     {
-      rotated_sprite =
+      --[[rotated_sprite =
       {
         filename = "__Moshine__/graphics/entity/agricultural-tower/laser-artillery-turret.png",
         width = 220,
@@ -191,7 +191,9 @@ local craneprop = {
         direction_count = 64,
         scale = 0.5,
         draw_as_shadow = true
-      },
+      },]]
+      rotated_sprite = nuthin,
+      rotated_sprite_shadow = nuthin,
       rotated_sprite_reflection = nuthin,
       layer = 1,
       allow_sprite_rotation = false,
@@ -464,6 +466,18 @@ data:extend({
         layers =
         {
           {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-base.png",
+            width = 500,
+            height = 500,
+            shift = util.by_pixel(0, -6),
+            line_length = 1,
+            priority = "high",
+            animation_speed = 0.5,
+            repeat_count = 48,
+            --frame_count = 48,
+            scale = 0.5,
+          },
+          {
             filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer.png",
             width = 400,
             height = 420,
@@ -476,9 +490,9 @@ data:extend({
           },
           {
             filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-sh.png",
-            width = 402,
-            height = 362,
-            shift = util.by_pixel(6, 10),
+            width = 500,
+            height = 500,
+            shift = util.by_pixel(0, -6),
             line_length = 1,
             priority = "high",
             frame_count = 1,
@@ -497,9 +511,10 @@ data:extend({
             frame_count = 48,
             scale = 0.5,
             draw_as_glow = true,
+            blend_mode = "additive",
           },
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-light.png",
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-glow2.png",
             width = 400,
             height = 420,
             shift = util.by_pixel(0, -6),
@@ -508,7 +523,21 @@ data:extend({
             animation_speed = 0.5,
             frame_count = 48,
             scale = 0.5,
-            draw_as_light = true,
+            draw_as_glow = true,
+            blend_mode = "additive-soft",
+          },
+          {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-glow3.png",
+            width = 400,
+            height = 420,
+            shift = util.by_pixel(0, -6),
+            line_length = 8,
+            priority = "high",
+            animation_speed = 1,
+            frame_count = 48,
+            scale = 0.5,
+            draw_as_glow = true,
+            blend_mode = "additive-soft",
           },
         }
       },
