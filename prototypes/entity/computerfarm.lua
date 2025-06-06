@@ -355,6 +355,7 @@ data:extend({
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     input_inventory_size = 1,
+    accepted_seeds = {"datacell-equation"},
     radius_visualisation_picture =
     {
       filename = "__core__/graphics/white-square.png",

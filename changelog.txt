@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.18
+Date: 2025-06-06
+  Changes:
+    - Added neodymium elevated rails (with custom graphics)
+    - Moved hidden electric poles feature directly in the submod
+    - Improved visual feedback of connecting power poles to neodymium rails
+    - Made rail electric connectors immune to lightning (even on modded planets)
+    - Removed utility science packs requirement to all base technologies
+    - Restricted compute farm inputs to "Datacell [equation]"
+  Graphics:
+    - Improved neodymium rail graphics
+  Locale:
+    - Russian translation continued by Kuaikuachu
+    - Improved neural computer description
+---------------------------------------------------------------------------------------------------
 Version: 1.0.17
 Date: 2025-05-02
   Graphics:
