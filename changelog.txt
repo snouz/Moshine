@@ -1,10 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.21
-Date: 2025-06- 
+Date: 2025-06-17
   Changes:
     - Rails also auto-connect red and green wires along the tracks
-    - Made the "replaceable group" and health boost part of this mod instead of Moshine
     - Added Made rail ramp automatically replaceable
+    - Raise sand and neodymium rocket capacity
+    - Reoganized moshine tiles in GUI
+  Compatibility:
+    - Added ores from other BZ mods - by Indzasa
+    - Made planet 98°C / 371°K with PlanetsLib
   Bugfixes:
     - Fixed missing "Moshine island" map generation text
     - Fixed invisible poles under elevated rails not being immune to thunder

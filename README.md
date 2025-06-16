@@ -26,7 +26,7 @@ Custom terrain generation, music/sfx, 26 techs, some original challenges... Unlo
   - French by **Fr_Dae** and snouz
   - Spanish by **marks20125**
 - Compatibility with Silica and Silicon by **Dh4mpyr**
-- Compatibility ores from other BZ mods added by **Indzasa**
+- Ores from other BZ mods added by **Indzasa**
 - Starmap icon partially from **DjKolekson**
 - [AI trainer sound](https://freesound.org/s/382687/), [Processor sound](https://freesound.org/s/343387/)
 

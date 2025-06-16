@@ -9,7 +9,7 @@
   "dependencies": [
     "base",
     "space-age",
-    "Moshine-assets >= 0.3.14",
+    "Moshine-assets >= 0.3.15",
     "snouz-big-accumulator >= 1.0.3",
     "snouz-big-solar-panel >= 1.0.4",
     "snouz_better_substation >= 1.1.0",
