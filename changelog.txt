@@ -1,10 +1,18 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.21
 Date: 2025-06- 
+  Changes:
+    - Rails also auto-connect red and green wires along the tracks
+    - Made the "replaceable group" and health boost part of this mod instead of Moshine
+    - Added Made rail ramp automatically replaceable
   Bugfixes:
     - Fixed missing "Moshine island" map generation text
+    - Fixed invisible poles under elevated rails not being immune to thunder
   Locale:
+    - New Spanish locale by marks20125
     - Completed Chinese locale by rlcyyg1108
+  Info:
+    - Some changes are from the minimalist rails submod
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.20
 Date: 2025-06-07 rlcyyg1108

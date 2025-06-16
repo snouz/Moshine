@@ -15,7 +15,7 @@
     "snouz_better_substation >= 1.1.0",
     "se-space-trains >= 1.0.6",
     "long_stack_inserter >= 1.0.1",
-    "minimalist-rails >= 2.0.3",
+    "minimalist-rails >= 2.0.4",
     "(?) bzsilicon",
     "(?) Glass",
     "(?) aai-industry",
