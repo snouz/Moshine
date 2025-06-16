@@ -4,7 +4,7 @@
   "description": "Hot planet to develop AI, 26 technologies, 2 new minerals, 5 buildings, many items, custom terrain, music, unique challenges...",
   "author": "snouz",
   "homepage": "https://github.com/snouz/Moshine",
-  "version": "1.0.19",
+  "version": "1.0.21",
   "factorio_version": "2.0",
   "dependencies": [
     "base",
@@ -15,7 +15,7 @@
     "snouz_better_substation >= 1.1.0",
     "se-space-trains >= 1.0.6",
     "long_stack_inserter >= 1.0.1",
-    "minimalist-rails >= 2.0.0",
+    "minimalist-rails >= 2.0.3",
     "(?) bzsilicon",
     "(?) Glass",
     "(?) aai-industry",

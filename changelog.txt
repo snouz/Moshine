@@ -1,5 +1,18 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.18
+Version: 1.0.21
+Date: 2025-06- 
+  Bugfixes:
+    - Fixed missing "Moshine island" map generation text
+  Locale:
+    - Completed Chinese locale by rlcyyg1108
+---------------------------------------------------------------------------------------------------
+Version: 1.0.20
+Date: 2025-06-07 rlcyyg1108
+  Bugfixes:
+    - Fixed fr locale
+    - Fixed the game not loading for some people (due to the rail submod)
+---------------------------------------------------------------------------------------------------
+Version: 1.0.19
 Date: 2025-06-06
   Changes:
     - Added neodymium elevated rails (with custom graphics)
