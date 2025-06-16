@@ -17,13 +17,17 @@ Custom terrain generation, music/sfx, 26 techs, some original challenges... Unlo
 ![planet](https://i.imgur.com/mOkVuPd.png)
 
 # CREDITS & LICENCE
-- The soundtrack is these two albums by Anemoia: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6), found on Free Music Archive under license CC-BY-NC-SA
-- Neural computer, Data extractor, Indexer, AI trainer and sand graphics include or are modified versions of Krastorio 1 and 2 (GNU LGPLv3 license)
-- The Data extractor, Data processor and AI trainer contain some graphics from Hurricane046's buildings (CC BY license)
-- AI trainer sound by Euphrosyyn -- https://freesound.org/s/382687/ -- License: Creative Commons 0
-- Processor sound by LOVEBURD -- https://freesound.org/s/343387/ -- License: Creative Commons 0
-- Translations: Chinese by rlcyyg1108, Russian by GafarovMaxim and Kuaikuachu, French by Fr_Dae
-- Compatibility to Silica and Silicon by Dh4mpyr
-- Starmap icon partially from DjKolekson
+- The soundtrack is from these two albums by **Anemoia**: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6), found on Free Music Archive under license CC-BY-NC-SA
+- Neural computer, Data extractor, Indexer, AI trainer and sand graphics include or are modified versions of **Krastorio 1 and 2** (GNU LGPLv3 license)
+- The Data extractor, Data processor and AI trainer contain some graphics from **Hurricane046**'s buildings (CC BY license)
+- Translations: 
+  - Chinese by **rlcyyg1108**
+  - Russian by **GafarovMaxim and Kuaikuachu**
+  - French by **Fr_Dae** and snouz
+  - Spanish by **marks20125**
+- Compatibility with Silica and Silicon by **Dh4mpyr**
+- Compatibility ores from other BZ mods added by **Indzasa**
+- Starmap icon partially from **DjKolekson**
+- [AI trainer sound](https://freesound.org/s/382687/), [Processor sound](https://freesound.org/s/343387/)
 
 ![gif](https://i.imgur.com/gy9IHdc.gif)
