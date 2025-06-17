@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.22
+Date: 2025-06-17
+  Graphics:
+    - Slightly retextured decals, cliffs, rocks and terrain (more colorful, warm and varied, cliffs less visible)
+  Bugfixes:
+    - Fixed progression being stuck if uninstalling AAI-industry (glass tech would not come back)
+  Locale:
+    - Second part of Spanish locale by marks20125
+---------------------------------------------------------------------------------------------------
 Version: 1.0.21
 Date: 2025-06-17
   Changes:

@@ -513,6 +513,9 @@ end
 if mods["aai-industry"] and data.raw["technology"]["glass-processing"] then
   data.raw["technology"]["moshine-tech-data-extractor"].prerequisites = {"moshine-tech-supercomputer", "glass-processing"}
   data.raw["technology"]["moshine-tech-glass"].enabled = false
+else
+  data.raw["technology"]["moshine-tech-data-extractor"].prerequisites = {"moshine-tech-supercomputer", "moshine-tech-glass"}
+	data.raw["technology"]["moshine-tech-glass"].enabled = true
 end
 
 
