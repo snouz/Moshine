@@ -1,5 +1,7 @@
 # MOSHINE
 
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/eKK6NXcCbu)
+
 -- Doesn't affect vanilla recipes, techs or balance, addable at any stage and any save --
 
 A very hot desert planet with almost no magnetic field (propice to precise computations). Rich in metals (neodymium, silicon...). You'll find some scientific probes here that you can harvest data from.
@@ -29,5 +31,9 @@ Custom terrain generation, music/sfx, 26 techs, some original challenges... Unlo
 - Ores from other BZ mods added by **Indzasa**
 - Starmap icon partially from **DjKolekson**
 - [AI trainer sound](https://freesound.org/s/382687/), [Processor sound](https://freesound.org/s/343387/)
+
+
+
+[KO-FI - Just in case anyone wants to support my work](https://ko-fi.com/snouz)
 
 ![gif](https://i.imgur.com/gy9IHdc.gif)
