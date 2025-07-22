@@ -11,7 +11,7 @@ data:extend({
     type = "item-subgroup",
     name = "moshine-production-machine",
     group = "production",
-    order = "ea"
+    order = "e2"
   },
 
 

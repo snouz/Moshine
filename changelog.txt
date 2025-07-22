@@ -7,6 +7,7 @@ Date: 2025-06-
     - Hypercell substation/solar/accumulator default location -> Moshine
   Bugfixes:
     - Fixed missing mixed ore entity name
+    - Recipes with datacells don't have raw data in "total raw"
   Compatibility:
     - (by SafTheLamb) Combine dataprocessor fluid boxes so they're all selected as a single output (making it easier for other mods to add separate fluid inputs) (by )
   Locale:

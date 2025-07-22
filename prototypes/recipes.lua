@@ -280,6 +280,7 @@ data:extend({
     subgroup = "moshine-processes",
     order = "ggb",
     hide_from_player_crafting = true,
+    hide_from_stats = true,
     energy_required = 1,
     ingredients = {
       {type = "item", name = "datacell-raw-data", amount = 1},
