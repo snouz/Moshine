@@ -128,6 +128,7 @@ data:extend({
     drop_sound = item_sounds.mechanical_large_inventory_move,
     place_result = "processing-grid",
     stack_size = 20,
+    weight = 50 * kg,
     default_import_location = "moshine"
   }, 
 

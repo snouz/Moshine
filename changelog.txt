@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.23
+Date: 2025-06-
+  Changes:
+    - Made se-space-trains and long-handed-inserters optional dependencies (instead of forced)
+    - Processing farm can be moved out of the planet
+    - Hypercell substation/solar/accumulator default location -> Moshine
+  Bugfixes:
+    - Fixed missing mixed ore entity name
+  Compatibility:
+    - (by SafTheLamb) Combine dataprocessor fluid boxes so they're all selected as a single output (making it easier for other mods to add separate fluid inputs) (by )
+  Locale:
+    - Update to Russian locale by Kuaikuachu
+---------------------------------------------------------------------------------------------------
 Version: 1.0.22
 Date: 2025-06-17
   Graphics:

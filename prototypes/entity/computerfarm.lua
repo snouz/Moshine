@@ -33,56 +33,6 @@ local nuthin = {
   direction_count = 1,
 }
 
-local function make_process_size_speed_shift(size, speed, shift_h, shift_v)
-  return 
-  {
-    --probability =0.05,
-    --scale = 1.2,--size/4,
-    animation = {
-      sheets = {
-        --[[{
-          variation_count = 1,
-          filenames = {"__Moshine__/graphics/entity/quantum-computer/plant2.png"},
-          size = 128,
-          lines_per_file = 50,
-          --line_length = 25,
-          frame_count = 50,
-          animation_speed = speed/20,
-          shift = util.by_pixel(shift_h, shift_v),
-          scale = 0.5,
-          --draw_as_glow = true,
-        },]]
-        --[[{
-          variation_count = 1,
-          filenames = {"__Moshine__/graphics/entity/quantum-computer/plant-datacell.png"},
-          size = 128,
-          --repeat_count = 1,
-          lines_per_file = 1,
-          frame_count = 50,
-          animation_speed = speed/20,
-          scale = 0.5,
-          frame_sequence = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
-        },]]
-        {
-          variation_count = 1,
-          filenames = {"__Moshine__/graphics/entity/quantum-computer/plant.png"},
-          size = 128,
-          lines_per_file = 25,
-          frame_count = 100,
-          animation_speed = speed/20,
-          shift = util.by_pixel(shift_h, shift_v),
-          scale = 0.5,
-          draw_as_glow = true,
-          frame_sequence = { 1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 10, 10, 11, 12, 1, 1, 13, 14, 15, 15, 13, 16, 17, 1, 18, 1, 19, 19, 20, 21, 22, 1, 22, 23, 1, 24, 25, 1, 12, 5, 6, 1, 15, 11, 7, 1, 8, 5, 4 ,
-            1, 1, 3, 1, 11, 5, 6, 1, 22, 8, 9, 1, 10, 1, 12, 1, 1, 3, 4, 1, 1, 13, 16, 17, 1, 16, 1, 1, 1, 1, 1, 22, 1, 22, 7, 1, 24, 6, 1, 1, 1, 1, 1, 1, 7, 7, 1, 11, 5, 1
-          }
-        },
-      }
-    }
-  }
-end
-
-
 local default_dying_effect =
 {
   particle_effects =
@@ -624,30 +574,25 @@ data:extend({
     },
     --variations = gleba_tree_variations("yumako-tree", 8, 4, 1.3),
     stateless_visualisation_variations = {
-      make_process_size_speed_shift(5, 3, 0, 0),
-      --[[make_process_size_speed_shift(6, 3, 0, 0),
-      make_process_size_speed_shift(4, 3, 0, 0),
-      make_process_size_speed_shift(4.5, 3, 0, 0),
-      make_process_size_speed_shift(5.5, 3, 0, 0),
-      make_process_size_speed_shift(5, 3, 0, 0),
-
-
-      make_process_size_speed_shift(5, 4, 0, 0),
-      make_process_size_speed_shift(6, 4, 0, 0),
-      make_process_size_speed_shift(4, 4, 0, 0),
-      make_process_size_speed_shift(4.5, 4, 0, 0),
-      make_process_size_speed_shift(5.5, 4, 0, 0),
-
-      make_process_size_speed_shift(5, 2, 0, 0),
-      make_process_size_speed_shift(6, 2, 0, 0),
-      make_process_size_speed_shift(4, 2, 0, 0),
-      make_process_size_speed_shift(4.5, 2, 0, 0),
-      make_process_size_speed_shift(5.5, 2, 0, 0),
-
-      make_process_size_speed_shift(5, 3, 2, 3),
-      make_process_size_speed_shift(6, 3, -3, 2),
-      make_process_size_speed_shift(4, 3, 3, -2),
-      make_process_size_speed_shift(4.5, 3, -3, -2),]]
+      {
+        animation = {
+          sheets = {
+            {
+              variation_count = 1,
+              filenames = {"__Moshine__/graphics/entity/quantum-computer/plant.png"},
+              size = 128,
+              lines_per_file = 25,
+              frame_count = 100,
+              animation_speed = 0.15,
+              scale = 0.5,
+              draw_as_glow = true,
+              frame_sequence = { 1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 10, 10, 11, 12, 1, 1, 13, 14, 15, 15, 13, 16, 17, 1, 18, 1, 19, 19, 20, 21, 22, 1, 22, 23, 1, 24, 25, 1, 12, 5, 6, 1, 15, 11, 7, 1, 8, 5, 4 ,
+                1, 1, 3, 1, 11, 5, 6, 1, 22, 8, 9, 1, 10, 1, 12, 1, 1, 3, 4, 1, 1, 13, 16, 17, 1, 16, 1, 1, 1, 1, 1, 22, 1, 22, 7, 1, 24, 6, 1, 1, 1, 1, 1, 1, 7, 7, 1, 11, 5, 1
+              }
+            },
+          }
+        }
+      }
     },
     pictures =
     {
