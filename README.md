@@ -2,7 +2,11 @@
 
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/eKK6NXcCbu)
 
+Previously hard dependencies, now optional: [SE Space Trains](https://mods.factorio.com/mod/se-space-trains/), [Long Stack Inserter](https://mods.factorio.com/mod/long_stack_inserter)
+
 -- Doesn't affect vanilla recipes, techs or balance, addable at any stage and any save --
+
+[SE Space Trains](https://mods.factorio.com/mod/se-space-trains) and [Long Stack Inserter](https://mods.factorio.com/mod/long_stack_inserter) were forced dependencies, and are now optional.
 
 A very hot desert planet with almost no magnetic field (propice to precise computations). Rich in metals (neodymium, silicon...). You'll find some scientific probes here that you can harvest data from.
 Custom terrain generation, music/sfx, 26 techs, some original challenges... Unlocks after Vulcanus and Fulgora, there's everything to not get stranded.

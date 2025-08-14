@@ -205,3 +205,20 @@ if mods["bzsilicon"] then
   end
 end
 
+if data.raw["agricultural-tower"]["agricultural-tower"] and not data.raw["agricultural-tower"]["agricultural-tower"].accepted_seeds then
+  data.raw["agricultural-tower"]["agricultural-tower"].accepted_seeds = {}
+  for _, seed in pairs(data.raw.item) do
+    if seed.plant_result then
+      if seed.name ~= "datacell-equation" and seed.name ~= "datacell-dna-raw" then
+        table.insert(data.raw["agricultural-tower"]["agricultural-tower"].accepted_seeds, seed.name)
+      end
+    end
+  end
+  for _, seed in pairs(data.raw.tool) do
+    if seed.plant_result then
+      if seed.name ~= "datacell-equation" and seed.name ~= "datacell-dna-raw" then
+        table.insert(data.raw["agricultural-tower"]["agricultural-tower"].accepted_seeds, seed.name)
+      end
+    end
+  end
+end

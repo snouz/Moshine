@@ -30,7 +30,7 @@ data:extend({
       {type = "item", name = "productivity-module-2", amount = 5},
       {type = "item", name = "silicon-carbide", amount = 5},
     },
-    surface_conditions = {{ property = "moshine-exclusive", min = 1, max = 1}},
+    surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     results = {{type = "item", name = "data-processor", amount = 1}},
     allow_productivity = false,
     enabled = false,
@@ -48,7 +48,7 @@ data:extend({
       {type = "item", name = "hard-drive", amount = 100},
 
     },
-    surface_conditions = {{ property = "moshine-exclusive", min = 1, max = 1}},
+    surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     results = {{type="item", name="supercomputer", amount = 1}},
     weight = 1001*kg,
     allow_productivity = false,
@@ -58,7 +58,7 @@ data:extend({
     type = "recipe",
     name = "data-extractor",
     energy_required = 10,
-    surface_conditions = {{ property = "moshine-exclusive", min = 1, max = 1}},
+    surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients = {
       {type = "item", name = "display-panel", amount = 10},
       {type = "item", name = "magnet", amount = 5},
@@ -73,7 +73,7 @@ data:extend({
     type = "recipe",
     name = "optical-cable",
     energy_required = 3,
-    surface_conditions = {{ property = "moshine-exclusive", min = 1, max = 1}},
+    surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients = {
       {type = "item", name = "silicon", amount = 1},
       {type = "item", name = "silicon-carbide", amount = 1},
@@ -90,7 +90,7 @@ data:extend({
     name = "processing-grid",
     energy_required = 20,
     category = "crafting",
-    surface_conditions = {{ property = "moshine-exclusive", min = 1, max = 1}},
+    surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients =
     {
       {type = "item", name = "data-processor", amount = 1},
@@ -108,7 +108,7 @@ data:extend({
     name = "processing-tile",
     energy_required = 2,
     category = "crafting",
-    surface_conditions = {{ property = "moshine-exclusive", min = 1, max = 1}},
+    surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients =
     {
       {type = "item", name = "model-stable", amount = 1},
@@ -125,7 +125,7 @@ data:extend({
     name = "ai-trainer",
     energy_required = 20,
     category = "crafting",
-    surface_conditions = {{ property = "moshine-exclusive", min = 1, max = 1}},
+    surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients =
     {
       {type = "item", name = "model-unstable", amount = 1},

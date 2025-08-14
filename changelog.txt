@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.23
-Date: 2025-06-
+Date: 2025-08-14
   Changes:
     - Made se-space-trains and long-handed-inserters optional dependencies (instead of forced)
     - Processing farm can be moved out of the planet
@@ -8,10 +8,13 @@ Date: 2025-06-
   Bugfixes:
     - Fixed missing mixed ore entity name
     - Recipes with datacells don't have raw data in "total raw"
+    - Agricultural tower doesn't accept datacells anymore
   Compatibility:
-    - (by SafTheLamb) Combine dataprocessor fluid boxes so they're all selected as a single output (making it easier for other mods to add separate fluid inputs) (by )
+    - (by SafTheLamb) Combine dataprocessor fluid boxes so they're all selected as a single output (making it easier for other mods to add separate fluid inputs)
   Locale:
-    - Update to Russian locale by Kuaikuachu
+    - Update to Russian locale by Kuaikuachu (also on submods)
+  UI:
+    - Removed "moshine exclusive", replaced with a strict pressure value
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.22
 Date: 2025-06-17
