@@ -55,7 +55,7 @@ data:extend({
     },
     output_fluid_box =
     {
-      volume = 1000,
+      volume = 10000,
       --pipe_covers = pipecoverspictures(),,
       max_pipeline_extent = 1000000,
       pipe_connections =

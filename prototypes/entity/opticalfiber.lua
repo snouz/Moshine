@@ -383,7 +383,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity(),
     fluid_box =
     {
-      volume = 10,
+      volume = 1000,
       pipe_covers = opticalfibercoverspictures(), -- in case a real pipe is connected to a ghost
       --filter = "raw-data",
       pipe_connections =

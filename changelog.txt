@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.25
+Date: 2025-08-30
+  Changes:
+    - Incresed data fluid buffer quantity (some players reported some slow data transfers)
+  Compatibility:
+    - Fixed compatibility with Quality Seeds
+    - Fixed compatibility with boompuff-agriculture (for real now, I promise)
+  Locale:
+    - German locale by Schlumpf
+---------------------------------------------------------------------------------------------------
+Version: 1.0.24
+Date: 2025-08-28
+  Compatibility:
+    - Fixed boompuff-agriculture compatibility (Cannot insert Boompuff into Agricultural Tower)
+  Locale:
+    - Esperanto by trentmkelly
+---------------------------------------------------------------------------------------------------
 Version: 1.0.23
 Date: 2025-08-14
   Changes:

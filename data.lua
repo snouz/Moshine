@@ -16,3 +16,10 @@ require ("prototypes.entity.aitrainer")
 require ("prototypes.achievements")
 
 require ("prototypes.compatibility")
+
+
+if mods["quality-seeds"] then
+  if quality_seeds and quality_seeds.ignore_plants then
+    table.insert(quality_seeds.ignore_plants, "processing-grid-process-equation")
+  end
+end

@@ -15,6 +15,10 @@ data:extend({
   },
 
 
+
+    subgroup = "extraction-machine",
+    order = "b[fluids]-b[pumpjack]",
+
 --- fluids
 
 --[[

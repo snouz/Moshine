@@ -60,7 +60,7 @@ data:extend({
         production_type = "input",
         --pipe_picture = assembler3pipepictures(),
         --pipe_covers = pipecoverspictures(),
-        volume = 1000,
+        volume = 10000,
         --filter = "raw-data",
         pipe_connections = {
           {flow_direction = "input", direction = defines.direction.north, position = {0, -1}, connection_category = "data"},
@@ -75,7 +75,7 @@ data:extend({
         production_type = "output",
         --pipe_picture = assembler3pipepictures(),
         --pipe_covers = pipecoverspictures(),
-        volume = 1000,
+        volume = 10000,
         --filter = "raw-data",
         pipe_connections = {
           {flow_direction = "output", direction = defines.direction.north, position = {-1, -1}, connection_category = "data"},

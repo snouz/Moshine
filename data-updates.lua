@@ -221,4 +221,18 @@ if data.raw["agricultural-tower"]["agricultural-tower"] and not data.raw["agricu
       end
     end
   end
+  for _, seed in pairs(data.raw.module) do
+    if seed.plant_result then
+      if seed.name ~= "datacell-equation" and seed.name ~= "datacell-dna-raw" then
+        table.insert(data.raw["agricultural-tower"]["agricultural-tower"].accepted_seeds, seed.name)
+      end
+    end
+  end
+  for _, seed in pairs(data.raw.capsule) do
+    if seed.plant_result then
+      if seed.name ~= "datacell-equation" and seed.name ~= "datacell-dna-raw" then
+        table.insert(data.raw["agricultural-tower"]["agricultural-tower"].accepted_seeds, seed.name)
+      end
+    end
+  end
 end
