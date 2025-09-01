@@ -26,13 +26,14 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 - The soundtrack is from these two albums by **Anemoia**: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6), found on Free Music Archive under license CC-BY-NC-SA
 - Neural computer, Data extractor, Indexer, AI trainer and sand graphics include or are modified versions of **Krastorio 1 and 2** (GNU LGPLv3 license)
 - The Data extractor, Data processor and AI trainer contain some graphics from **Hurricane046**'s buildings (CC BY license)
+- The new datacell icon is based on an icon by Petrak
 - Translations: 
-  - Chinese by **rlcyyg1108**
-  - Russian by **GafarovMaxim and Kuaikuachu**
-  - French by **Fr_Dae** and snouz
-  - Spanish by **marks20125**
-  - Esperanto by **trentmkelly**
-  - German by Schlumpf
+- - Chinese by **rlcyyg1108**
+- - Russian by **GafarovMaxim and Kuaikuachu**
+- - French by **Fr_Dae** and snouz
+- - Spanish by **marks20125**
+- - Esperanto by **trentmkelly**
+- - German by **Schlumpf**
 - Compatibility with Silica and Silicon by **Dh4mpyr**
 - Ores from other BZ mods added by **Indzasa**
 - Starmap icon partially from **DjKolekson**
