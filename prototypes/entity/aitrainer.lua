@@ -123,7 +123,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim.png",
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
@@ -132,14 +132,107 @@ data:extend({
                 scale = 0.5,
               },
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim.png",
-                blend_mode = "additive",
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim1.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
                 line_length = 4,
                 animation_speed = 0.4,
-                draw_as_light = true,
+                draw_as_glow = true,
+                blend_mode = "additive",
+                scale = 0.5,
+              },
+            }
+          }
+        },
+        {
+          fadeout = true,
+          effect = "flicker",
+          apply_recipe_tint = "secondary",
+          animation =
+          {
+            layers =
+            {
+              {
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
+                width = 620,
+                height = 620,
+                frame_count = 16,
+                line_length = 4,
+                animation_speed = 0.4,
+                scale = 0.5,
+              },
+              {
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim2.png",
+                width = 620,
+                height = 620,
+                frame_count = 16,
+                line_length = 4,
+                animation_speed = 0.4,
+                draw_as_glow = true,
+                blend_mode = "additive",
+                scale = 0.5,
+              },
+            }
+          }
+        },
+        {
+          fadeout = true,
+          effect = "flicker",
+          apply_recipe_tint = "tertiary",
+          animation =
+          {
+            layers =
+            {
+              {
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
+                width = 620,
+                height = 620,
+                frame_count = 16,
+                line_length = 4,
+                animation_speed = 0.4,
+                scale = 0.5,
+              },
+              {
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim3.png",
+                width = 620,
+                height = 620,
+                frame_count = 16,
+                line_length = 4,
+                animation_speed = 0.4,
+                draw_as_glow = true,
+                blend_mode = "additive",
+                scale = 0.5,
+              },
+            }
+          }
+        },
+        {
+          fadeout = true,
+          effect = "flicker",
+          apply_recipe_tint = "quaternary",
+          animation =
+          {
+            layers =
+            {
+              {
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
+                width = 620,
+                height = 620,
+                frame_count = 16,
+                line_length = 4,
+                animation_speed = 0.4,
+                scale = 0.5,
+              },
+              {
+                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim4.png",
+                width = 620,
+                height = 620,
+                frame_count = 16,
+                line_length = 4,
+                animation_speed = 0.4,
+                draw_as_glow = true,
+                blend_mode = "additive",
                 scale = 0.5,
               },
             }

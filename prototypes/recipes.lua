@@ -385,7 +385,13 @@ data:extend({
     },
     allow_productivity = false,
     enabled = false,
-    crafting_machine_tint = {primary = aicorecolors[1]},
+    crafting_machine_tint =
+    {
+      primary = {40, 66, 65, 255},
+      secondary = {r = 0, g = 0, b = 0, a = 0},
+      tertiary = {r = 0, g = 0, b = 0, a = 0},
+      quaternary = {r = 0, g = 0, b = 0, a = 0},
+    },
   },
   {
     type = "recipe",
@@ -410,11 +416,58 @@ data:extend({
     },
     allow_productivity = false,
     enabled = false,
-    crafting_machine_tint = {primary = aicorecolors[2]},
+    crafting_machine_tint = 
+    {
+      primary = {70, 128, 124, 255},
+      secondary = {r = 0, g = 0, b = 0, a = 0},
+      tertiary = {r = 0, g = 0, b = 0, a = 0},
+      quaternary = {r = 0, g = 0, b = 0, a = 0},
+    },
   },
 })
 
+local one =
+{
+  primary = {179, 255, 250, 255},
+  secondary = {r = 0, g = 0, b = 0, a = 0},
+  tertiary = {r = 0, g = 0, b = 0, a = 0},
+  quaternary = {r = 0, g = 0, b = 0, a = 0},
+}
+local two =
+{
+  primary = {r = 0, g = 0, b = 0, a = 0},
+  secondary = {r = 1, g = 1, b = 1, a = 1},
+  tertiary = {r = 0, g = 0, b = 0, a = 0},
+  quaternary = {r = 0, g = 0, b = 0, a = 0},
+}
+local three =
+{
+  primary = {r = 0, g = 0, b = 0, a = 0},
+  secondary = {r = 0, g = 0, b = 0, a = 0},
+  tertiary = {r = 1, g = 1, b = 1, a = 1},
+  quaternary = {r = 0, g = 0, b = 0, a = 0},
+}
+local four =
+{
+  primary = {r = 0, g = 0, b = 0, a = 0},
+  secondary = {r = 0, g = 0, b = 0, a = 0},
+  tertiary = {r = 0, g = 0, b = 0, a = 0},
+  quaternary = {r = 1, g = 1, b = 1, a = 1},
+}
+
 for i=2,9 do
+
+  local typeofanim = one
+
+  if i >= 8 then
+    typeofanim = four
+  elseif i >= 6 then
+    typeofanim = three
+  elseif i >= 3 then
+    typeofanim = two
+  end
+
+
   data:extend({
     {
       type = "recipe",
@@ -439,7 +492,11 @@ for i=2,9 do
       },
       allow_productivity = false,
       enabled = false,
-      crafting_machine_tint = {primary = aicorecolors[i+1]},
+      crafting_machine_tint = typeofanim,
+
+
     },
+
+
   })
 end

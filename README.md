@@ -29,8 +29,8 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 - The new datacell icon is based on an icon by Petrak
 - Translations: 
 - - Chinese by **rlcyyg1108**
-- - Russian by **GafarovMaxim and Kuaikuachu**
-- - French by **Fr_Dae** and snouz
+- - Russian by **GafarovMaxim, Kuaikuachu and Erofitskiy**
+- - French by **Fr_Dae and snouz**
 - - Spanish by **marks20125**
 - - Esperanto by **trentmkelly**
 - - German by **Schlumpf**
@@ -38,6 +38,7 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 - Ores from other BZ mods added by **Indzasa**
 - Starmap icon partially from **DjKolekson**
 - [AI trainer sound](https://freesound.org/s/382687/), [Processor sound](https://freesound.org/s/343387/)
+- AI trainer animation include parts of gifs by **zolloc** and **Mathew Lucas**.
 
 
 
