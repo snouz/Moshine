@@ -3,7 +3,7 @@ if data.raw["lab"]["supercomputer"] then
   {
     "hard-drive",
     "datacell-raw-data",
-    "model-stable",
+    "datacell-ai-model-data",
     "datacell-solved-equation"
   }
 end
@@ -28,20 +28,20 @@ end
 add_tech_unit("moshine-tech-data-extractor", 40, 60,          {{"hard-drive", 1}} )
 add_tech_unit("moshine-tech-3d-data-storage", 200, 60,        {{"datacell-raw-data", 1}} )
 add_tech_unit("moshine-tech-data-processor", 1000, 10,        {{"datacell-raw-data", 1}} )
-add_tech_unit("moshine-tech-ai-trainer", 50, 80,              {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-2", 10, 2*500,            {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("big-solar-energy", 13, 3*500,                  {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-3", 15, 16*500,           {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-4", 20, 54*500,           {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("snouz_better_substation_tech", 40, 27*500,     {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-5", 25, 128*500,          {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-processing-grid", 10, 145*500,    {{"datacell-raw-data", 10},{"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-6", 30, 250*500,          {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-7", 35, 432*500,          {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("electric-energy-big-accumulators", 36, 437*500,{{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-8", 40, 686*500,          {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-9", 45, 1024*500,         {{"datacell-raw-data", 1}, {"model-stable", 1}} )
-add_tech_unit("moshine-tech-ai-tier-10", 50, 1458*500,        {{"datacell-raw-data", 1}, {"model-stable", 1}} )
+add_tech_unit("moshine-tech-ai-trainer", 50, 80,              {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-2", 10, 2*500,            {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("big-solar-energy", 13, 3*500,                  {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-3", 15, 16*500,           {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-4", 20, 54*500,           {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("snouz_better_substation_tech", 40, 27*500,     {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-5", 25, 128*500,          {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-processing-grid", 10, 145*500,    {{"datacell-raw-data", 10},{"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-6", 30, 250*500,          {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-7", 35, 432*500,          {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("electric-energy-big-accumulators", 36, 437*500,{{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-8", 40, 686*500,          {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-9", 45, 1024*500,         {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
+add_tech_unit("moshine-tech-ai-tier-10", 50, 1458*500,        {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )
 add_tech_unit("long-stack-inserter", 1000, 2.45*500,          {{"datacell-raw-data", 1}, {"datacell-solved-equation", 1}} )
 
 

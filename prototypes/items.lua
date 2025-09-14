@@ -16,8 +16,8 @@ data:extend({
 
 
 
-    subgroup = "extraction-machine",
-    order = "b[fluids]-b[pumpjack]",
+    --subgroup = "extraction-machine",
+    --order = "b[fluids]-b[pumpjack]",
 
 --- fluids
 
@@ -64,7 +64,7 @@ data:extend({
     place_result = "supercomputer",
     stack_size = 5,
     default_import_location = "moshine",
-    weight = 1000 * kg
+    weight = 100 * kg
   },
   {
     type = "item",
@@ -121,7 +121,7 @@ data:extend({
     stack_size = 20,
     default_import_location = "moshine"
   },
-{
+  {
     type = "item",
     name = "processing-grid",
     icon = "__Moshine__/graphics/icons/processing-grid.png",
@@ -280,10 +280,27 @@ data:extend({
   },
   {
     type = "tool",
+    name = "datacell-ai-model-data",
+    icon = "__Moshine__/graphics/icons/datacell-ai-model-data.png",
+    subgroup = "moshine-processes",
+    order = "ggc",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value",
+    stack_size = 40,
+    weight = 5*kg,
+  },
+  {
+    type = "tool",
     name = "datacell-equation",
     icon = "__Moshine__/graphics/icons/datacell-equation.png",
     subgroup = "moshine-processes",
-    order = "ggc",
+    order = "ggd",
     plant_result = "processing-grid-process-equation",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
@@ -294,7 +311,7 @@ data:extend({
     factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value",
     stack_size = 40,
-    weight = 10000*kg,
+    weight = 5*kg,
   },
 
   {
@@ -302,7 +319,7 @@ data:extend({
     name = "datacell-solved-equation",
     icon = "__Moshine__/graphics/icons/datacell-solved-equation.png",
     subgroup = "moshine-processes",
-    order = "ggd",
+    order = "gge",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
     drop_sound = item_sounds.module_inventory_move,
@@ -496,7 +513,7 @@ data:extend({
 
 
   {
-    type = "tool",
+    type = "item",
     name = "model-stable",
     icons = {
       {icon = "__Moshine__/graphics/icons/aicores/tier-0.png"},
@@ -510,10 +527,10 @@ data:extend({
     drop_sound = item_sounds.module_inventory_move,
     default_import_location = "moshine",
     stack_size = 20,
-    durability = 1,
-    durability_description_key = "description.science-pack-remaining-amount-key",
-    factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
-    durability_description_value = "description.science-pack-remaining-amount-value",
+    --durability = 1,
+    --durability_description_key = "description.science-pack-remaining-amount-key",
+    --factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
+    --durability_description_value = "description.science-pack-remaining-amount-value",
     weight = 50*kg,
   },
 

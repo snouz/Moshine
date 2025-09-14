@@ -1,6 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.28
+Date: 2025-09-
+  Changes:
+    - Added datacell [AI] that can be crafted using stable model
+    - Technology now require datacell [AI] instead of stable model
+    - Neural computer and equation datacell can now get in rockets
+---------------------------------------------------------------------------------------------------
 Version: 1.0.27
-Date: 2025-0
+Date: 2025-09-14
   Graphics:
     - 4 different animations on the ai trainer depending on training stage
   Locale:

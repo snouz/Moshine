@@ -259,8 +259,8 @@ data:extend({
     name = "datacell-add-raw-data",
     icon = "__Moshine__/graphics/icons/datacell-add-raw-data.png",
     category = "data-processing",
-    subgroup = "moshine-processes",
-    order = "ggb",
+    --subgroup = "moshine-processes",
+    --order = "ggb",
     hide_from_player_crafting = true,
     energy_required = 1,
     ingredients = {
@@ -293,13 +293,33 @@ data:extend({
     auto_recycle = false,
     enabled = false,
   },
+
+  {
+    type = "recipe",
+    name = "datacell-add-ai-model-data",
+    icon = "__Moshine__/graphics/icons/datacell-add-ai-model-data.png",
+    category = "data-processing",
+    subgroup = "moshine-processes",
+    order = "ggc",
+    --hide_from_player_crafting = true,
+    energy_required = 10,
+    ingredients = {
+      {type = "item", name = "hard-drive", amount = 1},
+      {type = "item", name = "model-stable", amount = 1},
+    },
+    results = {{type = "item", name = "3d-data-storage", amount = 1}},
+    results = {{type = "item", name = "datacell-ai-model-data", amount = 1}},
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+  },
   {
     type = "recipe",
     name = "datacell-add-equation",
     icon = "__Moshine__/graphics/icons/datacell-add-equation.png",
     category = "data-processing",
     subgroup = "moshine-processes",
-    order = "ggc",
+    order = "ggd",
     --hide_from_player_crafting = true,
     energy_required = 1000,
     ingredients = {
@@ -310,6 +330,7 @@ data:extend({
     auto_recycle = false,
     enabled = false,
   },
+
   {
     type = "recipe",
     name = "3d-data-storage",
