@@ -492,6 +492,49 @@ data:extend({
           },
         }
       },
+      --[[
+      always_draw_idle_animation = true, 
+      idle_animation =
+      {
+        layers =
+        {
+          {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-base.png",
+            width = 500,
+            height = 500,
+            shift = util.by_pixel(0, -6),
+            line_length = 1,
+            priority = "high",
+            animation_speed = 0.5,
+            repeat_count = 48,
+            --frame_count = 48,
+            scale = 0.5,
+          },
+          {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer.png",
+            width = 400,
+            height = 420,
+            shift = util.by_pixel(0, -6),
+            line_length = 8,
+            priority = "high",
+            animation_speed = 0.5,
+            frame_count = 48,
+            scale = 0.5,
+          },
+          {
+            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-sh.png",
+            width = 500,
+            height = 500,
+            shift = util.by_pixel(0, -6),
+            line_length = 1,
+            priority = "high",
+            frame_count = 1,
+            repeat_count = 48,
+            draw_as_shadow = true,
+            scale = 0.5,
+          },
+        }
+      },]]
       water_reflection =
       {
         pictures =

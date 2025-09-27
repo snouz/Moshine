@@ -250,6 +250,10 @@ data:extend({
         type = "unlock-recipe",
         recipe = "model-stable"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-add-ai-model-data"
+      },
     },
     prerequisites = {"moshine-tech-3d-data-storage"},
     unit =

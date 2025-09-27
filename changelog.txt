@@ -1,6 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.30
+Date: 2025-
+  Changes:
+    - Added 2 technologies to unlock the recipes that were previously unlocked by planet discovery
+    - Removed map settings for cliffs, hills and fulgoran data probes
+  Bugfixes:
+    - Increased optical cable throughput
+---------------------------------------------------------------------------------------------------
+Version: 1.0.29
+Date: 2025-09-15
+  Bugfixes:
+    - Fixed datacell [AI] recipe not being available
+---------------------------------------------------------------------------------------------------
 Version: 1.0.28
-Date: 2025-09-
+Date: 2025-09-15
   Changes:
     - Added datacell [AI] that can be crafted using stable model
     - Technology now require datacell [AI] instead of stable model
