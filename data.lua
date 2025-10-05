@@ -14,6 +14,7 @@ require ("prototypes.entity.aitrainer")
 --require ("prototypes.entity.rails")
 
 require ("prototypes.achievements")
+require ("prototypes.menu-simulations")
 
 require ("prototypes.compatibility")
 

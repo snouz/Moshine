@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.31
+Date: 2025-
+  Changes:
+    - Added 4 menu simulations based on FalseIdenty's save
+  Bugfixes
+    - Fixed planet orientation in starmap (submod)
+  Locale:
+    - German locale update by Schlumpf
+---------------------------------------------------------------------------------------------------
 Version: 1.0.30
 Date: 2025-09-28
   Changes:

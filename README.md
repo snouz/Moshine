@@ -18,9 +18,9 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 # Rewards
 ![rewards](https://i.imgur.com/pJ1Ldtp.png)
 # Main mod
-![mod](https://i.imgur.com/eALVSW5.png)
+![mod](https://i.imgur.com/LQIta5u.png)
 # Base resources
-![planet](https://i.imgur.com/mOkVuPd.png)
+![planet](https://i.imgur.com/pP8G6Lk.png)
 
 # CREDITS & LICENCE
 - The soundtrack is from these two albums by **Anemoia**: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6), found on Free Music Archive under license CC-BY-NC-SA
@@ -40,6 +40,7 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 - Starmap icon partially from **DjKolekson**
 - [AI trainer sound](https://freesound.org/s/382687/), [Processor sound](https://freesound.org/s/343387/)
 - AI trainer animation include parts of gifs by **zolloc** and **Mathew Lucas**.
+- Menu simulations based on a save by FalseIdenty
 
 
 
