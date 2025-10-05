@@ -64,6 +64,7 @@ menu_sims.nauvis_rocket_factory = nil
 menu_sims.moshine_falseidentity_1 = {
   checkboard = false,
   game_view_settings = {default_show_value = false, show_shortcut_bar = false, show_quickbar = false, show_tool_bar = false},
+  init_update_count = 290,
   save = moshine_simulations .. "moshine_falseidentity.zip",
   length = 16 * second,
   init = [[
@@ -80,6 +81,7 @@ menu_sims.moshine_falseidentity_1 = {
 menu_sims.moshine_falseidentity_2 = {
   checkboard = false,
   game_view_settings = {default_show_value = false, show_shortcut_bar = false, show_quickbar = false, show_tool_bar = false},
+  init_update_count = 290,
   save = moshine_simulations .. "moshine_falseidentity.zip",
   length = 16 * second,
   init = [[
@@ -95,6 +97,7 @@ menu_sims.moshine_falseidentity_2 = {
 menu_sims.moshine_falseidentity_3 = {
   checkboard = false,
   game_view_settings = {default_show_value = false, show_shortcut_bar = false, show_quickbar = false, show_tool_bar = false},
+  init_update_count = 290,
   save = moshine_simulations .. "moshine_falseidentity.zip",
   length = 16 * second,
   init = [[
@@ -110,6 +113,7 @@ menu_sims.moshine_falseidentity_3 = {
 menu_sims.moshine_falseidentity_4 = {
   checkboard = false,
   game_view_settings = {default_show_value = false, show_shortcut_bar = false, show_quickbar = false, show_tool_bar = false},
+  init_update_count = 290,
   save = moshine_simulations .. "moshine_falseidentity.zip",
   length = 16 * second,
   init = [[
