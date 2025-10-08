@@ -171,6 +171,7 @@ data:extend({
       working_visualisations =
       {
         {
+          name = "rotation",
           constant_speed = true,
           always_draw = true,
           draw_in_states = {"working"},
@@ -180,7 +181,7 @@ data:extend({
             {
               {
                 filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-animation-1.png",
-                priority="high",
+                priority = "high",
                 width = 160,
                 height = 290,
                 frame_count = 16,
@@ -191,8 +192,8 @@ data:extend({
                 scale = 0.5
               },
               {
-                filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-1.png",
-                priority="high",
+                filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-2.png",
+                priority = "high",
                 width = 160,
                 height = 290,
                 frame_count = 16,
@@ -206,7 +207,33 @@ data:extend({
               },
             }
           },
-          name = "rotation"
+        },
+        {
+          name = "rotation2",
+          apply_recipe_tint = "primary",
+          constant_speed = true,
+          always_draw = true,
+          draw_in_states = {"working"},
+          animation = 
+          { 
+            layers =
+            {
+              {
+                filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-1.png",
+                priority = "high",
+                width = 160,
+                height = 290,
+                frame_count = 16,
+                line_length = 8,
+                animation_speed = 0.15,
+                run_mode = "forward-then-backward",
+                draw_as_glow = true,
+                blend_mode = "additive",
+                shift = util.by_pixel(0, -16),
+                scale = 0.5
+              },
+            }
+          },
         },
       },
       frozen_patch =

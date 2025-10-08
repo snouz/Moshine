@@ -271,6 +271,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
+    crafting_machine_tint = {primary = {109, 209, 94}}, --#6dd15e
   },
   {
     type = "recipe",
@@ -292,6 +293,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
+    crafting_machine_tint = {primary = {109, 209, 94}}, --#6dd15e
   },
 
   {
@@ -312,6 +314,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
+    crafting_machine_tint = {primary = {106, 196, 230}}, --#6ac4e6
   },
   {
     type = "recipe",
@@ -329,6 +332,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
+    crafting_machine_tint = {primary = {66, 125, 235}}, --#427deb
   },
 
   {
@@ -366,6 +370,7 @@ data:extend({
     },
     results = {{type = "item", name = "model-unstable", amount = 1}},
     enabled = false,
+    crafting_machine_tint = {primary = {255, 0, 0}}, --#ff0000
   },
 
 
@@ -384,6 +389,7 @@ data:extend({
     },
     results = {{type = "item", name = "model-stable", amount = 1}},
     enabled = false,
+    crafting_machine_tint = {primary = {20, 251, 255}}, --#14fbff
   },
   {
     type = "recipe",
