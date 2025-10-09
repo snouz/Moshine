@@ -26,7 +26,7 @@ local plant_flags = {"placeable-neutral"} --"placeable-off-grid"  "breaths-air"
 local gleba_tree_underwater_things = {}
 
 local nuthin = {
-  filename = "__Moshine__/graphics/empty.png",
+  filename = "__core__/graphics/empty.png",
   priority = "very-low",
   height = 1,
   width = 1,
@@ -346,7 +346,7 @@ data:extend({
     {
       sound =
       {
-        filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.ogg",
+        filename = "__Moshine-assets__/sound/entity/agricultural-tower/agricultural-tower-hub-loop.ogg",
         volume = 0.5,
         audible_distance_modifier = 0.7,
       },
@@ -356,8 +356,8 @@ data:extend({
     },
     central_orienting_sound =
     {
-      sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-loop.ogg", volume = 0.9},
-      stopped_sound = {filename = "__Moshine__/sound/entity/agricultural-tower/agricultural-tower-rotation-stop.ogg", volume = 0.9}
+      sound = {filename = "__Moshine-assets__/sound/entity/agricultural-tower/agricultural-tower-rotation-loop.ogg", volume = 0.9},
+      stopped_sound = {filename = "__Moshine-assets__/sound/entity/agricultural-tower/agricultural-tower-rotation-stop.ogg", volume = 0.9}
     },
     central_orienting_sound_source = "hub",
     arm_extending_sound =
@@ -378,8 +378,8 @@ data:extend({
       stopped_sound = {filename = "__space-age__/sound/entity/agricultural-tower/agricultural-tower-grappler-extend-stop.ogg", volume = 0}
     },
     grappler_extending_sound_source = "grappler-hub",
-    planting_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9),
-    harvesting_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9),
+    planting_sound = sound_variations("__Moshine-assets__/sound/entity/agricultural-tower/cervo", 13, 0.9),
+    harvesting_sound = sound_variations("__Moshine-assets__/sound/entity/agricultural-tower/cervo", 13, 0.9),
     resistances =
     {
       {
@@ -417,7 +417,7 @@ data:extend({
         layers =
         {
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-base.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-base.png",
             width = 500,
             height = 500,
             shift = util.by_pixel(0, -6),
@@ -429,7 +429,7 @@ data:extend({
             scale = 0.5,
           },
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer.png",
             width = 400,
             height = 420,
             shift = util.by_pixel(0, -6),
@@ -440,7 +440,7 @@ data:extend({
             scale = 0.5,
           },
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-sh.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-sh.png",
             width = 500,
             height = 500,
             shift = util.by_pixel(0, -6),
@@ -452,7 +452,7 @@ data:extend({
             scale = 0.5,
           },
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-glow.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-glow.png",
             width = 400,
             height = 420,
             shift = util.by_pixel(0, -6),
@@ -465,7 +465,7 @@ data:extend({
             blend_mode = "additive",
           },
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-glow2.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-glow2.png",
             width = 400,
             height = 420,
             shift = util.by_pixel(0, -6),
@@ -478,7 +478,7 @@ data:extend({
             blend_mode = "additive-soft",
           },
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-glow3.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-glow3.png",
             width = 400,
             height = 420,
             shift = util.by_pixel(0, -6),
@@ -499,7 +499,7 @@ data:extend({
         layers =
         {
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-base.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-base.png",
             width = 500,
             height = 500,
             shift = util.by_pixel(0, -6),
@@ -511,7 +511,7 @@ data:extend({
             scale = 0.5,
           },
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer.png",
             width = 400,
             height = 420,
             shift = util.by_pixel(0, -6),
@@ -522,7 +522,7 @@ data:extend({
             scale = 0.5,
           },
           {
-            filename = "__Moshine__/graphics/entity/quantum-computer/quantum-computer-sh.png",
+            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-sh.png",
             width = 500,
             height = 500,
             shift = util.by_pixel(0, -6),
@@ -576,7 +576,7 @@ data:extend({
               target_effects = {
                 {
                   type = "play-sound",
-                  sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9),
+                  sound = sound_variations("__Moshine-assets__/sound/entity/agricultural-tower/cervo", 13, 0.9),
                   damage_type_filters = "fire"
                 }
               }
@@ -585,8 +585,8 @@ data:extend({
         }
       }
     },
-    mining_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
-    mined_sound = sound_variations("__Moshine__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
+    mining_sound = sound_variations("__Moshine-assets__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/axe-mining-yumako-tree", 5, 0.6),
+    mined_sound = sound_variations("__Moshine-assets__/sound/entity/agricultural-tower/cervo", 13, 0.9), --sound_variations("__space-age__/sound/mining/mined-yumako-tree", 6, 0.3),
     growth_ticks = 4 * minutes,
     --harvest_emissions = plant_harvest_emissions,
     --emissions_per_second = plant_emissions,
@@ -622,7 +622,7 @@ data:extend({
           sheets = {
             {
               variation_count = 1,
-              filenames = {"__Moshine__/graphics/entity/quantum-computer/plant.png"},
+              filenames = {"__Moshine-assets__/graphics/entity/quantum-computer/plant.png"},
               size = 128,
               lines_per_file = 25,
               frame_count = 100,
@@ -642,7 +642,7 @@ data:extend({
       layers =
       {
         {
-          filename = "__Moshine__/graphics/empty.png",
+          filename = "__core__/graphics/empty.png",
           width = 1,
           height = 1,
         }

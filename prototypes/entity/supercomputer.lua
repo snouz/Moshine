@@ -168,7 +168,7 @@ data:extend({
     {
       sound =
       {
-        filename = "__Moshine__/sound/neural-computer/computer_buzz.ogg",
+        filename = "__Moshine-assets__/sound/neural-computer/computer_buzz.ogg",
         volume = 0.6,
         modifiers = {volume_multiplier("main-menu", 2.2), volume_multiplier("tips-and-tricks", 0.8)},
         audible_distance_modifier = 0.7,

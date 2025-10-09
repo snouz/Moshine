@@ -5,7 +5,7 @@ local menu_sims = data.raw["utility-constants"]["default"].main_menu_simulations
 -- Remove Vanilla + Expansion menu simulations
 -- Base
 
-
+--[[
 menu_sims.nauvis_solar_power_construction = nil
 menu_sims.nauvis_lab = nil
 menu_sims.nauvis_burner_city = nil
@@ -57,7 +57,7 @@ menu_sims.fulgora_race = nil
 menu_sims.aquilo_send_help = nil
 menu_sims.aquilo_starter = nil
 menu_sims.nauvis_rocket_factory = nil
-
+]]
 
 
 

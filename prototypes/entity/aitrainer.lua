@@ -53,7 +53,7 @@ data:extend({
     {
       sound =
       {
-        filename = "__Moshine__/sound/ai-trainer/ai-trainer-loop.ogg",
+        filename = "__Moshine-assets__/sound/ai-trainer/ai-trainer-loop.ogg",
         volume = 0.6,
         modifiers = {volume_multiplier("main-menu", 1.5), volume_multiplier("tips-and-tricks", 1.4)},
         audible_distance_modifier = 0.4

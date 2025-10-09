@@ -1,12 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.31
 Date: 2025-
+  Info:
+    - Prototypes from Moshine-assets were ported to this mod, Moshine-assets only contains assets
   Changes:
     - Added 4 menu simulations based on FalseIdenty's save
     - Added colors to data processor recipes
     - Made raw data fluid green
   Bugfixes
-    - Fixed planet orientation in starmap (submod)
+    - Fixed planet orientation in starmap
   Locale:
     - German locale update by Schlumpf
 ---------------------------------------------------------------------------------------------------

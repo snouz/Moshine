@@ -273,7 +273,7 @@ data:extend({
     {
       sound =
       {
-        filename = "__Moshine__/sound/data-processor/processor_buzz.ogg",
+        filename = "__Moshine-assets__/sound/data-processor/processor_buzz.ogg",
         volume = 0.7,
         modifiers = volume_multiplier("main-menu", 1.44),
         audible_distance_modifier = 0.6

@@ -3,38 +3,24 @@ local item_tints = require("__base__.prototypes.item-tints")
 local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
 require("sound-util")
 
+
 data:extend({
 
 
 --- subgroups
   {
     type = "item-subgroup",
+    name = "moshine-processes",
+    group = "intermediate-products",
+    order = "pa"
+  },
+
+  {
+    type = "item-subgroup",
     name = "moshine-production-machine",
     group = "production",
     order = "e2"
   },
-
-
-
-    --subgroup = "extraction-machine",
-    --order = "b[fluids]-b[pumpjack]",
-
---- fluids
-
---[[
-  {
-    type = "fluid",
-    name = "processing-power-fluid",
-    auto_barrel = false,
-    subgroup = "fluid",
-    fuel_value = "2kJ",
-    default_temperature = 15,
-    base_color = {0, 0.34, 0.6},
-    flow_color = {0.7, 0.7, 0.7},
-    icon = "__Moshine__/graphics/icons/processing-power-fluid.png",
-    order = "a[fluid]-a[water]-a[water]"
-  },
-]]
 
 --- entities begin
 
@@ -95,19 +81,6 @@ data:extend({
     weight = 20 * kg,
     random_tint_color = item_tints.iron_rust
   },
-  --[[{
-    type = "item",
-    name = "ai-support",
-    icon = "__Moshine__/graphics/icons/ai-support.png",
-    subgroup = "moshine-production-machine",
-    order = "ffj",
-    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
-    pick_sound = item_sounds.mechanical_large_inventory_pickup,
-    drop_sound = item_sounds.mechanical_large_inventory_move,
-    place_result = "ai-support",
-    stack_size = 20,
-    default_import_location = "moshine"
-  },]]--
   {
     type = "item",
     name = "ai-trainer",
@@ -157,6 +130,31 @@ data:extend({
   },
 
 --- items
+  
+  {
+    type = "item",
+    name = "sand",
+    icon = "__Moshine__/graphics/icons/sand-3.png",
+    subgroup = "moshine-processes",
+    order = "aaa",
+    icon_size = 64,
+    pictures =
+    {
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-1.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-2.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-3.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-4.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-5.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-6.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-7.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-8.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/sand-9.png", scale = 0.5 },
+    },
+    stack_size = 100,
+    default_import_location = "moshine",
+    random_tint_color = item_tints.iron_rust,
+    weight = 1*kg,
+  },
   {
     type = "item",
     name = "silicon",
@@ -188,6 +186,27 @@ if not data.raw.item["glass"] then
   })
 end
 data:extend({
+  {
+    type = "item",
+    name = "neodymium",
+    icon = "__Moshine__/graphics/icons/neodymium.png",
+    pictures =
+    {
+      { size = 64, filename = "__Moshine__/graphics/icons/neodymium.png",   scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-1.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-2.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/neodymium-3.png", scale = 0.5 }
+    },
+    subgroup = "moshine-processes",
+    order = "ccc",
+    inventory_move_sound = item_sounds.resource_inventory_move,
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
+    stack_size = 50,
+    default_import_location = "moshine",
+    random_tint_color = item_tints.iron_rust,
+    weight = 4*kg
+  },
   {
     type = "item",
     name = "magnet",
