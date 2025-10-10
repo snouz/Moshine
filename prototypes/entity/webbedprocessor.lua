@@ -26,10 +26,10 @@ local simulations = require("__space-age__.prototypes.factoriopedia-simulations"
 data:extend({
   {
     type = "tile",
-    name = "processing-tile",
+    name = "webbed_processor_tile",
     order = "a[artificial]-d[utility]-c[space-platform-foundation]",
     subgroup = "artificial-tiles",
-    minable = {mining_time = 0.5, result = "processing-tile"},
+    minable = {mining_time = 0.5, result = "webbed_processor_tile"},
     mined_sound = sounds.deconstruct_bricks(0.8),
     --is_foundation = true,
     allows_being_covered = true,

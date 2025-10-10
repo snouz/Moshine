@@ -61,14 +61,16 @@ data:extend({
       {type = "item", name = "productivity-module-2", amount = 5},
       {type = "item", name = "silicon-carbide", amount = 5},
     },
+    results = {
+      {type = "item", name = "data-processor", amount = 1}
+    },
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
-    results = {{type = "item", name = "data-processor", amount = 1}},
     allow_productivity = false,
     enabled = false,
   },
   {
     type = "recipe",
-    name = "supercomputer",
+    name = "neural_computer",
     energy_required = 30,
     ingredients =
     {
@@ -76,12 +78,11 @@ data:extend({
       {type = "item", name = "silicon-carbide", amount = 40},
       {type = "item", name = "magnet", amount = 20},
       {type = "item", name = "processing-unit", amount = 50},
-      {type = "item", name = "hard-drive", amount = 100},
+      {type = "item", name = "datacell-empty", amount = 100},
 
     },
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
-    results = {{type="item", name="supercomputer", amount = 1}},
-    weight = 1001*kg,
+    results = {{type = "item", name = "neural_computer", amount = 1}},
     allow_productivity = false,
     enabled = false,
   },
@@ -136,7 +137,7 @@ data:extend({
   
   {
     type = "recipe",
-    name = "processing-tile",
+    name = "webbed_processor_tile",
     energy_required = 2,
     category = "crafting",
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
@@ -147,7 +148,8 @@ data:extend({
       {type = "item", name = "processing-unit", amount = 1},
       {type = "item", name = "optical-cable", amount = 1},
     },
-    results = {{type="item", name="processing-tile", amount=1}},
+    results = {
+      {type = "item", name = "webbed_processor_tile", amount = 1}},
     allow_productivity = false,
     enabled = false,
   },
@@ -273,7 +275,7 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "hard-drive", -- datacell empty
+    name = "datacell-empty", -- datacell empty
     category = "electronics",
     energy_required = 10,
     ingredients = {
@@ -281,7 +283,7 @@ data:extend({
       {type = "item", name = "silicon-cell", amount = 1},
       {type = "item", name = "advanced-circuit", amount = 1},
     },
-    results = {{type = "item", name = "hard-drive", amount = 1}},
+    results = {{type = "item", name = "datacell-empty", amount = 1}},
     allow_productivity = true,
     enabled = false,
   },
@@ -295,7 +297,7 @@ data:extend({
     hide_from_player_crafting = true,
     energy_required = 1,
     ingredients = {
-      {type = "item", name = "hard-drive", amount = 1},
+      {type = "item", name = "datacell-empty", amount = 1},
       {type = "fluid", name = "raw-data", amount = 1000},
     },
     results = {{type = "item", name = "datacell-raw-data", amount = 1}},
@@ -318,7 +320,7 @@ data:extend({
       {type = "item", name = "datacell-raw-data", amount = 1},
     },
     results = {
-      {type = "item", name = "hard-drive", amount = 1},
+      {type = "item", name = "datacell-empty", amount = 1},
       {type = "fluid", name = "raw-data", amount = 1000},
     },
     allow_productivity = false,
@@ -337,7 +339,7 @@ data:extend({
     --hide_from_player_crafting = true,
     energy_required = 10,
     ingredients = {
-      {type = "item", name = "hard-drive", amount = 1},
+      {type = "item", name = "datacell-empty", amount = 1},
       {type = "item", name = "model-stable", amount = 1},
     },
     results = {{type = "item", name = "3d-data-storage", amount = 1}},
@@ -357,7 +359,7 @@ data:extend({
     --hide_from_player_crafting = true,
     energy_required = 1000,
     ingredients = {
-      {type = "item", name = "hard-drive", amount = 1},
+      {type = "item", name = "datacell-empty", amount = 1},
     },
     results = {{type = "item", name = "datacell-equation", amount = 1}},
     allow_productivity = false,
@@ -374,7 +376,7 @@ data:extend({
     ingredients = {
       {type = "item", name = "magnet", amount = 3},
       {type = "item", name = "silicon-cell", amount = 3},
-      {type = "item", name = "hard-drive", amount = 4},
+      {type = "item", name = "datacell-empty", amount = 4},
       {type = "item", name = "glass", amount = 5},
     },
     results = {{type = "item", name = "3d-data-storage", amount = 1}},

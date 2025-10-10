@@ -19,7 +19,7 @@ data:extend({
     type = "build-entity-achievement",
     name = "build-supercomputer",
     order = "m[moshine]-ccc",
-    to_build = "supercomputer",
+    to_build = "neural_computer",
     icon = "__Moshine__/graphics/achievement/build-supercomputer.png",
     icon_size = 128
   },

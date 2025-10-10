@@ -1,7 +1,7 @@
-if data.raw["lab"]["supercomputer"] then
-  data.raw["lab"]["supercomputer"].inputs =
+if data.raw["lab"]["neural_computer"] then
+  data.raw["lab"]["neural_computer"].inputs =
   {
-    "hard-drive",
+    "datacell-empty",
     "datacell-raw-data",
     "datacell-ai-model-data",
     "datacell-solved-equation"
@@ -25,7 +25,7 @@ end
 
 
 
-add_tech_unit("moshine-tech-data-extractor", 40, 60,          {{"hard-drive", 1}} )
+add_tech_unit("moshine-tech-data-extractor", 40, 60,          {{"datacell-empty", 1}} )
 add_tech_unit("moshine-tech-3d-data-storage", 200, 60,        {{"datacell-raw-data", 1}} )
 add_tech_unit("moshine-tech-data-processor", 1000, 10,        {{"datacell-raw-data", 1}} )
 add_tech_unit("moshine-tech-ai-trainer", 50, 80,              {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )

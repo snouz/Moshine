@@ -40,14 +40,14 @@ data:extend({
   },
   {
     type = "item",
-    name = "supercomputer",
+    name = "neural_computer",
     icon = "__Moshine__/graphics/icons/supercomputer.png",
     subgroup = "moshine-production-machine",
     order = "ffg",
     inventory_move_sound = item_sounds.mechanical_inventory_move,
     pick_sound = item_sounds.mechanical_inventory_pickup,
     drop_sound = item_sounds.mechanical_inventory_move,
-    place_result = "supercomputer",
+    place_result = "neural_computer",
     stack_size = 5,
     default_import_location = "moshine",
     weight = 100 * kg
@@ -111,7 +111,7 @@ data:extend({
 
   {
     type = "item",
-    name = "processing-tile",
+    name = "webbed_processor_tile",
     icon = "__Moshine__/graphics/icons/processing-tile.png",
     subgroup = "moshine-production-machine",
     order = "ffl",
@@ -122,7 +122,7 @@ data:extend({
     weight = 10 * kg,
     place_as_tile =
     {
-      result = "processing-tile",
+      result = "webbed_processor_tile",
       condition_size = 1,
       condition = {layers={water_tile=true}}
     },
@@ -250,7 +250,7 @@ data:extend({
   -- datacells
   {
     type = "tool",
-    name = "hard-drive", -- renamed Datacell[empty]
+    name = "datacell-empty", -- renamed Datacell[empty]
     icon = "__Moshine__/graphics/icons/datacell-empty.png",
     subgroup = "moshine-processes",
     order = "gga",

@@ -114,9 +114,9 @@ local planetary_teleporter_off_animation = {
 data:extend({
   {
     type = "lab",
-    name = "supercomputer", -- Neural computer
+    name = "neural_computer", -- Neural computer
     icon = "__Moshine__/graphics/icons/supercomputer.png",
-    minable = {mining_time = 3, result = "supercomputer"},
+    minable = {mining_time = 3, result = "neural_computer"},
     subgroup = "production-machine",
     order = "z-zz[z-lab]",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
@@ -182,7 +182,7 @@ data:extend({
       -- declared in data-final-fixes.lua
       
       --[[
-      "hard-drive",
+      "datacell-empty",
       "model-stable"
       
       "automation-science-pack",

@@ -8,6 +8,7 @@ Date: 2025-
     - Added 4 menu simulations based on FalseIdenty's save
     - Added colors to data processor recipes
     - Made raw data fluid green
+    - Changed some internal names
   Bugfixes
     - Fixed planet orientation in starmap
   Locale:

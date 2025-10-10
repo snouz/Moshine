@@ -607,7 +607,7 @@ data:extend({
       --probability_expression = "min(0.2, 0.3 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
       --richness_expression = "random_penalty_at(3, 1)",
       probability_expression = 0,
-      tile_restriction = {"processing-tile"},
+      tile_restriction = {"webbed_processor_tile"},
     },
     tile_buildability_rules = {
       {
@@ -684,7 +684,7 @@ data:extend({
 --[[
   {
     type = "tile-effect",
-    name = "processing-tile",
+    name = "webbed_processor_tile",
     shader = "water",
     water =
     {
@@ -728,11 +728,11 @@ data:extend({
 
   {
     type = "tile",
-    name = "processing-tile",
+    name = "webbed_processor_tile",
     icon = "__Moshine__/graphics/icons/processing-tile.png",
     icon_size = 64,
     order = "a[artificial]-b[tier-2]-a[concrete]",
-    effect = "processing-tile",
+    effect = "webbed_processor_tile",
     effect_color = { 167, 59, 27 },
     effect_color_secondary = { 49, 80, 14 },
 
@@ -845,11 +845,11 @@ data:extend({
 --[[
   {
     type = "tile",
-    name = "processing-tile",
+    name = "webbed_processor_tile",
     order = "a[artificial]-c[tier-3]-a[refined-concrete]",
     subgroup = "artificial-tiles",
     needs_correction = false,
-    minable = {mining_time = 0.1, result = "processing-tile"},
+    minable = {mining_time = 0.1, result = "webbed_processor_tile"},
     mined_sound = sounds.deconstruct_bricks(0.8),
     collision_mask = tile_collision_masks.ground(),
     --walking_speed_modifier = 1.5,
@@ -957,10 +957,10 @@ data:extend({
 --[[
   {
     type = "tile",
-    name = "processing-tile",
+    name = "webbed_processor_tile",
     order = "a[artificial]-d[utility]-b[space-platform-foundation]",
     subgroup = "artificial-tiles",
-    minable = {mining_time = 0.5, result = "processing-tile"},
+    minable = {mining_time = 0.5, result = "webbed_processor_tile"},
     mined_sound = sounds.deconstruct_bricks(0.8),
     --is_foundation = true,
     allows_being_covered = false,

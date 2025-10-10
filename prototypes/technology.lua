@@ -210,8 +210,8 @@ data:extend({
   },
   {
     type = "technology",
-    name = "moshine-tech-hard-drive",
-    icon = "__Moshine__/graphics/technology/moshine-tech-hard-drive.png",
+    name = "moshine-tech-datacell-empty",
+    icon = "__Moshine__/graphics/technology/moshine-tech-datacell-empty.png",
     icon_size = 256,
     effects =
     {
@@ -221,7 +221,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "hard-drive"
+        recipe = "datacell-empty"
       },
       {
         type = "unlock-recipe",
@@ -250,17 +250,17 @@ data:extend({
   },
   {
     type = "technology",
-    name = "moshine-tech-supercomputer",
-    icon = "__Moshine__/graphics/technology/moshine-tech-supercomputer.png",
+    name = "moshine-tech-neural_computer",
+    icon = "__Moshine__/graphics/technology/moshine-tech-neural_computer.png",
     icon_size = 256,
     effects =
     {
       {
         type = "unlock-recipe",
-        recipe = "supercomputer"
+        recipe = "neural_computer"
       },
     },
-    prerequisites = {"moshine-tech-hard-drive"},
+    prerequisites = {"moshine-tech-datacell-empty"},
     research_trigger =
     {
       type = "craft-item",
@@ -284,13 +284,13 @@ data:extend({
         recipe = "optical-cable"
       },
     },
-    prerequisites = {"circuit-network", "moshine-tech-supercomputer", "moshine-tech-glass"},
+    prerequisites = {"circuit-network", "moshine-tech-neural_computer", "moshine-tech-glass"},
     unit =
     {
       count = 10,
       ingredients =
       {
-        {"hard-drive", 1},
+        {"datacell-empty", 1},
       },
       time = 60
     }
@@ -363,7 +363,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "processing-tile"
+        recipe = "webbed_processor_tile"
       },
       {
         type = "unlock-recipe",
@@ -583,30 +583,13 @@ data:extend({
 })
 
 
-if data.raw.technology["long-stack-inserter"] then
-  if settings.startup["moshine-long_stack_inserter"].value then
-    table.insert(data.raw.technology["long-stack-inserter"].prerequisites, "moshine-tech-processing-grid")
-    data.raw.technology["long-stack-inserter"].unit =
-      {
-        count = 10,
-        ingredients =
-        {
-          {"datacell-raw-data", 1},
-          {"datacell-solved-equation", 1},
-        },
-        time = 2000
-      }
-  else
-    data.raw.technology["long-stack-inserter"].enabled = false
-  end
-end
 
 
 if mods["aai-industry"] and data.raw["technology"]["glass-processing"] then
-  data.raw["technology"]["moshine-tech-data-extractor"].prerequisites = {"moshine-tech-supercomputer", "glass-processing"}
+  data.raw["technology"]["moshine-tech-data-extractor"].prerequisites = {"moshine-tech-neural_computer", "glass-processing"}
   data.raw["technology"]["moshine-tech-glass"].enabled = false
 else
-  data.raw["technology"]["moshine-tech-data-extractor"].prerequisites = {"moshine-tech-supercomputer", "moshine-tech-glass"}
+  data.raw["technology"]["moshine-tech-data-extractor"].prerequisites = {"moshine-tech-neural_computer", "moshine-tech-glass"}
 	data.raw["technology"]["moshine-tech-glass"].enabled = true
 end
 
@@ -623,7 +606,7 @@ local function add_tech_unit(tech, count, time, ingredients)
   end
 end
 
-add_tech_unit("moshine-tech-data-extractor", 40, 60,          {{"hard-drive", 1}} )
+add_tech_unit("moshine-tech-data-extractor", 40, 60,          {{"datacell-empty", 1}} )
 add_tech_unit("moshine-tech-3d-data-storage", 200, 60,        {{"datacell-raw-data", 1}} )
 add_tech_unit("moshine-tech-data-processor", 1000, 10,        {{"datacell-raw-data", 1}} )
 add_tech_unit("moshine-tech-ai-trainer", 50, 80,              {{"datacell-raw-data", 1}, {"datacell-ai-model-data", 1}} )

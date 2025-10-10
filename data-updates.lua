@@ -182,13 +182,13 @@ if mods["bzsilicon"] then
           recipe = "optical-cable"
         },
       },
-      prerequisites = {"moshine-tech-supercomputer"},
+      prerequisites = {"moshine-tech-neural_computer"},
       unit =
       {
         count = 10,
         ingredients =
         {
-          {"hard-drive", 1},
+          {"datacell-empty", 1},
         },
         time = 60
       }
