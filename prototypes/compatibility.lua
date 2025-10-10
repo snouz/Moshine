@@ -135,3 +135,26 @@ end
 if mods["bzcarbon"] then
   add_ore_to_mix("rough-diamond", 1, 8 /1000)
 end
+
+
+if settings.startup["moshine-long_stack_inserter"].value then
+  if data.raw.technology["long-stack-inserter"] then
+  
+    table.insert(data.raw.technology["long-stack-inserter"].prerequisites, "moshine-tech-processing-grid")
+    data.raw.technology["long-stack-inserter"].unit =
+      {
+        count = 10,
+        ingredients =
+        {
+          {"datacell-raw-data", 1},
+          {"datacell-solved-equation", 1},
+        },
+        time = 2000
+      }
+  end
+else
+  if data.raw.technology["long-stack-inserter"] then data.raw.technology["long-stack-inserter"].enabled = false end
+  if data.raw["inserter"]["long-stack-inserter"] then data.raw["inserter"]["long-stack-inserter"].hidden = true end
+  if data.raw.recipe["long-stack-inserter"] then data.raw.recipe["long-stack-inserter"].hidden = true end
+  if data.raw.item["long-stack-inserter"] then data.raw.item["long-stack-inserter"].hidden = true end
+end

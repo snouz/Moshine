@@ -583,20 +583,24 @@ data:extend({
 })
 
 
-
 if data.raw.technology["long-stack-inserter"] then
-  table.insert(data.raw.technology["long-stack-inserter"].prerequisites, "moshine-tech-processing-grid")
-  data.raw.technology["long-stack-inserter"].unit =
-    {
-      count = 10,
-      ingredients =
+  if settings.startup["moshine-long_stack_inserter"].value then
+    table.insert(data.raw.technology["long-stack-inserter"].prerequisites, "moshine-tech-processing-grid")
+    data.raw.technology["long-stack-inserter"].unit =
       {
-        {"datacell-raw-data", 1},
-        {"datacell-solved-equation", 1},
-      },
-      time = 2000
-    }
+        count = 10,
+        ingredients =
+        {
+          {"datacell-raw-data", 1},
+          {"datacell-solved-equation", 1},
+        },
+        time = 2000
+      }
+  else
+    data.raw.technology["long-stack-inserter"].enabled = false
+  end
 end
+
 
 if mods["aai-industry"] and data.raw["technology"]["glass-processing"] then
   data.raw["technology"]["moshine-tech-data-extractor"].prerequisites = {"moshine-tech-supercomputer", "glass-processing"}

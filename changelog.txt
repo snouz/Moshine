@@ -1,9 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.31
+Version: 1.1.0
 Date: 2025-
   Info:
     - Prototypes from Moshine-assets were ported to this mod, Moshine-assets only contains assets
   Changes:
+    - "se-space-trains" and long handed stack inserter are now mandatory again, but with a startup setting to disable them
     - Added 4 menu simulations based on FalseIdenty's save
     - Added colors to data processor recipes
     - Made raw data fluid green

@@ -36,33 +36,53 @@ end
 local recycling = require("__quality__.prototypes.recycling")
 
 if mods["se-space-trains"] then
-  if data.raw["technology"]["tech-space-trains"] then
-    table.insert(data.raw["technology"]["tech-space-trains"].prerequisites, "moshine-tech-magnet")
-  end
-  if data.raw["recipe"]["space-locomotive"] then
-    table.insert(data.raw["recipe"]["space-locomotive"].ingredients, {type = "item", name = "magnet", amount = 5})
-  end
-  if data.raw["recipe"]["space-fluid-wagon"] then
-    table.insert(data.raw["recipe"]["space-fluid-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
-  end
-  if data.raw["recipe"]["space-cargo-wagon"] then
-    table.insert(data.raw["recipe"]["space-cargo-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
-  end
-  if data.raw["item-with-entity-data"]["space-locomotive"] then
-    data.raw["item-with-entity-data"]["space-locomotive"].order = "c[rolling-stock]-e[space-locomotive]"
-  end
-  if data.raw["item-with-entity-data"]["space-cargo-wagon"] then
-    data.raw["item-with-entity-data"]["space-cargo-wagon"].order = "c[rolling-stock]-f[space-cargo-wagon]"
-  end
-  if data.raw["item-with-entity-data"]["space-fluid-wagon"] then
-    data.raw["item-with-entity-data"]["space-fluid-wagon"].order = "c[rolling-stock]-g[space-fluid-wagon]"
-  end
+  if settings.startup["moshine-se-space-trains"].value then
+    if data.raw["technology"]["tech-space-trains"] then
+      table.insert(data.raw["technology"]["tech-space-trains"].prerequisites, "moshine-tech-magnet")
+    end
+    if data.raw["recipe"]["space-locomotive"] then
+      table.insert(data.raw["recipe"]["space-locomotive"].ingredients, {type = "item", name = "magnet", amount = 5})
+    end
+    if data.raw["recipe"]["space-fluid-wagon"] then
+      table.insert(data.raw["recipe"]["space-fluid-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
+    end
+    if data.raw["recipe"]["space-cargo-wagon"] then
+      table.insert(data.raw["recipe"]["space-cargo-wagon"].ingredients, {type = "item", name = "magnet", amount = 5})
+    end
+    if data.raw["item-with-entity-data"]["space-locomotive"] then
+      data.raw["item-with-entity-data"]["space-locomotive"].order = "c[rolling-stock]-e[space-locomotive]"
+    end
+    if data.raw["item-with-entity-data"]["space-cargo-wagon"] then
+      data.raw["item-with-entity-data"]["space-cargo-wagon"].order = "c[rolling-stock]-f[space-cargo-wagon]"
+    end
+    if data.raw["item-with-entity-data"]["space-fluid-wagon"] then
+      data.raw["item-with-entity-data"]["space-fluid-wagon"].order = "c[rolling-stock]-g[space-fluid-wagon]"
+    end
 
-  recycling.generate_recycling_recipe(data.raw["recipe"]["space-locomotive"])
-  recycling.generate_recycling_recipe(data.raw["recipe"]["space-cargo-wagon"])
-  recycling.generate_recycling_recipe(data.raw["recipe"]["space-fluid-wagon"])
-  recycling.generate_recycling_recipe(data.raw["recipe"]["space-train-battery-charging-station"])
-  recycling.generate_recycling_recipe(data.raw["recipe"]["space-train-battery-pack"])
+    recycling.generate_recycling_recipe(data.raw["recipe"]["space-locomotive"])
+    recycling.generate_recycling_recipe(data.raw["recipe"]["space-cargo-wagon"])
+    recycling.generate_recycling_recipe(data.raw["recipe"]["space-fluid-wagon"])
+    recycling.generate_recycling_recipe(data.raw["recipe"]["space-train-battery-charging-station"])
+    recycling.generate_recycling_recipe(data.raw["recipe"]["space-train-battery-pack"])
+  else
+    if data.raw.technology["tech-space-trains"] then data.raw.technology["tech-space-trains"].enabled = false end
+
+    if data.raw["locomotive"]["space-locomotive"] then data.raw["locomotive"]["space-locomotive"].hidden = true end
+    if data.raw["cargo-wagon"]["space-cargo-wagon"] then data.raw["cargo-wagon"]["space-cargo-wagon"].hidden = true end
+    if data.raw["fluid-wagon"]["space-fluid-wagon"] then data.raw["fluid-wagon"]["space-fluid-wagon"].hidden = true end
+    if data.raw["assembling-machine"]["space-train-battery-charging-station"] then data.raw["assembling-machine"]["space-train-battery-charging-station"].hidden = true end
+
+    if data.raw.recipe["space-locomotive"] then data.raw.recipe["space-locomotive"].hidden = true end
+    if data.raw.recipe["space-cargo-wagon"] then data.raw.recipe["space-cargo-wagon"].hidden = true end
+    if data.raw.recipe["space-fluid-wagon"] then data.raw.recipe["space-fluid-wagon"].hidden = true end
+    if data.raw.recipe["space-train-battery-charging-station"] then data.raw.recipe["space-train-battery-charging-station"].hidden = true end
+    if data.raw.recipe["space-train-battery-pack"] then data.raw.recipe["space-train-battery-pack"].hidden = true end
+    if data.raw["item"]["space-train-battery-charging-station"] then data.raw["item"]["space-train-battery-charging-station"].hidden = true end
+    if data.raw["item"]["space-train-battery-pack"] then data.raw["item"]["space-train-battery-pack"].hidden = true end
+    if data.raw["item-with-entity-data"]["space-locomotive"] then data.raw["item-with-entity-data"]["space-locomotive"].hidden = true end
+    if data.raw["item-with-entity-data"]["space-cargo-wagon"] then data.raw["item-with-entity-data"]["space-cargo-wagon"].hidden = true end
+    if data.raw["item-with-entity-data"]["space-fluid-wagon"] then data.raw["item-with-entity-data"]["space-fluid-wagon"].hidden = true end
+  end
 end
 
 if mods["maraxsis"] then
