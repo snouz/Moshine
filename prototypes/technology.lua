@@ -217,25 +217,48 @@ data:extend({
     {
       {
         type = "unlock-recipe",
+        recipe = "datacell-empty"
+      },
+    },
+    prerequisites = {"moshine-tech-magnet", "moshine-tech-silicon-cell",},
+    unit =
+    {
+      count = 200,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1},
+      },
+      time = 60
+    }
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-data-processor-building",
+    icon = "__Moshine__/graphics/technology/moshine-tech-data-processor-building.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
         recipe = "data-processor"
       },
       {
         type = "unlock-recipe",
-        recipe = "datacell-empty"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "datacell-add-raw-data"
+        recipe = "datacell-raw-data"
       },
       {
         type = "unlock-recipe",
         recipe = "datacell-remove-raw-data"
       },
     },
-    prerequisites = {"automation-3", "productivity-module-2", "moshine-tech-magnet", "moshine-tech-silicon-cell", "moshine-tech-silicon-carbide"},
+    prerequisites = {"moshine-tech-datacell-empty", "automation-3", "productivity-module-2", "moshine-tech-silicon-carbide"},
     unit =
     {
-      count = 200,
+      count = 300,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -260,7 +283,7 @@ data:extend({
         recipe = "neural_computer"
       },
     },
-    prerequisites = {"moshine-tech-datacell-empty"},
+    prerequisites = {"moshine-tech-data-processor-building"},
     research_trigger =
     {
       type = "craft-item",
@@ -336,7 +359,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "datacell-add-ai-model-data"
+        recipe = "datacell-ai-model-data"
       },
     },
     prerequisites = {"moshine-tech-3d-data-storage"},
@@ -367,7 +390,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "datacell-add-equation"
+        recipe = "datacell-equation"
       },
     },
     prerequisites = {"moshine-tech-ai-tier-2"},
@@ -411,7 +434,7 @@ data:extend({
     name = "moshine-tech-ai-tier-1",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-1.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-0" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-1" }},
     prerequisites = {"moshine-tech-ai-trainer"},
     research_trigger =
     {
@@ -427,7 +450,7 @@ data:extend({
     name = "moshine-tech-ai-tier-2",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-2.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-1" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-2" }},
     prerequisites = {"moshine-tech-ai-tier-1"},
     unit = {},
     upgrade = true,
@@ -437,7 +460,7 @@ data:extend({
     name = "moshine-tech-ai-tier-3",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-3.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-2" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-3" }},
     prerequisites = {"moshine-tech-ai-tier-2"},
     unit = {},
     upgrade = true,
@@ -447,7 +470,7 @@ data:extend({
     name = "moshine-tech-ai-tier-4",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-4.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-3" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-4" }},
     prerequisites = {"moshine-tech-ai-tier-3"},
     unit = {},
     upgrade = true,
@@ -457,7 +480,7 @@ data:extend({
     name = "moshine-tech-ai-tier-5",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-5.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-4" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-5" }},
     prerequisites = {"moshine-tech-ai-tier-4"},
     unit = {},
     upgrade = true,
@@ -467,7 +490,7 @@ data:extend({
     name = "moshine-tech-ai-tier-6",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-6.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-5" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-6" }},
     prerequisites = {"moshine-tech-ai-tier-5"},
     unit = {},
     upgrade = true,
@@ -477,7 +500,7 @@ data:extend({
     name = "moshine-tech-ai-tier-7",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-7.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-6" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-7" }},
     prerequisites = {"moshine-tech-ai-tier-6"},
     unit = {},
     upgrade = true,
@@ -487,7 +510,7 @@ data:extend({
     name = "moshine-tech-ai-tier-8",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-8.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-7" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-8" }},
     prerequisites = {"moshine-tech-ai-tier-7"},
     unit = {},
     upgrade = true,
@@ -497,7 +520,7 @@ data:extend({
     name = "moshine-tech-ai-tier-9",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-9.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-8" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-9" }},
     prerequisites = {"moshine-tech-ai-tier-8"},
     unit = {},
     upgrade = true,
@@ -507,7 +530,7 @@ data:extend({
     name = "moshine-tech-ai-tier-10",
     icon = "__Moshine__/graphics/technology/ai-tiers/tier-10.png",
     icon_size = 256,
-    effects = {{type = "unlock-recipe", recipe = "ai-tier-9" }},
+    effects = {{type = "unlock-recipe", recipe = "ai-tier-10" }},
     prerequisites = {"moshine-tech-ai-tier-9"},
     unit = {},
     upgrade = true,

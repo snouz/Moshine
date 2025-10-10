@@ -166,6 +166,16 @@ data:extend({
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
     random_tint_color = item_tints.iron_rust,
+    pictures =
+    {
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon_1.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon_2.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon_3.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon_4.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon_5.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon_6.png", scale = 0.5 },
+    },
     stack_size = 50,
     weight = 2*kg,
   },
@@ -179,6 +189,17 @@ if not data.raw.item["glass"] then
       stack_size = 100,
       subgroup = "moshine-processes",
       type = "item",
+      pictures =
+      {
+        { size = 64, filename = "__Moshine__/graphics/icons/glass.png", scale = 0.5 },
+        { size = 64, filename = "__Moshine__/graphics/icons/glass_1.png", scale = 0.5 },
+        { size = 64, filename = "__Moshine__/graphics/icons/glass_2.png", scale = 0.5 },
+        { size = 64, filename = "__Moshine__/graphics/icons/glass_3.png", scale = 0.5 },
+        { size = 64, filename = "__Moshine__/graphics/icons/glass_4.png", scale = 0.5 },
+        { size = 64, filename = "__Moshine__/graphics/icons/glass_5.png", scale = 0.5 },
+        { size = 64, filename = "__Moshine__/graphics/icons/glass_6.png", scale = 0.5 },
+        { size = 64, filename = "__Moshine__/graphics/icons/glass_7.png", scale = 0.5 },
+      },
       pick_sound = item_sounds.grenade_inventory_pickup,
       drop_sound = item_sounds.grenade_inventory_move,
       inventory_move_sound = item_sounds.grenade_inventory_move,
@@ -217,6 +238,13 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
+    pictures =
+    {
+      { size = 64, filename = "__Moshine__/graphics/icons/magnet.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/magnet_1.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/magnet_2.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/magnet_3.png", scale = 0.5 },
+    },
     stack_size = 50,
     weight = 5*kg,
   },
@@ -230,6 +258,13 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
+    pictures =
+    {
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon-cell.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon-cell_1.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon-cell_2.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon-cell_3.png", scale = 0.5 },
+    },
     stack_size = 50,
     weight = 5*kg,
   },
@@ -243,6 +278,13 @@ data:extend({
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
     default_import_location = "moshine",
+    pictures =
+    {
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon-carbide.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon-carbide_1.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon-carbide_2.png", scale = 0.5 },
+      { size = 64, filename = "__Moshine__/graphics/icons/silicon-carbide_3.png", scale = 0.5 },
+    },
     stack_size = 40,
     weight = 12.5*kg,
   },
@@ -534,10 +576,10 @@ data:extend({
   {
     type = "item",
     name = "model-stable",
-    icons = {
-      {icon = "__Moshine__/graphics/icons/aicores/tier-0.png"},
+    --icons = {
+    --  {icon = "__Moshine__/graphics/icons/aicores/tier-0.png"},
       --{icon = "__Moshine__/graphics/icons/tiers/tier-0.png", scale = 0.5},
-    },
+    --},
     icon = "__Moshine__/graphics/icons/model-stable.png",
     subgroup = "moshine-processes",
     order = "jjj",

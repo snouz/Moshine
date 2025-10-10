@@ -38,6 +38,7 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 - Compatibility with Silica and Silicon by **Dh4mpyr**
 - Ores from other BZ mods added by **Indzasa**
 - Starmap icon partially from **DjKolekson**
+- New glass icon is a modified icon from Artisanal Reskins by Kirazy
 - [AI trainer sound](https://freesound.org/s/382687/), [Processor sound](https://freesound.org/s/343387/)
 - AI trainer animation include parts of gifs by **zolloc** and **Mathew Lucas**.
 - Menu simulations based on a save by FalseIdenty

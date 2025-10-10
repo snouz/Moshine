@@ -289,8 +289,8 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "datacell-add-raw-data",
-    icon = "__Moshine__/graphics/icons/datacell-add-raw-data.png",
+    name = "datacell-raw-data",
+    icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
     category = "data-processing",
     --subgroup = "moshine-processes",
     --order = "ggb",
@@ -331,19 +331,22 @@ data:extend({
 
   {
     type = "recipe",
-    name = "datacell-add-ai-model-data",
-    icon = "__Moshine__/graphics/icons/datacell-add-ai-model-data.png",
+    name = "datacell-ai-model-data",
+    icon = "__Moshine__/graphics/icons/datacell-ai-model-data.png",
     category = "data-processing",
-    subgroup = "moshine-processes",
-    order = "ggc",
+    --subgroup = "moshine-processes",
+    --order = "ggc",
     --hide_from_player_crafting = true,
     energy_required = 10,
     ingredients = {
       {type = "item", name = "datacell-empty", amount = 1},
       {type = "item", name = "model-stable", amount = 1},
     },
-    results = {{type = "item", name = "3d-data-storage", amount = 1}},
-    results = {{type = "item", name = "datacell-ai-model-data", amount = 1}},
+    results = {
+      {type = "item", name = "3d-data-storage", amount = 1},
+      {type = "item", name = "datacell-ai-model-data", amount = 1}
+    },
+    main_product = "datacell-ai-model-data",
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
@@ -351,17 +354,19 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "datacell-add-equation",
-    icon = "__Moshine__/graphics/icons/datacell-add-equation.png",
+    name = "datacell-equation",
+    icon = "__Moshine__/graphics/icons/datacell-equation.png",
     category = "data-processing",
-    subgroup = "moshine-processes",
-    order = "ggd",
+    --subgroup = "moshine-processes",
+    --order = "ggd",
     --hide_from_player_crafting = true,
     energy_required = 1000,
     ingredients = {
       {type = "item", name = "datacell-empty", amount = 1},
     },
-    results = {{type = "item", name = "datacell-equation", amount = 1}},
+    results = {
+      {type = "item", name = "datacell-equation", amount = 1}
+    },
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
@@ -426,7 +431,7 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "ai-tier-0",
+    name = "ai-tier-1",
     icons = {
       {icon = "__Moshine__/graphics/icons/aicores/tier-1.png", icon_size = 64, scale = 0.5},
       --{icon = "__Moshine__/graphics/icons/tiers/tier-1.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
@@ -440,9 +445,10 @@ data:extend({
     energy_required = 10,
     ingredients = {{type = "item", name = "model-stable", amount = 1}},
     results = {
-      {type="item", name="model-stable", amount=1, probability=0.50},
-      {type="item", name="ai-tier-1", amount=1, probability=0.50},
+      {type = "item", name = "model-stable", amount = 1, probability = 0.50},
+      {type = "item", name = "ai-tier-1", amount = 1, probability = 0.50},
     },
+    main_product = "ai-tier-1",
     allow_productivity = false,
     enabled = false,
     crafting_machine_tint =
@@ -455,7 +461,7 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "ai-tier-1",
+    name = "ai-tier-2",
     icons = {
       {icon = "__Moshine__/graphics/icons/aicores/tier-2.png", icon_size = 64, scale = 0.5},
       --{icon = "__Moshine__/graphics/icons/tiers/tier-2.png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
@@ -471,9 +477,9 @@ data:extend({
     results = {
       {type="item", name="ai-tier-1", amount=1, probability=0.59},
       {type="item", name="ai-tier-2", amount=1, probability=0.40},
-      --{type="item", name="ai-tier-3", amount=1, probability=0.13},
       {type="item", name="model-unstable", amount=1, probability=0.01},
     },
+    main_product = "ai-tier-2",
     allow_productivity = false,
     enabled = false,
     crafting_machine_tint = 
@@ -531,7 +537,7 @@ for i=2,9 do
   data:extend({
     {
       type = "recipe",
-      name = "ai-tier-" .. i,
+      name = "ai-tier-" .. i+1,
       icons = {
         {icon = "__Moshine__/graphics/icons/aicores/tier-" .. i+1 .. ".png", icon_size = 64, scale = 0.5},
         --{icon = "__Moshine__/graphics/icons/tiers/tier-" .. i+1 .. ".png", icon_size = 64, scale = 0.35, shift = {0,0.3}},
@@ -540,16 +546,19 @@ for i=2,9 do
       hide_from_player_crafting = true,
       hidden_in_factoriopedia = false,
       category = "ai-training",
-      subgroup = "moshine-processes",
-      order = "kkk",
+      --subgroup = "moshine-processes",
+      --order = "kkk",
       energy_required = 10,
-      ingredients = {{type = "item", name = "ai-tier-" .. i, amount = 1}},
-      results = {
-        {type="item", name="ai-tier-" .. i, amount=1, probability=0.49},
-        {type="item", name="ai-tier-" .. i+1, amount=1, probability= (0.32 - i/100) },
-        {type="item", name="ai-tier-" .. i-1, amount=1, probability= (0.18 + i/100) },
-        {type="item", name="model-unstable", amount=1, probability=0.01},
+      ingredients = {
+        {type = "item", name = "ai-tier-" .. i, amount = 1}
       },
+      results = {
+        {type = "item", name = "ai-tier-" .. i,   amount = 1, probability = 0.47},
+        {type = "item", name = "ai-tier-" .. i+1, amount = 1, probability = (0.32 - i/100) },
+        {type = "item", name = "ai-tier-" .. i-1, amount = 1, probability = (0.20 + i/100) },
+        {type = "item", name = "model-unstable",  amount = 1, probability = 0.01},
+      },
+      main_product = "ai-tier-" .. i+1,
       allow_productivity = false,
       enabled = false,
       crafting_machine_tint = typeofanim,
