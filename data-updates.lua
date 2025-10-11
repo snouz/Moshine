@@ -77,8 +77,13 @@ if mods["se-space-trains"] then
     if data.raw.recipe["space-fluid-wagon"] then data.raw.recipe["space-fluid-wagon"].hidden = true end
     if data.raw.recipe["space-train-battery-charging-station"] then data.raw.recipe["space-train-battery-charging-station"].hidden = true end
     if data.raw.recipe["space-train-battery-pack"] then data.raw.recipe["space-train-battery-pack"].hidden = true end
+    if data.raw.recipe["space-train-battery-pack-refurbish"] then data.raw.recipe["space-train-battery-pack-refurbish"].hidden = true end
+    if data.raw.recipe["space-train-battery-pack-recharge"] then data.raw.recipe["space-train-battery-pack-recharge"].hidden = true end
+    
     if data.raw["item"]["space-train-battery-charging-station"] then data.raw["item"]["space-train-battery-charging-station"].hidden = true end
     if data.raw["item"]["space-train-battery-pack"] then data.raw["item"]["space-train-battery-pack"].hidden = true end
+    if data.raw["item"]["space-train-destroyed-battery-pack"] then data.raw["item"]["space-train-destroyed-battery-pack"].hidden = true end
+    if data.raw["item"]["space-train-discharged-battery-pack"] then data.raw["item"]["space-train-discharged-battery-pack"].hidden = true end
     if data.raw["item-with-entity-data"]["space-locomotive"] then data.raw["item-with-entity-data"]["space-locomotive"].hidden = true end
     if data.raw["item-with-entity-data"]["space-cargo-wagon"] then data.raw["item-with-entity-data"]["space-cargo-wagon"].hidden = true end
     if data.raw["item-with-entity-data"]["space-fluid-wagon"] then data.raw["item-with-entity-data"]["space-fluid-wagon"].hidden = true end
