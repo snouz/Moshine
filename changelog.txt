@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
-Date: 2025-10
+Date: 2025-10-11
   Info:
     - Prototypes from Moshine-assets were ported to this mod, Moshine-assets only contains assets
   Changes:

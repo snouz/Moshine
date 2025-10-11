@@ -13,7 +13,7 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 
 [Discord channel](https://discord.gg/eKK6NXcCbu) - Any sort of feedback is immensely welcome, (corrections, balance, ideas, criticism, contributions...)
 
-![gif](https://i.imgur.com/0dqkYaE.gif)![gif](https://i.imgur.com/4JkEmB1.gif)![gif](https://i.imgur.com/DjiEHgk.gif)![gif](https://i.imgur.com/v7z37X4.gif)
+![gif](https://i.imgur.com/0dqkYaE.gif)![gif](https://i.imgur.com/4JkEmB1.gif)![gif](https://i.imgur.com/V30Iaad.gif)![gif](https://i.imgur.com/v7z37X4.gif)
 
 # Rewards
 ![rewards](https://i.imgur.com/pJ1Ldtp.png)
@@ -26,8 +26,9 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 - The soundtrack is from these two albums by **Anemoia**: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6), found on Free Music Archive under license CC-BY-NC-SA
 - Neural computer, Data extractor, Indexer, AI trainer and sand graphics include or are modified versions of **Krastorio 1 and 2** (GNU LGPLv3 license)
 - The Data extractor, Data processor and AI trainer contain some graphics from **Hurricane046**'s buildings (CC BY license)
+- The neural computer includes parts from Exotic Space Industries from **PreyLeyZero** and **eliont** (GNU LGPLv3 license)
 - One tech icon uses an icon from **Malcolm Riley** (CC BY)
-- The new datacell icon is based on an icon by Petrak
+- The new datacell icon is based on an icon by **Petrak**
 - Translations: 
 - - Chinese by **rlcyyg1108**
 - - Russian by **GafarovMaxim, Kuaikuachu and Erofitskiy**
@@ -38,10 +39,10 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 - Compatibility with Silica and Silicon by **Dh4mpyr**
 - Ores from other BZ mods added by **Indzasa**
 - Starmap icon partially from **DjKolekson**
-- New glass icon is a modified icon from Artisanal Reskins by Kirazy
+- New glass icon is a modified icon from Artisanal Reskins by **Kirazy**
 - [AI trainer sound](https://freesound.org/s/382687/), [Processor sound](https://freesound.org/s/343387/)
 - AI trainer animation include parts of gifs by **zolloc** and **Mathew Lucas**.
-- Menu simulations based on a save by FalseIdenty
+- Menu simulations based on a save by **FalseIdenty**
 
 
 
