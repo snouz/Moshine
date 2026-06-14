@@ -3,10 +3,15 @@ Version: 1.1.4
 Date: 2026-06-
   Changes:
     - Maglev trains, maglev batteries, maglev station, Neo rails and neo ramps default location changed to Moshine
+    - Made it clearer that you need to find neodymium to get magnetism, and the fact that neodymium is rare but abundant when you find it
+  Graphics:
+    - Created custom tech icon for elevated rails (in submod)
   Compatibility:
     - Added module-category-defaults by SimonBrodtmann
     - Canal Excavator Compatibility by Jurgyy
+    - Made KrastorioSO's teleporter buildable on Moshine
   Locale:
+    - Added Polish by S3BA
     - Update to German by Schlumpf8
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.3

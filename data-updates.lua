@@ -12,7 +12,7 @@ function prevent_from_moshine(entity)
 end
 
 for _, entity in pairs(data.raw["accumulator"]) do
-  if not (entity.name == "ring-teleporter") then
+  if not (entity.name == "ring-teleporter") and not (entity.name == "kr-planetary-teleporter") then
     prevent_from_moshine(entity)
   end
 end
