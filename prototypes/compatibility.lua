@@ -158,3 +158,19 @@ else
   if data.raw.recipe["long-stack-inserter"] then data.raw.recipe["long-stack-inserter"].hidden = true end
   if data.raw.item["long-stack-inserter"] then data.raw.item["long-stack-inserter"].hidden = true end
 end
+
+if mods["canal-excavator"] then
+  data:extend({{
+    type = "mod-data",
+    name = "canex-moshine-config",
+    data_type = "canex-surface-config",
+    data = {
+      surfaceName = "moshine",
+      localisation = {"space-location-name.moshine"},
+      oreStartingAmount = 50,
+      mining_time = 0.5,
+      tint = {r = 183, g = 163, b = 135},
+      mineResult = "sand"
+    }
+  }})
+end

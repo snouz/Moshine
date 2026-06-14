@@ -21,7 +21,8 @@
     "(?) bzsilicon",
     "(?) Glass",
     "(?) aai-industry",
-    "(?) omnimatter_compression"
+    "(?) omnimatter_compression",
+    "(?) canal-excavator >= 1.12"
   ],
   "space_travel_required": true,
   "spoiling_required": true
