@@ -438,6 +438,7 @@ data:extend({
       {type = "fluid", name = "raw-data", amount = 500},
     },
     results = {{type = "item", name = "model-unstable", amount = 1}},
+    result_is_always_fresh = true,
     enabled = false,
     crafting_machine_tint = {primary = {255, 0, 0}}, --#ff0000
   },

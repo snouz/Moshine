@@ -2,7 +2,9 @@
 Version: 1.1.4
 Date: 2026-06-
   Changes:
-    - Maglev trains, maglev batteries, maglev station, Neo rails and neo ramps default location changed to Moshine
+    - Unstable cores: spoiling starts at the end of production
+    - Removed slowing terrain
+    - Default import location changed to Moshine for: maglev trains, neodymium rails and ramps, webbed processors, big accumulators and solar panels.
     - Made it clearer that you need to find neodymium to get magnetism, and the fact that neodymium is rare but abundant when you find it
   Graphics:
     - Created custom tech icon for elevated rails (in submod)

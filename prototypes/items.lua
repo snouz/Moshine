@@ -126,6 +126,7 @@ data:extend({
       condition_size = 1,
       condition = {layers={water_tile=true}}
     },
+    default_import_location = "moshine",
     random_tint_color = item_tints.bluish_concrete
   },
 
