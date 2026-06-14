@@ -1,10 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.4
-Date: 2026-06-
+Date: 2026-06-14
   Changes:
     - Unstable cores: spoiling starts at the end of production
     - Removed slowing terrain
-    - Default import location changed to Moshine for: maglev trains, neodymium rails and ramps, webbed processors, big accumulators and solar panels.
+    - Default import location changed to Moshine for: maglev trains, neodymium rails and ramps, webbed processors, big accumulators and solar panels
     - Made it clearer that you need to find neodymium to get magnetism, and the fact that neodymium is rare but abundant when you find it
   Graphics:
     - Created custom tech icon for elevated rails (in submod)
@@ -15,6 +15,7 @@ Date: 2026-06-
   Locale:
     - Added Polish by S3BA
     - Update to German by Schlumpf8
+    - Fixed achievement missing key
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.3
 Date: 2025-10-23
