@@ -13,7 +13,7 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 
 [Discord channel](https://discord.gg/eKK6NXcCbu) - Any sort of feedback is immensely welcome, (corrections, balance, ideas, criticism, contributions...)
 
-![gif](https://i.imgur.com/0dqkYaE.gif)![gif](https://i.imgur.com/4JkEmB1.gif)![gif](https://i.imgur.com/V30Iaad.gif)![gif](https://i.imgur.com/v7z37X4.gif)
+![gif](https://i.imgur.com/0dqkYaE.gif)![gif](https://i.imgur.com/4JkEmB1.gif)![gif](https://i.imgur.com/V30Iaad.gif)![gif](https://i.imgur.com/v7z37X4.gif)![gif](https://i.imgur.com/gy9IHdc.gif)
 
 # Rewards
 ![rewards](https://i.imgur.com/pJ1Ldtp.png)
@@ -48,4 +48,3 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 
 [KO-FI - Just in case anyone wants to support my work](https://ko-fi.com/snouz)
 
-![gif](https://i.imgur.com/gy9IHdc.gif)

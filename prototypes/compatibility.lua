@@ -7,12 +7,12 @@ if mods["minimalist-rails"] then
     }
   end
 
-  if data.raw["item"]["rail-minimal"] then
-    data.raw["item"]["rail-minimal"].default_import_location = "moshine"
+  if data.raw["rail-planner"]["rail-minimal"] then
+    data.raw["rail-planner"]["rail-minimal"].default_import_location = "moshine"
   end
 
-  if data.raw["item"]["rail-ramp-minimal"] then
-    data.raw["item"]["rail-ramp-minimal"].default_import_location = "moshine"
+  if data.raw["rail-planner"]["rail-ramp-minimal"] then
+    data.raw["rail-planner"]["rail-ramp-minimal"].default_import_location = "moshine"
   end
 
 

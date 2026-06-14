@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.4
+Date: 2026-06-
+  Changes:
+    - Maglev trains, maglev batteries, maglev station, Neo rails and neo ramps default location changed to Moshine
+  Compatibility:
+    - Added module-category-defaults by SimonBrodtmann
+    - Canal Excavator Compatibility by Jurgyy
+  Locale:
+    - Update to German by Schlumpf8
+---------------------------------------------------------------------------------------------------
 Version: 1.1.3
 Date: 2025-10-23
   Bugfixes:

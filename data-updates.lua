@@ -64,7 +64,17 @@ if mods["se-space-trains"] then
     recycling.generate_recycling_recipe(data.raw["recipe"]["space-fluid-wagon"])
     recycling.generate_recycling_recipe(data.raw["recipe"]["space-train-battery-charging-station"])
     recycling.generate_recycling_recipe(data.raw["recipe"]["space-train-battery-pack"])
+
+    if data.raw["item"]["space-train-battery-charging-station"] then data.raw["item"]["space-train-battery-charging-station"].default_import_location = "moshine" end
+    if data.raw["item"]["space-train-battery-pack"] then data.raw["item"]["space-train-battery-pack"].default_import_location = "moshine" end
+    if data.raw["item"]["space-train-destroyed-battery-pack"] then data.raw["item"]["space-train-destroyed-battery-pack"].default_import_location = "moshine" end
+    if data.raw["item"]["space-train-discharged-battery-pack"] then data.raw["item"]["space-train-discharged-battery-pack"].default_import_location = "moshine" end
+    if data.raw["item-with-entity-data"]["space-locomotive"] then data.raw["item-with-entity-data"]["space-locomotive"].default_import_location = "moshine" end
+    if data.raw["item-with-entity-data"]["space-cargo-wagon"] then data.raw["item-with-entity-data"]["space-cargo-wagon"].default_import_location = "moshine" end
+    if data.raw["item-with-entity-data"]["space-fluid-wagon"] then data.raw["item-with-entity-data"]["space-fluid-wagon"].default_import_location = "moshine" end
+
   else
+    -- mod is disabled, disable everything
     if data.raw.technology["tech-space-trains"] then
       data.raw.technology["tech-space-trains"].enabled = false
       data.raw.technology["tech-space-trains"].hidden = true
