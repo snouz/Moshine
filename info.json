@@ -16,6 +16,7 @@
     "minimalist-rails >= 2.0.4",
     "se-space-trains >= 1.0.6",
     "long_stack_inserter >= 1.0.1",
+    "module-category-defaults",
     "(?) maraxsis",
     "(?) bzsilicon",
     "(?) Glass",
