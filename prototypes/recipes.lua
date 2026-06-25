@@ -77,7 +77,7 @@ data:extend({
     type = "recipe",
     name = "processing-grid",
     energy_required = 20,
-    category = "crafting",
+    categories = {"crafting"},
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients =
     {
@@ -95,7 +95,7 @@ data:extend({
     type = "recipe",
     name = "webbed_processor_tile",
     energy_required = 2,
-    category = "crafting",
+    categories = {"crafting"},
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients =
     {
@@ -113,7 +113,7 @@ data:extend({
     type = "recipe",
     name = "ai-trainer",
     energy_required = 20,
-    category = "crafting",
+    categories = {"crafting"},
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients =
     {
@@ -133,7 +133,7 @@ data:extend({
     type = "recipe",
     name = "ai-support",
     energy_required = 1,
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     ingredients =
     {
       {type = "item", name = "iron-plate", amount = 1},
@@ -148,7 +148,7 @@ data:extend({
   {
     type = "recipe",
     name = "concrete-from-molten-iron-and-sand",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     icon = "__Moshine__/graphics/icons/concrete-from-molten-iron-and-sand.png",
     subgroup = "moshine-processes",
     order = "aab",
@@ -168,7 +168,7 @@ data:extend({
   {
     type = "recipe",
     name = "petroleum-from-sand-sulfur-steam-carbon",
-    category = "oil-processing",
+    categories = {"oil-processing"},
     icon = "__Moshine__/graphics/icons/petroleum-from-sand-sulfur-steam-carbon.png",
     subgroup = "moshine-processes",
     order = "aac",
@@ -194,7 +194,7 @@ data:extend({
   {
     type = "recipe",
     name = "silicon",
-    category = "chemistry",
+    categories = {"chemistry"},
     energy_required = 2,
     ingredients = {
       {type = "item", name = "sand", amount = 5},
@@ -212,7 +212,7 @@ if not data.raw.recipe["glass"] then
     {
       type = "recipe",
       name = "glass",
-      category = "smelting",
+      categories = {"smelting"},
       energy_required = 4,
       ingredients = {
         {type = "item", name = "sand", amount = 4}
@@ -228,7 +228,7 @@ data:extend({
   {
     type = "recipe",
     name = "silicon-carbide",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     energy_required = 8,
     ingredients =
     {
@@ -244,7 +244,7 @@ data:extend({
   {
     type = "recipe",
     name = "silicon-cell",
-    category = "electronics",
+    categories = {"crafting", "electromagnetics"},
     energy_required = 2,
     ingredients =
     {
@@ -264,7 +264,7 @@ data:extend({
   {
     type = "recipe",
     name = "magnet",
-    category = "electromagnetics", -- only electromagnetic plant
+    categories = {"electromagnetics"}, -- only electromagnetic plant
     energy_required = 5,
     ingredients = {
       {type = "item", name = "neodymium", amount = 1},
@@ -277,7 +277,7 @@ data:extend({
   {
     type = "recipe",
     name = "datacell-empty", -- datacell empty
-    category = "electronics",
+    categories = {"crafting", "electromagnetics"},
     energy_required = 10,
     ingredients = {
       {type = "item", name = "magnet", amount = 1},
@@ -292,14 +292,14 @@ data:extend({
     type = "recipe",
     name = "datacell-raw-data",
     icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
-    category = "data-processing",
+    categories = {"data-processing"},
     --subgroup = "moshine-processes",
     --order = "ggb",
     hide_from_player_crafting = true,
     energy_required = 1,
     ingredients = {
       {type = "item", name = "datacell-empty", amount = 1},
-      {type = "fluid", name = "raw-data", amount = 1000},
+      {type = "fluid", name = "raw-data", amount = 100},
     },
     results = {{type = "item", name = "datacell-raw-data", amount = 1}},
     allow_productivity = false,
@@ -311,7 +311,7 @@ data:extend({
     type = "recipe",
     name = "datacell-remove-raw-data",
     icon = "__Moshine__/graphics/icons/datacell-remove-raw-data.png",
-    category = "data-processing",
+    categories = {"data-processing"},
     subgroup = "moshine-processes",
     order = "ggb",
     hide_from_player_crafting = true,
@@ -322,7 +322,7 @@ data:extend({
     },
     results = {
       {type = "item", name = "datacell-empty", amount = 1},
-      {type = "fluid", name = "raw-data", amount = 1000},
+      {type = "fluid", name = "raw-data", amount = 100},
     },
     allow_productivity = false,
     auto_recycle = false,
@@ -334,7 +334,7 @@ data:extend({
     type = "recipe",
     name = "datacell-ai-model-data",
     icon = "__Moshine__/graphics/icons/datacell-ai-model-data.png",
-    category = "data-processing",
+    categories = {"data-processing"},
     --subgroup = "moshine-processes",
     --order = "ggc",
     --hide_from_player_crafting = true,
@@ -360,7 +360,7 @@ data:extend({
     type = "recipe",
     name = "datacell-remove-ai-model-data",
     icon = "__Moshine__/graphics/icons/datacell-remove-ai-model-data.png",
-    category = "data-processing",
+    categories = {"data-processing"},
     --subgroup = "moshine-processes",
     order = "jjk",
     --order = "ggc",
@@ -387,7 +387,7 @@ data:extend({
     type = "recipe",
     name = "datacell-equation",
     icon = "__Moshine__/graphics/icons/datacell-equation.png",
-    category = "data-processing",
+    categories = {"data-processing"},
     --subgroup = "moshine-processes",
     --order = "ggd",
     --hide_from_player_crafting = true,
@@ -407,7 +407,7 @@ data:extend({
   {
     type = "recipe",
     name = "3d-data-storage",
-    category = "electronics",
+    categories = {"crafting", "electromagnetics"},
     energy_required = 10,
     ingredients = {
       {type = "item", name = "magnet", amount = 3},
@@ -431,14 +431,13 @@ data:extend({
   {
     type = "recipe",
     name = "model-unstable",
-    category = "data-processing",
+    categories = {"data-processing"},
     energy_required = 10,
     ingredients = {
       {type = "item", name = "3d-data-storage", amount = 1},
-      {type = "fluid", name = "raw-data", amount = 500},
+      {type = "fluid", name = "raw-data", amount = 50},
     },
-    results = {{type = "item", name = "model-unstable", amount = 1}},
-    result_is_always_fresh = true,
+    results = {{type = "item", name = "model-unstable", amount = 1, always_fresh = true, reset_freshness_on_craft = true}},
     enabled = false,
     crafting_machine_tint = {primary = {255, 0, 0}}, --#ff0000
   },
@@ -451,11 +450,11 @@ data:extend({
   {
     type = "recipe",
     name = "model-stable",
-    category = "data-processing",
+    categories = {"data-processing"},
     energy_required = 40,
     ingredients = {
       {type = "item", name = "model-unstable", amount = 1},
-      {type = "fluid", name = "raw-data", amount = 1000},
+      {type = "fluid", name = "raw-data", amount = 100},
     },
     results = {{type = "item", name = "model-stable", amount = 1}},
     enabled = false,
@@ -471,14 +470,14 @@ data:extend({
     },
     --hide_from_player_crafting = true,
     --hidden_in_factoriopedia = true,
-    category = "ai-training",
+    categories = {"ai-training"},
     subgroup = "moshine-processes",
     order = "kkk",
     energy_required = 10,
     ingredients = {{type = "item", name = "model-stable", amount = 1}},
     results = {
-      {type = "item", name = "model-stable", amount = 1, probability = 0.50},
-      {type = "item", name = "ai-tier-1", amount = 1, probability = 0.50},
+      {type = "item", name = "model-stable", amount = 1, shared_probability = { min = 0, max = 0.5 }},
+      {type = "item", name = "ai-tier-1", amount = 1, shared_probability = { min = 0.5, max = 1 }},
     },
     main_product = "ai-tier-1",
     allow_productivity = false,
@@ -501,15 +500,15 @@ data:extend({
     },
     hide_from_player_crafting = true,
     hidden_in_factoriopedia = false,
-    category = "ai-training",
+    categories = {"ai-training"},
     subgroup = "moshine-processes",
     order = "kkk",
     energy_required = 10,
     ingredients = {{type = "item", name = "ai-tier-1", amount = 1}},
     results = {
-      {type="item", name="ai-tier-1", amount=1, probability=0.59},
-      {type="item", name="ai-tier-2", amount=1, probability=0.40},
-      {type="item", name="model-unstable", amount=1, probability=0.01},
+      {type="item", name="ai-tier-1", amount=1, shared_probability = { min = 0, max = 0.59 }},
+      {type="item", name="ai-tier-2", amount=1, shared_probability = { min = 0.4, max = 0.99 }},
+      {type="item", name="model-unstable", amount=1, shared_probability = { min = 0.99, max = 1 }},
     },
     main_product = "ai-tier-2",
     allow_productivity = false,
@@ -577,7 +576,7 @@ for i=2,9 do
       },
       hide_from_player_crafting = true,
       hidden_in_factoriopedia = false,
-      category = "ai-training",
+      categories = {"ai-training"},
       --subgroup = "moshine-processes",
       --order = "kkk",
       energy_required = 10,
@@ -585,10 +584,10 @@ for i=2,9 do
         {type = "item", name = "ai-tier-" .. i, amount = 1}
       },
       results = {
-        {type = "item", name = "ai-tier-" .. i,   amount = 1, probability = 0.47},
-        {type = "item", name = "ai-tier-" .. i+1, amount = 1, probability = (0.32 - i/100) },
-        {type = "item", name = "ai-tier-" .. i-1, amount = 1, probability = (0.20 + i/100) },
-        {type = "item", name = "model-unstable",  amount = 1, probability = 0.01},
+        {type = "item", name = "ai-tier-" .. i,   amount = 1, shared_probability = { min = 0, max = 0.47 }},
+        {type = "item", name = "ai-tier-" .. i+1, amount = 1, shared_probability = { min = 0.47, max = (0.47 + 0.32 - i/100) }},
+        {type = "item", name = "ai-tier-" .. i-1, amount = 1, shared_probability = { min = (0.47 + 0.32 - i/100), max = 0.99 }},
+        {type = "item", name = "model-unstable",  amount = 1, shared_probability = { min = 0.99, max = 1 }},
       },
       main_product = "ai-tier-" .. i+1,
       allow_productivity = false,

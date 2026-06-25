@@ -1,4 +1,30 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.7
+Date: 2026-06-25
+  Bugfixes:
+    - Fixed lava not destroying items
+  Changes:
+    - Divided by 10 all data fluid quantities (recipe, mined) to solve the throughput problem
+    - Added 3 outputs to data miner
+---------------------------------------------------------------------------------------------------
+Version: 1.1.6
+Date: 2026-06-24
+  Graphics:
+    - Added planet backdrop
+  Changes:
+    - Moved building, tech, terrain, achievements graphics over to "Moshine-assets"
+    - Science (datacell etc.) are now items instead of tools (to follow vanilla change)
+    - Starmap icon normalized to 512px, since background planets work differently now
+  Bugfixes:
+    - Fix in synaptic assembler that would make items exclusive to it
+---------------------------------------------------------------------------------------------------
+Version: 1.1.5
+Date: 2026-06-23
+  Info:
+    - Updated to 2.1
+  Changes:
+    - AI training always has 1 output (new feature of 2.1)
+---------------------------------------------------------------------------------------------------
 Version: 1.1.4
 Date: 2026-06-14
   Changes:

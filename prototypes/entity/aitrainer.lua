@@ -97,14 +97,14 @@ data:extend({
         layers =
         {
           {
-            filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-base.png",
+            filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-base.png",
             priority = "extra-high",
             width = 620,
             height = 620,
             scale = 0.5,
           },
           {
-            filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-base-shadow.png",
+            filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-base-shadow.png",
             width = 620,
             height = 620,
             draw_as_shadow = true,
@@ -123,7 +123,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
+                filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
@@ -132,7 +132,7 @@ data:extend({
                 scale = 0.5,
               },
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim1.png",
+                filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-anim1.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
@@ -154,7 +154,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
+                filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
@@ -163,7 +163,7 @@ data:extend({
                 scale = 0.5,
               },
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim2.png",
+                filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-anim2.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
@@ -185,7 +185,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
+                filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
@@ -194,7 +194,7 @@ data:extend({
                 scale = 0.5,
               },
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim3.png",
+                filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-anim3.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
@@ -216,7 +216,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
+                filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-anim-under.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,
@@ -225,7 +225,7 @@ data:extend({
                 scale = 0.5,
               },
               {
-                filename = "__Moshine__/graphics/entity/ai-trainer/ai-trainer-anim4.png",
+                filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-anim4.png",
                 width = 620,
                 height = 620,
                 frame_count = 16,

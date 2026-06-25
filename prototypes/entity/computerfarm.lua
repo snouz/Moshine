@@ -84,7 +84,7 @@ local craneprop = {
     --[[
     {
       rotated_sprite =
-      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-1",
+      util.sprite_load("__Moshine-assets__/graphics/entity/agricultural-tower/agricultural-tower-crane-1",
       {
         priority = "very-low",
         dice = 4,
@@ -92,7 +92,7 @@ local craneprop = {
         scale = 0.5
       }),
       rotated_sprite_shadow =
-      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-1-shadow",
+      util.sprite_load("__Moshine-assets__/graphics/entity/agricultural-tower/agricultural-tower-crane-1-shadow",
       {
         priority = "very-low",
         direction_count = 64,
@@ -100,7 +100,7 @@ local craneprop = {
         draw_as_shadow = true
       }),
       rotated_sprite_reflection =
-      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-1-reflection",
+      util.sprite_load("__Moshine-assets__/graphics/entity/agricultural-tower/agricultural-tower-crane-1-reflection",
       {
         priority = "very-low",
         direction_count = 64,
@@ -121,7 +121,7 @@ local craneprop = {
     {
       --[[rotated_sprite =
       {
-        filename = "__Moshine__/graphics/entity/agricultural-tower/laser-artillery-turret.png",
+        filename = "__Moshine-assets__/graphics/entity/agricultural-tower/laser-artillery-turret.png",
         width = 220,
         height = 190,
         shift = util.by_pixel(0, 0),
@@ -132,7 +132,7 @@ local craneprop = {
       },
       rotated_sprite_shadow = --nuthin,
       {
-        filename = "__Moshine__/graphics/entity/agricultural-tower/laser-artillery-turret-shadow.png",
+        filename = "__Moshine-assets__/graphics/entity/agricultural-tower/laser-artillery-turret-shadow.png",
         width = 230,
         height = 190,
         shift = util.by_pixel(5, 5),
@@ -240,20 +240,20 @@ local craneprop = {
     },
     {
       sprite =
-      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-9",
+      util.sprite_load("__Moshine-assets__/graphics/entity/agricultural-tower/agricultural-tower-crane-9",
       {
         priority = "very-low",
         scale = 0.5
       }),
       sprite_shadow =
-      util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-9-shadow",
+      util.sprite_load("__Moshine-assets__/graphics/entity/agricultural-tower/agricultural-tower-crane-9-shadow",
       {
         priority = "very-low",
         scale = 1,
         draw_as_shadow = true
       }),
       sprite_reflection =
-        util.sprite_load("__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-9-reflection",
+        util.sprite_load("__Moshine-assets__/graphics/entity/agricultural-tower/agricultural-tower-crane-9-reflection",
         {
           priority = "very-low",
           scale = 5
@@ -269,7 +269,7 @@ local craneprop = {
     {
       sprite =
       {
-        filename = "__Moshine__/graphics/entity/agricultural-tower/agricultural-tower-crane-10.png",
+        filename = "__Moshine-assets__/graphics/entity/agricultural-tower/agricultural-tower-crane-10.png",
         shift = util.by_pixel(0, -16),
         line_length = 1,
         priority = "very-low",

@@ -70,31 +70,31 @@ data:extend({
         {
           inner_corner =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-inner-corner.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-inner-corner.png",
             count = 16,
             scale = 0.5
           },
           outer_corner =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-outer-corner.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-outer-corner.png",
             count = 16,
             scale = 0.5
           },
           side =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-side.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-side.png",
             count = 32,
             scale = 0.5
           },
           u_transition =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-u.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-u.png",
             count = 4,
             scale = 0.5
           },
           o_transition =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-o.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-o.png",
             count = 1,
             scale = 0.5
           }
@@ -103,31 +103,31 @@ data:extend({
         {
           inner_corner =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-inner-corner-mask.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-inner-corner-mask.png",
             count = 16,
             scale = 0.5
           },
           outer_corner =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-outer-corner-mask.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-outer-corner-mask.png",
             count = 16,
             scale = 0.5
           },
           side =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-side-mask.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-side-mask.png",
             count = 32,
             scale = 0.5
           },
           u_transition =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-u-mask.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-u-mask.png",
             count = 4,
             scale = 0.5
           },
           o_transition =
           {
-            spritesheet = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-o-mask.png",
+            spritesheet = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground-o-mask.png",
             count = 1,
             scale = 0.5
           }
@@ -136,7 +136,7 @@ data:extend({
 
       material_background =
       {
-        picture = "__Moshine__/graphics/terrain/space-platform-for-ground/space-platform-for-ground.png",
+        picture = "__Moshine-assets__/graphics/terrain/space-platform-for-ground/space-platform-for-ground.png",
         count = 1,
         scale = 0.5
       }

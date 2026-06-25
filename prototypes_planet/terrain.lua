@@ -7,7 +7,21 @@ local tile_sounds = require("__space-age__/prototypes/tile/tile-sounds")
 local tile_graphics = require("__base__/prototypes/tile/tile-graphics")
 local tile_spritesheet_layout = tile_graphics.tile_spritesheet_layout
 
-
+local destroyed_item_trigger =
+{
+  type = "direct",
+  action_delivery =
+  {
+    type = "instant",
+    source_effects =
+    {
+      type = "create-trivial-smoke",
+      smoke_name = "smoke",
+      offset_deviation = {{-0.1, -0.1}, {0.1, 0.1}},
+      starting_frame_deviation = 5
+    }
+  }
+}
 
 local lava_stone_transitions =
 {
@@ -30,11 +44,11 @@ local lava_stone_transitions =
   {
     to_tiles = lava_tile_type_names,
     transition_group = lava_transition_group_id,
-    spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone.png",
-    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone-lightmap.png" },
+    spritesheet = "__space-age__/graphics/terrain/lava-transitions/lava-stone.png",
+    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/lava-transitions/lava-stone-lightmap.png" },
      -- this added the lightmap spritesheet
     layout = tile_spritesheet_layout.transition_16_16_16_4_4,
-    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone-lightmap.png" },
+    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/lava-transitions/lava-stone-lightmap.png" },
      -- this added the lightmap spritesheet
     effect_map_layout =
     {
@@ -263,7 +277,7 @@ data:extend({
     destroys_dropped_items = true,
     default_destroyed_dropped_item_trigger = destroyed_item_trigger,
     layer = 6,
-    layer_group = "water-overlay",
+    layer_group = "water",
     --sprite_usage_surface = "vulcanus",
     variants = tile_variations_template(
       "__Moshine-assets__/graphics/terrain/moshine-coastal-lava2.png",

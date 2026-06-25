@@ -3,7 +3,7 @@ local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
 
 
-supercomputer = "__Moshine__/graphics/entity/supercomputer/"
+supercomputer = "__Moshine-assets__/graphics/entity/supercomputer/"
 
 
 local planetary_teleporter_on_animation = {

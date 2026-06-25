@@ -33,7 +33,7 @@ if data.raw["item"]["foundation"] then
 end
 
 
-local recycling = require("__quality__.prototypes.recycling")
+local recycling = require("__recycler__.recycling")
 
 if mods["se-space-trains"] then
   if settings.startup["moshine-se-space-trains"].value then
@@ -125,7 +125,7 @@ if mods["bzsilicon"] then
     {
       type = "recipe",
       name = "advanced-silicon",
-      category = "smelting",
+      categories = {"smelting"},
       energy_required = 5,
       ingredients = {
         {type = "item", name = "silica", amount = 5}
@@ -137,7 +137,7 @@ if mods["bzsilicon"] then
     {
       type = "technology",
       name = "moshine-tech-silicon",
-      icon = "__Moshine__/graphics/technology/moshine-tech-silicon.png",
+      icon = "__Moshine-assets__/graphics/technology/moshine-tech-silicon.png",
       icon_size = 256,
       effects =
       {
@@ -187,7 +187,7 @@ if mods["bzsilicon"] then
     {
       type = "technology",
       name = "moshine-tech-data-extractor",
-      icon = "__Moshine__/graphics/technology/moshine-tech-data-extractor.png",
+      icon = "__Moshine-assets__/graphics/technology/moshine-tech-data-extractor.png",
       icon_size = 256,
       effects =
       {
@@ -218,8 +218,8 @@ if mods["bzsilicon"] then
       {
         type = "recipe",
         name = "advanced-silicon",
-        category = "smelting",
-        icon = "__Moshine__/graphics/technology/moshine-tech-silicon.png",
+        categories = {"smelting"},
+        icon = "__Moshine-assets__/graphics/technology/moshine-tech-silicon.png",
         icon_size = 256,
         energy_required = 5,
         ingredients = {
@@ -232,8 +232,8 @@ if mods["bzsilicon"] then
       {
         type = "recipe",
         name = "silicon",
-        category = "smelting",
-        icon = "__Moshine__/graphics/technology/moshine-tech-silicon.png",
+        categories = {"smelting"},
+        icon = "__Moshine-assets__/graphics/technology/moshine-tech-silicon.png",
         icon_size = 256,
         energy_required = 5,
         ingredients = {
@@ -249,7 +249,7 @@ if mods["bzsilicon"] then
       {
         type = "recipe",
         name = "advanced-silicon",
-        category = "chemistry",
+        categories = {"chemistry"},
         energy_required = 5,
         ingredients = {
           {type = "item", name = "silica", amount = 10},
@@ -262,8 +262,8 @@ if mods["bzsilicon"] then
       {
         type = "recipe",
         name = "silicon",
-        category = "chemistry",
-        icon = "__Moshine__/graphics/technology/moshine-tech-silicon.png",
+        categories = {"chemistry"},
+        icon = "__Moshine-assets__/graphics/technology/moshine-tech-silicon.png",
         icon_size = 256,
         energy_required = 5,
         ingredients = {
@@ -287,13 +287,13 @@ if data.raw["agricultural-tower"]["agricultural-tower"] and not data.raw["agricu
       end
     end
   end
-  for _, seed in pairs(data.raw.tool) do
-    if seed.plant_result then
-      if seed.name ~= "datacell-equation" and seed.name ~= "datacell-dna-raw" then
-        table.insert(data.raw["agricultural-tower"]["agricultural-tower"].accepted_seeds, seed.name)
-      end
-    end
-  end
+  --for _, seed in pairs(data.raw.tool) do
+  --  if seed.plant_result then
+  --    if seed.name ~= "datacell-equation" and seed.name ~= "datacell-dna-raw" then
+  --      table.insert(data.raw["agricultural-tower"]["agricultural-tower"].accepted_seeds, seed.name)
+  --    end
+  --  end
+  --end
   for _, seed in pairs(data.raw.module) do
     if seed.plant_result then
       if seed.name ~= "datacell-equation" and seed.name ~= "datacell-dna-raw" then

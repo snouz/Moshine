@@ -1,4 +1,4 @@
-local techicons = "__Moshine__/graphics/technology/"
+local techicons = "__Moshine-assets__/graphics/technology/"
 
 
 data:extend({
@@ -95,7 +95,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-silicon",
-    icon = "__Moshine__/graphics/technology/moshine-tech-silicon.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-silicon.png",
     icon_size = 256,
     effects =
     {
@@ -119,13 +119,13 @@ data:extend({
     research_trigger =
     {
       type = "mine-entity",
-      entity = "multi-ore_dummy_sand",
+      entities = {"multi-ore_dummy_sand"},
     },
   },
   {
     type = "technology",
     name = "moshine-tech-glass",
-    icon = "__Moshine__/graphics/technology/moshine-tech-glass.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-glass.png",
     icon_size = 256,
     effects =
     {
@@ -151,7 +151,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-silicon-carbide",
-    icon = "__Moshine__/graphics/technology/moshine-tech-silicon-carbide.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-silicon-carbide.png",
     icon_size = 256,
     effects =
     {
@@ -177,7 +177,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-silicon-cell",
-    icon = "__Moshine__/graphics/technology/moshine-tech-silicon-cell.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-silicon-cell.png",
     icon_size = 256,
     effects =
     {
@@ -197,7 +197,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-magnet",
-    icon = "__Moshine__/graphics/technology/moshine-tech-magnet.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-magnet.png",
     icon_size = 256,
     effects =
     {
@@ -221,13 +221,13 @@ data:extend({
     research_trigger =
     {
       type = "mine-entity",
-      entity = "multi-ore_dummy_neodymium",
+      entities = {"multi-ore_dummy_neodymium"},
     },
   },
   {
     type = "technology",
     name = "moshine-tech-datacell-empty",
-    icon = "__Moshine__/graphics/technology/moshine-tech-datacell-empty.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-datacell-empty.png",
     icon_size = 256,
     effects =
     {
@@ -260,7 +260,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-data-processor-building",
-    icon = "__Moshine__/graphics/technology/moshine-tech-data-processor-building.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-data-processor-building.png",
     icon_size = 256,
     effects =
     {
@@ -296,7 +296,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-neural_computer",
-    icon = "__Moshine__/graphics/technology/moshine-tech-neural_computer.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-neural_computer.png",
     icon_size = 256,
     effects =
     {
@@ -316,7 +316,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-data-extractor",
-    icon = "__Moshine__/graphics/technology/moshine-tech-data-extractor.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-data-extractor.png",
     icon_size = 256,
     effects =
     {
@@ -343,7 +343,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-3d-data-storage",
-    icon = "__Moshine__/graphics/technology/moshine-tech-3d-data-storage.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-3d-data-storage.png",
     icon_size = 256,
     effects =
     {
@@ -367,7 +367,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-data-processor",
-    icon = "__Moshine__/graphics/technology/moshine-tech-data-processor.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-data-processor.png",
     icon_size = 256,
     effects =
     {
@@ -402,7 +402,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-processing-grid",
-    icon = "__Moshine__/graphics/technology/moshine-tech-processing-grid.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-processing-grid.png",
     icon_size = 256,
     effects =
     {
@@ -434,7 +434,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-trainer",
-    icon = "__Moshine__/graphics/technology/moshine-tech-ai-trainer.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-ai-trainer.png",
     icon_size = 256,
     effects =
     {
@@ -458,7 +458,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-1",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-1.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-1.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-1" }},
     prerequisites = {"moshine-tech-ai-trainer"},
@@ -474,7 +474,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-2",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-2.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-2.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-2" }},
     prerequisites = {"moshine-tech-ai-tier-1"},
@@ -484,7 +484,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-3",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-3.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-3.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-3" }},
     prerequisites = {"moshine-tech-ai-tier-2"},
@@ -494,7 +494,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-4",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-4.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-4.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-4" }},
     prerequisites = {"moshine-tech-ai-tier-3"},
@@ -504,7 +504,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-5",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-5.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-5.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-5" }},
     prerequisites = {"moshine-tech-ai-tier-4"},
@@ -514,7 +514,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-6",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-6.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-6.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-6" }},
     prerequisites = {"moshine-tech-ai-tier-5"},
@@ -524,7 +524,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-7",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-7.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-7.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-7" }},
     prerequisites = {"moshine-tech-ai-tier-6"},
@@ -534,7 +534,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-8",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-8.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-8.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-8" }},
     prerequisites = {"moshine-tech-ai-tier-7"},
@@ -544,7 +544,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-9",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-9.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-9.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-9" }},
     prerequisites = {"moshine-tech-ai-tier-8"},
@@ -554,7 +554,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-ai-tier-10",
-    icon = "__Moshine__/graphics/technology/ai-tiers/tier-10.png",
+    icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-10.png",
     icon_size = 256,
     effects = {{type = "unlock-recipe", recipe = "ai-tier-10" }},
     prerequisites = {"moshine-tech-ai-tier-9"},
@@ -564,7 +564,7 @@ data:extend({
   --[[{
     type = "technology",
     name = "moshine-tech-advanced-ai-cores",
-    icon = "__Moshine__/graphics/technology/moshine-tech-advanced-ai-cores.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-advanced-ai-cores.png",
     icon_size = 256,
     effects =
     {
@@ -604,7 +604,7 @@ data:extend({
   {
     type = "technology",
     name = "moshine-tech-quantum-processor-productivity",
-    icons = util.technology_icon_constant_recipe_productivity("__Moshine__/graphics/technology/moshine-tech-quantum-processor-productivity.png"),
+    icons = util.technology_icon_constant_recipe_productivity("__Moshine-assets__/graphics/technology/moshine-tech-quantum-processor-productivity.png"),
     icon_size = 256,
     effects =
     {
