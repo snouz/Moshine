@@ -19,7 +19,7 @@ data:extend({
     expires = false,
     final_render_layer = "remnants",
     animation = {
-      filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-remnants.png",
+      filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-remnants.png",
       priority="high",
       width = 290,
       height = 290,
@@ -131,7 +131,7 @@ data:extend({
         layers =
         {
           {
-            filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-base.png",
+            filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-base.png",
             priority="high",
             width = 290,
             height = 290,
@@ -142,7 +142,7 @@ data:extend({
             scale = 0.5
           },
           {
-            filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-shadow.png",
+            filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-shadow.png",
             priority="high",
             width = 400,
             height = 350,
@@ -154,7 +154,7 @@ data:extend({
             scale = 0.5
           },
           {
-            filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-animation-1.png",
+            filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-animation-1.png",
             priority="high",
             width = 160,
             height = 290,
@@ -180,7 +180,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-animation-1.png",
+                filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-animation-1.png",
                 priority = "high",
                 width = 160,
                 height = 290,
@@ -192,7 +192,7 @@ data:extend({
                 scale = 0.5
               },
               {
-                filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-2.png",
+                filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-2.png",
                 priority = "high",
                 width = 160,
                 height = 290,
@@ -219,7 +219,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-1.png",
+                filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-1.png",
                 priority = "high",
                 width = 160,
                 height = 290,
@@ -238,7 +238,7 @@ data:extend({
       },
       frozen_patch =
       {
-        filename = "__Moshine__/graphics/entity/data-processor/suit-plug-outlet-hr-frozen.png",
+        filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-frozen.png",
         priority="high",
         width = 290,
         height = 290,

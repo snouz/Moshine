@@ -6,7 +6,7 @@ local data_extractor_sheet =
 {
   layers = {
     {
-      filename = "__Moshine__/graphics/entity/data-extractor/data-extractor-base-shadow.png",
+      filename = "__Moshine-assets__/graphics/entity/data-extractor/data-extractor-base-shadow.png",
       width = 700,
       height = 500,
       scale = 0.5,
@@ -14,7 +14,7 @@ local data_extractor_sheet =
       shift = util.by_pixel(0, 0),
     },
     {
-      filename = "__Moshine__/graphics/entity/data-extractor/data-extractor-base.png",
+      filename = "__Moshine-assets__/graphics/entity/data-extractor/data-extractor-base.png",
       priority = "extra-high",
       width = 700,
       height = 500,
@@ -22,7 +22,7 @@ local data_extractor_sheet =
       shift = util.by_pixel(0, 0),
     },
     {
-      filename = "__Moshine__/graphics/entity/data-extractor/data-extractor-base-light.png",
+      filename = "__Moshine-assets__/graphics/entity/data-extractor/data-extractor-base-light.png",
       width = 700,
       height = 500,
       scale = 0.5,
@@ -66,6 +66,24 @@ data:extend({
           connection_category = "data",
           flow_direction = "output"
         },
+        {
+          direction = defines.direction.south,
+          position = {0, 2},
+          connection_category = "data",
+          flow_direction = "output"
+        },
+        {
+          direction = defines.direction.east,
+          position = {2, 0},
+          connection_category = "data",
+          flow_direction = "output"
+        },
+        {
+          direction = defines.direction.west,
+          position = {-2, 0},
+          connection_category = "data",
+          flow_direction = "output"
+        },
       }
     },
     energy_usage = "3000kW",
@@ -97,7 +115,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__Moshine__/graphics/entity/data-extractor/data-extractor-base-shadow.png",
+              filename = "__Moshine-assets__/graphics/entity/data-extractor/data-extractor-base-shadow.png",
               width = 700,
               height = 500,
               scale = 0.5,
@@ -106,7 +124,7 @@ data:extend({
               shift = util.by_pixel(0, 0),
             },
             {
-              filename = "__Moshine__/graphics/entity/data-extractor/data-extractor-base.png",
+              filename = "__Moshine-assets__/graphics/entity/data-extractor/data-extractor-base.png",
               priority = "extra-high",
               width = 700,
               height = 500,
@@ -115,7 +133,7 @@ data:extend({
               shift = util.by_pixel(0, 0),
             },
             {
-              filename = "__Moshine__/graphics/entity/data-extractor/data-extractor-base-light.png",
+              filename = "__Moshine-assets__/graphics/entity/data-extractor/data-extractor-base-light.png",
               width = 700,
               height = 500,
               scale = 0.5,
@@ -133,7 +151,7 @@ data:extend({
           layers =
           {
             {
-              filename = "__Moshine__/graphics/entity/data-extractor/hr-crash-site-lab-repaired-beams.png",
+              filename = "__Moshine-assets__/graphics/entity/data-extractor/hr-crash-site-lab-repaired-beams.png",
               priority = "high",
               width = 130,
               height = 100,
@@ -146,7 +164,7 @@ data:extend({
               scale = 0.5
             },
             {
-              filename = "__Moshine__/graphics/entity/data-extractor/hr-crash-site-lab-repaired-beams.png",
+              filename = "__Moshine-assets__/graphics/entity/data-extractor/hr-crash-site-lab-repaired-beams.png",
               priority = "high",
               width = 130,
               height = 100,

@@ -30,7 +30,7 @@ end
 
 if mods["Glass"] then
   if data.raw["recipe"]["glass-plate"] then
-    data.raw["recipe"]["glass-plate"].category = "crafting"
+    data.raw["recipe"]["glass-plate"].categories = {"crafting"}
   end
 end
 
@@ -78,7 +78,7 @@ if new_ores_needed then
         type = "item",
         name = new_ore,
         amount = new_amount,
-        probability = new_probability,
+        independent_probability = new_probability,
       }
       table.insert(multi_ore.minable.results, new_result)
     end   
@@ -90,13 +90,13 @@ if mods["bzlead"] then
   add_ore_to_mix("lead-ore", 1, 2 /100)
   
   -- reduce copper ore output (because it is also a byproduct from lead and for overal balance)
-  local multi_ore = data.raw.resource["multi-ore"]
-  for index,result in pairs(multi_ore.minable.results) do
-    if result.name == "copper-ore" then
-      result.probability = result.probability / 4   
-      break
-    end
-  end 
+--  local multi_ore = data.raw.resource["multi-ore"]
+--  for index,result in pairs(multi_ore.minable.results) do
+--    if result.name == "copper-ore" then
+--      result.probability = result.probability / 4   
+--      break
+--    end
+--  end 
 end
 
 if mods["bztin"] then

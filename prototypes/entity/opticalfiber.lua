@@ -1,7 +1,7 @@
 local function make_visualization(i)
   return
   {
-    filename = "__Moshine__/graphics/entity/opticalfiber/visualization.png",
+    filename = "__Moshine-assets__/graphics/entity/opticalfiber/visualization.png",
     priority = "extra-high",
     x = i * 64,
     size = 64,
@@ -13,7 +13,7 @@ end
 local function make_disabled_visualization(i)
   return
   {
-    filename = "__Moshine__/graphics/entity/opticalfiber/disabled-visualization.png",
+    filename = "__Moshine-assets__/graphics/entity/opticalfiber/disabled-visualization.png",
     priority = "extra-high",
     x = i * 64,
     size = 64,
@@ -27,7 +27,7 @@ opticalfiberpictures = function()
   {
     straight_vertical_single =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-straight-vertical-single.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-straight-vertical-single.png",
       priority = "extra-high",
       width = 160,
       height = 160,
@@ -35,7 +35,7 @@ opticalfiberpictures = function()
     },
     straight_vertical =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-straight-vertical.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-straight-vertical.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -43,7 +43,7 @@ opticalfiberpictures = function()
     },
     straight_vertical_window =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-straight-vertical.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-straight-vertical.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -51,7 +51,7 @@ opticalfiberpictures = function()
     },
     straight_horizontal_window =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-straight-horizontal.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-straight-horizontal.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -59,7 +59,7 @@ opticalfiberpictures = function()
     },
     straight_horizontal =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-straight-horizontal.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-straight-horizontal.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -67,7 +67,7 @@ opticalfiberpictures = function()
     },
     corner_up_right =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-corner-up-right.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-corner-up-right.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -75,7 +75,7 @@ opticalfiberpictures = function()
     },
     corner_up_left =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-corner-up-left.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-corner-up-left.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -83,7 +83,7 @@ opticalfiberpictures = function()
     },
     corner_down_right =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-corner-down-right.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-corner-down-right.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -91,7 +91,7 @@ opticalfiberpictures = function()
     },
     corner_down_left =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-corner-down-left.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-corner-down-left.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -99,7 +99,7 @@ opticalfiberpictures = function()
     },
     t_up =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-t-up.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-t-up.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -107,7 +107,7 @@ opticalfiberpictures = function()
     },
     t_down =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-t-down.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-t-down.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -115,7 +115,7 @@ opticalfiberpictures = function()
     },
     t_right =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-t-right.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-t-right.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -123,7 +123,7 @@ opticalfiberpictures = function()
     },
     t_left =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-t-left.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-t-left.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -131,7 +131,7 @@ opticalfiberpictures = function()
     },
     cross =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cross.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-cross.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -139,7 +139,7 @@ opticalfiberpictures = function()
     },
     ending_up =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-ending-up.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-ending-up.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -147,7 +147,7 @@ opticalfiberpictures = function()
     },
     ending_down =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-ending-down.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-ending-down.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -155,7 +155,7 @@ opticalfiberpictures = function()
     },
     ending_right =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-ending-right.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-ending-right.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -163,7 +163,7 @@ opticalfiberpictures = function()
     },
     ending_left =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-ending-left.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-ending-left.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -207,7 +207,7 @@ opticalfiberpictures = function()
     ending_left_disabled_visualization = make_disabled_visualization(8),
     horizontal_window_background =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-horizontal-window-background.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-horizontal-window-background.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -215,7 +215,7 @@ opticalfiberpictures = function()
     },
     vertical_window_background =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-vertical-window-background.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-vertical-window-background.png",
       priority = "extra-high",
       width = 128,
       height = 128,
@@ -223,7 +223,7 @@ opticalfiberpictures = function()
     },
     fluid_background =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/fluid-background.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/fluid-background.png",
       priority = "extra-high",
       width = 64,
       height = 40,
@@ -231,7 +231,7 @@ opticalfiberpictures = function()
     },
     low_temperature_flow =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/fluid-flow-low-temperature.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/fluid-flow-low-temperature.png",
       priority = "extra-high",
       width = 160,
       scale = 8.5,
@@ -239,7 +239,7 @@ opticalfiberpictures = function()
     },
     middle_temperature_flow =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/fluid-flow-medium-temperature.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/fluid-flow-medium-temperature.png",
       priority = "extra-high",
       width = 160,
       scale = 8.5,
@@ -247,7 +247,7 @@ opticalfiberpictures = function()
     },
     high_temperature_flow =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/fluid-flow-high-temperature.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/fluid-flow-high-temperature.png",
       priority = "extra-high",
       width = 160,
       scale = 8.5,
@@ -255,7 +255,7 @@ opticalfiberpictures = function()
     },
     gas_flow =
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/steam.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/steam.png",
       priority = "extra-high",
       scale = 0,
       line_length = 10,
@@ -274,7 +274,7 @@ opticalfibercoverspictures = function()
       layers =
       {
         {
-          filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cover-north.png",
+          filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-cover-north.png",
           priority = "extra-high",
           width = 128,
           height = 128,
@@ -287,7 +287,7 @@ opticalfibercoverspictures = function()
       layers =
       {
         {
-          filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cover-east.png",
+          filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-cover-east.png",
           priority = "extra-high",
           width = 128,
           height = 128,
@@ -300,7 +300,7 @@ opticalfibercoverspictures = function()
       layers =
       {
         {
-          filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cover-south.png",
+          filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-cover-south.png",
           priority = "extra-high",
           width = 128,
           height = 128,
@@ -313,7 +313,7 @@ opticalfibercoverspictures = function()
       layers =
       {
         {
-          filename = "__Moshine__/graphics/entity/opticalfiber/opticalfiber-cover-west.png",
+          filename = "__Moshine-assets__/graphics/entity/opticalfiber/opticalfiber-cover-west.png",
           priority = "extra-high",
           width = 128,
           height = 128,
@@ -346,7 +346,7 @@ data:extend({
     remove_on_tile_placement = false,
     animation = make_rotated_animation_variations_from_sheet(2,
     {
-      filename = "__Moshine__/graphics/entity/opticalfiber/remnants/opticalfiber-remnants.png",
+      filename = "__Moshine-assets__/graphics/entity/opticalfiber/remnants/opticalfiber-remnants.png",
       width = 122,
       height = 120,
       line_length = 1,

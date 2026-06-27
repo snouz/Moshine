@@ -112,8 +112,8 @@ data:extend({
     order="a-b-a",
     infinite = true,
     highlight = true,
-    minimum = 60000,
-    normal = 300000,
+    minimum = 6000,
+    normal = 30000,
     infinite_depletion_amount = 0,
     resource_patch_search_radius = 1,
     tree_removal_probability = 1,
@@ -129,9 +129,9 @@ data:extend({
         {
           type = "fluid",
           name = "raw-data",
-          amount_min = 100,
-          amount_max = 100,
-          probability = 1
+          amount_min = 10,
+          amount_max = 10,
+          independent_probability = 1
         }
       }
     },
@@ -201,55 +201,55 @@ data:extend({
           type = "item",
           name = "sand",
           amount = 1,
-          probability = 28 /100,
+          independent_probability = 28 /100,
         },
         {
           type = "item",
           name = "neodymium",
           amount = 1020,
-          probability = 0.003 /100,
+          independent_probability = 0.003 /100,
         },
         {
           type = "item",
           name = "sulfur",
           amount = 1,
-          probability = 6 /100,
+          independent_probability = 6 /100,
         },
         --[[{
           type = "item",
           name = "carbon",
           amount = 1,
-          probability = 2 /100,
+          independent_probability = 2 /100,
         },]]
         {
           type = "item",
           name = "coal",
           amount = 1,
-          probability = 12 /100,
+          independent_probability = 12 /100,
         },
         --[[{
           type = "item",
           name = "iron-ore",
           amount = 1,
-          probability = 5 /100,
+          independent_probability = 5 /100,
         },]]
         {
           type = "item",
           name = "copper-ore",
           amount = 1,
-          probability = 8 /100,
+          independent_probability = 8 /100,
         },
         --[[{
           type = "item",
           name = "stone",
           amount = 1,
-          probability = 5 /100,
+          independent_probability = 5 /100,
         },]]
         --[[{
           type = "item",
           name = "calcite",
           amount = 1,
-          probability = 4 /100,
+          independent_probability = 4 /100,
         },]]
       }
     },
@@ -343,7 +343,7 @@ data:extend({
           temperature = 500,
           amount_min = 10,
           amount_max = 100,
-          probability = 1,
+          independent_probability = 1,
         }
       }
     },
@@ -451,7 +451,7 @@ data:extend({
           type = "item",
           name = "neodymium",
           amount = 1,
-          probability = 1 /1000,
+          independent_probability = 1 /1000,
         },
       }
     },
@@ -522,7 +522,7 @@ data:extend({
           type = "item",
           name = "sand",
           amount = 1,
-          probability = 1 /1000,
+          independent_probability = 28/100,
         },
       }
     },
@@ -570,7 +570,7 @@ data:extend({
 -- compatibility
 if mods["vtk-deep-core-mining"] then
   data.raw["resource"]["multi-ore"].minable.results[2].amount = 512
-  data.raw["resource"]["multi-ore"].minable.results[2].probability = 0.006 /100
+  data.raw["resource"]["multi-ore"].minable.results[2].independent_probability = 0.006 /100
 end
 
 
