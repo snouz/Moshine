@@ -14,8 +14,8 @@ data:extend({
     ingredients =
     {
       {type = "item", name = "assembling-machine-3", amount = 1},
-      {type = "item", name = "productivity-module-2", amount = 5},
       {type = "item", name = "silicon-carbide", amount = 5},
+      {type = "item", name = "productivity-module-2", amount = 5},
     },
     results = {
       {type = "item", name = "data-processor", amount = 1}
@@ -23,6 +23,7 @@ data:extend({
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     allow_productivity = false,
     enabled = false,
+    sort_item_ingredients = false,
   },
   {
     type = "recipe",
@@ -31,16 +32,17 @@ data:extend({
     ingredients =
     {
       {type = "item", name = "lab", amount = 1},
+      {type = "item", name = "datacell-empty", amount = 100},
+      {type = "item", name = "processing-unit", amount = 50},
       {type = "item", name = "silicon-carbide", amount = 40},
       {type = "item", name = "magnet", amount = 20},
-      {type = "item", name = "processing-unit", amount = 50},
-      {type = "item", name = "datacell-empty", amount = 100},
 
     },
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     results = {{type = "item", name = "neural_computer", amount = 1}},
     allow_productivity = false,
     enabled = false,
+    sort_item_ingredients = false,
   },
   {
     type = "recipe",
@@ -56,6 +58,7 @@ data:extend({
     results = {{type = "item", name = "data-extractor", amount = 1}},
     allow_productivity = false,
     enabled = false,
+    sort_item_ingredients = false,
   },
   {
     type = "recipe",
@@ -63,13 +66,14 @@ data:extend({
     energy_required = 3,
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients = {
-      {type = "item", name = "silicon", amount = 1},
       {type = "item", name = "silicon-carbide", amount = 1},
       {type = "item", name = "glass", amount = 1},
+      {type = "item", name = "silicon", amount = 1},
     },
     results = {{type = "item", name = "optical-cable", amount = 2}},
     allow_productivity = false,
     enabled = false,
+    sort_item_ingredients = false,
   },
 
 
@@ -89,6 +93,7 @@ data:extend({
     results = {{type="item", name="processing-grid", amount=1}},
     allow_productivity = false,
     enabled = false,
+    sort_item_ingredients = false,
   },
   
   {
@@ -99,8 +104,8 @@ data:extend({
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients =
     {
-      {type = "item", name = "model-stable", amount = 1},
       {type = "item", name = "space-platform-foundation", amount = 1},
+      {type = "item", name = "model-stable", amount = 1},
       {type = "item", name = "processing-unit", amount = 1},
       {type = "item", name = "optical-cable", amount = 1},
     },
@@ -108,6 +113,7 @@ data:extend({
       {type = "item", name = "webbed_processor_tile", amount = 1}},
     allow_productivity = false,
     enabled = false,
+    sort_item_ingredients = false,
   },
   {
     type = "recipe",
@@ -117,16 +123,17 @@ data:extend({
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients =
     {
-      {type = "item", name = "model-unstable", amount = 1},
-      {type = "item", name = "model-stable", amount = 10},
-      {type = "item", name = "data-processor", amount = 1},
-      {type = "item", name = "processing-unit", amount = 50},
       {type = "item", name = "concrete", amount = 100},
       {type = "item", name = "glass", amount = 100},
+      {type = "item", name = "processing-unit", amount = 50},
+      {type = "item", name = "model-stable", amount = 10},
+      {type = "item", name = "data-processor", amount = 1},
+      {type = "item", name = "model-unstable", amount = 1},
     },
     results = {{type="item", name="ai-trainer", amount=1}},
     allow_productivity = false,
     enabled = false,
+    sort_item_ingredients = false,
   },
   --[[
   {
@@ -155,15 +162,16 @@ data:extend({
     enabled = false,
     ingredients =
     {
+      {type = "item", name = "sand", amount = 80},
       {type = "fluid", name = "molten-iron", amount = 20},
       {type = "fluid", name = "water", amount = 100},
-      {type = "item", name = "sand", amount = 80},
     },
     energy_required = 10,
     results = {{type = "item", name = "concrete", amount = 10}},
     allow_decomposition = false,
     auto_recycle = false,
-    allow_productivity = true
+    allow_productivity = true,
+    sort_item_ingredients = false,
   },
   {
     type = "recipe",
@@ -175,10 +183,10 @@ data:extend({
     enabled = false,
     ingredients =
     {
-      {type = "fluid", name = "steam", amount = 50},
       {type = "item", name = "sand", amount = 40},
       {type = "item", name = "sulfur", amount = 10},
       {type = "item", name = "coal", amount = 5},
+      {type = "fluid", name = "steam", amount = 50},
     },
     energy_required = 3,
     results = {
@@ -188,7 +196,8 @@ data:extend({
     main_product = "petroleum-gas",
     allow_decomposition = false,
     auto_recycle = false,
-    allow_productivity = true
+    allow_productivity = true,
+    sort_item_ingredients = false,
   },
 
   {
@@ -204,6 +213,7 @@ data:extend({
     results = {{type = "item", name = "silicon", amount = 1}},
     allow_productivity = true,
     enabled = false,
+    sort_item_ingredients = false,
   },
 })
 
@@ -227,6 +237,22 @@ end
 data:extend({
   {
     type = "recipe",
+    name = "silicon-cell",
+    categories = {"crafting", "electromagnetics"},
+    energy_required = 2,
+    ingredients =
+    {
+      {type = "item", name = "silicon", amount = 5},
+      {type = "item", name = "electronic-circuit", amount = 1},
+    },
+    results = {{type = "item", name = "silicon-cell", amount = 1}},
+    allow_productivity = true,
+    enabled = false,
+    sort_item_ingredients = false,
+  },
+
+  {
+    type = "recipe",
     name = "silicon-carbide",
     categories = {"crafting-with-fluid"},
     energy_required = 8,
@@ -239,21 +265,7 @@ data:extend({
     results = {{type = "item", name = "silicon-carbide", amount = 2}},
     allow_productivity = true,
     enabled = false,
-  },
-
-  {
-    type = "recipe",
-    name = "silicon-cell",
-    categories = {"crafting", "electromagnetics"},
-    energy_required = 2,
-    ingredients =
-    {
-      {type = "item", name = "silicon", amount = 5},
-      {type = "item", name = "electronic-circuit", amount = 1},
-    },
-    results = {{type = "item", name = "silicon-cell", amount = 1}},
-    allow_productivity = true,
-    enabled = false,
+    sort_item_ingredients = false,
   },
 
 
@@ -287,6 +299,7 @@ data:extend({
     results = {{type = "item", name = "datacell-empty", amount = 1}},
     allow_productivity = true,
     enabled = false,
+    sort_item_ingredients = false,
   },
   {
     type = "recipe",
@@ -344,8 +357,8 @@ data:extend({
       {type = "item", name = "model-stable", amount = 1},
     },
     results = {
+      {type = "item", name = "datacell-ai-model-data", amount = 1},
       {type = "item", name = "3d-data-storage", amount = 1},
-      {type = "item", name = "datacell-ai-model-data", amount = 1}
     },
     main_product = "datacell-ai-model-data",
     allow_productivity = false,
@@ -353,6 +366,7 @@ data:extend({
     enabled = false,
     allow_decomposition = false,
     crafting_machine_tint = {primary = {106, 196, 230}}, --#6ac4e6
+    sort_item_ingredients = false,
   },
 
 
@@ -367,8 +381,8 @@ data:extend({
     --hide_from_player_crafting = true,
     energy_required = 15,
     ingredients = {
+      {type = "item", name = "datacell-ai-model-data", amount = 1},
       {type = "item", name = "3d-data-storage", amount = 1},
-      {type = "item", name = "datacell-ai-model-data", amount = 1}
     },
     results = {
       {type = "item", name = "datacell-empty", amount = 1},
@@ -381,6 +395,7 @@ data:extend({
     hide_from_player_crafting = true,
     crafting_machine_tint = {primary = {106, 196, 230}}, --#6ac4e6
     allow_decomposition = false,
+    sort_item_ingredients = false,
   },
 
   {
@@ -489,6 +504,7 @@ data:extend({
       tertiary = {r = 0, g = 0, b = 0, a = 0},
       quaternary = {r = 0, g = 0, b = 0, a = 0},
     },
+    sort_item_ingredients = false,
   },
   {
     type = "recipe",
@@ -506,8 +522,8 @@ data:extend({
     energy_required = 10,
     ingredients = {{type = "item", name = "ai-tier-1", amount = 1}},
     results = {
-      {type="item", name="ai-tier-1", amount=1, shared_probability = { min = 0, max = 0.59 }},
       {type="item", name="ai-tier-2", amount=1, shared_probability = { min = 0.4, max = 0.99 }},
+      {type="item", name="ai-tier-1", amount=1, shared_probability = { min = 0, max = 0.59 }},
       {type="item", name="model-unstable", amount=1, shared_probability = { min = 0.99, max = 1 }},
     },
     main_product = "ai-tier-2",
@@ -520,6 +536,7 @@ data:extend({
       tertiary = {r = 0, g = 0, b = 0, a = 0},
       quaternary = {r = 0, g = 0, b = 0, a = 0},
     },
+    sort_item_ingredients = false,
   },
 })
 
@@ -584,8 +601,8 @@ for i=2,9 do
         {type = "item", name = "ai-tier-" .. i, amount = 1}
       },
       results = {
-        {type = "item", name = "ai-tier-" .. i,   amount = 1, shared_probability = { min = 0, max = 0.47 }},
         {type = "item", name = "ai-tier-" .. i+1, amount = 1, shared_probability = { min = 0.47, max = (0.47 + 0.32 - i/100) }},
+        {type = "item", name = "ai-tier-" .. i,   amount = 1, shared_probability = { min = 0, max = 0.47 }},
         {type = "item", name = "ai-tier-" .. i-1, amount = 1, shared_probability = { min = (0.47 + 0.32 - i/100), max = 0.99 }},
         {type = "item", name = "model-unstable",  amount = 1, shared_probability = { min = 0.99, max = 1 }},
       },
@@ -593,7 +610,7 @@ for i=2,9 do
       allow_productivity = false,
       enabled = false,
       crafting_machine_tint = typeofanim,
-
+      sort_item_ingredients = false,
 
     },
 

@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.8
+Date: 2026-06-30
+  Changes:
+    - Hypercell accumulator, solar panel, substation, neodymium rails, long stack inserters and space trains are now "recommended" (activated by default but optional) (new in 2.1)
+    - Sorted recipe ingredients and results (new in 2.1)
+  Locale:
+    - Chinese update by ChuijkYahus
+---------------------------------------------------------------------------------------------------
 Version: 1.1.7
 Date: 2026-06-25
   Bugfixes:
