@@ -23,8 +23,8 @@ data:extend({
         }
       ),
     max_health = 1000,
-    corpse = "stone-furnace-remnants",
-    dying_explosion = "stone-furnace-explosion",
+    corpse = "ai-trainer-remnants",
+    dying_explosion = "foundry-explosion",
     repair_sound = sounds.manual_repair,
     mined_sound = sounds.deconstruct_bricks(0.8),
     open_sound = sounds.machine_open,
@@ -63,10 +63,6 @@ data:extend({
     },
     resistances =
     {
-      {
-        type = "fire",
-        percent = 90
-      },
       {
         type = "explosion",
         percent = 30
@@ -256,4 +252,31 @@ data:extend({
       }
     }
   },
+  {
+    type = "corpse",
+    name = "ai-trainer-remnants",
+    icon = "__Moshine__/graphics/icons/ai-trainer.png",
+    flags = {"placeable-neutral", "not-on-map"},
+    hidden_in_factoriopedia = true,
+    subgroup = "production-machine-remnants",
+    order = "i[ai-trainer]",
+    selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+    tile_width = 7,
+    tile_height = 7,
+    selectable_in_game = false,
+    time_before_removed = 60 * 60 * 15, -- 15 minutes
+    expires = false,
+    final_render_layer = "remnants",
+    remove_on_tile_placement = false,
+    animation =
+    {
+      filename = "__Moshine__/graphics/ai-trainer-remnants.png",
+      width = 620,
+      height = 620,
+      line_length = 1,
+      scale = 0.5,
+      direction_count = 1
+    },
+  },
+
 })

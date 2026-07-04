@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.10
+Date: 2026-07-04
+  Balancing:
+    - Removed fire resistance from AI trainer, Neural computer and Data processor (for sun heat mechanic)
+  Graphics:
+    - Added custom remnants for Compute farm, Neural computer and AI-trainer, and used a bigger explosion
+    - Removed a light effect from Compute farm
+---------------------------------------------------------------------------------------------------
+Version: 1.1.9
+Date: 2026-07-02
+  Changes:
+    - Added sun heat that affects electronics, and air conditionning unit (uses the lightning mechanic) (recommended submod, can be disabled)
+  Balancing:
+    - Doubled sand yield
+    - Prevent lightning collectors from being built on Moshine
+    - Removed fire resistance of compute farm
+---------------------------------------------------------------------------------------------------
 Version: 1.1.8
 Date: 2026-06-30
   Changes:
@@ -91,7 +108,7 @@ Date: 2025-10-11
     - Split datacell and data processor techs into 2 techs
   Graphics:
     - Complete rework of the neural computer graphics
-  Icons:
+  Gui:
     - Made AI tier 9 yellow to avoid confusion with unstable core
     - Reworked icons for ai core model
     - Changed glass icon (based on artisanal reskins)

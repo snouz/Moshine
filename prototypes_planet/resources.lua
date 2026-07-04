@@ -201,7 +201,7 @@ data:extend({
           type = "item",
           name = "sand",
           amount = 1,
-          independent_probability = 28 /100,
+          independent_probability = 56 /100,
         },
         {
           type = "item",

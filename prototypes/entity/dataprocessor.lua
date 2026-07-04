@@ -50,8 +50,8 @@ data:extend({
     resistances =
     {
       {
-        type = "fire",
-        percent = 98
+        type = "impact",
+        percent = 10
       }
     },
     fluid_boxes =

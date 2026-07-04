@@ -16,6 +16,11 @@ for _, entity in pairs(data.raw["accumulator"]) do
     prevent_from_moshine(entity)
   end
 end
+for _, entity in pairs(data.raw["lightning-attractor"]) do
+  if not (entity.name == "sun_heat_cooler_1") then
+    prevent_from_moshine(entity)
+  end
+end
 
 --if data.raw["reactor"]["nuclear-reactor"] then
 --  prevent_from_moshine(data.raw["reactor"]["nuclear-reactor"])

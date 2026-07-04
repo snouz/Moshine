@@ -153,7 +153,7 @@ local craneprop = {
       static_length = {0.0, 0.0, 0.88 },
       snap_start = 1.0,
       snap_end = 1.0,
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "hub"
     },
 
@@ -168,7 +168,7 @@ local craneprop = {
       static_length = {0.0, 1.0, 1.0 * 0.76179585},
       snap_start = 1.0,
       snap_end = 0.7,
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "arm_inner"
     },
     {
@@ -183,7 +183,7 @@ local craneprop = {
       snap_start = 0.8,
       snap_end = 0.5,
       snap_end_arm_extent_multiplier = 0.1,
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "arm_inner_joint"
     },
     {
@@ -196,7 +196,7 @@ local craneprop = {
       static_length = {0.0, 1.4, 1.4 * 0.1228},
       snap_start = 0.7,
       snap_end = 0.3,
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "arm_central"
     },
     {
@@ -211,7 +211,7 @@ local craneprop = {
       snap_start = 0.3,
       snap_end = 0.2,
       snap_end_arm_extent_multiplier = 0.05,
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "arm_central_joint"
     },
     {
@@ -225,7 +225,7 @@ local craneprop = {
       static_length = {0, 1.9, 1.9 * -0.1944 },
       snap_start = 0.3,
       snap_end = 0.0,
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "arm_outer"
     },
     {
@@ -235,7 +235,7 @@ local craneprop = {
       layer = -1,
       relative_position = {0.0, 0.0, -0.17 },
       static_length_grappler = {0, 0, -0.6 },
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "grappler-hub"
     },
     {
@@ -263,7 +263,7 @@ local craneprop = {
       relative_position = {0.0, 0.0, 0.0 },
       static_length_grappler = {0, 0, -0.5 },
       extendable_length_grappler = {0, 0, -4 },
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "telescope"
     },
     {
@@ -285,7 +285,7 @@ local craneprop = {
       relative_position = {0.0, 0.0, 0.0 },
       static_length_grappler = {0, 0, -0.75 },
       extendable_length_grappler = {0, 0, 0 },
-      dying_effect = default_dying_effect,
+      --dying_effect = default_dying_effect,
       name = "grappler-claw"
     }
   }
@@ -300,8 +300,8 @@ data:extend({
     minable = {mining_time = 0.2, result = "processing-grid"},
     fast_replaceable_group = "computer-farm",
     max_health = 500,
-    corpse = "agricultural-tower-remnants",
-    dying_explosion = "agricultural-tower-explosion",
+    corpse = "processing-grid-remnants",
+    dying_explosion = "foundry-explosion",
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     input_inventory_size = 1,
@@ -380,13 +380,13 @@ data:extend({
     grappler_extending_sound_source = "grappler-hub",
     planting_sound = sound_variations("__Moshine-assets__/sound/entity/agricultural-tower/cervo", 13, 0.9),
     harvesting_sound = sound_variations("__Moshine-assets__/sound/entity/agricultural-tower/cervo", 13, 0.9),
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 100
-      }
-    },
+    --resistances =
+    --{
+    --  {
+    --    type = "fire",
+    --    percent = 100
+    --  }
+    --},
     collision_box = {{-2.7, -2.7}, {2.7, 2.7}},
     selection_box = {{-3, -3}, {3, 3}},
     collision_mask = {layers={item=true, object=true, player=true, water_tile=true, elevated_rail=true, is_object=true, is_lower_object=true}},
@@ -477,21 +477,33 @@ data:extend({
             draw_as_glow = true,
             blend_mode = "additive-soft",
           },
-          {
-            filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-glow3.png",
-            width = 400,
-            height = 420,
-            shift = util.by_pixel(0, -6),
-            line_length = 8,
-            priority = "high",
-            animation_speed = 1,
-            frame_count = 48,
-            scale = 0.5,
-            draw_as_glow = true,
-            blend_mode = "additive-soft",
-          },
         }
       },
+    --[[  working_visualisations =
+      {
+        {
+          render_layer = "light-effect",
+          animation =
+          {
+            layers =
+            {
+              {
+                filename = "__Moshine-assets__/graphics/entity/quantum-computer/quantum-computer-glow3.png",
+                width = 400,
+                height = 420,
+                shift = util.by_pixel(0, -6),
+                line_length = 8,
+                priority = "high",
+                animation_speed = 1,
+                frame_count = 48,
+                scale = 0.5,
+                draw_as_glow = true,
+                blend_mode = "additive-soft",
+              },
+            },
+          },
+        },
+      },]]
       --[[
       always_draw_idle_animation = true, 
       idle_animation =
@@ -553,6 +565,32 @@ data:extend({
     }
   },
 
+  {
+    type = "corpse",
+    name = "processing-grid-remnants",
+    icon = "__Moshine__/graphics/icons/processing-grid.png",
+    flags = {"placeable-neutral", "not-on-map"},
+    hidden_in_factoriopedia = true,
+    subgroup = "production-machine-remnants",
+    order = "i[cryogenic-plant]",
+    selection_box = {{-3, -3}, {3, 3}},
+    tile_width = 6,
+    tile_height = 6,
+    selectable_in_game = false,
+    time_before_removed = 60 * 60 * 15, -- 15 minutes
+    expires = false,
+    final_render_layer = "remnants",
+    remove_on_tile_placement = false,
+    animation =
+    {
+      filename = "__Moshine__/graphics/processing-grid-remnants.png",
+      width = 500,
+      height = 500,
+      line_length = 1,
+      scale = 0.5,
+      direction_count = 1
+    },
+  },
 
 
   {

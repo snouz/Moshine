@@ -120,13 +120,13 @@ data:extend({
     impact_category = "metal",
     alert_icon_shift = util.by_pixel(0, -12),
     icon_draw_specification = {shift = {0, -0.3}, scale = 1.2},
-    corpse = "biolab-remnants",
-    dying_explosion = "biolab-explosion",
+    corpse = "neural_computer-remnants",
+    dying_explosion = "foundry-explosion",
     resistances =
     {
       {
-        type = "fire",
-        percent = 99
+        type = "impact",
+        percent = 10
       }
     },
     --[[surface_conditions =
@@ -210,6 +210,33 @@ data:extend({
       {inventory_index = defines.inventory.lab_modules, shift = {0, 1.8}, scale = 0.5, max_icons_per_row = 5},
       {inventory_index = defines.inventory.lab_input, shift = {0, 0}, scale = 0.7, max_icons_per_row = 6, separation_multiplier = 1/1.1}
     }
+  },
+  {
+    type = "corpse",
+    name = "neural_computer-remnants",
+    icon = "__Moshine__/graphics/icons/supercomputer.png",
+    flags = {"placeable-neutral", "not-on-map"},
+    hidden_in_factoriopedia = true,
+    subgroup = "production-machine-remnants",
+    order = "i[neural_computer]",
+    selection_box = {{-3, -3}, {3, 3}},
+    tile_width = 6,
+    tile_height = 6,
+    selectable_in_game = false,
+    time_before_removed = 60 * 60 * 15, -- 15 minutes
+    expires = false,
+    final_render_layer = "remnants",
+    remove_on_tile_placement = false,
+    animation =
+    {
+      filename = "__Moshine__/graphics/neural_computer-remnants.png",
+      width = 600,
+      height = 600,
+      line_length = 1,
+      scale = 0.5,
+      shift = {0, -0.5},
+      direction_count = 1
+    },
   },
 
 })
