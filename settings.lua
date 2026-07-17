@@ -1,4 +1,4 @@
-data:extend {
+--[[data:extend {
   {
     type = "bool-setting",
     name = "moshine-se-space-trains",
@@ -13,4 +13,4 @@ data:extend {
     default_value = true,
     order = "b"
   }
-}
+}]]

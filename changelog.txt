@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2026-0
+  Features:
+    - Added Sun heat and cooling as a recommended dependency (will download by default)
+    - This adds sun damage on moshine, sun visual effects, a building that protects from it
+  Balancing:
+    - Nerfed accumulator space efficiency to 6x more space efficient (from 15x) (by default) (in submod)
+    - Nerfed solar panel space efficiency to 4x more space efficient (from 6.6x) (by default) (in submod)
+    - Added startup settings to let you change the efficiency value of accumulators and solar panels
+    - Adjusted recipe cost to the new settings
+    - Reduced health of custom solar panel and accumulator to lower than the original as a tradeoff for how powerful they are
+  Graphics:
+    - Reworked accumulator sprite and animation
+  Bugfixes:
+    - Fixed recycling recipe for hypercell substation, solar panel and accumulator
+  Changes:
+    - Removed settings that disabled some mods that are now optionnal
+---------------------------------------------------------------------------------------------------
 Version: 1.1.10
 Date: 2026-07-04
   Balancing:

@@ -113,7 +113,8 @@ if mods["bzcarbon"] then
 end
 
 
-if settings.startup["moshine-long_stack_inserter"].value then
+--if settings.startup["moshine-long_stack_inserter"].value then
+if mods["long_stack_inserter"] then
   if data.raw.technology["long-stack-inserter"] then
   
     table.insert(data.raw.technology["long-stack-inserter"].prerequisites, "moshine-tech-processing-grid")
@@ -128,11 +129,12 @@ if settings.startup["moshine-long_stack_inserter"].value then
         time = 2000
       }
   end
-else
+--[[else
   if data.raw.technology["long-stack-inserter"] then data.raw.technology["long-stack-inserter"].enabled = false end
   if data.raw["inserter"]["long-stack-inserter"] then data.raw["inserter"]["long-stack-inserter"].hidden = true end
   if data.raw.recipe["long-stack-inserter"] then data.raw.recipe["long-stack-inserter"].hidden = true end
   if data.raw.item["long-stack-inserter"] then data.raw.item["long-stack-inserter"].hidden = true end
+  ]]
 end
 
 if mods["canal-excavator"] then

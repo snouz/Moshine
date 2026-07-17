@@ -41,7 +41,7 @@ end
 local recycling = require("__recycler__.recycling")
 
 if mods["se-space-trains"] then
-  if settings.startup["moshine-se-space-trains"].value then
+  --if settings.startup["moshine-se-space-trains"].value then
     if data.raw["technology"]["tech-space-trains"] then
       table.insert(data.raw["technology"]["tech-space-trains"].prerequisites, "moshine-tech-magnet")
     end
@@ -78,7 +78,7 @@ if mods["se-space-trains"] then
     if data.raw["item-with-entity-data"]["space-cargo-wagon"] then data.raw["item-with-entity-data"]["space-cargo-wagon"].default_import_location = "moshine" end
     if data.raw["item-with-entity-data"]["space-fluid-wagon"] then data.raw["item-with-entity-data"]["space-fluid-wagon"].default_import_location = "moshine" end
 
-  else
+  --[[else
     -- mod is disabled, disable everything
     if data.raw.technology["tech-space-trains"] then
       data.raw.technology["tech-space-trains"].enabled = false
@@ -105,7 +105,7 @@ if mods["se-space-trains"] then
     if data.raw["item-with-entity-data"]["space-locomotive"] then data.raw["item-with-entity-data"]["space-locomotive"].hidden = true end
     if data.raw["item-with-entity-data"]["space-cargo-wagon"] then data.raw["item-with-entity-data"]["space-cargo-wagon"].hidden = true end
     if data.raw["item-with-entity-data"]["space-fluid-wagon"] then data.raw["item-with-entity-data"]["space-fluid-wagon"].hidden = true end
-  end
+  end]]
 end
 
 if mods["maraxsis"] then
@@ -321,6 +321,7 @@ if mods["snouz-big-solar-panel"] then
   data.raw["item"]["big-solar-panel"].weight = 200*kg
   data.raw["item"]["big-solar-panel"].default_import_location = "moshine"
   table.insert(data.raw["technology"]["big-solar-energy"].prerequisites, "moshine-tech-ai-tier-2")
+  recycling.generate_recycling_recipe(data.raw["recipe"]["big-solar-panel"])
 end
 
 if mods["snouz-big-accumulator"] then
@@ -328,6 +329,7 @@ if mods["snouz-big-accumulator"] then
   data.raw["item"]["big-accumulator"].weight = 200*kg
   data.raw["item"]["big-accumulator"].default_import_location = "moshine"
   table.insert(data.raw["technology"]["electric-energy-big-accumulators"].prerequisites, "moshine-tech-ai-tier-6")
+  recycling.generate_recycling_recipe(data.raw["recipe"]["big-accumulator"])
 end
 
 if mods["snouz_better_substation"] then
@@ -339,4 +341,5 @@ if mods["snouz_better_substation"] then
   }
   data.raw["item"]["snouz_better_substation"].default_import_location = "moshine"
   data.raw["technology"]["snouz_better_substation_tech"].prerequisites = {"electric-energy-distribution-2", "moshine-tech-ai-tier-4"}
+  recycling.generate_recycling_recipe(data.raw["recipe"]["snouz_better_substation"])
 end
