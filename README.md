@@ -16,11 +16,11 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 ![gif](https://i.imgur.com/0dqkYaE.gif)![gif](https://i.imgur.com/4JkEmB1.gif)![gif](https://i.imgur.com/V30Iaad.gif)![gif](https://i.imgur.com/v7z37X4.gif)![gif](https://i.imgur.com/gy9IHdc.gif)
 
 # Rewards
-![rewards](https://i.imgur.com/pJ1Ldtp.png)
+![rewards](https://assets-mod.factorio.com/assets/97d67bcd418a2a66b91aaf8e0aac0acd58c0dd95.png)
 # Main mod
-![mod](https://i.imgur.com/LQIta5u.png)
+![mod](https://assets-mod.factorio.com/assets/ea384e592dad3078caa75fb1d797c8ffc6b9ef2b.png)
 # Base resources
-![planet](https://i.imgur.com/pP8G6Lk.png)
+![planet](https://assets-mod.factorio.com/assets/32b0262eebcc7cf3a8a8a0dddd13818219af943d.png)
 
 # CREDITS & LICENCE
 - The soundtrack is from these two albums by **Anemoia**: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6), found on Free Music Archive under license CC-BY-NC-SA

@@ -15,7 +15,7 @@ Date: 2026-0
   Bugfixes:
     - Fixed recycling recipe for hypercell substation, solar panel and accumulator
   Changes:
-    - Removed settings that disabled some mods that are now optionnal
+    - Removed settings that disabled some mods that are now simply optional
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.10
 Date: 2026-07-04
