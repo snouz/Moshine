@@ -16,6 +16,13 @@ Date: 2026-0
     - Fixed recycling recipe for hypercell substation, solar panel and accumulator
   Changes:
     - Removed settings that disabled some mods that are now simply optional
+    - Solar power on Moshine orbit increased from x60 to x350
+    - Can build Data processor in space
+  Locale:
+    - Changed how data is stylized in datacells (blank﹎data)
+    - Changed Training data to foreign﹎data (to avoid confusion in english between the action and the purpose)
+  Sounds:
+    - Reduced the probability and volume of some music tracks playing ("Forever" and "Remnant") since their pulsations can be irritating to some players
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.10
 Date: 2026-07-04

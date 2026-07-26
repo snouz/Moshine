@@ -91,8 +91,9 @@ data:extend(
     sound =
     {
       filename = musicpath .. "Anemoia_Forever.ogg",
-      volume = vol + 0.3,
-    }
+      volume = vol,
+    },
+    weight = 0.2,
   },
   {
     type = "ambient-sound",
@@ -124,7 +125,7 @@ data:extend(
     sound =
     {
       filename = musicpath .. "Anemoia_Reflux.ogg",
-      volume = vol,
+      volume = vol -0.3,
     }
   },
   {
@@ -136,7 +137,8 @@ data:extend(
     {
       filename = musicpath .. "Anemoia_Remnant.ogg",
       volume = vol,
-    }
+    },
+    weight = 0.2,
   },
   {
     type = "ambient-sound",

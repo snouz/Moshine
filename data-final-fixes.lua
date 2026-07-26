@@ -4,7 +4,8 @@ if data.raw["lab"]["neural_computer"] then
     "datacell-empty",
     "datacell-raw-data",
     "datacell-ai-model-data",
-    "datacell-solved-equation"
+    "datacell-solved-equation",
+    "datacell-cosmic-data",
   }
 end
 

@@ -457,6 +457,54 @@ data:extend({
   },
   {
     type = "technology",
+    name = "moshine-tech-cosmicscanner",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "moshine_cosmicscanner"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "cosmic-data-outsignal-creation"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-cosmic-data-outsignal"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-remove-cosmic-data-outsignal"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "cosmic-data-creation"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-cosmic-data"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-remove-cosmic-data"
+      },
+    },
+    prerequisites = {"moshine-tech-ai-trainer"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-ai-model-data", 1},
+      },
+      time = 80
+    }
+  },
+  {
+    type = "technology",
     name = "moshine-tech-ai-tier-1",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-1.png",
     icon_size = 256,

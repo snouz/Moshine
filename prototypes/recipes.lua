@@ -4,6 +4,10 @@ data:extend({
     type = "recipe-category",
     name = "ai-training"
   },
+  {
+    type = "recipe-category",
+    name = "cosmic-data-creation"
+  },
 
 -- entities
 
@@ -131,6 +135,26 @@ data:extend({
       {type = "item", name = "model-unstable", amount = 1},
     },
     results = {{type="item", name="ai-trainer", amount=1}},
+    allow_productivity = false,
+    enabled = false,
+    sort_item_ingredients = false,
+  },
+  {
+    type = "recipe",
+    name = "moshine_cosmicscanner",
+    energy_required = 100,
+    categories = {"crafting"},
+    surface_conditions = {{ property = "gravity", min = 0, max = 0}},
+    ingredients =
+    {
+      {type = "item", name = "concrete", amount = 100},
+      {type = "item", name = "glass", amount = 400},
+      {type = "item", name = "processing-unit", amount = 50},
+      {type = "item", name = "model-stable", amount = 10},
+      {type = "item", name = "data-processor", amount = 1},
+      {type = "item", name = "model-unstable", amount = 1},
+    },
+    results = {{type="item", name="moshine_cosmicscanner", amount=1}},
     allow_productivity = false,
     enabled = false,
     sort_item_ingredients = false,
@@ -341,6 +365,129 @@ data:extend({
     auto_recycle = false,
     enabled = false,
     crafting_machine_tint = {primary = {109, 209, 94}}, --#6dd15e
+  },
+
+  {
+    type = "recipe",
+    name = "cosmic-data-outsignal-creation",
+    icon = "__Moshine__/graphics/icons/cosmic-data-outsignal.png",
+    categories = {"data-processing"},
+    --subgroup = "moshine-processes",
+    --order = "ggf",
+    hide_from_player_crafting = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "fluid", name = "raw-data", amount = 100},
+    },
+    results = {{type = "fluid", name = "cosmic-data-outsignal", amount = 1}},
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+  },
+
+  {
+    type = "recipe",
+    name = "cosmic-data-creation",
+    icon = "__Moshine__/graphics/icons/cosmic-data.png",
+    categories = {"cosmic-data-creation"},
+    --subgroup = "moshine-processes",
+    --order = "ggf",
+    hide_from_player_crafting = true,
+    energy_required = 100,
+    ingredients = {
+      {type = "fluid", name = "cosmic-data-outsignal", amount = 100},
+    },
+    results = {{type = "fluid", name = "cosmic-data", amount = 100}},
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+  },
+
+  {
+    type = "recipe",
+    name = "datacell-cosmic-data",
+    icon = "__Moshine__/graphics/icons/datacell-cosmic-data.png",
+    categories = {"data-processing"},
+    --subgroup = "moshine-processes",
+    --order = "ggf",
+    hide_from_player_crafting = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "item", name = "datacell-empty", amount = 1},
+      {type = "fluid", name = "cosmic-data", amount = 100},
+    },
+    results = {{type = "item", name = "datacell-cosmic-data", amount = 1}},
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+  },
+  {
+    type = "recipe",
+    name = "datacell-remove-cosmic-data",
+    icon = "__Moshine__/graphics/icons/datacell-remove-cosmic-data.png",
+    categories = {"data-processing"},
+    subgroup = "moshine-processes",
+    order = "ggf",
+    hide_from_player_crafting = true,
+    hide_from_stats = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "item", name = "datacell-cosmic-data", amount = 1},
+    },
+    results = {
+      {type = "item", name = "datacell-empty", amount = 1},
+      {type = "fluid", name = "cosmic-data", amount = 100},
+    },
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+  },
+
+
+  {
+    type = "recipe",
+    name = "datacell-cosmic-data-outsignal",
+    icon = "__Moshine__/graphics/icons/datacell-cosmic-data-outsignal.png",
+    categories = {"data-processing"},
+    --subgroup = "moshine-processes",
+    --order = "ggf",
+    hide_from_player_crafting = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "item", name = "datacell-empty", amount = 1},
+      {type = "fluid", name = "cosmic-data-outsignal", amount = 100},
+    },
+    results = {{type = "item", name = "datacell-cosmic-data-outsignal", amount = 1}},
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+  },
+  {
+    type = "recipe",
+    name = "datacell-remove-cosmic-data-outsignal",
+    icon = "__Moshine__/graphics/icons/datacell-remove-cosmic-data-outsignal.png",
+    categories = {"data-processing"},
+    subgroup = "moshine-processes",
+    order = "ggf",
+    hide_from_player_crafting = true,
+    hide_from_stats = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "item", name = "datacell-cosmic-data-outsignal", amount = 1},
+    },
+    results = {
+      {type = "item", name = "datacell-empty", amount = 1},
+      {type = "fluid", name = "cosmic-data-outsignal", amount = 100},
+    },
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
   },
 
   {

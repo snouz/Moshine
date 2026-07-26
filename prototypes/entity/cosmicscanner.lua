@@ -1,17 +1,20 @@
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
- 
+
+local size = 11
+
+
 data:extend({
   {
     type = "corpse",
-    name = "data-processor-remnants",
-    icon = "__Moshine__/graphics/icons/data-processor.png",
+    name = "moshine_cosmicscanner-remnants",
+    icon = "__Moshine__/graphics/icons/moshine_cosmicscanner.png",
     flags = {"placeable-neutral", "not-on-map"},
     hidden_in_factoriopedia = true,
     subgroup = "production-machine-remnants",
     order = "a-a-a",
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    selection_box = {{-(size/2), -(size/2)}, {(size/2), (size/2)}},
     tile_width = 3,
     tile_height = 3,
     selectable_in_game = false,
@@ -19,7 +22,7 @@ data:extend({
     expires = false,
     final_render_layer = "remnants",
     animation = {
-      filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-remnants.png",
+      filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-remnants.png",
       priority="high",
       width = 290,
       height = 290,
@@ -31,22 +34,23 @@ data:extend({
   },
   {
     type = "assembling-machine",
-    name = "data-processor",
-    icon = "__Moshine__/graphics/icons/data-processor.png",
+    name = "moshine_cosmicscanner",
+    icon = "__Moshine__/graphics/icons/moshine_cosmicscanner.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    fixed_recipe = "cosmic-data-creation",
     minable = {mining_time = 1, result = "data-processor"},
-    crafting_categories = {"data-processing"},
-    max_health = 300,
-    corpse = "data-processor-remnants",
+    crafting_categories = {"cosmic-data-creation"},
+    max_health = 1500,
+    corpse = "moshine_cosmicscanner-remnants",
     dying_explosion = "assembling-machine-1-explosion",
-    icon_draw_specification = {shift = {0, 0}, scale = 0.7},
-    --surface_conditions =
-    --{
-    --  {
-    --    property = "gravity",
-    --    min = 0.1,
-    --  },
-    --},
+    icon_draw_specification = {shift = {0, 0}, scale = 1},
+    surface_conditions =
+    {
+      {
+        property = "gravity",
+        max = 0,
+      },
+    },
     resistances =
     {
       {
@@ -63,10 +67,10 @@ data:extend({
         volume = 10000,
         --filter = "raw-data",
         pipe_connections = {
-          {flow_direction = "input", direction = defines.direction.north, position = {0, -1}, connection_category = "data"},
-          {flow_direction = "input", direction = defines.direction.east, position = {1, 0}, connection_category = "data"},
-          {flow_direction = "input", direction = defines.direction.south, position = {0, 1}, connection_category = "data"},
-          {flow_direction = "input", direction = defines.direction.west, position = {-1, 0}, connection_category = "data"}
+          {flow_direction = "input", direction = defines.direction.north, position = {0, -((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "input", direction = defines.direction.east, position = {((size/2)-0.5), 0}, connection_category = "data"},
+          {flow_direction = "input", direction = defines.direction.south, position = {0, ((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "input", direction = defines.direction.west, position = {-((size/2)-0.5), 0}, connection_category = "data"}
         },
         secondary_draw_orders = { north = -1 },
         max_pipeline_extent = 1000000,
@@ -78,23 +82,23 @@ data:extend({
         volume = 10000,
         --filter = "raw-data",
         pipe_connections = {
-          {flow_direction = "output", direction = defines.direction.north, position = {-1, -1}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.north, position = {1, -1}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.east, position = {1, -1}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.east, position = {1, 1}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.south, position = {1, 1}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.south, position = {-1, 1}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.west, position = {-1, 1}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.west, position = {-1, -1}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.north, position = {-((size/2)-0.5), -((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.north, position = {((size/2)-0.5), -((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.east, position = {((size/2)-0.5), -((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.east, position = {((size/2)-0.5), ((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.south, position = {((size/2)-0.5), ((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.south, position = {-((size/2)-0.5), ((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.west, position = {-((size/2)-0.5), ((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.west, position = {-((size/2)-0.5), -((size/2)-0.5)}, connection_category = "data"},
         },
         secondary_draw_orders = { north = -1 },
         max_pipeline_extent = 1000000,
       },
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-((size/2)-0.3), -((size/2)-0.3)}, {((size/2)-0.3), ((size/2)-0.3)}},
+    selection_box = {{-(size/2), -(size/2)}, {(size/2), (size/2)}},
     damaged_trigger_effect = hit_effects.entity(),
-    fast_replaceable_group = "data-processor",
+    fast_replaceable_group = "moshine_cosmicscanner",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions.create_vector
     (
@@ -131,10 +135,10 @@ data:extend({
         layers =
         {
           {
-            filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-base.png",
+            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-base.png",
             priority="high",
-            width = 290,
-            height = 290,
+            width = 832,
+            height = 832,
             repeat_count = 30,
             line_length = 1,
             animation_speed = 0.15,
@@ -142,7 +146,7 @@ data:extend({
             scale = 0.5
           },
           {
-            filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-shadow.png",
+            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-shadow.png",
             priority="high",
             width = 400,
             height = 350,
@@ -154,7 +158,7 @@ data:extend({
             scale = 0.5
           },
           {
-            filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-animation-1.png",
+            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-animation-1.png",
             priority="high",
             width = 160,
             height = 290,
@@ -180,7 +184,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-animation-1.png",
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-animation-1.png",
                 priority = "high",
                 width = 160,
                 height = 290,
@@ -192,7 +196,7 @@ data:extend({
                 scale = 0.5
               },
               {
-                filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-2.png",
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-emission-2.png",
                 priority = "high",
                 width = 160,
                 height = 290,
@@ -219,7 +223,7 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-emission-1.png",
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-emission-1.png",
                 priority = "high",
                 width = 160,
                 height = 290,
@@ -236,16 +240,6 @@ data:extend({
           },
         },
       },
-      frozen_patch =
-      {
-        filename = "__Moshine-assets__/graphics/entity/data-processor/suit-plug-outlet-hr-frozen.png",
-        priority="high",
-        width = 290,
-        height = 290,
-        shift = util.by_pixel(0, -16),
-        scale = 0.5
-      },
-      reset_animation_when_frozen = true,
     },
 
 
@@ -256,18 +250,19 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = 4 }
+      --emissions_per_minute = { pollution = 4 }
+      drain = "1kW",
     },
-    energy_usage = "350kW",
-    heating_energy = "200kW",
+    energy_usage = "11GW",
+    --heating_energy = "200kW",
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     --allowed_effects = {"speed", "consumption", "pollution"},
     --effect_receiver = {uses_module_effects = false, uses_beacon_effects = false, uses_surface_effects = true},
-    module_slots = 4,
-    allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
-    allowed_module_categories = {"ai-speed"},
-    effect_receiver = {uses_module_effects = true, uses_beacon_effects = false, uses_surface_effects = true},
+    module_slots = 0,
+    --allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
+    --allowed_module_categories = {"ai-speed"},
+    --effect_receiver = {uses_module_effects = true, uses_beacon_effects = false, uses_surface_effects = true},
     impact_category = "metal",
     working_sound =
     {

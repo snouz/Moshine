@@ -293,7 +293,7 @@ data:extend({
     subgroup = "planets",
     map_gen_settings = planet_map_gen.moshine(),
     pollutant_type = nil,
-    solar_power_in_space = 6000,
+    solar_power_in_space = 35000,
     platform_procession_set =
     {
       arrival = {"planet-to-platform-b"},
