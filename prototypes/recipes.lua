@@ -669,8 +669,8 @@ data:extend({
     energy_required = 10,
     ingredients = {{type = "item", name = "ai-tier-1", amount = 1}},
     results = {
-      {type="item", name="ai-tier-2", amount=1, shared_probability = { min = 0.4, max = 0.99 }},
-      {type="item", name="ai-tier-1", amount=1, shared_probability = { min = 0, max = 0.59 }},
+      {type="item", name="ai-tier-2", amount=1, shared_probability = { min = 0, max = 0.50 }},
+      {type="item", name="ai-tier-1", amount=1, shared_probability = { min = 0.50, max = 0.99 }},
       {type="item", name="model-unstable", amount=1, shared_probability = { min = 0.99, max = 1 }},
     },
     main_product = "ai-tier-2",

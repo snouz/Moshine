@@ -28,7 +28,7 @@ data:extend({
       height = 290,
       line_length = 1,
       direction_count = 1,
-      shift = util.by_pixel(0, -16),
+      --shift = util.by_pixel(0, -16),
       scale = 0.5
     },
   },
@@ -142,7 +142,7 @@ data:extend({
             repeat_count = 30,
             line_length = 1,
             animation_speed = 0.15,
-            shift = util.by_pixel(0, -16),
+            --shift = util.by_pixel(0, -16),
             scale = 0.5
           },
           {
@@ -154,7 +154,7 @@ data:extend({
             line_length = 1,
             draw_as_shadow = true,
             animation_speed = 0.15,
-            shift = util.by_pixel(0, -16),
+            --shift = util.by_pixel(0, -16),
             scale = 0.5
           },
           {
@@ -166,7 +166,7 @@ data:extend({
             line_length = 8,
             animation_speed = 0.15,
             run_mode = "forward-then-backward",
-            shift = util.by_pixel(0, -16),
+            --shift = util.by_pixel(0, -16),
             scale = 0.5
           },
           
@@ -192,7 +192,7 @@ data:extend({
                 line_length = 8,
                 animation_speed = 0.15,
                 run_mode = "forward-then-backward",
-                shift = util.by_pixel(0, -16),
+                --shift = util.by_pixel(0, -16),
                 scale = 0.5
               },
               {
@@ -206,7 +206,7 @@ data:extend({
                 run_mode = "forward-then-backward",
                 draw_as_glow = true,
                 blend_mode = "additive",
-                shift = util.by_pixel(0, -16),
+                --shift = util.by_pixel(0, -16),
                 scale = 0.5
               },
             }
@@ -233,7 +233,7 @@ data:extend({
                 run_mode = "forward-then-backward",
                 draw_as_glow = true,
                 blend_mode = "additive",
-                shift = util.by_pixel(0, -16),
+                --shift = util.by_pixel(0, -16),
                 scale = 0.5
               },
             }
@@ -253,7 +253,7 @@ data:extend({
       --emissions_per_minute = { pollution = 4 }
       drain = "1kW",
     },
-    energy_usage = "11GW",
+    energy_usage = "30GW",
     --heating_energy = "200kW",
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,

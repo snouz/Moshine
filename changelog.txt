@@ -14,9 +14,10 @@ Date: 2026-0
     - Reworked accumulator sprite and animation
   Bugfixes:
     - Fixed recycling recipe for hypercell substation, solar panel and accumulator
+    - Fixed ai-tier-2 recipe result probability
   Changes:
     - Removed settings that disabled some mods that are now simply optional
-    - Solar power on Moshine orbit increased from x60 to x350
+    - Solar power on Moshine orbit increased from x60 to x600
     - Can build Data processor in space
   Locale:
     - Changed how data is stylized in datacells (blank﹎data)
