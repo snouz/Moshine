@@ -389,7 +389,7 @@ data:extend({
   {
     type = "recipe",
     name = "cosmic-data-creation",
-    icon = "__Moshine__/graphics/icons/cosmic-data.png",
+    icon = "__Moshine__/graphics/icons/cosmos-scanning.png",
     categories = {"cosmic-data-creation"},
     --subgroup = "moshine-processes",
     --order = "ggf",

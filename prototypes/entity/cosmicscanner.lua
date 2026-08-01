@@ -2,21 +2,22 @@ local hit_effects = require("__base__.prototypes.entity.hit-effects")
 local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
 
-local size = 11
-
+local size = 14
+local pipedistance = 0.5
+local pipedistance2 = 0.5
 
 data:extend({
   {
     type = "corpse",
     name = "moshine_cosmicscanner-remnants",
     icon = "__Moshine__/graphics/icons/moshine_cosmicscanner.png",
-    flags = {"placeable-neutral", "not-on-map"},
+    flags = {"placeable-neutral", "not-on-map", "not-rotatable"},
     hidden_in_factoriopedia = true,
     subgroup = "production-machine-remnants",
     order = "a-a-a",
     selection_box = {{-(size/2), -(size/2)}, {(size/2), (size/2)}},
-    tile_width = 3,
-    tile_height = 3,
+    tile_width = size,
+    tile_height = size,
     selectable_in_game = false,
     time_before_removed = 60 * 60 * 15, -- 15 minutes
     expires = false,
@@ -24,8 +25,8 @@ data:extend({
     animation = {
       filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-remnants.png",
       priority="high",
-      width = 290,
-      height = 290,
+      width = 1024,
+      height = 1024,
       line_length = 1,
       direction_count = 1,
       --shift = util.by_pixel(0, -16),
@@ -43,7 +44,8 @@ data:extend({
     max_health = 1500,
     corpse = "moshine_cosmicscanner-remnants",
     dying_explosion = "assembling-machine-1-explosion",
-    icon_draw_specification = {shift = {0, 0}, scale = 1},
+    show_recipe_icon = false,
+    icon_draw_specification = {shift = {0, 5.5}, scale = 1},
     surface_conditions =
     {
       {
@@ -67,10 +69,14 @@ data:extend({
         volume = 10000,
         --filter = "raw-data",
         pipe_connections = {
-          {flow_direction = "input", direction = defines.direction.north, position = {0, -((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "input", direction = defines.direction.east, position = {((size/2)-0.5), 0}, connection_category = "data"},
-          {flow_direction = "input", direction = defines.direction.south, position = {0, ((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "input", direction = defines.direction.west, position = {-((size/2)-0.5), 0}, connection_category = "data"}
+          --{flow_direction = "input", direction = defines.direction.north, position = {pipedistance, -((size/2)-0.5)}, connection_category = "data"},
+          --{flow_direction = "input", direction = defines.direction.north, position = {-pipedistance, -((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "input", direction = defines.direction.east, position = {((size/2)-0.5), pipedistance}, connection_category = "data"},
+          {flow_direction = "input", direction = defines.direction.east, position = {((size/2)-0.5), -pipedistance}, connection_category = "data"},
+          --{flow_direction = "input", direction = defines.direction.south, position = {pipedistance, ((size/2)-0.5)}, connection_category = "data"},
+          --{flow_direction = "input", direction = defines.direction.south, position = {-pipedistance, ((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "input", direction = defines.direction.west, position = {-((size/2)-0.5), pipedistance}, connection_category = "data"},
+          {flow_direction = "input", direction = defines.direction.west, position = {-((size/2)-0.5), -pipedistance}, connection_category = "data"},
         },
         secondary_draw_orders = { north = -1 },
         max_pipeline_extent = 1000000,
@@ -82,14 +88,14 @@ data:extend({
         volume = 10000,
         --filter = "raw-data",
         pipe_connections = {
-          {flow_direction = "output", direction = defines.direction.north, position = {-((size/2)-0.5), -((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.north, position = {((size/2)-0.5), -((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.east, position = {((size/2)-0.5), -((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.east, position = {((size/2)-0.5), ((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.south, position = {((size/2)-0.5), ((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.south, position = {-((size/2)-0.5), ((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.west, position = {-((size/2)-0.5), ((size/2)-0.5)}, connection_category = "data"},
-          {flow_direction = "output", direction = defines.direction.west, position = {-((size/2)-0.5), -((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.north, position = {pipedistance2, -((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.north, position = {-pipedistance2, -((size/2)-0.5)}, connection_category = "data"},
+          --{flow_direction = "output", direction = defines.direction.east, position = {((size/2)-0.5), pipedistance2}, connection_category = "data"},
+          --{flow_direction = "output", direction = defines.direction.east, position = {((size/2)-0.5), -pipedistance2}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.south, position = {pipedistance2, ((size/2)-0.5)}, connection_category = "data"},
+          {flow_direction = "output", direction = defines.direction.south, position = {-pipedistance2, ((size/2)-0.5)}, connection_category = "data"},
+          --{flow_direction = "output", direction = defines.direction.west, position = {-((size/2)-0.5), pipedistance2}, connection_category = "data"},
+          --{flow_direction = "output", direction = defines.direction.west, position = {-((size/2)-0.5), -pipedistance2}, connection_category = "data"},
         },
         secondary_draw_orders = { north = -1 },
         max_pipeline_extent = 1000000,
@@ -137,14 +143,14 @@ data:extend({
           {
             filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-base.png",
             priority="high",
-            width = 832,
-            height = 832,
+            width = 1024,
+            height = 1024,
             repeat_count = 30,
             line_length = 1,
             animation_speed = 0.15,
             --shift = util.by_pixel(0, -16),
             scale = 0.5
-          },
+          },--[[
           {
             filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-shadow.png",
             priority="high",
@@ -156,9 +162,9 @@ data:extend({
             animation_speed = 0.15,
             --shift = util.by_pixel(0, -16),
             scale = 0.5
-          },
+          },]]
           {
-            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-animation-1.png",
+            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-idle-animation.png",
             priority="high",
             width = 160,
             height = 290,
@@ -169,7 +175,6 @@ data:extend({
             --shift = util.by_pixel(0, -16),
             scale = 0.5
           },
-          
         }
       },
       working_visualisations =
@@ -184,53 +189,26 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-animation-1.png",
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-working-animation.png",
                 priority = "high",
                 width = 160,
                 height = 290,
                 frame_count = 16,
                 line_length = 8,
                 animation_speed = 0.15,
-                run_mode = "forward-then-backward",
+                run_mode = "forward",
                 --shift = util.by_pixel(0, -16),
                 scale = 0.5
               },
               {
-                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-emission-2.png",
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-emission.png",
                 priority = "high",
                 width = 160,
                 height = 290,
                 frame_count = 16,
                 line_length = 8,
                 animation_speed = 0.15,
-                run_mode = "forward-then-backward",
-                draw_as_glow = true,
-                blend_mode = "additive",
-                --shift = util.by_pixel(0, -16),
-                scale = 0.5
-              },
-            }
-          },
-        },
-        {
-          name = "rotation2",
-          apply_recipe_tint = "primary",
-          constant_speed = true,
-          always_draw = true,
-          draw_in_states = {"working"},
-          animation = 
-          { 
-            layers =
-            {
-              {
-                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-emission-1.png",
-                priority = "high",
-                width = 160,
-                height = 290,
-                frame_count = 16,
-                line_length = 8,
-                animation_speed = 0.15,
-                run_mode = "forward-then-backward",
+                run_mode = "forward",
                 draw_as_glow = true,
                 blend_mode = "additive",
                 --shift = util.by_pixel(0, -16),
@@ -240,6 +218,15 @@ data:extend({
           },
         },
       },
+      integration_patch =
+      {
+        filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-underplatform.png",
+        priority = crash_site_sprite_priority,
+        width = 1024,
+        height = 1772,
+        scale = 0.5
+      },
+      integration_patch_render_layer = "background-transitions",
     },
 
 

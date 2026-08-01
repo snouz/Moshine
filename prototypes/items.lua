@@ -117,9 +117,9 @@ data:extend({
     inventory_move_sound = item_sounds.mechanical_large_inventory_move,
     pick_sound = item_sounds.mechanical_large_inventory_pickup,
     drop_sound = item_sounds.mechanical_large_inventory_move,
-    place_result = "moshine_cosmicscanner",
+    place_result = "moshine_cosmicscanner-scaffolding",
     stack_size = 1,
-    weight = 2000 * kg,
+    weight = 1000 * kg,
     default_import_location = "moshine"
   },
 
