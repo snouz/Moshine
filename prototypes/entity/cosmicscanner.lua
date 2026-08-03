@@ -171,6 +171,8 @@ data:extend({
             repeat_count = animframes,
             line_length = 1,
             animation_speed = animspeed,
+            draw_as_glow = true,
+            blend_mode = "additive",
             scale = 0.5
           },
         }
@@ -182,21 +184,12 @@ data:extend({
           constant_speed = true,
           always_draw = true,
           draw_in_states = {"working"},
+          render_layer = "higher-object-under",
+          apply_tint = "status",
           animation = 
           { 
             layers =
             {
-              {
-                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-working-animation.png",
-                priority = "high",
-                width = 1,
-                height = 1,
-                frame_count = animframes,
-                line_length = 8,
-                animation_speed = animspeed,
-                run_mode = "forward",
-                scale = 0.5
-              },
               {
                 filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-emission.png",
                 priority = "high",
@@ -214,10 +207,11 @@ data:extend({
           },
         },
         {
-          name = "rotation",
+          name = "dome",
           constant_speed = true,
           always_draw = true,
           draw_in_states = {"idle", "working"},
+          render_layer = "higher-object-above",
           animation = 
           { 
             layers =
@@ -248,6 +242,7 @@ data:extend({
           effect = "flicker",
           frame_based_on_shift_animation_progress = false,
           apply_tint = "status",
+          render_layer = "train-stop-top",
           animation = 
           { 
             layers =
@@ -313,8 +308,7 @@ data:extend({
     --allowed_effects = {"speed"}, --{"consumption", "speed", "pollution", "quality"}, --"productivity"
     --allowed_module_categories = {"ai-speed"},
     --effect_receiver = {uses_module_effects = true, uses_beacon_effects = false, uses_surface_effects = true},
-    impact_category = "metal",
-    working_sound =
+    --[[working_sound =
     {
       sound =
       {
@@ -327,6 +321,25 @@ data:extend({
       activity_to_volume_modifiers = {offset = 2, inverted = true},
       fade_in_ticks = 4,
       fade_out_ticks = 20,
+    },]]
+
+
+    impact_category = "metal-large",
+    open_sound = {filename = "__Moshine-assets__/sound/cosmic-scanner/scanner-open.ogg", volume = 0.9},
+    --close_sound = {filename = "__matter_printer__/sound/zap-38.ogg", volume = 0.5},
+    working_sound =
+    {
+      sound = {filename = "__Moshine-assets__/sound/cosmic-scanner/scanner-continuous.ogg", volume = 0.9},
+      max_sounds_per_prototype = 5,
+      fade_in_ticks = 20,
+      fade_out_ticks = 20,
+      sound_accents = {
+        {
+          sound = {filename = "__Moshine-assets__/sound/cosmic-scanner/scanner-repeated-sound.ogg",},
+          frame = 1,
+          play_for_working_visualisation = "pulselight"
+        },
+      },
     },
   },
 })

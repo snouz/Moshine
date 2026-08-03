@@ -1,7 +1,7 @@
 -- Script by Talandar
 
 local prestage_number = 4
-local required_crafts = 20
+local required_crafts = 15
 
 script.on_init(function()
   storage.megastructure_progress = storage.megastructure_progress or {}

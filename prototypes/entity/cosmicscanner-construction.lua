@@ -6,7 +6,7 @@ local megastructure_stages = {
   {
     name = "moshine_cosmicscanner-construction-stage-1",
     upgrade_recipe = {
-      energy_required = 4,
+      energy_required = 10,
       ingredients = {
         { type = "item", name = "steel-plate", amount = 120 },
         { type = "item", name = "concrete", amount = 150 },
@@ -16,7 +16,7 @@ local megastructure_stages = {
   {
     name = "moshine_cosmicscanner-construction-stage-2",
     upgrade_recipe = {
-      energy_required = 6,
+      energy_required = 12,
       ingredients = {
         { type = "item", name = "low-density-structure", amount = 50 },
         { type = "item", name = "steel-plate", amount = 200 },
@@ -26,7 +26,7 @@ local megastructure_stages = {
   {
     name = "moshine_cosmicscanner-construction-stage-3",
     upgrade_recipe = {
-      energy_required = 9,
+      energy_required = 14,
       ingredients = {
         { type = "item", name = "electric-engine-unit", amount = 40 },
         { type = "item", name = "steel-plate", amount = 200 },
@@ -36,7 +36,7 @@ local megastructure_stages = {
   {
     name = "moshine_cosmicscanner-construction-stage-4",
     upgrade_recipe = {
-      energy_required = 15,
+      energy_required = 16,
       ingredients = {
         { type = "item", name = "processing-unit", amount = 50 },
         { type = "item", name = "electric-engine-unit", amount = 40 },
@@ -150,7 +150,7 @@ for i, stage in ipairs(megastructure_stages) do
         scale = 0.5
       },
       integration_patch_render_layer = "background-transitions",
-      animation = {
+      idle_animation = {
         layers = {
           {
             filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/" .. entity_name .. ".png",
@@ -164,6 +164,66 @@ for i, stage in ipairs(megastructure_stages) do
           },
         },
       },
+      animation_progress = 0.05,
+      always_draw_idle_animation = true,
+      states =
+      {
+        {
+          name = "idle",
+          duration = 1,
+          next_active = "working",
+          next_inactive = "idle",
+        },
+        {
+          name = "working",
+          duration = 50,
+          next_active = "working",
+          next_inactive = "idle",
+        },
+      },
+      working_visualisations = {
+        {
+          name = "constructionlights",
+          constant_speed = true,
+          --always_draw = true,
+          draw_in_states = {"working"},
+          --fadeout = true,
+          effect = "flicker",
+          --frame_based_on_shift_animation_progress = false,
+          --apply_tint = "status",
+          render_layer = "train-stop-top",
+          animation = 
+          { 
+            layers =
+            {
+              {
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/" .. entity_name .. "-light.png",
+                priority = "high",
+                width = 1024,
+                height = 1024,
+                frame_count = 2,
+                line_length = 2,
+                frame_sequence = {1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1},
+                animation_speed = 0.05,
+                run_mode = "forward-then-backward",
+                draw_as_glow = true,
+                blend_mode = "additive",
+                scale = 0.5,
+                --render_layer = "",
+              },
+            }
+          },
+        },
+      },
+    },
+    impact_category = "metal-large",
+    open_sound = {filename = "__Moshine-assets__/sound/cosmic-scanner/scanner-open.ogg", volume = 0.9},
+    working_sound =
+    {
+      sound = {filename = "__Moshine-assets__/sound/cosmic-scanner/construction-loop.ogg", volume = 1},
+      max_sounds_per_prototype = 3,
+      fade_in_ticks = 20,
+      fade_out_ticks = 20,
     },
   }
 
@@ -191,6 +251,7 @@ for i, stage in ipairs(megastructure_stages) do
         hidden = true,
         hidden_in_factoriopedia = true,
         hide_from_player_crafting = true,
+        surface_conditions = {{ property = "gravity", min = 0, max = 0}},
       },
     })
   end
