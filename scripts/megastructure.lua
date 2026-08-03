@@ -14,10 +14,10 @@ script.on_configuration_changed(function()
 end)
 
 local stage_names = {
-  "moshine_cosmicscanner-scaffolding",
   "moshine_cosmicscanner-construction-stage-1",
   "moshine_cosmicscanner-construction-stage-2",
   "moshine_cosmicscanner-construction-stage-3",
+  "moshine_cosmicscanner-construction-stage-4",
   "moshine_cosmicscanner",
 }
 
@@ -34,7 +34,7 @@ local function create_or_update_text(entity, progress)
   end
 
   local new_obj = rendering.draw_text({
-    text = progress .. " / " .. required_crafts,
+    text = progress .. "/" .. required_crafts,
     surface = entity.surface,
     target = entity,
     target_offset = {0, 4.5},
@@ -118,7 +118,7 @@ script.on_event(defines.events.on_script_trigger_effect, function(event)
       return
     end
 
-    if entity.name == "moshine_cosmicscanner-scaffolding" then
+    if entity.name == "moshine_cosmicscanner-construction-stage-1" then
       storage.megastructure_progress = storage.megastructure_progress or {}
       storage.megastructure_progress[entity.unit_number] = 0
       create_or_update_text(entity, 0)

@@ -1,10 +1,12 @@
 --code mostly by Talandar
+local item_sounds = require("__base__.prototypes.item_sounds")
+
 
 local megastructure_stages = {
   {
-    name = "moshine_cosmicscanner-scaffolding",
+    name = "moshine_cosmicscanner-construction-stage-1",
     upgrade_recipe = {
-      energy_required = 3,
+      energy_required = 4,
       ingredients = {
         { type = "item", name = "steel-plate", amount = 120 },
         { type = "item", name = "concrete", amount = 150 },
@@ -12,9 +14,9 @@ local megastructure_stages = {
     },
   },
   {
-    name = "moshine_cosmicscanner-construction-stage-1",
+    name = "moshine_cosmicscanner-construction-stage-2",
     upgrade_recipe = {
-      energy_required = 5,
+      energy_required = 6,
       ingredients = {
         { type = "item", name = "low-density-structure", amount = 50 },
         { type = "item", name = "steel-plate", amount = 200 },
@@ -22,7 +24,7 @@ local megastructure_stages = {
     },
   },
   {
-    name = "moshine_cosmicscanner-construction-stage-2",
+    name = "moshine_cosmicscanner-construction-stage-3",
     upgrade_recipe = {
       energy_required = 9,
       ingredients = {
@@ -32,9 +34,9 @@ local megastructure_stages = {
     },
   },
   {
-    name = "moshine_cosmicscanner-construction-stage-3",
+    name = "moshine_cosmicscanner-construction-stage-4",
     upgrade_recipe = {
-      energy_required = 10,
+      energy_required = 15,
       ingredients = {
         { type = "item", name = "processing-unit", amount = 50 },
         { type = "item", name = "electric-engine-unit", amount = 40 },
@@ -49,16 +51,60 @@ data:extend({
     type = "recipe-category",
     name = "moshine_cosmicscanner-building",
   },
+
+  {
+    type = "item-subgroup",
+    name = "moshine-space-platform",
+    group = "space",
+    order = "a2"
+  },
+
   {
     type = "item",
-    name = "moshine_cosmicscanner-scaffolding",
-    icon = "__Moshine__/graphics/icons/moshine_cosmicscanner-scaffolding.png",
+    name = "moshine_cosmicscanner-construction-stage-1",
+    icon = "__Moshine__/graphics/icons/moshine_cosmicscanner-construction-stage-1.png",
+    --subgroup = "moshine-production-machine",
+    --order = "ffl",
+    subgroup = "moshine-space-platform",
+    order = "a[moshine_cosmicscanner]",
+    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
+    pick_sound = item_sounds.mechanical_large_inventory_pickup,
+    drop_sound = item_sounds.mechanical_large_inventory_move,
+    place_result = "moshine_cosmicscanner-construction-stage-1",
+    stack_size = 1,
+    weight = 1000 * kg,
+    default_import_location = "moshine"
+  },
+  {
+    type = "recipe",
+    name = "moshine_cosmicscanner",
+    energy_required = 100,
+    categories = {"crafting"},
+    surface_conditions = {{ property = "gravity", min = 0, max = 0}},
+    ingredients =
+    {
+      {type = "item", name = "concrete", amount = 100},
+      {type = "item", name = "glass", amount = 400},
+      {type = "item", name = "processing-unit", amount = 50},
+      {type = "item", name = "model-stable", amount = 10},
+      {type = "item", name = "data-processor", amount = 1},
+      {type = "item", name = "model-unstable", amount = 1},
+    },
+    results = {{type="item", name="moshine_cosmicscanner-construction-stage-1", amount=1}},
+    allow_productivity = false,
+    enabled = false,
+    sort_item_ingredients = false,
+  },
+  --[[{
+    type = "item",
+    name = "moshine_cosmicscanner-construction-stage-1",
+    icon = "__Moshine__/graphics/icons/moshine_cosmicscanner-construction-stage-1.png",
     icon_size = 64,
     subgroup = "space-platform",
     order = "a[moshine_cosmicscanner]",
-    place_result = "moshine_cosmicscanner-scaffolding",
+    place_result = "moshine_cosmicscanner-construction-stage-1",
     stack_size = 10,
-  },
+  },]]
 })
 
 for i, stage in ipairs(megastructure_stages) do
@@ -71,7 +117,7 @@ for i, stage in ipairs(megastructure_stages) do
     icon = "__Moshine__/graphics/icons/" .. entity_name .. ".png",
     icon_size = 64,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 10, result = "moshine_cosmicscanner-scaffolding"},
+    minable = {mining_time = 10, result = "moshine_cosmicscanner-construction-stage-1"},
     max_health = 3000 - (i * 300),
     collision_box = {{-((size/2)-0.3), -((size/2)-0.3)}, {((size/2)-0.3), ((size/2)-0.3)}},
     selection_box = {{-(size/2), -(size/2)}, {(size/2), (size/2)}},
@@ -79,6 +125,7 @@ for i, stage in ipairs(megastructure_stages) do
     crafting_speed = 1,
     energy_source = { type = "electric", usage_priority = "secondary-input" },
     energy_usage = i * 360 .. "MW",
+    icon_draw_specification = {shift = {0, 5.5}, scale = 1.2},
     surface_conditions = {
       { property = "gravity", min = 0, max = 0 },
     },

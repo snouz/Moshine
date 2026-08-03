@@ -21,6 +21,12 @@ data:extend({
     group = "production",
     order = "e2"
   },
+  {
+    type = "item-subgroup",
+    name = "moshine-datacells",
+    group = "intermediate-products",
+    order = "pb"
+  },
 
 --- entities begin
 
@@ -108,21 +114,6 @@ data:extend({
     weight = 50 * kg,
     default_import_location = "moshine"
   },
-  {
-    type = "item",
-    name = "moshine_cosmicscanner",
-    icon = "__Moshine__/graphics/icons/moshine_cosmicscanner.png",
-    subgroup = "moshine-production-machine",
-    order = "ffl",
-    inventory_move_sound = item_sounds.mechanical_large_inventory_move,
-    pick_sound = item_sounds.mechanical_large_inventory_pickup,
-    drop_sound = item_sounds.mechanical_large_inventory_move,
-    place_result = "moshine_cosmicscanner-scaffolding",
-    stack_size = 1,
-    weight = 1000 * kg,
-    default_import_location = "moshine"
-  },
-
 --tile
   {
     type = "item",
@@ -310,8 +301,8 @@ data:extend({
     type = "item",
     name = "datacell-empty", -- renamed Datacell[empty]
     icon = "__Moshine__/graphics/icons/datacell-empty.png",
-    subgroup = "moshine-processes",
-    order = "gga",
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-aa",
     inventory_move_sound = item_sounds.metal_small_inventory_move,
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
@@ -342,8 +333,8 @@ data:extend({
     type = "item",
     name = "datacell-raw-data",
     icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
-    subgroup = "moshine-processes",
-    order = "ggb",
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-ab",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
     drop_sound = item_sounds.module_inventory_move,
@@ -359,8 +350,8 @@ data:extend({
     type = "item",
     name = "datacell-ai-model-data",
     icon = "__Moshine__/graphics/icons/datacell-ai-model-data.png",
-    subgroup = "moshine-processes",
-    order = "ggc",
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-ba",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
     drop_sound = item_sounds.module_inventory_move,
@@ -376,8 +367,8 @@ data:extend({
     type = "item",
     name = "datacell-equation",
     icon = "__Moshine__/graphics/icons/datacell-equation.png",
-    subgroup = "moshine-processes",
-    order = "ggd",
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-ca",
     plant_result = "processing-grid-process-equation",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
@@ -395,26 +386,8 @@ data:extend({
     type = "item",
     name = "datacell-solved-equation",
     icon = "__Moshine__/graphics/icons/datacell-solved-equation.png",
-    subgroup = "moshine-processes",
-    order = "gge",
-    inventory_move_sound = item_sounds.module_inventory_move,
-    pick_sound = item_sounds.module_inventory_pickup,
-    drop_sound = item_sounds.module_inventory_move,
-    default_import_location = "moshine",
-    --durability = 1,
-    --durability_description_key = "description.science-pack-remaining-amount-key",
-    --factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
-    --durability_description_value = "description.science-pack-remaining-amount-value",
-    stack_size = 40,
-    weight = 5*kg,
-  },
-
-  {
-    type = "item",
-    name = "datacell-cosmic-data",
-    icon = "__Moshine__/graphics/icons/datacell-cosmic-data.png",
-    subgroup = "moshine-processes",
-    order = "ggf",
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-cb",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
     drop_sound = item_sounds.module_inventory_move,
@@ -431,8 +404,8 @@ data:extend({
     type = "item",
     name = "datacell-cosmic-data-outsignal",
     icon = "__Moshine__/graphics/icons/datacell-cosmic-data-outsignal.png",
-    subgroup = "moshine-processes",
-    order = "ggg",
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-db",
     inventory_move_sound = item_sounds.module_inventory_move,
     pick_sound = item_sounds.module_inventory_pickup,
     drop_sound = item_sounds.module_inventory_move,
@@ -445,6 +418,24 @@ data:extend({
     weight = 5*kg,
   },
 
+
+  {
+    type = "item",
+    name = "datacell-cosmic-data",
+    icon = "__Moshine__/graphics/icons/datacell-cosmic-data.png",
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-eb",
+    inventory_move_sound = item_sounds.module_inventory_move,
+    pick_sound = item_sounds.module_inventory_pickup,
+    drop_sound = item_sounds.module_inventory_move,
+    default_import_location = "moshine",
+    --durability = 1,
+    --durability_description_key = "description.science-pack-remaining-amount-key",
+    --factoriopedia_durability_description_key = "description.factoriopedia-science-pack-remaining-amount-key",
+    --durability_description_value = "description.science-pack-remaining-amount-value",
+    stack_size = 40,
+    weight = 5*kg,
+  },
   {
     type = "item",
     name = "3d-data-storage",

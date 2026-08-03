@@ -20,9 +20,10 @@ Date: 2026-0
     - Removed settings that disabled some mods that are now simply optional
     - Solar power on Moshine orbit increased from x60 to x600
     - Data processor can be built in space
-  Locale:
-    - Changed how data is stylized in datacells (blank﹎data)
-    - Changed Training data to foreign﹎data (to avoid confusion in english between the action and the purpose)
+  Gui:
+    - Hid datacell-remove-raw-data recipe
+    - Changed how data is stylized in datacells with colors, and their name to _____.DATA
+    - Changed Training data to FOREIGN.DATA (to avoid confusion in english between the action and the purpose)
   Sounds:
     - Reduced the probability and volume of some music tracks playing ("Forever" and "Remnant") since their pulsations can be irritating to some players
 ---------------------------------------------------------------------------------------------------

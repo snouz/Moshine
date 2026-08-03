@@ -24,6 +24,7 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 
 # CREDITS & LICENCE
 - The soundtrack is from these two albums by **Anemoia**: [Forever](https://freemusicarchive.org/music/anemoia/forever), [>>>>](https://freemusicarchive.org/music/anemoia/-6), found on Free Music Archive under license CC-BY-NC-SA
+- 1000 thanks to Talandar for the custom "cosmic scanner" spinning dome and the code for the multi-stage building
 - Neural computer, Data extractor, Indexer, AI trainer and sand graphics include or are modified versions of **Krastorio 1 and 2** (GNU LGPLv3 license)
 - The Data extractor, Data processor and AI trainer contain some graphics from **Hurricane046**'s buildings (CC BY license)
 - The neural computer includes parts from Exotic Space Industries from **PreyLeyZero** and **eliont** (GNU LGPLv3 license)

@@ -5,6 +5,8 @@ local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
 local size = 14
 local pipedistance = 0.5
 local pipedistance2 = 0.5
+local animframes = 30
+local animspeed = 0.3
 
 data:extend({
   {
@@ -39,7 +41,7 @@ data:extend({
     icon = "__Moshine__/graphics/icons/moshine_cosmicscanner.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     fixed_recipe = "cosmic-data-creation",
-    minable = {mining_time = 1, result = "data-processor"},
+    minable = {mining_time = 15, result = "moshine_cosmicscanner-construction-stage-1"},
     crafting_categories = {"cosmic-data-creation"},
     max_health = 1500,
     corpse = "moshine_cosmicscanner-remnants",
@@ -110,10 +112,10 @@ data:extend({
     (
       universal_connector_template,
       {
-        { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
-        { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
-        { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true },
-        { variation = 18, main_offset = util.by_pixel(6, -12), shadow_offset = util.by_pixel(17, -6), show_shadow = true }
+        { variation = 18, main_offset = util.by_pixel(128, 335), shadow_offset = util.by_pixel(128, 340), show_shadow = false },
+        { variation = 18, main_offset = util.by_pixel(128, 335), shadow_offset = util.by_pixel(128, 340), show_shadow = false },
+        { variation = 18, main_offset = util.by_pixel(128, 335), shadow_offset = util.by_pixel(128, 340), show_shadow = false },
+        { variation = 18, main_offset = util.by_pixel(128, 335), shadow_offset = util.by_pixel(128, 340), show_shadow = false }
       }
     ),
     alert_icon_shift = util.by_pixel(0, -12),
@@ -141,38 +143,34 @@ data:extend({
         layers =
         {
           {
-            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-base.png",
+            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished.png",
             priority="high",
             width = 1024,
             height = 1024,
-            repeat_count = 30,
+            repeat_count = animframes,
             line_length = 1,
-            animation_speed = 0.15,
-            --shift = util.by_pixel(0, -16),
+            animation_speed = animspeed,
             scale = 0.5
-          },--[[
+          },
           {
-            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-shadow.png",
+            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-idle-animation.png",
             priority="high",
-            width = 400,
-            height = 350,
-            repeat_count = 30,
-            line_length = 1,
-            draw_as_shadow = true,
-            animation_speed = 0.15,
-            --shift = util.by_pixel(0, -16),
-            scale = 0.5
-          },]]
-          {
-            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-idle-animation.png",
-            priority="high",
-            width = 160,
-            height = 290,
-            frame_count = 16,
+            width = 1,
+            height = 1,
+            frame_count = animframes,
             line_length = 8,
-            animation_speed = 0.15,
-            run_mode = "forward-then-backward",
-            --shift = util.by_pixel(0, -16),
+            animation_speed = animspeed,
+            run_mode = "forward",
+            scale = 0.5
+          },
+          {
+            filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-idle-emission.png",
+            priority="high",
+            width = 1024,
+            height = 1024,
+            repeat_count = animframes,
+            line_length = 1,
+            animation_speed = animspeed,
             scale = 0.5
           },
         }
@@ -189,34 +187,99 @@ data:extend({
             layers =
             {
               {
-                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-working-animation.png",
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-working-animation.png",
                 priority = "high",
-                width = 160,
-                height = 290,
-                frame_count = 16,
+                width = 1,
+                height = 1,
+                frame_count = animframes,
                 line_length = 8,
-                animation_speed = 0.15,
+                animation_speed = animspeed,
                 run_mode = "forward",
-                --shift = util.by_pixel(0, -16),
                 scale = 0.5
               },
               {
-                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-emission.png",
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-emission.png",
                 priority = "high",
-                width = 160,
-                height = 290,
-                frame_count = 16,
+                width = 1,
+                height = 1,
+                frame_count = animframes,
                 line_length = 8,
-                animation_speed = 0.15,
+                animation_speed = animspeed,
                 run_mode = "forward",
                 draw_as_glow = true,
                 blend_mode = "additive",
-                --shift = util.by_pixel(0, -16),
                 scale = 0.5
               },
             }
           },
         },
+        {
+          name = "rotation",
+          constant_speed = true,
+          always_draw = true,
+          draw_in_states = {"idle", "working"},
+          animation = 
+          { 
+            layers =
+            {
+              {
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-spinningdome.png",
+                priority = "high",
+                width = 740,
+                height = 740,
+                frame_count = 64,
+                line_length = 8,
+                animation_speed = animspeed,
+                run_mode = "forward",
+                --draw_as_glow = true,
+                --blend_mode = "additive",
+                scale = 0.5
+                ---render_layer = "",
+              },
+            }
+          },
+        },
+        {
+          name = "pulselight",
+          constant_speed = true,
+          --always_draw = true,
+          draw_in_states = {"working"},
+          fadeout = true,
+          effect = "flicker",
+          frame_based_on_shift_animation_progress = false,
+          apply_tint = "status",
+          animation = 
+          { 
+            layers =
+            {
+              {
+                filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-pulselight.png",
+                priority = "high",
+                width = 740,
+                height = 740,
+                frame_count = 32,
+                line_length = 6,
+                animation_speed = animspeed,
+                run_mode = "forward-then-backward",
+                draw_as_glow = true,
+                blend_mode = "additive",
+                scale = 0.5,
+                --render_layer = "",
+              },
+            }
+          },
+        },
+      },
+
+      status_colors = {
+        idle={0.1,0.1,0.1,0.1},
+        no_minable_resources={0,0,0,0},
+        full_output={0,0,0,0},
+        insufficient_input={0,0,0,0},
+        disabled={0,0,0,0},
+        no_power={0.02,0.02,0.02,0.02},
+        working={1,1,1,1},
+        low_power={0.4,0.4,0.2,0.2},
       },
       integration_patch =
       {
