@@ -166,8 +166,8 @@ data:extend({
           {
             filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-idle-emission.png",
             priority="high",
-            width = 1024,
-            height = 1024,
+            width = 1,
+            height = 1,
             repeat_count = animframes,
             line_length = 1,
             animation_speed = animspeed,
@@ -180,11 +180,13 @@ data:extend({
       working_visualisations =
       {
         {
-          name = "rotation",
+          name = "lights",
           constant_speed = true,
           always_draw = true,
-          draw_in_states = {"working"},
+          draw_in_states = {"idle", "working"},
           render_layer = "higher-object-under",
+          fadeout = true,
+          effect = "flicker",
           apply_tint = "status",
           animation = 
           { 
@@ -192,13 +194,12 @@ data:extend({
             {
               {
                 filename = "__Moshine-assets__/graphics/entity/moshine_cosmicscanner/moshine_cosmicscanner-finished-emission.png",
-                priority = "high",
-                width = 1,
-                height = 1,
-                frame_count = animframes,
-                line_length = 8,
+                priority="high",
+                width = 1024,
+                height = 1024,
+                repeat_count = animframes,
+                line_length = 1,
                 animation_speed = animspeed,
-                run_mode = "forward",
                 draw_as_glow = true,
                 blend_mode = "additive",
                 scale = 0.5
@@ -270,7 +271,7 @@ data:extend({
         idle={0.1,0.1,0.1,0.1},
         no_minable_resources={0,0,0,0},
         full_output={0,0,0,0},
-        insufficient_input={0,0,0,0},
+        insufficient_input={0.3,0.1,0.1,0.1},
         disabled={0,0,0,0},
         no_power={0.02,0.02,0.02,0.02},
         working={1,1,1,1},
