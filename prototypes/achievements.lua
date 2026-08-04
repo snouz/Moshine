@@ -39,4 +39,12 @@ data:extend({
     icon = "__Moshine-assets__/graphics/achievement/research-moshine-tech-ai-tier-10.png",
     icon_size = 128
   },
+  {
+    type = "build-entity-achievement",
+    name = "build-moshine_cosmicscanner",
+    order = "m[moshine]-fff",
+    to_build = "moshine_cosmicscanner",
+    icon = "__Moshine-assets__/graphics/achievement/build-moshine_cosmicscanner.png",
+    icon_size = 128
+  },
 })

@@ -455,40 +455,21 @@ data:extend({
       time = 80
     }
   },
+--     ██████  ██████  ███████ ███    ███ ██  ██████     ███████  ██████  █████  ███    ██ ███    ██ ███████ ██████  
+--    ██      ██    ██ ██      ████  ████ ██ ██          ██      ██      ██   ██ ████   ██ ████   ██ ██      ██   ██ 
+--    ██      ██    ██ ███████ ██ ████ ██ ██ ██          ███████ ██      ███████ ██ ██  ██ ██ ██  ██ █████   ██████  
+--    ██      ██    ██      ██ ██  ██  ██ ██ ██               ██ ██      ██   ██ ██  ██ ██ ██  ██ ██ ██      ██   ██ 
+--     ██████  ██████  ███████ ██      ██ ██  ██████     ███████  ██████ ██   ██ ██   ████ ██   ████ ███████ ██   ██ 
   {
     type = "technology",
-    name = "moshine-tech-cosmicscanner",
-    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner.png",
+    name = "moshine-tech-cosmicscanner-construction1",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction1.png",
     icon_size = 256,
     effects =
     {
       {
         type = "unlock-recipe",
-        recipe = "moshine_cosmicscanner"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "cosmic-data-outsignal-creation"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "datacell-cosmic-data-outsignal"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "datacell-remove-cosmic-data-outsignal"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "cosmic-data-creation"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "datacell-cosmic-data"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "datacell-remove-cosmic-data"
+        recipe = "moshine_cosmicscanner-construction-stage-1"
       },
     },
     prerequisites = {"moshine-tech-ai-trainer"},
@@ -503,6 +484,132 @@ data:extend({
       time = 80
     }
   },
+  {
+    type = "technology",
+    name = "moshine-tech-cosmicscanner-construction2",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction2.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "moshine_cosmicscanner-construct-1"
+      },
+    },
+    prerequisites = {"moshine-tech-cosmicscanner-construction1"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-ai-model-data", 1},
+      },
+      time = 80
+    }
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-cosmicscanner-construction3",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction3.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "moshine_cosmicscanner-construct-2"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "cosmic-data-outsignal-creation"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-cosmic-data-outsignal"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-remove-cosmic-data-outsignal"
+      },
+    },
+    prerequisites = {"moshine-tech-cosmicscanner-construction2"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-ai-model-data", 1},
+      },
+      time = 80
+    }
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-cosmicscanner-construction4",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction4.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "moshine_cosmicscanner-construct-3"
+      },
+    },
+    prerequisites = {"moshine-tech-cosmicscanner-construction3"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-ai-model-data", 1},
+      },
+      time = 80
+    }
+  },
+  {
+    type = "technology",
+    name = "moshine-tech-cosmicscanner-construction5",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction5.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "moshine_cosmicscanner-construct-4"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "cosmic-data-creation"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-cosmic-data"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-remove-cosmic-data"
+      },
+    },
+    prerequisites = {"moshine-tech-cosmicscanner-construction4"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-ai-model-data", 1},
+      },
+      time = 80
+    }
+  },
+
+--     █████  ██     ████████ ██ ███████ ██████  ███████ 
+--    ██   ██ ██        ██    ██ ██      ██   ██ ██      
+--    ███████ ██        ██    ██ █████   ██████  ███████ 
+--    ██   ██ ██        ██    ██ ██      ██   ██      ██ 
+--    ██   ██ ██        ██    ██ ███████ ██   ██ ███████     
   {
     type = "technology",
     name = "moshine-tech-ai-tier-1",
@@ -670,6 +777,7 @@ data:extend({
       {
         {"datacell-raw-data", 1},
         {"datacell-solved-equation", 1},
+        {"datacell-cosmic-data", 1},
       },
       time = 60000
     },

@@ -11,6 +11,7 @@ Date: 2026-0
     - Added startup settings to let you change the efficiency value of accumulators and solar panels (in submod)
     - Adjusted recipe cost to the new settings (in submod)
     - Reduced health of custom solar panel and accumulator to lower than the original as a tradeoff for how powerful they are (in submod)
+    - Quantum processor prod tech now requires cosmic data
   Graphics:
     - Reworked accumulator sprite and animation (in submod)
   Bugfixes:
@@ -23,7 +24,8 @@ Date: 2026-0
   Gui:
     - Hid datacell-remove-raw-data recipe
     - Changed how data is stylized in datacells with colors, and their name to _____.DATA
-    - Changed Training data to FOREIGN.DATA (to avoid confusion in english between the action and the purpose)
+    - Renamed Training data to FOREIGN.DATA (to avoid confusion in english between the action and the purpose)
+    - Renamed "Archeological data retriever" to "Foreign data decoder"
   Sounds:
     - Reduced the probability and volume of some music tracks playing ("Forever" and "Remnant") since their pulsations can be irritating to some players
 ---------------------------------------------------------------------------------------------------

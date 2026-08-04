@@ -54,6 +54,7 @@ if data.raw["technology"]["moshine-tech-quantum-processor-productivity"] then
       {
         {"datacell-raw-data", 1},
         {"datacell-solved-equation", 1},
+        {"datacell-cosmic-data", 1},
       },
       time = 6000
     }

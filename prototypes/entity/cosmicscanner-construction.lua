@@ -77,9 +77,11 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "moshine_cosmicscanner",
+    name = "moshine_cosmicscanner-construction-stage-1",
     energy_required = 100,
     categories = {"crafting"},
+    subgroup = "moshine-space-platform",
+    order = "a[moshine_cosmicscanner]",
     surface_conditions = {{ property = "gravity", min = 0, max = 0}},
     ingredients =
     {
@@ -94,6 +96,7 @@ data:extend({
     allow_productivity = false,
     enabled = false,
     sort_item_ingredients = false,
+    auto_recycle = false,
   },
   --[[{
     type = "item",
@@ -242,16 +245,19 @@ for i, stage in ipairs(megastructure_stages) do
         name = "moshine_cosmicscanner-construct-" .. i,
         icon = "__Moshine__/graphics/icons/" .. entity_name .. ".png",
         icon_size = 64,
+        subgroup = "moshine-space-platform",
+        order = "b[moshine_cosmicscanner]-" .. i,
         categories = { "moshine_cosmicscanner-building" },
         energy_required = stage.upgrade_recipe.energy_required,
-        enabled = true,
+        enabled = false,
         ingredients = stage.upgrade_recipe.ingredients,
         results = {},
         raise_on_crafted = true,
-        hidden = true,
-        hidden_in_factoriopedia = true,
+        --hidden = true,
+        --hidden_in_factoriopedia = true,
         hide_from_player_crafting = true,
         surface_conditions = {{ property = "gravity", min = 0, max = 0}},
+        auto_recycle = false,
       },
     })
   end
