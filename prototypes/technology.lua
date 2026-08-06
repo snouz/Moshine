@@ -1,7 +1,23 @@
 local techicons = "__Moshine-assets__/graphics/technology/"
 
 
+
+
+
 data:extend({
+  {
+    type = "item-group",
+    name = "moshine-tech",
+    icon = "__core__/graphics/icons/category/unsorted.png",
+    icon_size = 128,
+    order = "zz"
+  },
+  {
+    type = "item-subgroup",
+    name = "moshine-tech-with-datacells",
+    group = "moshine-tech",
+    order = "e"
+  },
   {
     type = "technology",
     name = "planet-discovery-moshine",
@@ -318,6 +334,8 @@ data:extend({
     name = "moshine-tech-data-extractor",
     icon = "__Moshine-assets__/graphics/technology/moshine-tech-data-extractor.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects =
     {
       {
@@ -338,13 +356,15 @@ data:extend({
         {"datacell-empty", 1},
       },
       time = 60
-    }
+    },
   },
   {
     type = "technology",
     name = "moshine-tech-3d-data-storage",
     icon = "__Moshine-assets__/graphics/technology/moshine-tech-3d-data-storage.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects =
     {
       {
@@ -369,6 +389,7 @@ data:extend({
     name = "moshine-tech-data-processor",
     icon = "__Moshine-assets__/graphics/technology/moshine-tech-data-processor.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
     effects =
     {
       {
@@ -404,6 +425,8 @@ data:extend({
     name = "moshine-tech-processing-grid",
     icon = "__Moshine-assets__/graphics/technology/moshine-tech-processing-grid.png",
     icon_size = 256,
+    subgroup = "other",
+    order = "aaa",
     effects =
     {
       {
@@ -418,17 +441,22 @@ data:extend({
         type = "unlock-recipe",
         recipe = "datacell-equation"
       },
+      {
+        type = "nothing",
+        icon = "__Moshine__/graphics/icons/processing-grid-process-equation.png",
+        effect_description = {"description.equation_to_solved_equation_description"},
+      },
     },
-    prerequisites = {"moshine-tech-ai-tier-2"},
+    prerequisites = {"moshine-tech-data-processor"},
     unit =
     {
-      count = 10,
+      count = 100,
       ingredients =
       {
         {"datacell-raw-data", 10},
         {"datacell-ai-model-data", 1},
       },
-      time = 20000
+      time = 100
     }
   },
   {
@@ -436,6 +464,8 @@ data:extend({
     name = "moshine-tech-ai-trainer",
     icon = "__Moshine-assets__/graphics/technology/moshine-tech-ai-trainer.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects =
     {
       {
@@ -460,10 +490,53 @@ data:extend({
 --    ██      ██    ██ ███████ ██ ████ ██ ██ ██          ███████ ██      ███████ ██ ██  ██ ██ ██  ██ █████   ██████  
 --    ██      ██    ██      ██ ██  ██  ██ ██ ██               ██ ██      ██   ██ ██  ██ ██ ██  ██ ██ ██      ██   ██ 
 --     ██████  ██████  ███████ ██      ██ ██  ██████     ███████  ██████ ██   ██ ██   ████ ██   ████ ███████ ██   ██ 
+
+
+  {
+    type = "technology",
+    name = "moshine-tech-cosmic-data-outsignal-creation",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmic-data-outsignal-creation.png",
+    order = "zzz",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-remove-solved-equation"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-solved-equation"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "cosmic-data-outsignal-creation"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-remove-cosmic-data-outsignal"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "datacell-cosmic-data-outsignal"
+      },
+    },
+    prerequisites = {"moshine-tech-processing-grid", "moshine-tech-cosmicscanner-construction1"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"datacell-raw-data", 1},
+        {"datacell-ai-model-data", 1},
+      },
+      time = 80
+    },
+  },
   {
     type = "technology",
     name = "moshine-tech-cosmicscanner-construction1",
-    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction1.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction-1.png",
     icon_size = 256,
     effects =
     {
@@ -472,22 +545,26 @@ data:extend({
         recipe = "moshine_cosmicscanner-construction-stage-1"
       },
     },
-    prerequisites = {"moshine-tech-ai-trainer"},
+    prerequisites = {"moshine-tech-silicon",},
     unit =
     {
-      count = 50,
+      count = 650,
       ingredients =
       {
-        {"datacell-raw-data", 1},
-        {"datacell-ai-model-data", 1},
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"space-science-pack", 1},
+        {"metallurgic-science-pack", 1}
       },
-      time = 80
-    }
+      time = 60
+    },
+    order = "zzz",
   },
   {
     type = "technology",
     name = "moshine-tech-cosmicscanner-construction2",
-    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction2.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction-2.png",
     icon_size = 256,
     effects =
     {
@@ -496,40 +573,32 @@ data:extend({
         recipe = "moshine_cosmicscanner-construct-1"
       },
     },
-    prerequisites = {"moshine-tech-cosmicscanner-construction1"},
+    prerequisites = {"moshine-tech-cosmicscanner-construction1", "moshine-tech-silicon-carbide"},
     unit =
     {
-      count = 50,
+      count = 400,
       ingredients =
       {
-        {"datacell-raw-data", 1},
-        {"datacell-ai-model-data", 1},
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"space-science-pack", 1},
+        {"metallurgic-science-pack", 1}
       },
       time = 80
-    }
+    },
+    order = "zzz",
   },
   {
     type = "technology",
     name = "moshine-tech-cosmicscanner-construction3",
-    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction3.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction-3.png",
     icon_size = 256,
     effects =
     {
       {
         type = "unlock-recipe",
         recipe = "moshine_cosmicscanner-construct-2"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "cosmic-data-outsignal-creation"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "datacell-cosmic-data-outsignal"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "datacell-remove-cosmic-data-outsignal"
       },
     },
     prerequisites = {"moshine-tech-cosmicscanner-construction2"},
@@ -542,12 +611,14 @@ data:extend({
         {"datacell-ai-model-data", 1},
       },
       time = 80
-    }
+    },
+    order = "zzz",
+    --upgrade = true,
   },
   {
     type = "technology",
     name = "moshine-tech-cosmicscanner-construction4",
-    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction4.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction-4.png",
     icon_size = 256,
     effects =
     {
@@ -556,7 +627,7 @@ data:extend({
         recipe = "moshine_cosmicscanner-construct-3"
       },
     },
-    prerequisites = {"moshine-tech-cosmicscanner-construction3"},
+    prerequisites = {"moshine-tech-cosmicscanner-construction3", "moshine-tech-cosmic-data-outsignal-creation"},
     unit =
     {
       count = 50,
@@ -566,12 +637,14 @@ data:extend({
         {"datacell-ai-model-data", 1},
       },
       time = 80
-    }
+    },
+    order = "zzz",
+    --upgrade = true,
   },
   {
     type = "technology",
     name = "moshine-tech-cosmicscanner-construction5",
-    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction5.png",
+    icon = "__Moshine-assets__/graphics/technology/moshine-tech-cosmicscanner-construction-5.png",
     icon_size = 256,
     effects =
     {
@@ -602,7 +675,9 @@ data:extend({
         {"datacell-ai-model-data", 1},
       },
       time = 80
-    }
+    },
+    order = "zzz",
+    --upgrade = true,
   },
 
 --     █████  ██     ████████ ██ ███████ ██████  ███████ 
@@ -615,6 +690,8 @@ data:extend({
     name = "moshine-tech-ai-tier-1",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-1.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-1" }},
     prerequisites = {"moshine-tech-ai-trainer"},
     research_trigger =
@@ -631,6 +708,8 @@ data:extend({
     name = "moshine-tech-ai-tier-2",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-2.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-2" }},
     prerequisites = {"moshine-tech-ai-tier-1"},
     unit = {},
@@ -641,6 +720,9 @@ data:extend({
     name = "moshine-tech-ai-tier-3",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-3.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
+    subgroup = "moshine-tech-with-datacells",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-3" }},
     prerequisites = {"moshine-tech-ai-tier-2"},
     unit = {},
@@ -651,6 +733,8 @@ data:extend({
     name = "moshine-tech-ai-tier-4",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-4.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-4" }},
     prerequisites = {"moshine-tech-ai-tier-3"},
     unit = {},
@@ -661,6 +745,8 @@ data:extend({
     name = "moshine-tech-ai-tier-5",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-5.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-5" }},
     prerequisites = {"moshine-tech-ai-tier-4"},
     unit = {},
@@ -671,6 +757,8 @@ data:extend({
     name = "moshine-tech-ai-tier-6",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-6.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-6" }},
     prerequisites = {"moshine-tech-ai-tier-5"},
     unit = {},
@@ -681,6 +769,8 @@ data:extend({
     name = "moshine-tech-ai-tier-7",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-7.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-7" }},
     prerequisites = {"moshine-tech-ai-tier-6"},
     unit = {},
@@ -691,6 +781,8 @@ data:extend({
     name = "moshine-tech-ai-tier-8",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-8.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-8" }},
     prerequisites = {"moshine-tech-ai-tier-7"},
     unit = {},
@@ -701,6 +793,8 @@ data:extend({
     name = "moshine-tech-ai-tier-9",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-9.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-9" }},
     prerequisites = {"moshine-tech-ai-tier-8"},
     unit = {},
@@ -711,6 +805,8 @@ data:extend({
     name = "moshine-tech-ai-tier-10",
     icon = "__Moshine-assets__/graphics/technology/ai-tiers/tier-10.png",
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects = {{type = "unlock-recipe", recipe = "ai-tier-10" }},
     prerequisites = {"moshine-tech-ai-tier-9"},
     unit = {},
@@ -761,6 +857,8 @@ data:extend({
     name = "moshine-tech-quantum-processor-productivity",
     icons = util.technology_icon_constant_recipe_productivity("__Moshine-assets__/graphics/technology/moshine-tech-quantum-processor-productivity.png"),
     icon_size = 256,
+    subgroup = "moshine-tech-with-datacells",
+    order = "zzz",
     effects =
     {
       {

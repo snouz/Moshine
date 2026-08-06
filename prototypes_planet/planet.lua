@@ -470,7 +470,7 @@ data.raw.planet["moshine"].platform_surface_render_parameters.platform_backdrop 
   planet_axis_deviation_amplitude = {10.0, 10.0},
   planet_axis_deviation_seconds = {890.5*2/4.66, 753.7*2/4.66},
   position = {-680, 601},
-  parallax_strength = {0.95, 0.95},
+  parallax_strength = {0.98, 0.98},
   light_direction = {-0.42, 0.23, 0.67},
   light_intensity_contrast = 0.6,
   light_color = {1, 0.99, 0.95, 1},

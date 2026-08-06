@@ -48,4 +48,3 @@ Custom terrain, music/sfx, 26 techs, 5 buildings, some original challenges... Un
 
 
 [KO-FI - Just in case anyone wants to support my work](https://ko-fi.com/snouz)
-

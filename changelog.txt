@@ -1,10 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
-Date: 2026-0
+Date: 2026-08
   Features:
     - Added Sun heat and cooling as a recommended dependency (will download by default, can be disabled)
-    - This adds sun damage on moshine, sun visual effects, a building that protects from it
-    - Added Cosmic scanner, a huge telescope buildable in 5 steps in space.
+    - This adds sun damage on moshine, sun visual effects, and a building that protects from it
+    - Added Cosmic scanner, a huge telescope buildable in 5 steps in space
+    - Added 6 technologies for the Cosmic scanner construction and data making
+    - Added OUTSIGNAL.DATA (data processor) and COSMIC.DATA (Cosmic scanner)
+    - Added achievement for building a cosmic scanner
+    - You can load and unload solved equation data in/from datacells
   Balancing:
     - Nerfed accumulator space efficiency to 6x more space efficient (from 15x) (by default) (in submod)
     - Nerfed solar panel space efficiency to 4x more space efficient (from 6.6x) (by default) (in submod)
@@ -12,6 +16,7 @@ Date: 2026-0
     - Adjusted recipe cost to the new settings (in submod)
     - Reduced health of custom solar panel and accumulator to lower than the original as a tradeoff for how powerful they are (in submod)
     - Quantum processor prod tech now requires cosmic data
+    - Process indexing tech now earlier in the tech tree (after stable model), with cost adjusted
   Graphics:
     - Reworked accumulator sprite and animation (in submod)
   Bugfixes:
@@ -23,11 +28,24 @@ Date: 2026-0
     - Data processor can be built in space
   Gui:
     - Hid datacell-remove-raw-data recipe
-    - Changed how data is stylized in datacells with colors, and their name to _____.DATA
-    - Renamed Training data to FOREIGN.DATA (to avoid confusion in english between the action and the purpose)
-    - Renamed "Archeological data retriever" to "Foreign data decoder"
+    - Changed how data is stylized in datacells with colors and the format "---_----.dat"
+    - Renamed Training data to foreign.dat (to avoid confusion in english between the action and the purpose)
+    - Renamed "Archeological data retriever" to "Foreign data decoder", tech Data archeology to foreign.dat translation
+    - Added a descriptive icon/text of the Processing farm technology (changed name from Process indexer)
+    - Changed AI upgrade sub-icon
+    - Datacell is considered raw material for other recipes tooltips
   Sounds:
     - Reduced the probability and volume of some music tracks playing ("Forever" and "Remnant") since their pulsations can be irritating to some players
+---------------------------------------------------------------------------------------------------
+Version: 1.1.12
+Date: 2026-08-05
+  Bugfixes:
+    - Hotfix, but better
+---------------------------------------------------------------------------------------------------
+Version: 1.1.11
+Date: 2026-08-05
+  Bugfixes:
+    - Hotfix for compatibility with Factorio 2.1.13
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.10
 Date: 2026-07-04

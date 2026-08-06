@@ -10,7 +10,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_Diorite",
     track_type = "hero-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_Diorite.ogg",
@@ -21,7 +21,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_5.12a",
     track_type = "interlude",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_5.12a.ogg",
@@ -32,7 +32,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_6.06",
     track_type = "interlude",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_6.06.ogg",
@@ -43,7 +43,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_6.56",
     track_type = "interlude",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_6.56.ogg",
@@ -54,7 +54,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_4.07",
     track_type = "interlude",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_4.07.ogg",
@@ -65,7 +65,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_2.00",
     track_type = "interlude",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_2.00.ogg",
@@ -76,7 +76,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_Emanate",
     track_type = "main-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_Emanate.ogg",
@@ -87,7 +87,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_Forever",
     track_type = "main-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_Forever.ogg",
@@ -99,7 +99,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_Immeasurable",
     track_type = "main-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_Immeasurable.ogg",
@@ -110,7 +110,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_Long_dead",
     track_type = "main-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_Long_dead.ogg",
@@ -121,7 +121,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_Reflux",
     track_type = "main-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_Reflux.ogg",
@@ -132,7 +132,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_Remnant",
     track_type = "main-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_Remnant.ogg",
@@ -144,7 +144,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_Subside",
     track_type = "main-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_Subside.ogg",
@@ -155,7 +155,7 @@ data:extend(
     type = "ambient-sound",
     name = "Anemoia_The_Far_Reaches",
     track_type = "main-track",
-    planet = "moshine",
+    planets = {"moshine"},
     sound =
     {
       filename = musicpath .. "Anemoia_The_Far_Reaches.ogg",

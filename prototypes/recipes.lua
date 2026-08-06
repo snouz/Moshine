@@ -321,10 +321,12 @@ data:extend({
     allow_productivity = true,
     enabled = false,
     sort_item_ingredients = false,
+    allow_decomposition = false,
   },
   {
     type = "recipe",
     name = "datacell-raw-data",
+    localised_name = {"recipe-name.datacell-raw-data"},
     icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
     categories = {"data-processing"},
     subgroup = "moshine-datacells",
@@ -339,7 +341,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
-    crafting_machine_tint = {primary = {109, 209, 94}}, --#6dd15e
+    crafting_machine_tint = {primary = {109,207,154}}, --#6dd15e
   },
   {
     type = "recipe",
@@ -362,7 +364,7 @@ data:extend({
     auto_recycle = false,
     enabled = false,
     hide_from_player_crafting = true,
-    crafting_machine_tint = {primary = {109, 209, 94}}, --#6dd15e
+    crafting_machine_tint = {primary = {109,207,154}}, --#6dd15e
   },
 
 
@@ -370,6 +372,7 @@ data:extend({
   {
     type = "recipe",
     name = "datacell-ai-model-data",
+    localised_name = {"recipe-name.datacell-ai-model-data"},
     icon = "__Moshine__/graphics/icons/datacell-ai-model-data.png",
     categories = {"data-processing"},
     subgroup = "moshine-datacells",
@@ -388,7 +391,7 @@ data:extend({
     auto_recycle = false,
     enabled = false,
     allow_decomposition = false,
-    crafting_machine_tint = {primary = {106, 196, 230}}, --#6ac4e6
+    crafting_machine_tint = {primary = {123,186,240}}, --#6ac4e6
     sort_item_ingredients = false,
   },
 
@@ -414,7 +417,7 @@ data:extend({
     auto_recycle = false,
     enabled = false,
     hide_from_player_crafting = true,
-    crafting_machine_tint = {primary = {106, 196, 230}}, --#6ac4e6
+    crafting_machine_tint = {primary = {123,186,240}}, --#6ac4e6
     allow_decomposition = false,
     sort_item_ingredients = false,
   },
@@ -422,11 +425,12 @@ data:extend({
   {
     type = "recipe",
     name = "datacell-equation",
+    localised_name = {"recipe-name.datacell-equation"},
     icon = "__Moshine__/graphics/icons/datacell-equation.png",
     categories = {"data-processing"},
     subgroup = "moshine-datacells",
     order = "a[moshine]-ca",
-    energy_required = 1000,
+    energy_required = 100,
     ingredients = {
       {type = "item", name = "datacell-empty", amount = 1},
     },
@@ -436,7 +440,53 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
-    crafting_machine_tint = {primary = {66, 125, 235}}, --#427deb
+    crafting_machine_tint = {primary = {2685e5}}, --#427deb
+  },
+
+
+
+  {
+    type = "recipe",
+    name = "datacell-solved-equation",
+    icon = "__Moshine__/graphics/icons/datacell-solved-equation.png",
+    categories = {"data-processing"},
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-cb",
+    hide_from_player_crafting = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "item", name = "datacell-empty", amount = 1},
+      {type = "fluid", name = "solved-equation-data", amount = 60},
+    },
+    results = {{type = "item", name = "datacell-solved-equation", amount = 1}},
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+    crafting_machine_tint = {primary = {212,212,5}}, --#f2eb76
+  },
+  {
+    type = "recipe",
+    name = "datacell-remove-solved-equation",
+    localised_name = {"recipe-name.datacell-remove-solved-equation"},
+    icon = "__Moshine__/graphics/icons/datacell-solved-equation_unloading.png",
+    categories = {"data-processing"},
+    subgroup = "moshine-datacells",
+    order = "a[moshine]-cc",
+    hide_from_player_crafting = true,
+    hide_from_stats = true,
+    energy_required = 1,
+    ingredients = {
+      {type = "item", name = "datacell-solved-equation", amount = 1},
+    },
+    results = {
+      {type = "item", name = "datacell-empty", amount = 1},
+      {type = "fluid", name = "solved-equation-data", amount = 60},
+    },
+    allow_productivity = false,
+    auto_recycle = false,
+    enabled = false,
+    hide_from_player_crafting = true,
+    crafting_machine_tint = {primary = {212,212,5}}, --#f2eb76
   },
 
 
@@ -457,14 +507,14 @@ data:extend({
     hide_from_player_crafting = true,
     energy_required = 1,
     ingredients = {
-      {type = "fluid", name = "raw-data", amount = 100},
-      --{type = "fluid", name = "raw-data", amount = 100},
+      {type = "fluid", name = "raw-data", amount = 300},
+      {type = "fluid", name = "solved-equation-data", amount = 90},
     },
     results = {{type = "fluid", name = "cosmic-data-outsignal", amount = 1}},
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
-    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+    crafting_machine_tint = {primary = {197,8,181}}, --#260d7f
   },
 
   {
@@ -484,7 +534,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
-    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+    crafting_machine_tint = {primary = {197,8,181}}, --#260d7f
   },
   {
     type = "recipe",
@@ -507,7 +557,7 @@ data:extend({
     auto_recycle = false,
     enabled = false,
     hide_from_player_crafting = true,
-    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+    crafting_machine_tint = {primary = {197,8,181}}, --#260d7f
   },
 
   {
@@ -526,7 +576,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
-    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+    crafting_machine_tint = {primary = {126,57,215}}, --#260d7f
   },
 
   {
@@ -546,7 +596,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
-    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+    crafting_machine_tint = {primary = {126,57,215}}, --#260d7f
   },
   {
     type = "recipe",
@@ -569,7 +619,7 @@ data:extend({
     auto_recycle = false,
     enabled = false,
     hide_from_player_crafting = true,
-    crafting_machine_tint = {primary = {38, 13, 127}}, --#260d7f
+    crafting_machine_tint = {primary = {126,57,215}}, --#260d7f
   },
 
 
