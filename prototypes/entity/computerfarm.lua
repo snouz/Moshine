@@ -587,7 +587,7 @@ data:extend({
     remove_on_tile_placement = false,
     animation =
     {
-      filename = "__Moshine__/graphics/processing-grid-remnants.png",
+      filename = "__Moshine-assets__/graphics/entity/quantum-computer/processing-grid-remnants.png",
       width = 500,
       height = 500,
       line_length = 1,

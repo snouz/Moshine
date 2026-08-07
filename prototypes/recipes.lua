@@ -60,6 +60,7 @@ data:extend({
   {
     type = "recipe",
     name = "data-extractor",
+    localised_name = {"recipe-name.data-extractor"},
     energy_required = 10,
     surface_conditions = {{ property = "pressure", min = 701, max = 701}},
     ingredients = {
@@ -440,7 +441,7 @@ data:extend({
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,
-    crafting_machine_tint = {primary = {2685e5}}, --#427deb
+    crafting_machine_tint = {primary = {22,165,255}}, --#427deb
   },
 
 
@@ -572,7 +573,7 @@ data:extend({
     ingredients = {
       {type = "fluid", name = "cosmic-data-outsignal", amount = 100},
     },
-    results = {{type = "fluid", name = "cosmic-data", amount = 100}},
+    results = {{type = "fluid", name = "cosmic-data", amount_min = 9, amount_max = 267}},
     allow_productivity = false,
     auto_recycle = false,
     enabled = false,

@@ -270,7 +270,7 @@ data:extend({
     remove_on_tile_placement = false,
     animation =
     {
-      filename = "__Moshine__/graphics/ai-trainer-remnants.png",
+      filename = "__Moshine-assets__/graphics/entity/ai-trainer/ai-trainer-remnants.png",
       width = 620,
       height = 620,
       line_length = 1,

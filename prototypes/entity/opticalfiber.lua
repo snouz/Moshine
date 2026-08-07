@@ -388,10 +388,10 @@ data:extend({
       --filter = "raw-data",
       pipe_connections =
       {
-        { direction = defines.direction.north, position = {0, 0}, connection_category = "data" },
-        { direction = defines.direction.east, position = {0, 0}, connection_category = "data" },
-        { direction = defines.direction.south, position = {0, 0}, connection_category = "data" },
-        { direction = defines.direction.west, position = {0, 0}, connection_category = "data" }
+        { direction = defines.direction.north, position = {0, 0}, connection_category = "data", hide_connection_info = true },
+        { direction = defines.direction.east, position = {0, 0}, connection_category = "data", hide_connection_info = true },
+        { direction = defines.direction.south, position = {0, 0}, connection_category = "data", hide_connection_info = true },
+        { direction = defines.direction.west, position = {0, 0}, connection_category = "data", hide_connection_info = true }
       },
       hide_connection_info = true,
       max_pipeline_extent = 1000000,

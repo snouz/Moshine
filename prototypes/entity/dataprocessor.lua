@@ -63,10 +63,25 @@ data:extend({
         volume = 10000,
         --filter = "raw-data",
         pipe_connections = {
-          {flow_direction = "input", direction = defines.direction.north, position = {0, -1}, connection_category = "data"},
+          --{flow_direction = "input", direction = defines.direction.north, position = {0, -1}, connection_category = "data"},
           {flow_direction = "input", direction = defines.direction.east, position = {1, 0}, connection_category = "data"},
-          {flow_direction = "input", direction = defines.direction.south, position = {0, 1}, connection_category = "data"},
+          --{flow_direction = "input", direction = defines.direction.south, position = {0, 1}, connection_category = "data"},
           {flow_direction = "input", direction = defines.direction.west, position = {-1, 0}, connection_category = "data"}
+        },
+        secondary_draw_orders = { north = -1 },
+        max_pipeline_extent = 1000000,
+      },
+      {
+        production_type = "input",
+        --pipe_picture = assembler3pipepictures(),
+        --pipe_covers = pipecoverspictures(),
+        volume = 10000,
+        --filter = "raw-data",
+        pipe_connections = {
+          {flow_direction = "input", direction = defines.direction.north, position = {0, -1}, connection_category = "data"},
+          --{flow_direction = "input", direction = defines.direction.east, position = {1, 0}, connection_category = "data"},
+          {flow_direction = "input", direction = defines.direction.south, position = {0, 1}, connection_category = "data"},
+          --{flow_direction = "input", direction = defines.direction.west, position = {-1, 0}, connection_category = "data"}
         },
         secondary_draw_orders = { north = -1 },
         max_pipeline_extent = 1000000,

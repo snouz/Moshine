@@ -19,6 +19,8 @@ Date: 2026-08
     - Process indexing tech now earlier in the tech tree (after stable model), with cost adjusted
   Graphics:
     - Reworked accumulator sprite and animation (in submod)
+    - Added data extractor remnants
+    - Removed optical fiber connection arrows displaying
   Bugfixes:
     - Fixed recycling recipe for hypercell substation, solar panel and accumulator
     - Fixed ai-tier-2 recipe result probability
@@ -27,13 +29,15 @@ Date: 2026-08
     - Solar power on Moshine orbit increased from x60 to x600
     - Data processor can be built in space
   Gui:
-    - Hid datacell-remove-raw-data recipe
-    - Changed how data is stylized in datacells with colors and the format "---_----.dat"
+    - Hid0 datacell-remove-raw-data recipe
+    - Changed how data is stylized in datacells with colors, border and the format "---_----.data"
     - Renamed Training data to foreign.dat (to avoid confusion in english between the action and the purpose)
-    - Renamed "Archeological data retriever" to "Foreign data decoder", tech Data archeology to foreign.dat translation
+    - Renamed "Archeological data retriever" to "Foreign data decoder", tech Data archeology to foreign.data translation
     - Added a descriptive icon/text of the Processing farm technology (changed name from Process indexer)
     - Changed AI upgrade sub-icon
     - Datacell is considered raw material for other recipes tooltips
+    - Changed data extractor name to foreign.dat decoder
+    - Added datacell-solved-equation description
   Sounds:
     - Reduced the probability and volume of some music tracks playing ("Forever" and "Remnant") since their pulsations can be irritating to some players
 ---------------------------------------------------------------------------------------------------

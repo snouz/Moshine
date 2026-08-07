@@ -229,7 +229,7 @@ data:extend({
     remove_on_tile_placement = false,
     animation =
     {
-      filename = "__Moshine__/graphics/neural_computer-remnants.png",
+      filename = supercomputer .. "neural_computer-remnants.png",
       width = 600,
       height = 600,
       line_length = 1,

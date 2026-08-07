@@ -4,43 +4,52 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 
 local megastructure_stages = {
   {
-    name = "moshine_cosmicscanner-construction-stage-1",
+    name = "moshine_cosmicscanner-construction-stage-1", --x15 --ring
     upgrade_recipe = {
       energy_required = 10,
       ingredients = {
-        { type = "item", name = "steel-plate", amount = 120 },
-        { type = "item", name = "silicon-carbide", amount = 90 },
+        { type = "item", name = "magnet", amount = 210 },
+        { type = "item", name = "silicon-carbide", amount = 150 },
+        { type = "item", name = "engine-unit", amount = 50 },
+        { type = "item", name = "tungsten-plate", amount = 30 },
       },
     },
   },
   {
-    name = "moshine_cosmicscanner-construction-stage-2",
+    name = "moshine_cosmicscanner-construction-stage-2", --x15 --infrastructure
     upgrade_recipe = {
       energy_required = 12,
       ingredients = {
-        { type = "item", name = "low-density-structure", amount = 50 },
-        { type = "item", name = "steel-plate", amount = 200 },
+        { type = "item", name = "data-processor", amount = 1 },
+        { type = "item", name = "silicon-cell", amount = 200 },
+        { type = "item", name = "glass", amount = 50 },
+        { type = "item", name = "holmium-plate", amount = 50 },
       },
     },
   },
   {
-    name = "moshine_cosmicscanner-construction-stage-3",
+    name = "moshine_cosmicscanner-construction-stage-3", --x15 --fine machines
     upgrade_recipe = {
       energy_required = 14,
       ingredients = {
+        { type = "item", name = "data-extractor", amount = 1 },
+        { type = "item", name = "tesla-turret", amount = 1 },
         { type = "item", name = "electric-engine-unit", amount = 40 },
-        { type = "item", name = "steel-plate", amount = 200 },
+        { type = "item", name = "low-density-structure", amount = 200 },
       },
     },
   },
   {
-    name = "moshine_cosmicscanner-construction-stage-4",
+    name = "moshine_cosmicscanner-construction-stage-4", --x15 --final touches, dome, lab
     upgrade_recipe = {
       energy_required = 16,
       ingredients = {
-        { type = "item", name = "processing-unit", amount = 50 },
+        { type = "item", name = "lab", amount = 1 },
+        { type = "item", name = "radar", amount = 1 },
+        { type = "item", name = "ai-tier-1", amount = 1 },
+        { type = "item", name = "glass", amount = 100 },
         { type = "item", name = "electric-engine-unit", amount = 40 },
-        { type = "item", name = "radar", amount = 5 },
+        --{ type = "item", name = "processing-unit", amount = 50 },
       },
     },
   },
@@ -87,10 +96,13 @@ data:extend({
     subgroup = "moshine-space-platform",
     order = "a[moshine_cosmicscanner]",
     surface_conditions = {{ property = "gravity", min = 0, max = 0}},
-    ingredients =
+    ingredients = --x1 --scaffoldings
     {
-      {type = "item", name = "space-platform-foundation", amount = 100},
-      {type = "item", name = "steel-plate", amount = 200},
+      {type = "item", name = "concrete", amount = 600},
+      {type = "item", name = "steel-plate", amount = 300},
+      {type = "item", name = "space-platform-foundation", amount = 200},
+      {type = "item", name = "silicon", amount = 50},
+      --{type = "fluid", name = "petroleum-gas", amount = 100},
       --{type = "item", name = "concrete", amount = 100},
       --{type = "item", name = "glass", amount = 400},
       --{type = "item", name = "processing-unit", amount = 50},

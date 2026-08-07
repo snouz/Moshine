@@ -1,4 +1,13 @@
-
+data:extend({
+  {
+    type = "font",
+    name = "moshine-data",
+    from = "default-bold",
+    size = 15,
+    border = true,
+    border_color = {0.1,0.1,0.1,1},
+  }
+})
 require ("prototypes.items")
 require ("prototypes.fluid")
 require ("prototypes.recipes")

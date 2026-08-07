@@ -40,8 +40,8 @@ data:extend({
     minable = {mining_time = 0.5, result = "data-extractor"},
     resource_categories = {"raw-data"},
     max_health = 200,
-    corpse = "pumpjack-remnants",
-    dying_explosion = "pumpjack-explosion",
+    corpse = "data-extractor-remnants",
+    dying_explosion = "assembling-machine-1-explosion",
     collision_mask = {layers={doodad=true},colliding_with_tiles_only = false},
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
@@ -203,5 +203,31 @@ data:extend({
         }
       ),
     circuit_wire_max_distance = default_circuit_wire_max_distance
+  },
+
+  {
+    type = "corpse",
+    name = "data-extractor-remnants",
+    icon = "__Moshine__/graphics/icons/data-extractor.png",
+    flags = {"placeable-neutral", "not-on-map"},
+    hidden_in_factoriopedia = true,
+    subgroup = "production-machine-remnants",
+    order = "i[cryogenic-plant]",
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    tile_width = 5,
+    tile_height = 5,
+    selectable_in_game = false,
+    time_before_removed = 60 * 60 * 15, -- 15 minutes
+    expires = false,
+    final_render_layer = "remnants",
+    remove_on_tile_placement = false,
+    animation =
+    {
+      filename = "__Moshine-assets__/graphics/entity/data-extractor/data-extractor-remnants.png",
+      width = 700,
+      height = 500,
+      scale = 0.5,
+      shift = util.by_pixel(0, 0),
+    },
   },
 })

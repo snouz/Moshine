@@ -545,10 +545,10 @@ data:extend({
         recipe = "moshine_cosmicscanner-construction-stage-1"
       },
     },
-    prerequisites = {"moshine-tech-silicon",},
+    prerequisites = {"moshine-tech-silicon", "moshine-concrete-from-molten-iron-and-sand", "moshine-petroleum-from-sand-sulfur-steam-carbon"},
     unit =
     {
-      count = 650,
+      count = 390,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -573,7 +573,7 @@ data:extend({
         recipe = "moshine_cosmicscanner-construct-1"
       },
     },
-    prerequisites = {"moshine-tech-cosmicscanner-construction1", "moshine-tech-silicon-carbide"},
+    prerequisites = {"moshine-tech-cosmicscanner-construction1", "moshine-tech-silicon-carbide", "moshine-tech-magnet"},
     unit =
     {
       count = 400,
@@ -601,14 +601,17 @@ data:extend({
         recipe = "moshine_cosmicscanner-construct-2"
       },
     },
-    prerequisites = {"moshine-tech-cosmicscanner-construction2"},
+    prerequisites = {"moshine-tech-cosmicscanner-construction2","moshine-tech-data-processor-building"},
     unit =
     {
-      count = 50,
+      count = 420,
       ingredients =
       {
-        {"datacell-raw-data", 1},
-        {"datacell-ai-model-data", 1},
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"space-science-pack", 1},
+        {"metallurgic-science-pack", 1}
       },
       time = 80
     },
@@ -627,14 +630,13 @@ data:extend({
         recipe = "moshine_cosmicscanner-construct-3"
       },
     },
-    prerequisites = {"moshine-tech-cosmicscanner-construction3", "moshine-tech-cosmic-data-outsignal-creation"},
+    prerequisites = {"moshine-tech-cosmicscanner-construction3", "moshine-tech-data-extractor", "tesla-weapons"},
     unit =
     {
-      count = 50,
+      count = 450,
       ingredients =
       {
         {"datacell-raw-data", 1},
-        {"datacell-ai-model-data", 1},
       },
       time = 80
     },
@@ -665,7 +667,7 @@ data:extend({
         recipe = "datacell-remove-cosmic-data"
       },
     },
-    prerequisites = {"moshine-tech-cosmicscanner-construction4"},
+    prerequisites = {"moshine-tech-cosmicscanner-construction4", "moshine-tech-cosmic-data-outsignal-creation", "moshine-tech-ai-tier-1"},
     unit =
     {
       count = 50,
@@ -673,6 +675,7 @@ data:extend({
       {
         {"datacell-raw-data", 1},
         {"datacell-ai-model-data", 1},
+        {"datacell-solved-equation", 1},
       },
       time = 80
     },
