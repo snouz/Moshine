@@ -443,7 +443,7 @@ data:extend({
       },
       {
         type = "nothing",
-        icon = "__Moshine__/graphics/icons/processing-grid-process-equation.png",
+        icon = "__Moshine__/graphics/icons/data/processing-grid-process-equation.png",
         effect_description = {"description.equation_to_solved_equation_description"},
       },
     },
@@ -545,7 +545,7 @@ data:extend({
         recipe = "moshine_cosmicscanner-construction-stage-1"
       },
     },
-    prerequisites = {"moshine-tech-silicon", "moshine-concrete-from-molten-iron-and-sand", "moshine-petroleum-from-sand-sulfur-steam-carbon"},
+    prerequisites = {"moshine-tech-silicon", "moshine-concrete-from-molten-iron-and-sand"},
     unit =
     {
       count = 390,

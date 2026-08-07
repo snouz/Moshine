@@ -13,7 +13,7 @@ data:extend({
     default_temperature = 15,
     base_color = {87,165,123},
     flow_color = {87,165,123},
-    icon = "__Moshine__/graphics/icons/raw-data.png",
+    icon = "__Moshine__/graphics/icons/data/raw-data.png",
     auto_barrel = false,
   },
   {
@@ -24,7 +24,7 @@ data:extend({
     default_temperature = 15,
     base_color = {212,212,5},
     flow_color = {212,212,5},
-    icon = "__Moshine__/graphics/icons/solved-equation-data.png",
+    icon = "__Moshine__/graphics/icons/data/solved-equation-data.png",
     auto_barrel = false,
   },
   {
@@ -35,7 +35,7 @@ data:extend({
     default_temperature = 15,
     base_color = {163,7,150},
     flow_color = {163,7,150},
-    icon = "__Moshine__/graphics/icons/cosmic-data-outsignal.png",
+    icon = "__Moshine__/graphics/icons/data/cosmic-data-outsignal.png",
     auto_barrel = false,
   },
   {
@@ -46,7 +46,7 @@ data:extend({
     default_temperature = 15,
     base_color = {104,47,178},
     flow_color = {104,47,178},
-    icon = "__Moshine__/graphics/icons/cosmic-data.png",
+    icon = "__Moshine__/graphics/icons/data/cosmic-data.png",
     auto_barrel = false,
   },
 })

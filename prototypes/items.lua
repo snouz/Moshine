@@ -334,7 +334,7 @@ data:extend({
   {
     type = "item",
     name = "datacell-empty", -- renamed Datacell[empty]
-    icon = "__Moshine__/graphics/icons/datacell-empty.png",
+    icon = "__Moshine__/graphics/icons/data/datacell-empty.png",
     subgroup = "moshine-datacells",
     order = "a[moshine]-aa",
     inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -366,7 +366,7 @@ data:extend({
   {
     type = "item",
     name = "datacell-raw-data",
-    icon = "__Moshine__/graphics/icons/datacell-raw-data.png",
+    icon = "__Moshine__/graphics/icons/data/datacell-raw-data.png",
     subgroup = "moshine-datacells",
     order = "a[moshine]-ab",
     inventory_move_sound = item_sounds.module_inventory_move,
@@ -383,7 +383,7 @@ data:extend({
   {
     type = "item",
     name = "datacell-ai-model-data",
-    icon = "__Moshine__/graphics/icons/datacell-ai-model-data.png",
+    icon = "__Moshine__/graphics/icons/data/datacell-ai-model-data.png",
     subgroup = "moshine-datacells",
     order = "a[moshine]-ba",
     inventory_move_sound = item_sounds.module_inventory_move,
@@ -400,7 +400,7 @@ data:extend({
   {
     type = "item",
     name = "datacell-equation",
-    icon = "__Moshine__/graphics/icons/datacell-equation.png",
+    icon = "__Moshine__/graphics/icons/data/datacell-equation.png",
     subgroup = "moshine-datacells",
     order = "a[moshine]-ca",
     plant_result = "processing-grid-process-equation",
@@ -419,7 +419,7 @@ data:extend({
   {
     type = "item",
     name = "datacell-solved-equation",
-    icon = "__Moshine__/graphics/icons/datacell-solved-equation.png",
+    icon = "__Moshine__/graphics/icons/data/datacell-solved-equation.png",
     subgroup = "moshine-datacells",
     order = "a[moshine]-cb",
     inventory_move_sound = item_sounds.module_inventory_move,
@@ -437,7 +437,7 @@ data:extend({
   {
     type = "item",
     name = "datacell-cosmic-data-outsignal",
-    icon = "__Moshine__/graphics/icons/datacell-cosmic-data-outsignal.png",
+    icon = "__Moshine__/graphics/icons/data/datacell-outsignal.png",
     subgroup = "moshine-datacells",
     order = "a[moshine]-db",
     inventory_move_sound = item_sounds.module_inventory_move,
@@ -456,7 +456,7 @@ data:extend({
   {
     type = "item",
     name = "datacell-cosmic-data",
-    icon = "__Moshine__/graphics/icons/datacell-cosmic-data.png",
+    icon = "__Moshine__/graphics/icons/data/datacell-cosmic-data.png",
     subgroup = "moshine-datacells",
     order = "a[moshine]-eb",
     inventory_move_sound = item_sounds.module_inventory_move,

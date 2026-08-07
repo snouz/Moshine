@@ -6,7 +6,7 @@ Date: 2026-08
     - This adds sun damage on moshine, sun visual effects, and a building that protects from it
     - Added Cosmic scanner, a huge telescope buildable in 5 steps in space
     - Added 6 technologies for the Cosmic scanner construction and data making
-    - Added OUTSIGNAL.DATA (data processor) and COSMIC.DATA (Cosmic scanner)
+    - Added out_signal.data (data processor, combines solved_equation.data and foreign.data) and cosmos.data (Cosmic scanner)
     - Added achievement for building a cosmic scanner
     - You can load and unload solved equation data in/from datacells
   Balancing:
@@ -18,9 +18,11 @@ Date: 2026-08
     - Quantum processor prod tech now requires cosmic data
     - Process indexing tech now earlier in the tech tree (after stable model), with cost adjusted
   Graphics:
-    - Reworked accumulator sprite and animation (in submod)
+    - Reworked big accumulator sprite and animation (in submod)
     - Added data extractor remnants
     - Removed optical fiber connection arrows displaying
+    - Adjusted some icons (AI tiers)
+    - Reworked some icons (model-stable, datacells, data)
   Bugfixes:
     - Fixed recycling recipe for hypercell substation, solar panel and accumulator
     - Fixed ai-tier-2 recipe result probability
