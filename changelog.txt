@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.9
+Date: 2026-09-06
+  Bugfixes:
+    - Fixed Cosmic scanner getting stuck with "output is full" (by raising internal buffer to 100000)
+---------------------------------------------------------------------------------------------------
+Version: 1.2.8
+Date: 2026-09-02
+  Balancing:
+    - Quantum processor productivity cost scaled down a lot (700 to 35 for base cost) (forgot to apply to final stage)
+    - Removed inserters and belt splitters heat damage (in submod)
+  Bugfixes:
+    - Hypercell solar panels are not shown as under entities at the north of them anymore (in submod)
+---------------------------------------------------------------------------------------------------
 Version: 1.2.7
 Date: 2026-09-01
   Balancing:

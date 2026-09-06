@@ -53,7 +53,7 @@ add_tech_unit("moshine-tech-ai-tier-10",          50, 1458*500,   {{"datacell-ra
 if data.raw["technology"]["moshine-tech-quantum-processor-productivity"] then
   data.raw["technology"]["moshine-tech-quantum-processor-productivity"].unit =
     {
-      count_formula = "1.4^L*700",
+      count_formula = "1.4^L*35",
       ingredients =
       {
         {"datacell-raw-data", 1},
