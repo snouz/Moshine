@@ -186,7 +186,7 @@ data:extend({
     layer_group = "ground-natural",
     vehicle_friction_modifier = 4,
     --walking_speed_modifier = 0.8,
-    default_cover_tile = "foundation",
+    --default_cover_tile = "foundation",
     absorptions_per_second = tile_pollution.fulgora,
     --effect = "moshine-hot-swamp",
     particle_tints = tile_graphics.fulgora_oil_ocean_particle_tints,

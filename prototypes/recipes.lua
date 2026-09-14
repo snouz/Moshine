@@ -599,7 +599,7 @@ data:extend({
       amount_min = 1240, 
       amount_max = 13480,
     }},
-    allow_productivity = false,
+    --allow_productivity = false,
     auto_recycle = false,
     enabled = false,
     allow_productivity = true,

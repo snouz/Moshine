@@ -4,7 +4,7 @@
   "description": "Hot planet where you develop AI, 33 technologies, 2 new minerals, 7 buildings, many items, custom terrain, music, unique challenges... Doesn't break Space Age balance, integrates well to it",
   "author": "snouz",
   "homepage": "https://github.com/snouz/Moshine",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "factorio_version": "2.1",
   "dependencies": [
     "base",

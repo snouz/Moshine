@@ -346,7 +346,7 @@ data:extend({
       { size = 64, filename = "__Moshine__/graphics/icons/silicon-carbide_3.png", scale = 0.5 },
     },
     stack_size = 40,
-    weight = 12.5*kg,
+    weight = 2.5*kg,
   },
 
 --    ██████   █████  ████████  █████   ██████ ███████ ██      ██      

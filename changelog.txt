@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.10
+Date: 2026-09-14
+  Balancing:
+    - Removed electricity from cooler 2 (in submod)
+    - Silicon carbide is lighter, you can put 400 in a rocket (previously 80)
+  Gui:
+    - Removed "default_cover_tile" from moshine-hot-swamp
+  Locale:
+    - Chinese locale update by ChuijkYahus
+    - German locale update by Schlumpf8
+---------------------------------------------------------------------------------------------------
 Version: 1.2.9
 Date: 2026-09-06
   Bugfixes:
