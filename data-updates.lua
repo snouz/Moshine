@@ -108,7 +108,7 @@ if mods["se-space-trains"] then
   end]]
 end
 
-if mods["maraxsis"] then
+if mods["maraxsis"] or mods["maraxsis-classic"] then
   if data.raw.item["maraxsis-glass-panes"] then
     data.raw.item["maraxsis-glass-panes"].localised_name = {"item-name.maraxsis-reinforced-glass"}
   end

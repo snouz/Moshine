@@ -1,5 +1,30 @@
+
+
 --code partly by Talandar
 local item_sounds = require("__base__.prototypes.item_sounds")
+
+
+local constructionframe_sequence = 
+{
+1,1,1,1,1,1,1,1,1,2,
+1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,2,1,
+1,1,1,1,1,1,1,1,1,1,
+1,1,1,2,1,1,1,1,1,1,
+1,1,1,2,1,1,1,1,1,1,
+1,1,1,1,1,1,1,2,2,1,
+1,1,1,2,1,1,2,1,1,1,
+1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,2,1,
+1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,2,1,1,1,
+1,1,1
+}
+--10,29,44,54,68,69,74,77,99,117
+                
+
+
+
 
 
 local make_simulation = function(name)
@@ -334,13 +359,12 @@ for i, stage in ipairs(megastructure_stages) do
                 height = 1024,
                 frame_count = 2,
                 line_length = 2,
-                frame_sequence = {1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1},
+                frame_sequence = constructionframe_sequence,
                 animation_speed = 0.05,
-                run_mode = "forward-then-backward",
+                run_mode = "forward",
                 draw_as_glow = true,
                 blend_mode = "additive",
                 scale = 0.5,
-                --render_layer = "",
               },
             }
           },
@@ -355,8 +379,65 @@ for i, stage in ipairs(megastructure_stages) do
       max_sounds_per_prototype = 3,
       fade_in_ticks = 20,
       fade_out_ticks = 20,
+      sound_accents = {
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 10,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 29,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 44,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 54,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 68,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 69,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 74,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 77,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 99,
+          play_for_working_visualisation = "constructionlights",
+        },
+        {
+          sound = {variations = sound_variations("__Moshine__/sound/weld", 20, 1)},
+          frame = 117,
+          play_for_working_visualisation = "constructionlights",
+        },10,29,44,54,68,69,74,77,99,117
+      },
     },
   }
+
+
+
+
+
 
   if stage.upgrade_recipe then
     entity.fixed_recipe = "moshine_cosmicscanner-construct-" .. i

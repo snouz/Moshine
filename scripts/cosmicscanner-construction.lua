@@ -148,7 +148,16 @@ local function on_entity_removed(event)
   end
 end
 
-script.on_event(defines.events.on_player_mined_entity, on_entity_removed)
-script.on_event(defines.events.on_robot_mined_entity, on_entity_removed)
-script.on_event(defines.events.on_entity_died, on_entity_removed)
-script.on_event(defines.events.script_raised_destroy, on_entity_removed)
+local destroy_filters = {
+  {filter = "name", name = "moshine_cosmicscanner-construction-stage-1" },
+  {filter = "name", name = "moshine_cosmicscanner-construction-stage-2" },
+  {filter = "name", name = "moshine_cosmicscanner-construction-stage-3" },
+  {filter = "name", name = "moshine_cosmicscanner-construction-stage-4" },
+  {filter = "name", name = "moshine_cosmicscanner" },
+}
+
+script.on_event(defines.events.on_player_mined_entity, on_entity_removed, destroy_filters)
+script.on_event(defines.events.on_robot_mined_entity, on_entity_removed, destroy_filters)
+script.on_event(defines.events.on_entity_died, on_entity_removed, destroy_filters)
+script.on_event(defines.events.script_raised_destroy, on_entity_removed, destroy_filters)
+

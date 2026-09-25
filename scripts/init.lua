@@ -6,7 +6,7 @@ function Public.initialize_moshine(surface) -- Must run before terrain generatio
 
   if not surface then
     surface = game.planets["moshine"].create_surface()
-    log("no surface, generated")
+    --log("no surface, generated")
   end
 
   if not surface.valid then
@@ -14,7 +14,7 @@ function Public.initialize_moshine(surface) -- Must run before terrain generatio
     surface = game.planets["moshine"].create_surface()
   end
 
-  log("initialize_moshine")
+  --log("initialize_moshine")
   --surface.min_brightness = 0.2
   --surface.brightness_visual_weights = { 0.12, 0.15, 0.12 }
 
@@ -58,7 +58,7 @@ function Public.create_lab_ruin(surface)
   e.minable_flag = false
   e.destructible = false
 
-  log("testlog create_entity")
+  --log("testlog create_entity")
 end
 
 script.on_event(defines.events.on_surface_created, function(event)
@@ -70,7 +70,7 @@ script.on_event(defines.events.on_surface_created, function(event)
   end
 
   Public.initialize_moshine(surface)
-  log("testlog max")
+  --log("testlog max")
 end)
 
 return Public

@@ -80,6 +80,7 @@ data:extend({
     },
     two_direction_only = true,
     window_bounding_box = {util.by_pixel(-16, -29.5), util.by_pixel(16, -16.5), 0.5},
+    heating_energy = "100kW",
     pictures =
     {
       picture =
@@ -114,6 +115,14 @@ data:extend({
             blend_mode = "additive",
           }
         }
+      },
+      frozen_patch =
+      {
+        filename = "__Moshine__/graphics/opticalfiber-storage-tank-frozen.png",
+        width = 384,
+        height = 448,
+        shift = util.by_pixel(0, -16),
+        scale = 0.5
       },
       fluid_background =
       {

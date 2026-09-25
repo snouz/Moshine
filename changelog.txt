@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.12
+Date: 2026-09-
+  Compatibility:
+    - Added the line change to Maraxsis to Maraxsis classic
+---------------------------------------------------------------------------------------------------
+Version: 1.2.11
+Date: 2026-09-22
+  Changes:
+    - Added data server frozen picture, can freeze (e.g. on aquilo)
+  Sound:
+    - Added welding sounds to cosmic scanner construction
+  Optimization:
+    - Optimized script for cosmic scanner (thanks MeteorSwarm!)
+    - Optimized script for coolers desctruction and creation (thanks MeteorSwarm!)
+---------------------------------------------------------------------------------------------------
 Version: 1.2.10
 Date: 2026-09-14
   Balancing:
