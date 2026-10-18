@@ -105,7 +105,8 @@ data:extend({
     corpse = "moshine_cosmicscanner-remnants",
     dying_explosion = "assembling-machine-1-explosion",
     show_recipe_icon = false,
-    icon_draw_specification = {shift = {0, 5.5}, scale = 1},
+    icon_draw_specification = {shift = {0, 5.5}, scale = 1.5},
+    icons_positioning = { {inventory_index = defines.inventory.lab_modules, shift = util.by_pixel_hr(0, 336)}, },
     surface_conditions =
     {
       {
@@ -173,13 +174,13 @@ data:extend({
     (
       universal_connector_template,
       {
-        { variation = 18, main_offset = util.by_pixel(128, 335), shadow_offset = util.by_pixel(128, 340), show_shadow = false },
-        { variation = 18, main_offset = util.by_pixel(128, 335), shadow_offset = util.by_pixel(128, 340), show_shadow = false },
-        { variation = 18, main_offset = util.by_pixel(128, 335), shadow_offset = util.by_pixel(128, 340), show_shadow = false },
-        { variation = 18, main_offset = util.by_pixel(128, 335), shadow_offset = util.by_pixel(128, 340), show_shadow = false }
+        { variation = 18, main_offset = util.by_pixel_hr(128, 335), shadow_offset = util.by_pixel_hr(128, 340), show_shadow = false },
+        { variation = 18, main_offset = util.by_pixel_hr(128, 335), shadow_offset = util.by_pixel_hr(128, 340), show_shadow = false },
+        { variation = 18, main_offset = util.by_pixel_hr(128, 335), shadow_offset = util.by_pixel_hr(128, 340), show_shadow = false },
+        { variation = 18, main_offset = util.by_pixel_hr(128, 335), shadow_offset = util.by_pixel_hr(128, 340), show_shadow = false }
       }
     ),
-    alert_icon_shift = util.by_pixel(0, -12),
+    alert_icon_shift = util.by_pixel_hr(0, -70),
     graphics_set =
     {
       animation_progress = 0.15,

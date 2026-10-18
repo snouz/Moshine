@@ -255,6 +255,112 @@ local planet_catalogue_vulcanus = require("__space-age__.prototypes.planet.proce
 local effects = require("__core__.lualib.surface-render-parameter-effects")
 local asteroid_util = require("__space-age__.prototypes.planet.asteroid-spawn-definitions")
 
+
+local texturemod = "__Moshine-assets__/graphics/space/"
+local texturesa = "__space-age__/graphics/space/"
+
+
+local planetbackdrop = {
+  atmosphere_color = {
+    41,
+    48,
+    189,
+    7,
+  },
+  atmosphere_ray_light_color_1 = {
+    84,
+    44,
+    0,
+    255,
+  },
+  atmosphere_ray_light_color_2 = {
+    125,
+    94,
+    26,
+    255,
+  },
+  atmosphere_thickness = 0.255,
+  cloud_flow_intensity = 5,
+  cloud_flow_seconds = 53,
+  cloud_normal_intensity = 5,
+  cloud_panning_rate = 1,
+  cloud_vertical_offset = 0,
+  cloudiness = 0.097,
+  emission_scalar = 4.638,
+  emission_scales_with_shadow = false,
+  global_cloud = {
+    filename = texturesa .. "nauvis-cloud.png",
+    width = 2048,
+    height = 1024,
+  },
+  global_cloud_flow = {
+    filename = texturesa .. "nauvis-cloud-flow.png",
+    width = 2048,
+    height = 1024,
+  },
+  global_cloud_normal = {
+    filename = texturesa .. "vulcanus-cloud-normal.png",
+    width = 2048,
+    height = 1024,
+  },
+  light_color = {
+    236,
+    236,
+    236,
+    255,
+  },
+  light_direction = {
+    -0.53259223,
+    0.1460832,
+    0.61090524,
+  },
+  light_intensity_contrast = 0.601,
+  light_radius = 15,
+  planet_axis = {
+    3,
+    13,
+  },
+  planet_axis_deviation_amplitude = {
+    10,
+    10,
+  },
+  planet_axis_deviation_seconds = {
+    382.18884120171674,
+    323.47639484978544,
+  },
+  planet_emission = {
+    filename = texturemod .. "moshine-emission.png",
+    width = 2048,
+    height = 1024,
+  },
+  planet_normal = {
+    filename = texturesa .. "nauvis-cloud-normal.png",
+    width = 2048,
+    height = 1024,
+  },
+  planet_surface = {
+    filename = texturemod .. "moshine.png",
+    width = 2048,
+    height = 1024,
+  },
+  radius = 520,
+  rotation_seconds = 900,
+  specular_color = {
+    255,
+    124,
+    0,
+    255,
+  },
+  specular_intensity = 1,
+  surface_normal_intensity = 0.521,
+  surface_vertical_offset = 0.063,
+}
+
+
+
+
+
+
 data:extend({
 
   --[[{
@@ -444,8 +550,8 @@ data:extend({
       },
       terrain_tint_effect = nil,
       shadow_opacity = 0.7,
-      platform_backdrop =
-      {
+      platform_backdrop = planetbackdrop,
+      --[[{
         emission_scales_with_shadow = false,
         radius = 520,
         rotation_seconds = 15 * 60, --15m
@@ -488,7 +594,7 @@ data:extend({
         global_cloud = nil,
         global_cloud_normal = nil,
         global_cloud_flow = nil,
-      },
+      },]]
     },
   },
   {

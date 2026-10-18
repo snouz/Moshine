@@ -760,7 +760,7 @@ data:extend({
     results = {
       {type="item", name="ai-tier-2", amount=1, shared_probability = { min = 0, max = 0.50 }},
       {type="item", name="ai-tier-1", amount=1, shared_probability = { min = 0.50, max = 0.99 }},
-      {type="item", name="model-unstable", amount=1, shared_probability = { min = 0.99, max = 1 }},
+      {type="item", name="model-unstable", amount=1, shared_probability = { min = 0.99, max = 1 },always_fresh = true, reset_freshness_on_craft = true,},
     },
     main_product = "ai-tier-2",
     allow_productivity = false,
@@ -840,16 +840,13 @@ for i=2,9 do
         {type = "item", name = "ai-tier-" .. i+1, amount = 1, shared_probability = { min = 0.47, max = (0.47 + 0.32 - i/100) }},
         {type = "item", name = "ai-tier-" .. i,   amount = 1, shared_probability = { min = 0, max = 0.47 }},
         {type = "item", name = "ai-tier-" .. i-1, amount = 1, shared_probability = { min = (0.47 + 0.32 - i/100), max = 0.99 }},
-        {type = "item", name = "model-unstable",  amount = 1, shared_probability = { min = 0.99, max = 1 }},
+        {type = "item", name = "model-unstable",  amount = 1, shared_probability = { min = 0.99, max = 1 },always_fresh = true, reset_freshness_on_craft = true,},
       },
       main_product = "ai-tier-" .. i+1,
       allow_productivity = false,
       enabled = false,
       crafting_machine_tint = typeofanim,
       sort_item_ingredients = false,
-
     },
-
-
   })
 end

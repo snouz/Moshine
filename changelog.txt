@@ -1,8 +1,25 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.14
+Date: 2026-10-
+  Bugfixes:
+    - Unstable models from AI up-tier recipes are always "fresh"
+    - Fixed ingame changelog
+---------------------------------------------------------------------------------------------------
+Version: 1.2.13
+Date: 2026-10-15
+  Bugfixes:
+    - Fixed breaking change in experimental 2.1.22
+---------------------------------------------------------------------------------------------------
 Version: 1.2.12
-Date: 2026-09-
+Date: 2026-10-10
+  Bugfixes:
+    - Fixed cosmic scanner module slot positioning and electric wire positioning
+  Graphics:
+    - Planet backdrop reworked (thanks Hanodest for the great tool)
   Compatibility:
     - Added the line change to Maraxsis to Maraxsis classic
+  Optimization:
+    - Optimized poor UPS in sun heat submod (x10 damage, /10 frequency)
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.11
 Date: 2026-09-22
@@ -54,7 +71,7 @@ Date: 2026-09-01
 Version: 1.2.6
 Date: 2026-08-30
   Balancing:
-    - foreign.data decoder: allows AI cores now (and raised ouptut buffer from 100 to 10000)
+    - foreign.data decoder: allows AI cores now (and raised output buffer from 100 to 10000)
     - Made out_signal.data MUCH cheaper and faster (from 300 foreign, 90 solved_eq, 1 white sc -> to 150 foreign, 40 solved_eq, 1 white sc; and 2x faster)
     - cosmos.data recipe output DOUBLED, also takes 170 sec instead of 220 sec
   Gui:
@@ -156,7 +173,7 @@ Date: 2026-08-14
     - SOME OF THE CHANGES MIGHT BREAK SOME OF YOUR EXISTING BASE
   Features:
     - Added Sun heat and cooling as a recommended dependency (will download by default, can be disabled)
-    - This adds sun damage on moshine, sun visual effects, and 2 buildings that protects from it
+    - This adds sun damage on moshine, sun visual effects, and 2 buildings that protects against it
     - Added Cosmic scanner, a huge telescope buildable in 5 steps in space
     - Added 6 technologies for the Cosmic scanner construction and data making
     - Added out_signal.data (data processor, combines solved_equation.data and foreign.data) and cosmos.data (Cosmic scanner)
@@ -181,10 +198,10 @@ Date: 2026-08-14
     - Added out_signal.data requirement for techs ai-tier-7, ai-tier-8, ai-tier-9, ai-tier-10, long stack inserter and big accumulators
     - Added cosmos.data requirement for techs ai-tier-9 and ai-tier-10
   Graphics:
-    - Brand new optical fiber graphics, with proper connectors on data processor and 
+    - Brand new optical fiber graphics, with proper connectors on data processor
     - Reworked big accumulator sprite and animation (in submod)
     - Added data extractor remnants
-    - Removed optical fiber connection arrows displaying
+    - Removed optical fiber connection arrows
     - Adjusted some icons (AI tiers)
     - Reworked some icons (model-stable, datacells, data)
     - Added 4 neodymium sprite variations (prev. 4)

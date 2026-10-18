@@ -228,6 +228,28 @@ data:extend({
     water =
     {
       shader_variation = "lava",
+      noise_textures =
+      {
+        {
+          filename = "__space-age__/graphics/terrain/vulcanus/lava-textures/lava-noise-1.png",
+          size = 512,
+          color_channels = 2
+        },
+        {
+          filename = "__space-age__/graphics/terrain/vulcanus/lava-textures/lava-noise-2.png",
+          size = 512,
+          color_channels = 1
+        }
+      },
+      image_textures =
+      {
+        {
+          filename = "__Moshine-assets__/graphics/terrain/moshine-coastal-lava.png",
+        }
+      },
+
+
+      ---------------------- FOR PRE-2.1.22 versions
       textures =
       {
         {
@@ -241,10 +263,13 @@ data:extend({
           height = 512 * 2
         }
       },
+
       texture_variations_columns = 1,
       texture_variations_rows = 1,
       secondary_texture_variations_columns = 4,
       secondary_texture_variations_rows = 2,
+
+      --------------------------------------
 
       animation_speed = 1.5,
       animation_scale = { 0.75, 0.75 },
