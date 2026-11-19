@@ -23,4 +23,18 @@ data:extend({
     default_value = true,
     order = "a"
   },
+  {
+    type = "bool-setting",
+    name = "moshine-link-se-space-trains-to-moshine-progression",
+    setting_type = "startup",
+    default_value = true,
+    order = "b"
+  },
+  {
+    type = "bool-setting",
+    name = "moshine-opticalfiber-look-clean",
+    setting_type = "startup",
+    default_value = false,
+    order = "c"
+  },
 })

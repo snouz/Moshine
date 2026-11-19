@@ -296,7 +296,7 @@ data:extend({
         recipe = "datacell-equation"
       },
     },
-    prerequisites = {"moshine-tech-datacell-empty", "automation-3", "productivity-module-2", "moshine-tech-silicon-carbide"},
+    prerequisites = {"electromagnetic-science-pack", "moshine-tech-datacell-empty", "automation-3", "productivity-module-2", "moshine-tech-silicon-carbide"},
     unit =
     {
       count = 300,
@@ -342,6 +342,10 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "opticalfiber-storage-tank"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "optical-cable-to-ground"
       },
     },
     prerequisites = {"moshine-tech-neural_computer"},

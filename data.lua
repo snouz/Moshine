@@ -24,6 +24,7 @@ require ("prototypes_planet.music")
 
 require ("sound-util")
 require ("prototypes.entity.opticalfiber")
+require ("prototypes.entity.opticalfiber-to-ground")
 require ("prototypes.entity.opticalfiber-storage-tank")
 require ("prototypes.entity.supercomputer")
 require ("prototypes.entity.dataprocessor")

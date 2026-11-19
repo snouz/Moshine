@@ -35,16 +35,6 @@ if mods["Glass"] then
 end
 
 
-
-
---[[
-if mods["se-space-trains"] then
-  if data.raw.item["space-train-battery-charging-station"] then data.raw.item["space-train-battery-charging-station"].default_import_location = "moshine" end
-  if data.raw.item["space-train-battery-pack"] then data.raw.item["space-train-battery-pack"].default_import_location = "moshine" end
-  if data.raw.item["space-train-discharged-battery-pack"] then data.raw.item["space-train-discharged-battery-pack"].default_import_location = "moshine" end
-end
-]]
-
 if mods["quality-seeds"] then
   if quality_seeds and quality_seeds.ignore_plants then
     table.insert(quality_seeds.ignore_plants, "processing-grid-process-equation")

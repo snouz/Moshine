@@ -382,6 +382,12 @@ data:extend({
     })
   },
 
+--    ██████  ██ ██████  ███████ 
+--    ██   ██ ██ ██   ██ ██      
+--    ██████  ██ ██████  █████   
+--    ██      ██ ██      ██      
+--    ██      ██ ██      ███████ 
+
   {
     type = "pipe",
     name = "optical-cable",
@@ -435,3 +441,227 @@ data:extend({
     vertical_window_bounding_box = {util.by_pixel(-3, -5), util.by_pixel(4,4)}
   },
 })
+
+if helpers.compare_versions(mods["base"], "2.1.25") >= 0 then
+  if data.raw.pipe["optical-cable"] and data.raw.pipe["optical-cable"].pictures then
+    data.raw.pipe["optical-cable"].draw_window = false
+    local pics = data.raw.pipe["optical-cable"].pictures
+    local optical_path = "__Moshine__/graphics/entity/opticalfiber/"
+    pics.straight_vertical = {}
+    pics.straight_horizontal = {}
+    pics.corner_up_right = {}
+    pics.corner_up_left = {}
+    pics.corner_down_right = {}
+    pics.corner_down_left = {}
+    pics.t_up = {}
+    pics.t_down = {}
+    pics.t_right = {}
+    pics.t_left = {}
+    pics.cross = {}
+
+    for i=0,13 do
+      table.insert(
+        pics.straight_vertical,
+        {
+          filename = optical_path .. "opticalfiber-straight-vertical-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+      table.insert(
+        pics.straight_horizontal,
+        {
+          filename = optical_path .. "opticalfiber-straight-horizontal-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+    end
+
+    for i=0,4 do
+      table.insert(
+        pics.corner_up_right,
+        {
+          filename = optical_path .. "opticalfiber-corner-up-right-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+      table.insert(
+        pics.corner_up_left,
+        {
+          filename = optical_path .. "opticalfiber-corner-up-left-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+      table.insert(
+        pics.corner_down_right,
+        {
+          filename = optical_path .. "opticalfiber-corner-down-right-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+      table.insert(
+        pics.corner_down_left,
+        {
+          filename = optical_path .. "opticalfiber-corner-down-left-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+    end
+
+
+
+    for i=0,4 do
+      table.insert(
+        pics.t_up,
+        {
+          filename = optical_path .. "opticalfiber-t-up-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+      table.insert(
+        pics.t_down,
+        {
+          filename = optical_path .. "opticalfiber-t-down-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+      table.insert(
+        pics.t_right,
+        {
+          filename = optical_path .. "opticalfiber-t-right-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+      table.insert(
+        pics.t_left,
+        {
+          filename = optical_path .. "opticalfiber-t-left-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+      table.insert(
+        pics.cross,
+        {
+          filename = optical_path .. "opticalfiber-cross-" ..i ..".png",
+          flags = {"low-object"},
+          size = 128,
+          scale = 0.5
+        }
+      )
+    end
+
+    for i=1,2 do
+      table.insert(
+        pics.straight_vertical_single,
+        {
+          filename = optical_path .. "opticalfiber-straight-vertical-single-" ..i ..".png",
+          flags = {"low-object"},
+          size = 160,
+          scale = 0.5
+        }
+      )
+    end
+
+
+
+    if settings.startup["moshine-opticalfiber-look-clean"] and settings.startup["moshine-opticalfiber-look-clean"].value == true then
+      pics.straight_vertical = 
+      {
+        filename = optical_path .. "opticalfiber-straight-vertical-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.straight_horizontal =
+      {
+        filename = optical_path .. "opticalfiber-straight-horizontal-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.corner_up_right =
+      {
+        filename = optical_path .. "opticalfiber-corner-up-right-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.corner_up_left =
+      {
+        filename = optical_path .. "opticalfiber-corner-up-left-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.corner_down_right =
+      {
+        filename = optical_path .. "opticalfiber-corner-down-right-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.corner_down_left =
+      {
+        filename = optical_path .. "opticalfiber-corner-down-left-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.t_up =
+      {
+        filename = optical_path .. "opticalfiber-t-up-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.t_down =
+      {
+        filename = optical_path .. "opticalfiber-t-down-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.t_right =
+      {
+        filename = optical_path .. "opticalfiber-t-right-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.t_left =
+      {
+        filename = optical_path .. "opticalfiber-t-left-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+      pics.cross =
+      {
+        filename = optical_path .. "opticalfiber-cross-0.png",
+        flags = {"low-object"},
+        size = 128,
+        scale = 0.5
+      }
+    end
+  end
+end
+

@@ -54,7 +54,7 @@ data:extend({
     name = "optical-cable",
     icon = "__Moshine__/graphics/icons/optical-fiber.png",
     subgroup = "moshine-production-machine",
-    order = "ffa",
+    order = "ffaa",
     inventory_move_sound = item_sounds.metal_small_inventory_move,
     pick_sound = item_sounds.metal_small_inventory_pickup,
     drop_sound = item_sounds.metal_small_inventory_move,
@@ -62,6 +62,21 @@ data:extend({
     stack_size = 200,
     default_import_location = "moshine",
     weight = 0.5 * kg,
+    random_tint_color = item_tints.iron_rust
+  },
+  {
+    type = "item",
+    name = "optical-cable-to-ground",
+    icon = "__Moshine__/graphics/icons/optical-cable-to-ground.png",
+    subgroup = "moshine-production-machine",
+    order = "ffab",
+    inventory_move_sound = item_sounds.metal_small_inventory_move,
+    pick_sound = item_sounds.metal_small_inventory_pickup,
+    drop_sound = item_sounds.metal_small_inventory_move,
+    place_result = "optical-cable-to-ground",
+    stack_size = 50,
+    default_import_location = "moshine",
+    weight = 2 * kg,
     random_tint_color = item_tints.iron_rust
   },
   {

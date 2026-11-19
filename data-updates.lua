@@ -41,9 +41,11 @@ end
 local recycling = require("__recycler__.recycling")
 
 if mods["se-space-trains"] then
+  if settings.startup["moshine-link-se-space-trains-to-moshine-progression"] and settings.startup["moshine-link-se-space-trains-to-moshine-progression"].value == true then
   --if settings.startup["moshine-se-space-trains"].value then
     if data.raw["technology"]["tech-space-trains"] then
       table.insert(data.raw["technology"]["tech-space-trains"].prerequisites, "moshine-tech-magnet")
+      table.insert(data.raw["technology"]["tech-space-trains"].prerequisites, "electromagnetic-science-pack")
     end
     if data.raw["recipe"]["space-locomotive"] then
       table.insert(data.raw["recipe"]["space-locomotive"].ingredients, {type = "item", name = "magnet", amount = 5})
@@ -106,6 +108,7 @@ if mods["se-space-trains"] then
     if data.raw["item-with-entity-data"]["space-cargo-wagon"] then data.raw["item-with-entity-data"]["space-cargo-wagon"].hidden = true end
     if data.raw["item-with-entity-data"]["space-fluid-wagon"] then data.raw["item-with-entity-data"]["space-fluid-wagon"].hidden = true end
   end]]
+  end
 end
 
 if mods["maraxsis"] or mods["maraxsis-classic"] then

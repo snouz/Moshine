@@ -1,3 +1,6 @@
+
+
+
 data:extend({
 --    ██████  ███████  ██████ ██ ██████  ███████        ██████  █████  ████████ ███████  ██████   ██████  ██████  ██    ██ 
 --    ██   ██ ██      ██      ██ ██   ██ ██            ██      ██   ██    ██    ██      ██       ██    ██ ██   ██  ██  ██  
@@ -85,6 +88,19 @@ data:extend({
       {type = "item", name = "silicon", amount = 1},
     },
     results = {{type = "item", name = "optical-cable", amount = 2}},
+    allow_productivity = false,
+    enabled = false,
+    sort_item_ingredients = false,
+  },
+  {
+    type = "recipe",
+    name = "optical-cable-to-ground",
+    energy_required = 1,
+    --surface_conditions = {{ property = "pressure", min = 701, max = 701}},
+    ingredients = {
+      {type = "item", name = "optical-cable", amount = 5},
+    },
+    results = {{type = "item", name = "optical-cable-to-ground", amount = 1}},
     allow_productivity = false,
     enabled = false,
     sort_item_ingredients = false,
