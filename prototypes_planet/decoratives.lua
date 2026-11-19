@@ -428,7 +428,7 @@ data:extend({
       {
         filename = "__Moshine-assets__/graphics/decorative/snow-drift-decal/snow-drift-decal-21.png",
         width = 418,
-        height = 154,
+        height = 314,
         shift = util.by_pixel(1, 3),
         scale = 0.5
       },
